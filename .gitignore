@@ -1,0 +1,31 @@
+# Bỏ qua môi trường ảo (Virtual Environment)
+venv/
+env/
+.venv/
+
+# BẢO MẬT TUYỆT ĐỐI: Không đẩy file chứa khóa bí mật và mật khẩu lên mạng
+.env
+
+# Bỏ qua thư mục chứa dữ liệu cào được (Tránh làm nặng Git và lộ lịch sử cào)
+data/
+*.json
+
+# Bỏ qua các file rác của Python trong quá trình biên dịch
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+
+# Bỏ qua cấu hình của các IDE (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Bỏ qua file log và DB local
+*.log
+*.sqlite3
+
+# Bỏ qua bộ nhớ đệm của Hugging Face (nếu có tải model thẳng vào thư mục dự án)
+.huggingface/

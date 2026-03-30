@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  pgvector-db:
+    # Image chính chủ đã tích hợp sẵn PostgreSQL 16 và pgvector
+    image: pgvector/pgvector:pg16
+    container_name: fashion_vector_db
+    restart: always
+    environment:
+      POSTGRES_USER: pbtien
+      POSTGRES_PASSWORD: tien12345
+      POSTGRES_DB: fashion_db
+    ports:
+      - "5433:5432"
+    volumes:
+      # Map volume để lỡ có xóa container thì data R2 và Vector vẫn còn nguyên trong ổ cứng
+      - pgvector_data:/var/lib/postgresql/data
+
+volumes:
+  pgvector_data:
