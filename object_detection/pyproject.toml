@@ -1,0 +1,15 @@
+[project]
+name = "object-detection"
+version = "0.1.0"
+description = "YOLO clothing detection service for Fashion Visual Search"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-multipart",
+    "ultralytics",
+    "opencv-python-headless",
+    "numpy",
+    "pillow",
+]
+

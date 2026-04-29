@@ -1,94 +1,293 @@
-# 👗👔 Fashion Visual Search
+# Fashion Visual Search
 
-Hệ thống Tìm kiếm Sản phẩm Thời trang bằng Hình ảnh (Visual Search) dựa trên mô hình AI nhúng (CLIP Model) và cơ sở dữ liệu Vector (PostgreSQL + pgvector).
+MVP web app for fashion visual search:
 
-## 🌟 Tính năng chính
+```text
+Upload outfit image
+-> YOLO object detection detects and crops each clothing item
+-> FashionCLIP vectorizes each crop
+-> PostgreSQL + pgvector searches similar products
+-> React frontend renders results grouped by detected item
+```
 
-- **Cào dữ liệu tự động (ETL)**: Thu thập thông tin sản phẩm (Tên, Giá, Hãng, Hình đại diện) từ Amazon thông qua mạng lưới Apify Actor.
-- **Lưu trữ tĩnh hiệu suất cao**: Tự động tải ảnh sản phẩm gốc và đẩy trực tiếp lên Cloudflare R2 nhằm tạo kho ảnh nội bộ độc lập.
-- **Trích xuất Vector AI**: Ứng dụng mạng nơ-ron đa thể thức OpenAI CLIP (`clip-vit-base-patch32`) để biến ảnh sản phẩm thành mảng 512 con số (Vector Embeddings) có ngữ nghĩa.
-- **Tìm kiếm tương đồng (Similarity Search)**: Dựa vào một hình ảnh bất kỳ (Input Image), máy sẽ chuyển đổi thành vector, sau đó sử dụng **PostgreSQL với pgvector HNSW Index** để tìm và tính toán khoảng cách Cosine (Cosine Distance). Trả về các sản phẩm có phong cách, kiểu dáng giống nhất ở tốc độ phần nghìn giây.
+## Services
 
-## 🏗️ Kiến trúc Hệ thống
+- `frontend`: React/Vite upload and results UI, port `5173`.
+- `api`: FastAPI upload pipeline, port `8000`.
+- `object-detection`: FastAPI YOLO crop service, port `8001`.
+- `postgres-pgvector`: PostgreSQL 16 with pgvector, host port `5433`.
 
-1. **ETL Pipeline (`etl/`)**: Apify ➔ Cloudflare R2 ➔ Lọc & Trích xuất JSON cục bộ.
-2. **AI Engine (`AI/vectorizer.py`)**: Đọc kho JSON ➔ Tải ảnh vào RAM ➔ Extract bằng Torch & HuggingFace ➔ Ghi Vectors vào JSON.
-3. **Database (`db/` & Docker)**: Khởi tạo bảng, index HNSW, đẩy đống Vectors vào PostgreSQL cục bộ.
-4. **Searcher (`searcher.py`)**: Người dùng chạy script ➔ Query SQL pgvector ➔ Hiển thị kết quả.
+## Environment
 
-## 🛠 Cài đặt & Chuẩn bị
+Create a local env file from the example:
 
-### 1. Yêu cầu hệ thống
-- Python 3.10+
-- Docker Desktop (để chạy database)
-- Môi trường ảo (venv)
-
-### 2. Cài đặt thư viện Python
 ```powershell
-# Chạy ở thư mục gốc của dự án
+copy .env.example .env
+```
+
+For Docker Compose, the default `.env.example` values match the service names:
+
+```env
+DB_HOST=postgres-pgvector
+DB_PORT=5432
+DB_USER=pbtien
+DB_PASSWORD=change_me
+DB_NAME=fashion_db
+
+OBJECT_DETECTION_URL=http://object-detection:8001
+OBJECT_DETECTION_MODEL_PATH=/models/object-detection/best.pt
+
+API_PORT=8000
+VITE_API_URL=http://localhost:8000
+MATCH_SCORE_THRESHOLD=0.45
+
+EMBEDDING_MODEL=patrickjohncyh/fashion-clip
+EMBEDDING_VERSION=2
+
+APIFY_API_TOKEN=
+R2_ENDPOINT_URL=
+R2_ACCESS_KEY_ID=
+R2_SECRET_ACCESS_KEY=
+R2_BUCKET_NAME=
+R2_PUBLIC_BASE_URL=
+```
+
+Do not put real secrets in frontend env vars. Only variables prefixed with `VITE_` are exposed to the browser.
+
+## YOLO Model
+
+Place the object detection weight file here:
+
+```text
+models/object-detection/best.pt
+```
+
+The file is intentionally ignored by Git. Docker mounts it into the object detection container at:
+
+```text
+/models/object-detection/best.pt
+```
+
+If the model is missing, `/detect/upload` returns:
+
+```text
+Missing YOLO model at /models/object-detection/best.pt
+```
+
+## Install Local Python Dependencies
+
+```powershell
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3. Cấu hình biến môi trường (`.env`)
-Tạo một file `.env` ở thư mục gốc theo format:
-```env
-# APIFY Setup (Dùng crawler lấy data)
-APIFY_API_TOKEN=your_apify_token_here
+## Prepare Product Data
 
-# CLOUDFLARE R2 Setup (Dùng lưu trữ ảnh)
-R2_ENDPOINT_URL=https://<your_account_id>.r2.cloudflarestorage.com
-R2_ACCESS_KEY_ID=your_access_key
-R2_SECRET_ACCESS_KEY=your_secret_key
-R2_BUCKET_NAME=fashion-visual-search
+The existing ETL/vector pipeline is still supported.
 
-# POSTGRESQL Setup (Khai báo đúng như trong docker-compose.yml)
-DB_HOST=localhost
-DB_PORT=5433
-DB_USER=pbtien
-DB_PASSWORD=tien12345
-DB_NAME=fashion_db
-```
+1. Crawl product metadata and upload product images to R2:
 
-### 4. Khởi động PostgreSQL (pgvector)
-```powershell
-docker-compose up -d
-```
-Bạn có thể xác nhận container đang chạy ở port `5433`.
-
-## 🚀 Hướng dẫn Chạy Pipeline Toàn Tập
-
-### Bước 1: Thu thập Dữ liệu (ETL)
-Chạy script để crawl dữ liệu từ khóa thời trang và lưu ảnh sang R2. Thông tin sẽ được xuất ra `data/fashion_metadata.json`.
 ```powershell
 python etl/test.py
 ```
-*(Bạn có thể cấu hình danh sách từ khóa trực tiếp bằng cách sửa file `etl/test.py`)*
 
-### Bước 2: AI Vectorizer
-Đưa ảnh qua model AI để tạo vector. Dữ liệu sẽ lưu ở `data/fashion_with_vectors.json`.
+This writes product metadata to:
+
+```text
+data/fashion_metadata.json
+```
+
+2. Generate FashionCLIP vectors:
+
 ```powershell
 python AI/vectorizer.py
 ```
 
-### Bước 3: Nạp dữ liệu vào Database
-Tạo schema trên PostgreSQL và Import đống sản phẩm đã nhúng vector vào CSDL.
+This writes:
+
+```text
+data/fashion_with_vectors.json
+```
+
+3. Initialize PostgreSQL schema and load vectors:
+
+If running scripts from the host against Docker Postgres, set:
+
+```env
+DB_HOST=localhost
+DB_PORT=5433
+DB_USER=pbtien
+DB_PASSWORD=change_me
+DB_NAME=fashion_db
+```
+
+Then run:
+
 ```powershell
 python db/database.py
 ```
 
-### Bước 4: Chạy Tìm Kiếm (Visual Search)
-Bạn nhập URL bất kỳ của một tấm ảnh ở dòng `test_image_url` bên trong `searcher.py`. Sau đó chạy lệnh:
-```powershell
-python searcher.py
-```
-Hệ thống sẽ in ra top những sản phẩm thời trang giống tấm hình của bạn nhất!
+The DB schema stores embeddings as:
 
-## 🔖 Công nghệ sử dụng
-- **Python**: Ngôn ngữ xử lý mạch chính.
-- **HuggingFace (`transformers`) & PyTorch**: Chạy mô hình pretrained **CLIP**.
-- **Apify Client**: Agent đám mây đi cào mảng E-Commerce.
-- **Boto3**: Tương tác với Cloudflare R2 theo chuẩn API S3.
-- **PostgreSQL 16 & pgvector & psycopg 3**: Cấu trúc Data Warehouse kết hợp Index HNSW cho việc tìm kiếm Vector siêu tốc.
-- **Docker Compose**: Đóng gói CSDL sạch sẽ không cấu hình nhọc sức.
+```sql
+embedding VECTOR(512)
+```
+
+### Embedding Model
+
+The project default embedding model is now FashionCLIP:
+
+```env
+EMBEDDING_MODEL=patrickjohncyh/fashion-clip
+EMBEDDING_VERSION=2
+```
+
+To re-vectorize the catalog with the default FashionCLIP model:
+
+```powershell
+$env:EMBEDDING_MODEL="patrickjohncyh/fashion-clip"
+$env:EMBEDDING_VERSION="2"
+python AI\vectorizer.py
+python db\database.py
+```
+
+Then run the API with the same env:
+
+```powershell
+$env:EMBEDDING_MODEL="patrickjohncyh/fashion-clip"
+$env:EMBEDDING_VERSION="2"
+uvicorn api.main:app --host 0.0.0.0 --port 8000
+```
+
+For Docker Compose, these are already the defaults unless `.env` overrides them. The API filters search candidates by `embedding_model` and `embedding_version`, so query embeddings and database embeddings must match.
+
+The database still uses:
+
+```sql
+embedding VECTOR(512)
+```
+
+If a model returns a dimension other than 512, vectorization/search fails with a clear error. Do not change the pgvector dimension without a separate migration/table plan.
+
+To compare against the old CLIP baseline, temporarily set CLIP version 1, re-vectorize/reload, and run eval:
+
+```powershell
+$env:EMBEDDING_MODEL="openai/clip-vit-base-patch32"
+$env:EMBEDDING_VERSION="1"
+python AI\vectorizer.py
+python db\database.py
+python evaluation\run_eval.py --api-url http://localhost:8000 --labels evaluation\labels.json --run-name clip_v1
+
+$env:EMBEDDING_MODEL="patrickjohncyh/fashion-clip"
+$env:EMBEDDING_VERSION="2"
+python AI\vectorizer.py
+python db\database.py
+python evaluation\run_eval.py --api-url http://localhost:8000 --labels evaluation\labels.json --run-name fashionclip_v2
+
+python evaluation\compare_runs.py evaluation\results\clip_v1.json evaluation\results\fashionclip_v2.json
+```
+
+## Run Full App
+
+Start Docker Desktop, then run:
+
+```powershell
+docker compose up --build
+```
+
+URLs:
+
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- API health: [http://localhost:8000/health](http://localhost:8000/health)
+- Object detection health: [http://localhost:8001/health](http://localhost:8001/health)
+- Postgres host port: `localhost:5433`
+
+## Run Pieces Locally
+
+API:
+
+```powershell
+uvicorn api.main:app --host 0.0.0.0 --port 8000
+```
+
+Object detection:
+
+```powershell
+uvicorn object_detection.api:app --host 0.0.0.0 --port 8001
+```
+
+Frontend:
+
+```powershell
+cd web\fe
+npm install
+npm run dev
+```
+
+## Troubleshooting
+
+### Missing YOLO model
+
+Put the real model file at:
+
+```text
+models/object-detection/best.pt
+```
+
+The repository does not commit `.pt` files.
+
+### DB has no vector data
+
+If upload works but products are empty, load vector data:
+
+```powershell
+python AI/vectorizer.py
+python db/database.py
+```
+
+Confirm Docker Postgres is reachable on `localhost:5433` when running host scripts.
+
+### Embedding model download or cache issues
+
+The first FashionCLIP vectorization loads `patrickjohncyh/fashion-clip` through Hugging Face. It may need network access and write access to the Hugging Face cache. If cache permissions fail, clear or fix permissions for:
+
+```text
+%USERPROFILE%\.cache\huggingface
+```
+
+### Frontend does not show `s3://` image URLs
+
+The API returns:
+
+- `image_url`: raw stored URL, including `s3://...`
+- `usable_image_url`: a public `http(s)` URL when `R2_PUBLIC_BASE_URL` is configured, or an API image proxy path such as `/api/products/{id}/image`
+
+For the simplest setup, make the R2 bucket public through a custom/public domain and set:
+
+```env
+R2_PUBLIC_BASE_URL=https://your-public-r2-domain
+```
+
+If the bucket is private, keep `R2_PUBLIC_BASE_URL` empty and configure the backend R2 credentials in `.env`; the API will proxy product images without exposing secrets to the frontend.
+
+## Verification Checklist
+
+```powershell
+python -m compileall AI db etl api
+docker compose config
+cd web\fe
+npm run build
+```
+
+Runtime checks:
+
+- `GET http://localhost:8000/health`
+- `GET http://localhost:8001/health`
+- upload a real outfit image at `http://localhost:5173`
+
+## Notes
+
+- `/api/search/url` is intentionally not implemented in the MVP to avoid URL-fetch/SSRF risk.
+- Product search uses FashionCLIP vectors and PostgreSQL pgvector cosine distance.
+- Object detection returns raw JPEG base64 crops without a `data:image` prefix; the frontend prepends that for previews.

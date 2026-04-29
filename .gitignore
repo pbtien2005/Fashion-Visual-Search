@@ -29,3 +29,25 @@ __pycache__/
 
 # Bỏ qua bộ nhớ đệm của Hugging Face (nếu có tải model thẳng vào thư mục dự án)
 .huggingface/
+.hf_cache/
+
+# AI model weights stay local
+models/
+*.pt
+
+# Frontend dependencies/build output
+node_modules/
+web/fe/node_modules/
+web/fe/dist/
+
+# Keep frontend package manifests despite broad *.json data ignore above
+!web/fe/package.json
+!web/fe/package-lock.json
+
+# Keep evaluation label templates, but ignore generated eval outputs
+!evaluation/
+!evaluation/labels.example.json
+!evaluation/labels.json
+!evaluation/queries/
+!evaluation/queries/.gitkeep
+evaluation/results/

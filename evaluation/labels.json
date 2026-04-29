@@ -1,0 +1,14 @@
+[
+  {
+    "query_id": "q001",
+    "image": "queries/q001.jpg",
+    "expected_items": [
+      {
+        "type": "top",
+        "expected_categories": ["shirt", "top", "blouse", "short_sleeve_top"],
+        "expected_color": "white",
+        "acceptable_product_ids": []
+      }
+    ]
+  }
+]

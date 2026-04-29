@@ -1,20 +1,98 @@
-version: '3.8'
-
 services:
-  pgvector-db:
-    # Image chính chủ đã tích hợp sẵn PostgreSQL 16 và pgvector
+  postgres-pgvector:
     image: pgvector/pgvector:pg16
-    container_name: fashion_vector_db
-    restart: always
+    container_name: fashion_postgres_pgvector
+    restart: unless-stopped
     environment:
       POSTGRES_USER: pbtien
-      POSTGRES_PASSWORD: tien12345
+      POSTGRES_PASSWORD: change_me
       POSTGRES_DB: fashion_db
     ports:
       - "5433:5432"
     volumes:
-      # Map volume để lỡ có xóa container thì data R2 và Vector vẫn còn nguyên trong ổ cứng
       - pgvector_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pbtien -d fashion_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  object-detection:
+    build:
+      context: ./object_detection
+    container_name: fashion_object_detection
+    restart: unless-stopped
+    environment:
+      OBJECT_DETECTION_MODEL_PATH: /models/object-detection/best.pt
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./models/object-detection:/models/object-detection
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health', timeout=5).read()",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: fashion_api
+    restart: unless-stopped
+    environment:
+      DB_HOST: postgres-pgvector
+      DB_PORT: "5432"
+      DB_USER: pbtien
+      DB_PASSWORD: change_me
+      DB_NAME: fashion_db
+      OBJECT_DETECTION_URL: http://object-detection:8001
+      API_PORT: "8000"
+      MATCH_SCORE_THRESHOLD: ${MATCH_SCORE_THRESHOLD:-0.45}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-patrickjohncyh/fashion-clip}
+      EMBEDDING_VERSION: ${EMBEDDING_VERSION:-2}
+      R2_ENDPOINT_URL: ${R2_ENDPOINT_URL:-}
+      R2_ACCESS_KEY_ID: ${R2_ACCESS_KEY_ID:-}
+      R2_SECRET_ACCESS_KEY: ${R2_SECRET_ACCESS_KEY:-}
+      R2_BUCKET_NAME: ${R2_BUCKET_NAME:-}
+      R2_PUBLIC_BASE_URL: ${R2_PUBLIC_BASE_URL:-}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres-pgvector:
+        condition: service_healthy
+      object-detection:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5).read()",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./web/fe
+    container_name: fashion_frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports:
+      - "5173:5173"
+    depends_on:
+      api:
+        condition: service_healthy
 
 volumes:
   pgvector_data:
