@@ -22,6 +22,28 @@ PALETTE = {
 
 MAX_RGB_DISTANCE = math.sqrt(3 * (255**2))
 
+COLOR_MISMATCH_CAPS = {
+    frozenset(("black", "gray")): 0.65,
+    frozenset(("black", "brown")): 0.45,
+    frozenset(("black", "blue")): 0.45,
+    frozenset(("black", "green")): 0.45,
+    frozenset(("white", "beige")): 0.65,
+    frozenset(("white", "gray")): 0.55,
+    frozenset(("gray", "beige")): 0.55,
+    frozenset(("gray", "brown")): 0.45,
+    frozenset(("gray", "green")): 0.45,
+    frozenset(("gray", "blue")): 0.45,
+    frozenset(("brown", "beige")): 0.65,
+    frozenset(("brown", "orange")): 0.55,
+    frozenset(("brown", "green")): 0.40,
+    frozenset(("green", "blue")): 0.50,
+    frozenset(("red", "pink")): 0.65,
+    frozenset(("red", "orange")): 0.55,
+    frozenset(("purple", "pink")): 0.55,
+}
+
+DEFAULT_COLOR_MISMATCH_CAP = 0.35
+
 
 def ensure_rgb_tuple(color) -> tuple[int, int, int] | None:
     if not color or len(color) != 3:
@@ -100,4 +122,12 @@ def color_similarity(query_rgb, product_rgb, query_name: str | None = None, prod
     distance_score = 1.0 - min(math.dist(query_rgb, product_rgb) / MAX_RGB_DISTANCE, 1.0)
     if query_name and product_name and query_name == product_name:
         return max(distance_score, 0.85)
+
+    if query_name and product_name and query_name != product_name:
+        cap = COLOR_MISMATCH_CAPS.get(
+            frozenset((query_name, product_name)),
+            DEFAULT_COLOR_MISMATCH_CAP,
+        )
+        return min(distance_score, cap)
+
     return distance_score
