@@ -1,0 +1,522 @@
+[
+  {
+    "query_id": "starter_B0GGYQ4J5Z",
+    "image": "queries/starter_catalog/B0GGYQ4J5Z.jpg",
+    "expected_items": [
+      {
+        "type": "short_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "t-shirt",
+          "tee",
+          "polo",
+          "blouse"
+        ],
+        "expected_color": "beige",
+        "acceptable_product_ids": [
+          "B0GGYQ4J5Z"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0FRRYXKFC",
+    "image": "queries/starter_catalog/B0FRRYXKFC.jpg",
+    "expected_items": [
+      {
+        "type": "short_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "t-shirt",
+          "tee",
+          "polo",
+          "blouse"
+        ],
+        "expected_color": "gray",
+        "acceptable_product_ids": [
+          "B0FRRYXKFC"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0FC6DVGHL",
+    "image": "queries/starter_catalog/B0FC6DVGHL.jpg",
+    "expected_items": [
+      {
+        "type": "short_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "t-shirt",
+          "tee",
+          "polo",
+          "blouse"
+        ],
+        "expected_color": "white",
+        "acceptable_product_ids": [
+          "B0FC6DVGHL"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0D5DFHZVG",
+    "image": "queries/starter_catalog/B0D5DFHZVG.jpg",
+    "expected_items": [
+      {
+        "type": "short_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "t-shirt",
+          "tee",
+          "polo",
+          "blouse"
+        ],
+        "expected_color": "beige",
+        "acceptable_product_ids": [
+          "B0D5DFHZVG"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0D2K2FWDZ",
+    "image": "queries/starter_catalog/B0D2K2FWDZ.jpg",
+    "expected_items": [
+      {
+        "type": "long_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "sweater",
+          "cardigan",
+          "pullover",
+          "long sleeve"
+        ],
+        "expected_color": "brown",
+        "acceptable_product_ids": [
+          "B0D2K2FWDZ"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0FM8D382M",
+    "image": "queries/starter_catalog/B0FM8D382M.jpg",
+    "expected_items": [
+      {
+        "type": "long_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "sweater",
+          "cardigan",
+          "pullover",
+          "long sleeve"
+        ],
+        "expected_color": "black",
+        "acceptable_product_ids": [
+          "B0FM8D382M"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0C3838ZBF",
+    "image": "queries/starter_catalog/B0C3838ZBF.jpg",
+    "expected_items": [
+      {
+        "type": "long_sleeve_outwear",
+        "expected_categories": [
+          "jacket",
+          "coat",
+          "outwear",
+          "outerwear",
+          "blazer"
+        ],
+        "expected_color": "gray",
+        "acceptable_product_ids": [
+          "B0C3838ZBF"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0DP6TQTQT",
+    "image": "queries/starter_catalog/B0DP6TQTQT.jpg",
+    "expected_items": [
+      {
+        "type": "long_sleeve_outwear",
+        "expected_categories": [
+          "jacket",
+          "coat",
+          "outwear",
+          "outerwear",
+          "blazer"
+        ],
+        "expected_color": "gray",
+        "acceptable_product_ids": [
+          "B0DP6TQTQT"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0FKNFKXRJ",
+    "image": "queries/starter_catalog/B0FKNFKXRJ.jpg",
+    "expected_items": [
+      {
+        "type": "long_sleeve_outwear",
+        "expected_categories": [
+          "jacket",
+          "coat",
+          "outwear",
+          "outerwear",
+          "blazer"
+        ],
+        "expected_color": "beige",
+        "acceptable_product_ids": [
+          "B0FKNFKXRJ"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0G8SMR8WH",
+    "image": "queries/starter_catalog/B0G8SMR8WH.jpg",
+    "expected_items": [
+      {
+        "type": "long_sleeve_outwear",
+        "expected_categories": [
+          "jacket",
+          "coat",
+          "outwear",
+          "outerwear",
+          "blazer"
+        ],
+        "expected_color": "brown",
+        "acceptable_product_ids": [
+          "B0G8SMR8WH"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B079RDWBGD",
+    "image": "queries/starter_catalog/B079RDWBGD.jpg",
+    "expected_items": [
+      {
+        "type": "long_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "sweater",
+          "cardigan",
+          "pullover",
+          "long sleeve"
+        ],
+        "expected_color": "white",
+        "acceptable_product_ids": [
+          "B079RDWBGD"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0GK1LGTCW",
+    "image": "queries/starter_catalog/B0GK1LGTCW.jpg",
+    "expected_items": [
+      {
+        "type": "long_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "sweater",
+          "cardigan",
+          "pullover",
+          "long sleeve"
+        ],
+        "expected_color": "red",
+        "acceptable_product_ids": [
+          "B0GK1LGTCW"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B076JFJCL4",
+    "image": "queries/starter_catalog/B076JFJCL4.jpg",
+    "expected_items": [
+      {
+        "type": "trousers",
+        "expected_categories": [
+          "pants",
+          "trousers",
+          "jeans",
+          "chino",
+          "sweatpants"
+        ],
+        "expected_color": "black",
+        "acceptable_product_ids": [
+          "B076JFJCL4"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0CDXJDS8W",
+    "image": "queries/starter_catalog/B0CDXJDS8W.jpg",
+    "expected_items": [
+      {
+        "type": "trousers",
+        "expected_categories": [
+          "pants",
+          "trousers",
+          "jeans",
+          "chino",
+          "sweatpants"
+        ],
+        "expected_color": "black",
+        "acceptable_product_ids": [
+          "B0CDXJDS8W"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0D95SYCS8",
+    "image": "queries/starter_catalog/B0D95SYCS8.jpg",
+    "expected_items": [
+      {
+        "type": "trousers",
+        "expected_categories": [
+          "pants",
+          "trousers",
+          "jeans",
+          "chino",
+          "sweatpants"
+        ],
+        "expected_color": "gray",
+        "acceptable_product_ids": [
+          "B0D95SYCS8"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B09MVGF14B",
+    "image": "queries/starter_catalog/B09MVGF14B.jpg",
+    "expected_items": [
+      {
+        "type": "trousers",
+        "expected_categories": [
+          "pants",
+          "trousers",
+          "jeans",
+          "chino",
+          "sweatpants"
+        ],
+        "expected_color": "gray",
+        "acceptable_product_ids": [
+          "B09MVGF14B"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B07HNVV8MV",
+    "image": "queries/starter_catalog/B07HNVV8MV.jpg",
+    "expected_items": [
+      {
+        "type": "shorts",
+        "expected_categories": [
+          "shorts"
+        ],
+        "expected_color": "beige",
+        "acceptable_product_ids": [
+          "B07HNVV8MV"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0G641WSM7",
+    "image": "queries/starter_catalog/B0G641WSM7.jpg",
+    "expected_items": [
+      {
+        "type": "shorts",
+        "expected_categories": [
+          "shorts"
+        ],
+        "expected_color": "beige",
+        "acceptable_product_ids": [
+          "B0G641WSM7"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0CSPSV33V",
+    "image": "queries/starter_catalog/B0CSPSV33V.jpg",
+    "expected_items": [
+      {
+        "type": "shorts",
+        "expected_categories": [
+          "shorts"
+        ],
+        "expected_color": "brown",
+        "acceptable_product_ids": [
+          "B0CSPSV33V"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0BX8T4BBC",
+    "image": "queries/starter_catalog/B0BX8T4BBC.jpg",
+    "expected_items": [
+      {
+        "type": "shorts",
+        "expected_categories": [
+          "shorts"
+        ],
+        "expected_color": "black",
+        "acceptable_product_ids": [
+          "B0BX8T4BBC"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0G6CZ3RV9",
+    "image": "queries/starter_catalog/B0G6CZ3RV9.jpg",
+    "expected_items": [
+      {
+        "type": "skirt",
+        "expected_categories": [
+          "skirt"
+        ],
+        "expected_color": "black",
+        "acceptable_product_ids": [
+          "B0G6CZ3RV9"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0GF7HJCPS",
+    "image": "queries/starter_catalog/B0GF7HJCPS.jpg",
+    "expected_items": [
+      {
+        "type": "skirt",
+        "expected_categories": [
+          "skirt"
+        ],
+        "expected_color": "brown",
+        "acceptable_product_ids": [
+          "B0GF7HJCPS"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0DQFTN3GM",
+    "image": "queries/starter_catalog/B0DQFTN3GM.jpg",
+    "expected_items": [
+      {
+        "type": "skirt",
+        "expected_categories": [
+          "skirt"
+        ],
+        "expected_color": "brown",
+        "acceptable_product_ids": [
+          "B0DQFTN3GM"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0FV8THCJ8",
+    "image": "queries/starter_catalog/B0FV8THCJ8.jpg",
+    "expected_items": [
+      {
+        "type": "skirt",
+        "expected_categories": [
+          "skirt"
+        ],
+        "expected_color": "beige",
+        "acceptable_product_ids": [
+          "B0FV8THCJ8"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0FZJ583QN",
+    "image": "queries/starter_catalog/B0FZJ583QN.jpg",
+    "expected_items": [
+      {
+        "type": "dress",
+        "expected_categories": [
+          "dress"
+        ],
+        "expected_color": "green",
+        "acceptable_product_ids": [
+          "B0FZJ583QN"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0GWM9K9JC",
+    "image": "queries/starter_catalog/B0GWM9K9JC.jpg",
+    "expected_items": [
+      {
+        "type": "dress",
+        "expected_categories": [
+          "dress"
+        ],
+        "expected_color": "green",
+        "acceptable_product_ids": [
+          "B0GWM9K9JC"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0D8B3DT6P",
+    "image": "queries/starter_catalog/B0D8B3DT6P.jpg",
+    "expected_items": [
+      {
+        "type": "dress",
+        "expected_categories": [
+          "dress"
+        ],
+        "expected_color": "purple",
+        "acceptable_product_ids": [
+          "B0D8B3DT6P"
+        ]
+      }
+    ]
+  },
+  {
+    "query_id": "starter_B0CK14HCM8",
+    "image": "queries/starter_catalog/B0CK14HCM8.jpg",
+    "expected_items": [
+      {
+        "type": "dress",
+        "expected_categories": [
+          "dress"
+        ],
+        "expected_color": "gray",
+        "acceptable_product_ids": [
+          "B0CK14HCM8"
+        ]
+      }
+    ]
+  }
+]

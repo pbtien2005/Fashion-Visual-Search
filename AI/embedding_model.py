@@ -23,6 +23,8 @@ else:
 
 _loaded_models: dict[str, tuple[CLIPModel, CLIPProcessor]] = {}
 _model_lock = threading.Lock()
+_text_embedding_cache: dict[tuple[str, str], list[float]] = {}
+_text_cache_lock = threading.Lock()
 
 
 @dataclass(frozen=True)
@@ -105,3 +107,58 @@ def encode_image(image, model_name: str | None = None) -> list[float]:
     vector = features.cpu().numpy()[0].tolist()
     validate_embedding_dimension(vector, model_name=model_name)
     return vector
+
+
+def _normalize_text_input(text: str | None) -> str:
+    normalized = " ".join(str(text or "").split())
+    return normalized or "clothing product"
+
+
+def encode_texts(texts: list[str], model_name: str | None = None) -> list[list[float]]:
+    model_name = model_name or get_embedding_model_name()
+    if not texts:
+        return []
+
+    normalized_texts = [_normalize_text_input(text) for text in texts]
+    cached_vectors: list[list[float] | None] = []
+    missing_texts = []
+    missing_indexes = []
+
+    with _text_cache_lock:
+        for index, text in enumerate(normalized_texts):
+            key = (model_name, text)
+            cached = _text_embedding_cache.get(key)
+            cached_vectors.append(cached)
+            if cached is None:
+                missing_texts.append(text)
+                missing_indexes.append(index)
+
+    if missing_texts:
+        model, processor = load_embedding_model(model_name)
+        inputs = processor(
+            text=missing_texts,
+            padding=True,
+            truncation=True,
+            return_tensors="pt",
+        ).to(DEVICE)
+
+        with torch.no_grad():
+            features = model.get_text_features(**inputs)
+
+        features = features / features.norm(p=2, dim=-1, keepdim=True)
+        new_vectors = features.cpu().numpy().tolist()
+        for vector in new_vectors:
+            validate_embedding_dimension(vector, model_name=model_name)
+
+        with _text_cache_lock:
+            if len(_text_embedding_cache) > 5000:
+                _text_embedding_cache.clear()
+            for index, text, vector in zip(missing_indexes, missing_texts, new_vectors):
+                cached_vectors[index] = vector
+                _text_embedding_cache[(model_name, text)] = vector
+
+    return [vector for vector in cached_vectors if vector is not None]
+
+
+def encode_text(text: str, model_name: str | None = None) -> list[float]:
+    return encode_texts([text], model_name=model_name)[0]

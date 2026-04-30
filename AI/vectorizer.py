@@ -29,6 +29,13 @@ VECTOR_DIMENSION = EXPECTED_VECTOR_DIMENSION
 _r2_client = None
 
 
+def env_flag(name: str, default: bool = False) -> bool:
+    raw_value = os.getenv(name)
+    if raw_value is None:
+        return default
+    return raw_value.strip().lower() in {"1", "true", "yes", "on"}
+
+
 def get_r2_client():
     global _r2_client
     if _r2_client is None:
@@ -103,6 +110,83 @@ def extract_vector_from_base64(image_base64: str) -> list:
     return extract_vector(image_from_base64(image_base64))
 
 
+def get_product_crop_detection_url() -> str:
+    explicit_url = os.getenv("PRODUCT_CROP_DETECTION_URL", "").strip()
+    if explicit_url:
+        return explicit_url.rstrip("/")
+
+    object_detection_url = os.getenv("OBJECT_DETECTION_URL", "").strip()
+    if object_detection_url and "object-detection" not in object_detection_url:
+        return object_detection_url.rstrip("/")
+
+    return "http://localhost:8001"
+
+
+def choose_best_detection_crop(crops: list[dict]) -> dict | None:
+    candidates = [crop for crop in crops if crop.get("image_base64")]
+    if not candidates:
+        return None
+
+    def crop_score(crop: dict) -> float:
+        bbox = crop.get("bbox") or crop.get("expanded_bbox") or [0, 0, 1, 1]
+        try:
+            x1, y1, x2, y2 = [float(value) for value in bbox]
+        except (TypeError, ValueError):
+            x1, y1, x2, y2 = 0.0, 0.0, 1.0, 1.0
+        area = max(1.0, (x2 - x1) * (y2 - y1))
+        return float(crop.get("confidence") or 0.0) * area
+
+    return max(candidates, key=crop_score)
+
+
+def detect_product_crop(image, item_id: str | None = None) -> dict | None:
+    image = ensure_pil_rgb(image)
+    buffer = BytesIO()
+    image.save(buffer, format="JPEG", quality=90)
+    detection_url = get_product_crop_detection_url()
+    timeout = float(os.getenv("PRODUCT_CROP_DETECTION_TIMEOUT", "60"))
+
+    try:
+        with httpx.Client(timeout=timeout) as client:
+            response = client.post(
+                f"{detection_url}/detect/upload",
+                files={"file": (f"{item_id or 'product'}.jpg", buffer.getvalue(), "image/jpeg")},
+            )
+            response.raise_for_status()
+            payload = response.json()
+    except Exception as e:
+        print(f"Product crop detection skipped for {item_id}: {e}")
+        return None
+
+    if not payload.get("success"):
+        print(f"Product crop detection returned no success for {item_id}: {payload.get('message')}")
+        return None
+
+    return choose_best_detection_crop(payload.get("crops") or [])
+
+
+def select_embedding_image(item: dict, image):
+    if not env_flag("USE_PRODUCT_CROP_EMBEDDING", default=False):
+        return image, {"embedding_source": "original_image"}
+
+    best_crop = detect_product_crop(image, item_id=str(item.get("id") or item.get("asin") or "product"))
+    if not best_crop:
+        return image, {"embedding_source": "original_image"}
+
+    try:
+        crop_image = image_from_base64(best_crop["image_base64"])
+    except ValueError as e:
+        print(f"Product crop decode failed for {item.get('id')}: {e}")
+        return image, {"embedding_source": "original_image"}
+
+    return crop_image, {
+        "embedding_source": "product_crop",
+        "product_crop_class_name": best_crop.get("class_name"),
+        "product_crop_confidence": best_crop.get("confidence"),
+        "product_crop_bbox": best_crop.get("bbox"),
+    }
+
+
 def process_single_item(item: dict) -> dict:
     image_url = item.get("r2_image_url")
     if not image_url:
@@ -110,12 +194,15 @@ def process_single_item(item: dict) -> dict:
 
     img = fetch_image_for_ai(image_url)
     if img:
-        dominant_color = extract_dominant_color(img)
+        embedding_image, embedding_metadata = select_embedding_image(item, img)
+        item.update(embedding_metadata)
+
+        dominant_color = extract_dominant_color(embedding_image)
         if dominant_color:
             item["dominant_color_rgb"] = list(dominant_color)
             item["dominant_color_name"] = name_color(dominant_color)
 
-        vector = extract_vector(img)
+        vector = extract_vector(embedding_image)
         if vector:
             validate_embedding_dimension(vector)
             embedding_config = get_embedding_config()

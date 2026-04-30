@@ -18,9 +18,32 @@ evaluation/queries/q001.jpg
 evaluation/queries/q002.jpg
 ```
 
+For a real visual-search benchmark, use outfit photos taken from user-like images, not catalog/product images:
+
+```text
+evaluation/queries/real_outfits/real_001.jpg
+evaluation/queries/real_outfits/real_002.jpg
+```
+
+`queries/auto_smoke/` is only a smoke test because those images come from the catalog and are easier than real outfit photos.
+
+You can also build a reproducible starter set from the current catalog/model photos:
+
+```powershell
+python evaluation/build_starter_catalog_eval.py --api-url http://localhost:8000 --per-group 4
+python evaluation/run_eval.py --api-url http://localhost:8000 --labels evaluation/labels.starter_catalog.json --run-name starter_catalog_current
+```
+
+This starter set is useful for regression checks, but it is still easier than real outfit photos because each query comes from the product catalog.
+
 ## Edit Labels
 
 Use `labels.example.json` as the template and edit `labels.json`.
+For the real outfit benchmark, copy `labels.real.example.json` and fill product ids after inspecting the returned results:
+
+```powershell
+Copy-Item evaluation/labels.real.example.json evaluation/labels.real.json
+```
 
 ```json
 [
@@ -58,6 +81,31 @@ Start the API first, then run:
 ```powershell
 python evaluation/run_eval.py --api-url http://localhost:8000 --labels evaluation/labels.json --run-name current
 ```
+
+Run the real outfit benchmark:
+
+```powershell
+python evaluation/run_eval.py --api-url http://localhost:8000 --labels evaluation/labels.real.json --run-name real_outfits_current
+```
+
+You can build a small real-outfit starter set from Wikimedia Commons:
+
+```powershell
+python evaluation/build_wikimedia_real_eval.py --per-category 2
+python evaluation/run_eval.py --api-url http://localhost:8000 --labels evaluation/labels.real.json --run-name real_outfits_current --timeout 300
+```
+
+The builder writes source attribution to `evaluation/real_outfit_sources.md` and `evaluation/real_outfit_sources.json`.
+
+## Tune Rerank Weights
+
+After running an eval, test several image/category/color weight mixes against the returned score breakdown:
+
+```powershell
+python evaluation/tune_rerank_weights.py --result evaluation/results/real_outfits_wikimedia_current.json --labels evaluation/labels.real.json
+```
+
+This is an offline rerank of products already returned in the eval response, so it is a fast tuning aid rather than a replacement for a full API rerun.
 
 Outputs:
 

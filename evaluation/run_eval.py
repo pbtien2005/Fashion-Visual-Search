@@ -34,7 +34,8 @@ def _product_text(product: dict) -> str:
 def _all_top_products(detected_items: list[dict], top_k: int = 5) -> list[dict]:
     products = []
     for detected_index, item in enumerate(detected_items):
-        for rank, product in enumerate((item.get("similar_products") or [])[:top_k], start=1):
+        item_products = item.get("similar_products") or item.get("low_confidence_products") or []
+        for rank, product in enumerate(item_products[:top_k], start=1):
             products.append(
                 {
                     "detected_index": detected_index,
@@ -98,7 +99,7 @@ def reciprocal_rank(expected_item: dict, detected_items: list[dict]) -> float | 
 
 
 def summarize_detection_item(item: dict) -> dict:
-    products = item.get("similar_products") or []
+    products = item.get("similar_products") or item.get("low_confidence_products") or []
     return {
         "class_name": item.get("class_name"),
         "class_name_vi": item.get("class_name_vi"),
@@ -109,6 +110,7 @@ def summarize_detection_item(item: dict) -> dict:
         "query_color_name": item.get("query_color_name"),
         "query_color_rgb": item.get("query_color_rgb"),
         "similar_product_count": len(products),
+        "low_confidence_product_count": len(item.get("low_confidence_products") or []),
         "top_products": [
             {
                 "rank": index,
@@ -119,8 +121,15 @@ def summarize_detection_item(item: dict) -> dict:
                 "image_similarity": product.get("image_similarity"),
                 "category_score": product.get("category_score"),
                 "color_score": product.get("color_score"),
+                "text_score": product.get("text_score"),
+                "style_score": product.get("style_score"),
+                "text_style_score": product.get("text_style_score"),
+                "category_penalty": product.get("category_penalty"),
+                "color_penalty": product.get("color_penalty"),
                 "final_score": product.get("final_score"),
                 "match_reason": product.get("match_reason"),
+                "query_style_label": product.get("query_style_label"),
+                "product_styles": product.get("product_styles"),
             }
             for index, product in enumerate(products[:5], start=1)
         ],

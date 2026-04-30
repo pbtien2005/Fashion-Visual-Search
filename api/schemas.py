@@ -14,12 +14,32 @@ class ProductResult(BaseModel):
     image_similarity: float | None = None
     category_score: float | None = None
     color_score: float | None = None
+    text_score: float | None = None
+    style_score: float | None = None
+    text_style_score: float | None = None
     final_score: float | None = None
     match_reason: str | None = None
+    category_penalty: float | None = None
+    color_penalty: float | None = None
+    query_style_label: str | None = None
+    product_styles: list[str] = Field(default_factory=list)
     dominant_color_rgb: list[int] | None = None
     dominant_color_name: str | None = None
     embedding_model: str | None = None
     embedding_version: int | None = None
+    best_crop_variant: str | None = None
+    variant_scores: dict[str, float] | None = None
+
+
+class CropVariantResult(BaseModel):
+    name: str
+    image_base64: str
+    bbox: list[int] = Field(..., min_length=4, max_length=4)
+    crop_width: int | None = None
+    crop_height: int | None = None
+    source_crop_width: int | None = None
+    source_crop_height: int | None = None
+    crop_strategy: str | None = None
 
 
 class DetectedItemResult(BaseModel):
@@ -29,10 +49,17 @@ class DetectedItemResult(BaseModel):
     bbox: list[int] = Field(..., min_length=4, max_length=4)
     crop_image_base64: str
     similar_products: list[ProductResult]
+    low_confidence_products: list[ProductResult] = Field(default_factory=list)
     is_confident_match: bool | None = None
     message: str | None = None
+    reject_reason: str | None = None
+    top_final_score: float | None = None
+    top_image_similarity: float | None = None
+    match_score_threshold: float | None = None
+    min_image_similarity: float | None = None
     query_color_rgb: list[int] | None = None
     query_color_name: str | None = None
+    query_style_label: str | None = None
     original_bbox: list[int] | None = Field(default=None, min_length=4, max_length=4)
     expanded_bbox: list[int] | None = Field(default=None, min_length=4, max_length=4)
     padded_bbox: list[int] | None = Field(default=None, min_length=4, max_length=4)
@@ -41,6 +68,9 @@ class DetectedItemResult(BaseModel):
     source_crop_width: int | None = None
     source_crop_height: int | None = None
     crop_strategy: str | None = None
+    crop_variants: list[CropVariantResult] = Field(default_factory=list)
+    search_variants: list[str] = Field(default_factory=list)
+    search_variant_count: int | None = None
 
 
 class SearchUploadResponse(BaseModel):

@@ -92,10 +92,17 @@ async def search_upload(file: UploadFile = File(...), top_k: int = 5):
                 bbox=crop["bbox"],
                 crop_image_base64=crop["image_base64"],
                 similar_products=match_result["similar_products"],
+                low_confidence_products=match_result.get("low_confidence_products", []),
                 is_confident_match=match_result["is_confident_match"],
                 message=match_result["message"],
+                reject_reason=match_result.get("reject_reason"),
+                top_final_score=match_result.get("top_final_score"),
+                top_image_similarity=match_result.get("top_image_similarity"),
+                match_score_threshold=match_result.get("match_score_threshold"),
+                min_image_similarity=match_result.get("min_image_similarity"),
                 query_color_rgb=match_result.get("query_color_rgb"),
                 query_color_name=match_result.get("query_color_name"),
+                query_style_label=match_result.get("query_style_label"),
                 original_bbox=crop.get("original_bbox") or crop.get("bbox"),
                 expanded_bbox=crop.get("expanded_bbox"),
                 padded_bbox=crop.get("padded_bbox"),
@@ -104,6 +111,9 @@ async def search_upload(file: UploadFile = File(...), top_k: int = 5):
                 source_crop_width=crop.get("source_crop_width"),
                 source_crop_height=crop.get("source_crop_height"),
                 crop_strategy=crop.get("crop_strategy"),
+                crop_variants=crop.get("crop_variants") or [],
+                search_variants=match_result.get("search_variants", []),
+                search_variant_count=match_result.get("search_variant_count"),
             )
         )
 

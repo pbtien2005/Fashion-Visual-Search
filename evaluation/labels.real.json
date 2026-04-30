@@ -1,0 +1,272 @@
+[
+  {
+    "query_id": "real_green_tshirt_01",
+    "image": "queries/real_outfits/real_green_tshirt_01_You_broke_the_site_again_211068750_.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22You_broke_the_site_again%22_%28211068750%29.jpg",
+    "expected_items": [
+      {
+        "type": "short_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "t-shirt",
+          "tee"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "green"
+      }
+    ]
+  },
+  {
+    "query_id": "real_green_tshirt_02",
+    "image": "queries/real_outfits/real_green_tshirt_02_1-6_MTX_5-15_Stream_Crossing_150914-M-OU200-018.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1-6_MTX_5-15_Stream_Crossing_150914-M-OU200-018.jpg",
+    "expected_items": [
+      {
+        "type": "short_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "t-shirt",
+          "tee"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "green"
+      }
+    ]
+  },
+  {
+    "query_id": "real_white_shirt_01",
+    "image": "queries/real_outfits/real_white_shirt_01_Americana_2016_30044392184_.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22Americana%22_%282016%29_%2830044392184%29.jpg",
+    "expected_items": [
+      {
+        "type": "short_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "blouse"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "white"
+      }
+    ]
+  },
+  {
+    "query_id": "real_white_shirt_02",
+    "image": "queries/real_outfits/real_white_shirt_02_Another_good_shot_-_Flickr_-_GeorgeTan_2...thanks_for_millionth_support.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22Another_good_shot%22_-_Flickr_-_GeorgeTan_%5E2...thanks_for_millionth_support.jpg",
+    "expected_items": [
+      {
+        "type": "short_sleeve_top",
+        "expected_categories": [
+          "shirt",
+          "top",
+          "blouse"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "white"
+      }
+    ]
+  },
+  {
+    "query_id": "real_blue_jeans_01",
+    "image": "queries/real_outfits/real_blue_jeans_01_02015_0217_Herbst-Wintermode_2015-2016_Beskiden.JPG.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02015_0217_Herbst-Wintermode_2015-2016%2C_Beskiden.JPG",
+    "expected_items": [
+      {
+        "type": "trousers",
+        "expected_categories": [
+          "pants",
+          "trousers",
+          "jeans"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "blue"
+      }
+    ]
+  },
+  {
+    "query_id": "real_blue_jeans_02",
+    "image": "queries/real_outfits/real_blue_jeans_02_02017_blue_jeans.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:02017_blue_jeans.jpg",
+    "expected_items": [
+      {
+        "type": "trousers",
+        "expected_categories": [
+          "pants",
+          "trousers",
+          "jeans"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "blue"
+      }
+    ]
+  },
+  {
+    "query_id": "real_black_trousers_01",
+    "image": "queries/real_outfits/real_black_trousers_01_2015_RiP_Bastille_Dan_Smith_by_2eight_-_3SC5305.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2015_RiP_Bastille_Dan_Smith_by_2eight_-_3SC5305.jpg",
+    "expected_items": [
+      {
+        "type": "trousers",
+        "expected_categories": [
+          "pants",
+          "trousers"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "black"
+      }
+    ]
+  },
+  {
+    "query_id": "real_black_trousers_02",
+    "image": "queries/real_outfits/real_black_trousers_02_2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg",
+    "expected_items": [
+      {
+        "type": "trousers",
+        "expected_categories": [
+          "pants",
+          "trousers"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "black"
+      }
+    ]
+  },
+  {
+    "query_id": "real_shorts_01",
+    "image": "queries/real_outfits/real_shorts_01_0001_August_2016_in_Moscow_41.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:0001_August_2016_in_Moscow_41.jpg",
+    "expected_items": [
+      {
+        "type": "shorts",
+        "expected_categories": [
+          "shorts"
+        ],
+        "acceptable_product_ids": []
+      }
+    ]
+  },
+  {
+    "query_id": "real_shorts_02",
+    "image": "queries/real_outfits/real_shorts_02_0078_29th_of_July_2016_in_Vladimir_Oblast_Russia.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:0078_29th_of_July_2016_in_Vladimir_Oblast%2C_Russia.jpg",
+    "expected_items": [
+      {
+        "type": "shorts",
+        "expected_categories": [
+          "shorts"
+        ],
+        "acceptable_product_ids": []
+      }
+    ]
+  },
+  {
+    "query_id": "real_black_skirt_01",
+    "image": "queries/real_outfits/real_black_skirt_01_G_I-DLE_2020_Young_05.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%28G%29I-DLE_2020_%E5%8F%B0%E5%8D%97%E5%A5%BDYoung%E8%80%B6%E8%AA%95%E8%B7%A8%E5%B9%B4%E5%9F%8E_05.jpg",
+    "expected_items": [
+      {
+        "type": "skirt",
+        "expected_categories": [
+          "skirt"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "black"
+      }
+    ]
+  },
+  {
+    "query_id": "real_black_skirt_02",
+    "image": "queries/real_outfits/real_black_skirt_02_160924_AOA_cropped_.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:160924_AOA_%EC%9D%B8%EC%B2%9C%ED%95%9C%EB%A5%98%EA%B4%80%EA%B4%91%EC%BD%98%EC%84%9C%ED%8A%B8_%28cropped%29.jpg",
+    "expected_items": [
+      {
+        "type": "skirt",
+        "expected_categories": [
+          "skirt"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "black"
+      }
+    ]
+  },
+  {
+    "query_id": "real_red_dress_01",
+    "image": "queries/real_outfits/real_red_dress_01_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_01_cropped_.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_01_%28cropped%29.jpg",
+    "expected_items": [
+      {
+        "type": "dress",
+        "expected_categories": [
+          "dress"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "red"
+      }
+    ]
+  },
+  {
+    "query_id": "real_red_dress_02",
+    "image": "queries/real_outfits/real_red_dress_02_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg",
+    "expected_items": [
+      {
+        "type": "dress",
+        "expected_categories": [
+          "dress"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "red"
+      }
+    ]
+  },
+  {
+    "query_id": "real_black_dress_01",
+    "image": "queries/real_outfits/real_black_dress_01_GTA_Vice_City_Fashion_27520178494_.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22GTA_Vice_City%22_Fashion_%2827520178494%29.jpg",
+    "expected_items": [
+      {
+        "type": "dress",
+        "expected_categories": [
+          "dress"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "black"
+      }
+    ]
+  },
+  {
+    "query_id": "real_black_dress_02",
+    "image": "queries/real_outfits/real_black_dress_02_An_Evening_with_Judd_Apatow_Leslie_Mann_8224252457_.jpg.jpg",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+    "expected_items": [
+      {
+        "type": "dress",
+        "expected_categories": [
+          "dress"
+        ],
+        "acceptable_product_ids": [],
+        "expected_color": "black"
+      }
+    ]
+  }
+]

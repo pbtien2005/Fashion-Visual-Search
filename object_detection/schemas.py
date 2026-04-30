@@ -3,6 +3,17 @@ from typing import Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 
+class CropVariant(BaseModel):
+    name: str
+    image_base64: str
+    bbox: list[int] = Field(..., min_length=4, max_length=4)
+    crop_width: int | None = None
+    crop_height: int | None = None
+    source_crop_width: int | None = None
+    source_crop_height: int | None = None
+    crop_strategy: str | None = None
+
+
 class CropResult(BaseModel):
     class_id: int
     class_name: str
@@ -18,6 +29,7 @@ class CropResult(BaseModel):
     source_crop_width: int | None = None
     source_crop_height: int | None = None
     crop_strategy: str | None = None
+    crop_variants: list[CropVariant] = Field(default_factory=list)
 
 
 class DetectionResponse(BaseModel):

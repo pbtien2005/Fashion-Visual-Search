@@ -48,6 +48,13 @@ web/fe/dist/
 !evaluation/
 !evaluation/labels.example.json
 !evaluation/labels.json
+!evaluation/labels.real.example.json
+!evaluation/labels.real.json
+!evaluation/real_outfit_sources.json
+!evaluation/labels.starter_catalog.json
 !evaluation/queries/
 !evaluation/queries/.gitkeep
+!evaluation/queries/real_outfits/
+!evaluation/queries/real_outfits/.gitkeep
+!evaluation/queries/starter_catalog/
 evaluation/results/

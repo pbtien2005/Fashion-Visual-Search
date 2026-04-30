@@ -1,0 +1,20 @@
+[
+  {
+    "query_id": "real_001",
+    "image": "queries/real_outfits/real_001.jpg",
+    "expected_items": [
+      {
+        "type": "top",
+        "expected_categories": ["shirt", "top", "t-shirt", "short_sleeve_top"],
+        "expected_color": "green",
+        "acceptable_product_ids": []
+      },
+      {
+        "type": "bottom",
+        "expected_categories": ["pants", "trousers", "jeans"],
+        "expected_color": "black",
+        "acceptable_product_ids": []
+      }
+    ]
+  }
+]

@@ -161,6 +161,17 @@ button:disabled {
   border: 1px solid #ead29a;
 }
 
+.low-confidence-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.low-confidence-title {
+  color: #4f4f49;
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .status-panel {
   margin-top: 24px;
   padding: 18px;
@@ -305,6 +316,35 @@ button:disabled {
 
 .debug-row strong {
   font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.crop-variants {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.crop-variant {
+  width: 72px;
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.crop-variant img {
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #efefe9;
+}
+
+.crop-variant figcaption {
+  color: #676761;
+  font-size: 11px;
+  text-align: center;
   overflow-wrap: anywhere;
 }
 

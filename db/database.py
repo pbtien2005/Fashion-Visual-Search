@@ -4,6 +4,8 @@ import psycopg
 from pgvector.psycopg import register_vector
 from dotenv import load_dotenv
 
+from AI.color_utils import name_color
+
 load_dotenv()
 
 VECTOR_DIMENSION = 512
@@ -112,6 +114,8 @@ def load_data_to_db(input_file="data/fashion_with_vectors.json"):
         validate_vector_dimension(vector)
             
         price = item.get("price")
+        dominant_color_rgb = item.get("dominant_color_rgb")
+        dominant_color_name = name_color(dominant_color_rgb) or item.get("dominant_color_name")
         
         try:
             conn.execute("""
@@ -141,8 +145,8 @@ def load_data_to_db(input_file="data/fashion_with_vectors.json"):
                 str(item.get("category", "")), 
                 item.get("original_url") or item.get("product_url"),
                 item.get("r2_image_url") or item.get("thumbnailImage"), 
-                item.get("dominant_color_rgb"),
-                item.get("dominant_color_name"),
+                dominant_color_rgb,
+                dominant_color_name,
                 item.get("embedding_model") or get_configured_embedding_model(),
                 item.get("embedding_version") or get_configured_embedding_version(),
                 vector
