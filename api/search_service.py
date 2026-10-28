@@ -253,7 +253,7 @@ def serialize_product(product: dict) -> dict:
         "category_penalty": product.get("category_penalty"),
         "color_penalty": product.get("color_penalty"),
         "query_style_label": product.get("query_style_label"),
-        "product_styles": product.get("product_styles"),
+        "product_styles": product.get("product_styles") or [],
         "dominant_color_rgb": product.get("dominant_color_rgb"),
         "dominant_color_name": product.get("dominant_color_name"),
         "embedding_model": product.get("embedding_model"),

@@ -3,6 +3,12 @@
 This folder contains a small evaluation harness for the upload visual-search API.
 It does not depend on the frontend.
 
+For the strongest combined benchmark, see `evaluation/BENCHMARK.md` and run:
+
+```powershell
+python evaluation/run_benchmark.py --api-url http://localhost:8000 --run-prefix benchmark_current --timeout 300
+```
+
 ## Add Query Images
 
 Put fixed query images in:
