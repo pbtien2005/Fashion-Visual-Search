@@ -1,0 +1,145 @@
+{
+  "roi_policy": "whole_catalog_photo_v1",
+  "catalog": [
+    {
+      "id": "B076JFJCL4",
+      "image": "../../evaluation/queries/starter_catalog/B076JFJCL4.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B079RDWBGD",
+      "image": "../../evaluation/queries/starter_catalog/B079RDWBGD.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B07HNVV8MV",
+      "image": "../../evaluation/queries/starter_catalog/B07HNVV8MV.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B09MVGF14B",
+      "image": "../../evaluation/queries/starter_catalog/B09MVGF14B.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0BX8T4BBC",
+      "image": "../../evaluation/queries/starter_catalog/B0BX8T4BBC.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0C3838ZBF",
+      "image": "../../evaluation/queries/starter_catalog/B0C3838ZBF.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0CDXJDS8W",
+      "image": "../../evaluation/queries/starter_catalog/B0CDXJDS8W.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0CK14HCM8",
+      "image": "../../evaluation/queries/starter_catalog/B0CK14HCM8.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0CSPSV33V",
+      "image": "../../evaluation/queries/starter_catalog/B0CSPSV33V.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0D2K2FWDZ",
+      "image": "../../evaluation/queries/starter_catalog/B0D2K2FWDZ.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0D5DFHZVG",
+      "image": "../../evaluation/queries/starter_catalog/B0D5DFHZVG.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0D8B3DT6P",
+      "image": "../../evaluation/queries/starter_catalog/B0D8B3DT6P.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0D95SYCS8",
+      "image": "../../evaluation/queries/starter_catalog/B0D95SYCS8.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0DP6TQTQT",
+      "image": "../../evaluation/queries/starter_catalog/B0DP6TQTQT.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0DQFTN3GM",
+      "image": "../../evaluation/queries/starter_catalog/B0DQFTN3GM.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0FC6DVGHL",
+      "image": "../../evaluation/queries/starter_catalog/B0FC6DVGHL.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0FKNFKXRJ",
+      "image": "../../evaluation/queries/starter_catalog/B0FKNFKXRJ.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0FM8D382M",
+      "image": "../../evaluation/queries/starter_catalog/B0FM8D382M.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0FRRYXKFC",
+      "image": "../../evaluation/queries/starter_catalog/B0FRRYXKFC.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0FV8THCJ8",
+      "image": "../../evaluation/queries/starter_catalog/B0FV8THCJ8.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0FZJ583QN",
+      "image": "../../evaluation/queries/starter_catalog/B0FZJ583QN.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0G641WSM7",
+      "image": "../../evaluation/queries/starter_catalog/B0G641WSM7.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0G6CZ3RV9",
+      "image": "../../evaluation/queries/starter_catalog/B0G6CZ3RV9.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0G8SMR8WH",
+      "image": "../../evaluation/queries/starter_catalog/B0G8SMR8WH.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0GF7HJCPS",
+      "image": "../../evaluation/queries/starter_catalog/B0GF7HJCPS.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0GGYQ4J5Z",
+      "image": "../../evaluation/queries/starter_catalog/B0GGYQ4J5Z.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0GK1LGTCW",
+      "image": "../../evaluation/queries/starter_catalog/B0GK1LGTCW.jpg",
+      "roi_source": "whole_catalog_photo"
+    },
+    {
+      "id": "B0GWM9K9JC",
+      "image": "../../evaluation/queries/starter_catalog/B0GWM9K9JC.jpg",
+      "roi_source": "whole_catalog_photo"
+    }
+  ]
+}

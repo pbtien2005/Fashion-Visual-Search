@@ -58,3 +58,8 @@ web/fe/dist/
 !evaluation/queries/real_outfits/.gitkeep
 !evaluation/queries/starter_catalog/
 evaluation/results/
+
+# Reproducible M3 diagnostic reports (separate from production catalogs/caches)
+!docs/m3_results/**/report.json
+!docs/m3_results/catalog_manifest.json
+!docs/m3_results/catalog_color_cache.json
