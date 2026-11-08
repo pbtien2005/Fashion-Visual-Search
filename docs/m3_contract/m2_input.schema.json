@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M2 detection input accepted by M3 adapter v1",
+  "description": "image_base64 is the existing encoder crop. Source RGB original image may instead be supplied as an in-process original_rgb argument. Source ROI PNG and ROI-coordinate binary mask PNG are recommended. This is a handoff contract, not an installed M2 HTTP schema.",
+  "type": "object",
+  "required": ["image_base64"],
+  "properties": {
+    "image_base64": {"type": "string", "minLength": 1},
+    "source_roi_base64": {"type": "string", "minLength": 1},
+    "mask_base64": {"type": "string", "minLength": 1, "description": "Plain base64 PNG, single-channel, binary 0/1/255, same H/W and origin as the selected source ROI. Not a full-image mask."},
+    "bbox": {"$ref": "#/$defs/bbox"},
+    "original_bbox": {"$ref": "#/$defs/bbox"},
+    "class_name": {"type": "string"}
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "bbox": {"type": "array", "items": {"type": "integer"}, "minItems": 4, "maxItems": 4, "description": "[x1,y1,x2,y2] original-image coordinates, x2/y2 exclusive; required at runtime if original_rgb is provided and source_roi_base64 is absent."}
+  }
+}

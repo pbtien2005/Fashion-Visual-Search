@@ -63,3 +63,8 @@ evaluation/results/
 !docs/m3_results/**/report.json
 !docs/m3_results/catalog_manifest.json
 !docs/m3_results/catalog_color_cache.json
+
+# Shared M3 handoff profile and real-weights verification evidence
+!docs/m3_contract/*.json
+!docs/m3_handoff_evidence/*.json
+!docs/m3_production_evidence/*.json

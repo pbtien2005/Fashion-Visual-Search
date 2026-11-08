@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY AI ./AI
 COPY api ./api
 COPY db ./db
+COPY docs/m3_contract/hsv147.json /app/config/hsv147.json
 
 EXPOSE 8000
 

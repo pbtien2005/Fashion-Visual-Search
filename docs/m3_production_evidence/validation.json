@@ -1,0 +1,89 @@
+{
+  "base_commit": "5a433e9e55201c89f5b3fa25e2dc6339d6ba66b2",
+  "branch": "vinh",
+  "tests": {
+    "run": 72,
+    "passed": 72,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 31.126,
+    "command": ".venv/Scripts/python -B -m unittest discover -s tests -v",
+    "environment_flags": {
+      "RUN_REAL_HSV_INTEGRATION": "1",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "HF_HUB_CACHE": ".hf_cache/hub"
+    },
+    "execution": "Outside Windows sandbox; asyncio socketpair blocked inside sandbox"
+  },
+  "real_integration": {
+    "pretrained_encoder_and_processor": true,
+    "model": "patrickjohncyh/fashion-clip",
+    "revision": "7e3ba62ce16b379a1ab479346b66f192e76f51b7",
+    "catalog_and_query_encoder_real": true,
+    "cache_on_disk": true,
+    "http_handlers_real": true,
+    "m2_transport": "fixture",
+    "db_candidate_transport": "fixture with cosine from real vectors",
+    "live_yolo_or_postgresql": false
+  },
+  "sample_rebuild": {
+    "products": {
+      "total": 28,
+      "extracted": 28,
+      "fraction": 1.0,
+      "mask_status_counts": {
+        "missing": 28
+      }
+    },
+    "failed": 0,
+    "config_version": "hsv-hs-v1-147-b0681e3cbf842188",
+    "validated_descriptors": 28,
+    "roi_policy": "source_roi_v1",
+    "source": "28 starter catalog photos; --skip-detection original-image fallback; no garment masks",
+    "input_sha256": "58bb8a6676de57467c2e93d4354b52b557c5a4bc29688d202123c33e17362ba0",
+    "cache_sha256": "bf815aa090e6e6e2c3705e1432ce21995056eab403cdf1ea53b7ca6cbb368b14",
+    "command": ".venv/Scripts/python -B -m AI.rebuild_color_cache --catalog output/hsv_catalog_starter_28.json --config docs/m3_contract/hsv147.json --skip-detection --output output/color_cache_hsv147_sample_run001.json"
+  },
+  "unchanged_targets": [
+    "AI/hsv_descriptor.py",
+    "AI/embedding_model.py",
+    "object_detection",
+    "web/fe",
+    "api/schemas.py",
+    "docs/m3_results"
+  ],
+  "source_hashes": {
+    "AI/production_color.py": "1bcbc572b5f998daca4f18e26b9225ca6b6883bb458d791ae1dfda880f80edd6",
+    "AI/features.py": "50bbea7f4c16626a58d0135c013ddccd794e54e4f38a3b4b35117321bea8b86f",
+    "AI/vectorizer.py": "4cb050b4dea1acebf8ba110bfa4f705e35c38e08da9927a3e96ef087412c56c4",
+    "AI/color_cache.py": "2815b22002a159a06f16eca4848c3a264c6c12c5a56e66c5a026d0b8427f587a",
+    "AI/rebuild_color_cache.py": "778d8342d7ccb51af92336e00965c3c02af0989c8455fbb97d08a1368ce147ec",
+    "AI/hsv_descriptor.py": "f970747b65c9520d2f8674b2035fa874c86e76f3e8825ea8dd5b136b209a2a9f",
+    "AI/embedding_model.py": "05b5863e157d8fab98606d288a97180a89e38243688f8070c444d0cc3b755de6",
+    "api/main.py": "8eedb46f58bf19fff6dd596f287ffba4c1fa82015913d460351d84531cf0d467",
+    "api/search_service.py": "a8e71064eb1b1f1564281b65da7715412d38cfc89d269a1a9146cc10e1daf3be",
+    "db/database.py": "d591d8fdd64cd2fe54a3cbb8581da563b12fa0d57027164d07256de764497de5",
+    "db/backfill_color_names.py": "024c57e1aac7a83da613e7b60e05a05beb1722e3c73ab3df7047179baf873abb",
+    "etl/backfill_product_colors.py": "3ffec0f9d2a633c0ef3c5487e617096f0bef445c73e3ae114ea0cb2d1f7fe1dd",
+    "tests/test_production_hsv.py": "98ac1b83ff4050427525836fb1d6341134c13d4845ffc0f43c4efe33112c4923",
+    "tests/test_production_hsv_real.py": "eca6a2a79f2e89ea722dd7095dca780fc55b0c607eb16ca23a97bccf5953ca90",
+    "tests/test_search_service.py": "9ac0168f12e0b127d6d450b4d90abc3c54638dc1d6308ac24d4473912a6a48d5",
+    "docs/m3_contract/hsv147.json": "b3b71e41069da47c2a535f692cc8841e381100e2e13ebc98c93afe1086d4fefa"
+  },
+  "limitations": [
+    "No complete production catalog in checkout",
+    "Docker engine unavailable; not deployed to a running website",
+    "No live YOLO/PostgreSQL end-to-end verification",
+    "No retrieval benchmark or RGB comparison executed",
+    "Real test uses staged M2/DB transports",
+    "Current Torch/Transformers differ from requirements pins; see handoff environment"
+  ],
+  "additional_checks": [
+    "EXIF image decode matches M2 OpenCV coordinates",
+    "Catalog detector resolver honors configured Docker service URL",
+    "docker compose config --quiet passed",
+    "M4 scoped patch reverse-apply check passed",
+    "No runtime/maintenance imports of AI.color_utils"
+  ]
+}

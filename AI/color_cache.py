@@ -56,6 +56,25 @@ def read_cached_descriptor(cache, key, model_name, model_version, roi_policy, co
     return descriptor
 
 
+def catalog_descriptor_for_query(cache, product_id, query_color, model_name, model_version):
+    """M3 handoff helper: validate query/config/policy and resolve one catalog item.
+
+    Raises KeyError for missing IDs, ValueError for incompatible/ambiguous entries.
+    Scoring and missing-descriptor ranking policy remain M4's responsibility.
+    """
+    validate_descriptor(query_color)
+    if cache.get("schema") != "m3-color-cache-v1" or cache.get("config") != query_color.config:
+        raise ValueError("Query/catalog descriptor config mismatch")
+    matches = [key for key, entry in cache["entries"].items()
+               if entry["product_id"] == str(product_id)]
+    if not matches:
+        raise KeyError(f"Missing catalog color descriptor: {product_id}")
+    if len(matches) != 1:
+        raise ValueError(f"Ambiguous catalog color descriptor: {product_id}")
+    return read_cached_descriptor(cache, matches[0], model_name, model_version,
+                                  query_color.roi_policy, query_color.version)
+
+
 def build_color_cache(records, root, config=None, model_name="patrickjohncyh/fashion-clip",
                       model_version=2, roi_policy="source_roi_v1"):
     config = config or HSVConfig()
@@ -84,6 +103,35 @@ def build_color_cache(records, root, config=None, model_name="patrickjohncyh/fas
             "config": config.spec(), "entries": entries, "failures": failures,
             "coverage": {"total": len(records), "extracted": len(entries),
                          "fraction": len(entries) / len(records) if records else 0,
+                         "mask_status_counts": statuses}}
+
+
+def cache_from_extracted_items(items, config, model_name, model_version, roi_policy):
+    """Build a separate cache from production HSV outputs, without re-encoding."""
+    entries, failures, statuses, seen = {}, [], {}, set()
+    for index, item in enumerate(items):
+        product_id = str(item.get("id") or item.get("asin") or "")
+        if not product_id or product_id in seen:
+            raise ValueError(f"Missing or duplicate product ID at record {index}: {product_id}")
+        seen.add(product_id)
+        try:
+            color = ColorDescriptor(**item["color_descriptor"])
+            validate_descriptor(color)
+            if (color.config != config.spec() or color.version != config.version
+                    or color.roi_policy != roi_policy or not color.valid_pixels):
+                raise ValueError("descriptor_config_policy_or_pixels_mismatch")
+            hashes = color.metadata.get("source_hashes", {})
+            key = descriptor_cache_key(product_id, model_name, model_version, roi_policy, color.version, hashes)
+            entries[key] = {"product_id": product_id, "embedding_model": model_name,
+                            "embedding_version": model_version, "source_hashes": hashes,
+                            "descriptor": color.to_dict()}
+            statuses[color.mask_status] = statuses.get(color.mask_status, 0) + 1
+        except (KeyError, ValueError, TypeError) as exc:
+            failures.append({"product_id": product_id, "error": str(exc)})
+    return {"schema": "m3-color-cache-v1", "config": config.spec(), "color_version": config.version,
+            "entries": entries, "failures": failures,
+            "coverage": {"total": len(items), "extracted": len(entries),
+                         "fraction": len(entries) / len(items) if items else 0,
                          "mask_status_counts": statuses}}
 
 
