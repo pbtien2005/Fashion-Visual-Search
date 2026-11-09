@@ -1,0 +1,264 @@
+diff --git a/api/search_service.py b/api/search_service.py
+index 7ad7480..5e4ae0b 100644
+--- a/api/search_service.py
++++ b/api/search_service.py
+@@ -1,9 +1,12 @@
+ import os
+ from urllib.parse import quote, urlparse
+ 
+-from AI.color_utils import color_similarity, extract_dominant_color, name_color
+ from AI.embedding_model import encode_texts, get_embedding_config
+-from AI.vectorizer import extract_vector, image_from_base64
++from AI.features import extract_runtime_features
++from AI.hsv_descriptor import histogram_similarity
++from AI.production_color import (extract_source_color, descriptor_display, product_color,
++                                 unavailable, validate_production_color)
++from AI.vectorizer import image_from_base64
+ from api.category_mapping import get_category_terms
+ from db.database import search_similar_by_vector, validate_vector_dimension
+ 
+@@ -16,8 +19,6 @@ DEFAULT_IMAGE_WEIGHT = 0.60
+ DEFAULT_CATEGORY_WEIGHT = 0.15
+ DEFAULT_COLOR_WEIGHT = 0.15
+ DEFAULT_TEXT_STYLE_WEIGHT = 0.10
+-DEFAULT_COLOR_MISMATCH_THRESHOLD = 0.35
+-DEFAULT_COLOR_MISMATCH_PENALTY = 0.08
+ DEFAULT_OPPOSITE_CATEGORY_PENALTY = 0.10
+ TEXT_SCORE_WEIGHT = 0.65
+ STYLE_SCORE_WEIGHT = 0.35
+@@ -184,14 +185,6 @@ def get_rerank_weights() -> tuple[float, float, float, float]:
+     )
+ 
+ 
+-def get_color_mismatch_threshold() -> float:
+-    return _env_float("COLOR_MISMATCH_THRESHOLD", DEFAULT_COLOR_MISMATCH_THRESHOLD)
+-
+-
+-def get_color_mismatch_penalty() -> float:
+-    return max(0.0, _env_float("COLOR_MISMATCH_PENALTY", DEFAULT_COLOR_MISMATCH_PENALTY))
+-
+-
+ def get_opposite_category_penalty() -> float:
+     return max(0.0, _env_float("OPPOSITE_CATEGORY_PENALTY", DEFAULT_OPPOSITE_CATEGORY_PENALTY))
+ 
+@@ -231,6 +224,12 @@ def make_product_url(product: dict) -> str | None:
+ 
+ 
+ def serialize_product(product: dict) -> dict:
++    if not product.get("_hsv_display"):
++        config = get_embedding_config()
++        color = product_color(product.get("id"), config.model_name, config.version)
++        rgb, name = descriptor_display(color)
++        product = {**product, "dominant_color_rgb": list(rgb) if rgb else None,
++                   "dominant_color_name": name}
+     image_url = product.get("image_url")
+     return {
+         "id": product.get("id"),
+@@ -488,13 +487,9 @@ def compute_color_penalty(
+     query_color_name: str | None = None,
+     product_color_name: str | None = None,
+ ) -> float:
+-    if not query_color_name or not product_color_name:
+-        return 0.0
+-    if query_color_name == product_color_name:
+-        return 0.0
+-    if color_score >= get_color_mismatch_threshold():
+-        return 0.0
+-    return get_color_mismatch_penalty()
++    # Kept as a compatibility symbol. RGB palette caps/thresholds have no
++    # calibrated meaning for Hellinger; do not transfer them to HSV ranking.
++    return 0.0
+ 
+ 
+ def _match_reason(
+@@ -535,8 +530,32 @@ def rerank_products(
+     class_name: str | None = None,
+     query_vector: list[float] | None = None,
+     embedding_model: str | None = None,
++    query_color=None,
++    embedding_version: int | None = None,
+ ) -> list[dict]:
+     reranked = []
++    config = get_embedding_config()
++    embedding_model = embedding_model or config.model_name
++    embedding_version = embedding_version if embedding_version is not None else config.version
++    if query_color is None:
++        unavailable("query_descriptor_missing")
++    else:
++        try:
++            validate_production_color(query_color)
++        except (ValueError, TypeError) as exc:
++            query_color = unavailable(f"query_descriptor_invalid:{exc}")
++    # M4 integration boundary: only color input/score changes. Never use RGB
++    # fields from legacy DB rows, including in text/style color prompts.
++    color_by_id = {}
++    hsv_products = []
++    for product in products:
++        color = product_color(product.get("id"), embedding_model, embedding_version)
++        rgb, name = descriptor_display(color)
++        hsv_product = {**product, "dominant_color_rgb": list(rgb) if rgb else None,
++                       "dominant_color_name": name, "_hsv_display": True}
++        hsv_products.append(hsv_product)
++        color_by_id[_product_key(hsv_product)] = color
++    products = hsv_products
+     image_weight, category_weight, color_weight, text_style_weight = get_rerank_weights()
+     text_style_scores = compute_text_style_scores(
+         products,
+@@ -555,18 +574,15 @@ def rerank_products(
+     for product in products:
+         image_similarity = float(product.get("similarity") or 0.0)
+         category_score = compute_category_score(product, category_terms, class_name=class_name)
+-        color_score = color_similarity(
+-            query_color_rgb,
+-            product.get("dominant_color_rgb"),
+-            query_name=query_color_name,
+-            product_name=product.get("dominant_color_name"),
+-        )
++        color = color_by_id.get(_product_key(product))
++        color_score = 0.0
++        if query_color is not None and color is not None:
++            try:
++                color_score = histogram_similarity(query_color, color)
++            except (ValueError, TypeError) as exc:
++                unavailable(f"similarity:{exc}", product.get("id"))
+         category_penalty = compute_category_penalty(product, class_name=class_name)
+-        color_penalty = compute_color_penalty(
+-            color_score,
+-            query_color_name=query_color_name,
+-            product_color_name=product.get("dominant_color_name"),
+-        )
++        color_penalty = 0.0  # No RGB mismatch penalty is reused for HSV.
+         text_style_info = text_style_scores.get(_product_key(product), {})
+         text_score = float(text_style_info.get("text_score") or 0.0)
+         style_score = float(text_style_info.get("style_score") or 0.0)
+@@ -729,16 +745,13 @@ def _search_single_crop_variant(
+     top_k: int,
+     category_terms: list[str],
+     embedding_config,
++    query_color=None,
+ ) -> tuple[list[dict], tuple[int, int, int] | None, str | None]:
+     image = image_from_base64(variant["image_base64"])
+-    query_color_rgb = extract_dominant_color(image)
+-    query_color_name = name_color(query_color_rgb)
+-    vector = extract_vector(image)
+-    if vector is None:
+-        raise ValueError(
+-            f"Embedding extraction failed for crop class {crop.get('class_name')} "
+-            f"variant {variant.get('name')}"
+-        )
++    features = extract_runtime_features(str(crop.get("id") or crop.get("class_name") or "query"),
++                                        image, query_color)
++    query_color_rgb, query_color_name = descriptor_display(features.color)
++    vector = features.embedding
+ 
+     validate_vector_dimension(vector)
+     products = search_similar_by_vector(
+@@ -757,16 +770,21 @@ def _search_single_crop_variant(
+         class_name=crop.get("class_name", ""),
+         query_vector=vector,
+         embedding_model=embedding_config.model_name,
++        query_color=features.color,
++        embedding_version=features.embedding_version,
+     )
+     return ranked, query_color_rgb, query_color_name
+ 
+ 
+-def search_match_for_crop(crop: dict, top_k: int = 5) -> dict:
++def search_match_for_crop(crop: dict, top_k: int = 5, original_rgb=None) -> dict:
+     variants = crop_variants_for_search(crop)
+     if not variants:
+         raise ValueError(f"Missing crop image payload for class {crop.get('class_name')}")
+ 
+     embedding_config = get_embedding_config()
++    # One source-ROI color descriptor for all encoder variants; no padded
++    # variant can redefine query color when the original upload is available.
++    query_color = extract_source_color(original_rgb, crop, crop.get("id") or crop.get("class_name"))
+     category_terms = get_category_terms(crop.get("class_name", ""))
+     ranked_variants = []
+     query_color_rgb = None
+@@ -781,6 +799,7 @@ def search_match_for_crop(crop: dict, top_k: int = 5) -> dict:
+                 top_k=top_k,
+                 category_terms=category_terms,
+                 embedding_config=embedding_config,
++                query_color=query_color,
+             )
+         except Exception as exc:
+             errors.append(f"{variant.get('name')}: {exc}")
+diff --git a/tests/test_search_service.py b/tests/test_search_service.py
+index 6935077..441dcff 100644
+--- a/tests/test_search_service.py
++++ b/tests/test_search_service.py
+@@ -1,5 +1,7 @@
+ import unittest
+ from unittest.mock import patch
++import numpy as np
++from AI.hsv_descriptor import extract_hsv_descriptor
+ 
+ from api.search_service import (
+     apply_match_threshold,
+@@ -12,6 +14,13 @@ from api.search_service import (
+ 
+ 
+ class SearchServiceTests(unittest.TestCase):
++    def setUp(self):
++        self.gray = extract_hsv_descriptor(np.full((8, 8, 3), 128, np.uint8))
++        self.black = extract_hsv_descriptor(np.zeros((8, 8, 3), np.uint8))
++        color_patch = patch("api.search_service.product_color", return_value=self.gray)
++        color_patch.start()
++        self.addCleanup(color_patch.stop)
++
+     def test_threshold_returns_low_confidence_suggestions(self):
+         products = [
+             {
+@@ -80,7 +89,7 @@ class SearchServiceTests(unittest.TestCase):
+         self.assertAlmostEqual(color_weight, 1 / 6)
+         self.assertAlmostEqual(text_style_weight, 1 / 6)
+ 
+-    def test_color_penalty_only_applies_to_strong_mismatch(self):
++    def test_rgb_name_penalty_is_not_transferred_to_hsv(self):
+         self.assertEqual(
+             compute_color_penalty(0.90, query_color_name="black", product_color_name="gray"),
+             0.0,
+@@ -89,7 +98,7 @@ class SearchServiceTests(unittest.TestCase):
+             compute_color_penalty(0.10, query_color_name="black", product_color_name="black"),
+             0.0,
+         )
+-        self.assertGreater(
++        self.assertEqual(
+             compute_color_penalty(0.10, query_color_name="black", product_color_name="white"),
+             0.0,
+         )
+@@ -115,13 +124,13 @@ class SearchServiceTests(unittest.TestCase):
+             products,
+             category_terms=["shirt", "top"],
+             top_k=1,
+-            query_color_rgb=(20, 20, 20),
++            query_color=self.black,
+             query_color_name="black",
+             class_name="short_sleeve_top",
+         )
+ 
+         self.assertGreater(ranked[0]["category_penalty"], 0.0)
+-        self.assertGreater(ranked[0]["color_penalty"], 0.0)
++        self.assertEqual(ranked[0]["color_penalty"], 0.0)
+         self.assertIn("penalty", ranked[0]["match_reason"])
+ 
+     def test_rerank_products_uses_text_style_signal_without_filtering_candidates(self):
+@@ -167,7 +176,7 @@ class SearchServiceTests(unittest.TestCase):
+                 products,
+                 category_terms=["shirt", "top"],
+                 top_k=2,
+-                query_color_rgb=(120, 120, 120),
++                query_color=self.gray,
+                 query_color_name="gray",
+                 class_name="short_sleeve_top",
+                 query_vector=[0.0] * 512,
+@@ -194,7 +203,7 @@ class SearchServiceTests(unittest.TestCase):
+                 [product],
+                 category_terms=["shirt", "top"],
+                 top_k=1,
+-                query_color_rgb=(120, 120, 120),
++                query_color=self.gray,
+                 query_color_name="gray",
+                 class_name="short_sleeve_top",
+                 query_vector=[0.0] * 512,

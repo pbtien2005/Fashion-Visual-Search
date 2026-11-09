@@ -71,3 +71,12 @@ output/m2/runs/
 !docs/m2/phase1/*.json
 !docs/m2/phase1/baseline_20261107_cpu/baseline.json
 !docs/m2/phase2/*.json
+# Reproducible M3 diagnostic reports (separate from production catalogs/caches)
+!docs/m3_results/**/report.json
+!docs/m3_results/catalog_manifest.json
+!docs/m3_results/catalog_color_cache.json
+
+# Shared M3 handoff profile and real-weights verification evidence
+!docs/m3_contract/*.json
+!docs/m3_handoff_evidence/*.json
+!docs/m3_production_evidence/*.json

@@ -1,0 +1,20 @@
+# M3 source audit, before implementation
+
+- Checkout: `main`, SHA `3247a5b33a016fd064ac9851410e7ec755d5e320`.
+- Initial `git status --short`: empty. No user modifications found; no reset or cache regeneration performed.
+- Inspected AI/color_utils.py, AI/embedding_model.py, AI/vectorizer.py, api/search_service.py, api/schemas.py, api/detection_client.py, db/database.py, object_detection/detector.py, evaluation/run_eval.py, evaluation/run_benchmark.py, evaluation/run_embedding_only_eval.py, tests, requirements and labels.
+
+## Findings
+
+1. Color is dominant RGB, not an HSV histogram: thumbnail <=64, RGB buckets of width 24, priority on central 50% if >=32 retained pixels. Bright low-saturation pixels (`V>0.88, S<0.18`, colorsys scale 0..1) are excluded unless all pixels are excluded. This can select skin instead of a white garment. Palette name is nearest RGB Euclidean neighbor. Similarity is `1-distance/sqrt(3*255^2)`, with same-name floor .85 and hand-coded mismatch caps (default .35).
+2. FashionCLIP default is `patrickjohncyh/fashion-clip`, embedding version 2. CLIPModel + CLIPProcessor from the same model ID; device CUDA/MPS/CPU; eval/no_grad; 512 dimensions and L2 normalization. Dimension check exists but zero norms and non-finite outputs are not checked. Keep processor and encoder unchanged; add output validation only.
+3. Catalog `process_single_item` normally uses original image. Optional `USE_PRODUCT_CROP_EMBEDDING` calls detector and chooses confidence*area crop. Query uses each tight/padded/wide 224 square white-padded crop. Thus catalog/query policies are not inherently equal.
+4. Detector decodes BGR with OpenCV, creates bbox variants, square white padding and resize 224. No segmentation mask or raw ROI is returned by detector.py. HTTP client posts multipart image to `/detect/upload`; search consumes base64 image fields and bbox metadata. New M3 can accept independent raw RGB ROI/mask and must label legacy-crop fallback explicitly. It must not pretend a bbox mask is segmentation.
+5. Catalog M3 runs through vectorizer, writes embeddings plus dominant RGB/name to JSON then DB. Query M3 is `_search_single_crop_variant`, then pgvector candidates and `rerank_products`. DB has no histogram column. Use a separate descriptor cache and interface, no DB migration or silent ranking replacement.
+6. Candidates: model/version-filtered cosine nearest neighbors, broad category selection, limit >=100 per variant; rerank >=20 per variant; merge keeps best product score across variants. Default weights .60 image/.15 category/.15 RGB color/.10 text-style, normalized; category/color penalties and score/confidence gates also apply. Text-style absence renormalizes active weights. These are unchanged. RGB thresholds are unsuitable for direct transfer to Hellinger scores.
+7. Existing evaluator uses category substring and palette-name hit@5, product-ID hit@5 (called recall, not set recall), best reciprocal rank across detections. It does not establish instance detection matching or independently isolate masks/achromatic handling; top-k helpers are fixed at 5. Real outfit labels primarily provide category/color expectations; starter catalog is easier product-ID matching. Existing composite benchmark weights/gates do not establish statistical improvement of M3.
+8. Local checkout has query JPEGs but no `data/` catalog/vector cache, model weights, or ROI/mask ground truth. A real-photo transformed-instance diagnostic can run locally; it is not independent user-query retrieval evidence. Synthetic known masks permit a controlled factorial ablation, not claims about YOLO mask quality. External labeled ROI/catalog data is needed for final end-to-end conclusions.
+
+## Implementation boundary
+
+Add standalone versioned histogram extraction, unified M3 result, explicit ROI adapter and separate catalog color cache, reproducible color-only benchmark and tests. Preserve existing API/ranker/DB/encoder contracts. Start with 18x8 and configurable achromatic thresholds as unvalidated defaults. Record failures, fallback coverage and artifact hashes. Do not claim improved search without independent evaluation.

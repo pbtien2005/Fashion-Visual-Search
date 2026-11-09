@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse, StreamingResponse
 
 from AI.vectorizer import get_r2_client
+from AI.production_color import decode_uploaded_rgb
 from api.detection_client import DetectionClient, DetectionServiceError
 from api.schemas import DetectedItemResult, ProductListResponse, SearchUploadResponse
 from api.search_service import search_match_for_crop, serialize_product
@@ -78,9 +79,13 @@ async def search_upload(file: UploadFile = File(...), top_k: int = 5):
         raise HTTPException(status_code=502, detail=detection.get("message") or "Detection service failed")
 
     detected_items = []
+    try:
+        original_rgb = decode_uploaded_rgb(image_bytes)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail="Could not decode uploaded RGB image") from exc
     for crop in crops:
         try:
-            match_result = search_match_for_crop(crop, top_k=top_k)
+            match_result = search_match_for_crop(crop, top_k=top_k, original_rgb=original_rgb)
         except Exception as exc:
             raise HTTPException(status_code=500, detail=f"Search failed for crop {crop.get('class_name')}: {exc}") from exc
 

@@ -2,6 +2,8 @@
 
 Fashion Visual Search is an end-to-end AI/full-stack web app for finding similar fashion products from an uploaded outfit image.
 
+Production color is **HSV Histogram 147**, with the existing FashionCLIP encoder. Query/catalog require a matching versioned HSV sidecar; there is no Dominant RGB fallback. See [production migration and deployment](docs/M3_HSV_PRODUCTION.md) and the [M4 review boundary](docs/M4_HSV_INTEGRATION_REVIEW.md). Docker requires the rebuilt cache file before startup.
+
 ```text
 Upload outfit image
 -> YOLO detects clothing items
@@ -198,16 +200,17 @@ data/scraped_history.json
 
 ## Vectorize Products
 
-Generate embeddings and dominant colors:
+Generate FashionCLIP embeddings and HSV147 descriptors (new output files only):
 
 ```powershell
-python AI\vectorizer.py
+python -m AI.vectorizer
 ```
 
 Output:
 
 ```text
-data/fashion_with_vectors.json
+data/fashion_with_hsv_vectors.json
+data/color_cache_hsv147.json
 ```
 
 Default embedding config:
@@ -249,10 +252,10 @@ Optional migrations:
 python db\run_migrations.py
 ```
 
-Backfill product colors if needed:
+Rebuild only color for an existing catalog, without re-embedding or overwriting the original:
 
 ```powershell
-python etl\backfill_product_colors.py
+python -m AI.rebuild_color_cache --catalog data/fashion_with_vectors.json --allow-remote --output data/color_cache_hsv147_run001.json
 ```
 
 ## Run Pieces Locally
@@ -427,7 +430,7 @@ Invoke-RestMethod "http://localhost:8000/api/products?limit=1&offset=0"
 - Catalog balance depends on the ETL keywords in `etl/test.py`.
 - Outfit photos and Amazon catalog images have a domain gap.
 - YOLO bbox crops are rectangular and not segmentation masks.
-- Color extraction is simple dominant-color logic, not mask-aware.
+- Color uses mask-aware HSV147, with explicit ROI/missing-descriptor policies. H-S discards chromatic brightness; display color names are approximate. Real garment masks still depend on M2.
 - Reranking uses metadata keyword heuristics.
 - Amazon product URLs can become stale or out of stock.
 - Evaluation set is small and should be expanded before making strong quality claims.

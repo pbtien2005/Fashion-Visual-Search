@@ -1,0 +1,12 @@
+{
+  "hue_bins": 18,
+  "saturation_bins": 8,
+  "achromatic": true,
+  "achromatic_s_max": 32,
+  "black_v_max": 40,
+  "white_v_min": 220,
+  "mask_policy": "roi",
+  "min_mask_fraction": 0.001,
+  "max_mask_fraction": 1.0,
+  "min_pixels": 1
+}
