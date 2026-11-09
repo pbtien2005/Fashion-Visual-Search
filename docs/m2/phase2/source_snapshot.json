@@ -1,0 +1,42 @@
+{
+  "client_date": "2026-11-07",
+  "base_git_commit": "3247a5b33a016fd064ac9851410e7ec755d5e320",
+  "uncommitted_m2_changes": true,
+  "deployed_image_id": "sha256:09815b87095be1e5642bd740ea5d1e2192ba160cac5a4cf82262a940c82c33df",
+  "reference_image_id": "sha256:2041a2f15f8df30272144b3dd9ee6861382f4b2e67156c03c915521f60ae46b3",
+  "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+  "files_sha256": {
+    "object_detection/roi.py": "d3d4d240d36bdec69b8562b6d802e5677bee5b0ee0091886ca87ab4183d54816",
+    "object_detection/detector.py": "612a71813f1d18d43b2535ad3dd38a639ec5eb5476f614d5ff8f33d5fe206036",
+    "object_detection/schemas.py": "9b1aafb00f7ba9d7c27cb198e6eeb03399b0f27e4beabb106768fe9d760238f3",
+    "object_detection/utils.py": "e200b7c6c74d9060d2912075f9bbee46b3e3627847795a34adc8774e13367060",
+    "object_detection/api.py": "33f14e833bfb03fa3a0913fbc9e72631938a35005b617ccf31edc00a04e33dc0",
+    "object_detection/config.py": "da6b0acf378d1481c43ddae78c20af8a8014aca29671ad601ffb6ec78d743d7c",
+    "object_detection/Dockerfile": "4b9eb6e8d1e5d4626d1e00466b8f13559f4c8903568a0bc4381a24cde94d5214",
+    "docker-compose.yml": "97c098482f87a8f84f49f9537ae54d4a18b501246adc6ca03c87296a28c8152d",
+    "evaluation/check_m2_phase2.py": "a702cf9c1b23b88848ef0c5a9e2556cf662457ce513306b02ef54991eab5e771",
+    "evaluation/prepare_m2_phase1.py": "1fcb7a958186435cd8510477baf3be1a3ef26462706487b41f6bfa739d7f106f",
+    "tests/test_detection_roi.py": "ecfaac520bffe18cbcf5db49946206409dea85a70da5334a6c7ac7ce6ecc3760",
+    "tests/test_detection_roi_api.py": "be28b9091bd5dc25f57d2ce377157fbbafc49e55caefe544ff9eacb1b59ad32e",
+    "tests/test_detection_api_bootstrap.py": "7a781e0d2afa186e509af95c5afc1707df185f65ba4827efd8569ef076203dbd",
+    "tests/test_m2_contract_fixtures.py": "01dd74a8e87439a3469e87520dbd74a902da05278388cba78ca5be439f6895fe",
+    "tests/fixtures/m2/phase2_response.json": "e6b5857e23848cd459d9e6aabc8c9ba9bb3f6e3d003f023b2151c55c572d42da",
+    "docs/M2_CONTRACT.md": "4d7e4b7fe58cf16c5ef13e3ca069c2d6a5c6cd8f6081e60085a1c1ff6fb4c94d"
+  },
+  "validation": {
+    "tests_passed": 40,
+    "detection_coverage_percent": 89,
+    "roi_module_coverage_percent": 98,
+    "real_regression_images": 16,
+    "exact_source_rois": 54,
+    "exact_legacy_jpeg_variants": 161,
+    "real_http": "passed",
+    "compile": "passed"
+  },
+  "not_validated": [
+    "M1 production normalization",
+    "M3 production decoder/color/retrieval",
+    "target detection recall/mAP",
+    "segmentation IoU"
+  ]
+}

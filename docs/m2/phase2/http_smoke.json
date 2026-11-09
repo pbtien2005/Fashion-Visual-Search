@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "mode": "real_HTTP_real_YOLO_CPU",
+  "health": {
+    "status": "ok",
+    "model_path": "/models/object-detection/best.pt",
+    "model_available": true,
+    "model_loaded": true
+  },
+  "upload_status": 200,
+  "schema_version": "m2.roi.v1",
+  "query_id": "phase2_http",
+  "total_crops": 2,
+  "exact_source_png_round_trips": 2,
+  "mask": "null_mask_disabled",
+  "invalid_image_status": 400,
+  "invalid_id_status": 422,
+  "frozen_legacy_schema_accepts_new_response": true,
+  "diagnostics": {
+    "raw_box_count": 2,
+    "invalid_bbox_count": 0,
+    "invalid_prediction_count": 0,
+    "no_valid_variant_count": 0,
+    "skipped_variant_count": 0,
+    "delivered_crop_count": 2
+  }
+}

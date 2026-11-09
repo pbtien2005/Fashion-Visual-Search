@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "mode": "real_http_real_yolo_cpu",
+  "query_id": "real_green_tshirt_01",
+  "health_before": {
+    "status": "ok",
+    "model_path": "/models/object-detection/best.pt",
+    "model_available": true,
+    "model_loaded": false
+  },
+  "health_after": {
+    "status": "ok",
+    "model_path": "/models/object-detection/best.pt",
+    "model_available": true,
+    "model_loaded": true
+  },
+  "upload_status": 200,
+  "total_crops": 2,
+  "jpeg_shape_hwc": [
+    224,
+    224,
+    3
+  ],
+  "invalid_mime_status": 400,
+  "schema": "legacy_only_m2_fields_not_implemented_yet",
+  "crops": [
+    {
+      "class_name": "short_sleeve_top",
+      "confidence": 0.8780478239059448,
+      "bbox": [
+        64,
+        322,
+        735,
+        953
+      ]
+    },
+    {
+      "class_name": "short_sleeve_top",
+      "confidence": 0.7022636532783508,
+      "bbox": [
+        512,
+        103,
+        754,
+        363
+      ]
+    }
+  ]
+}

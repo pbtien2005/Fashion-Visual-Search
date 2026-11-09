@@ -1,0 +1,122 @@
+{
+  "schema_version": "m2.fixture.v1",
+  "origin": "generated_synthetic_not_real_evaluation",
+  "source": "source_rgb.png",
+  "detection": "detection_rgb.png",
+  "branch_transform": "saturating +40 RGB units; fixture only, not M1 gamma",
+  "shape_hwc": [
+    96,
+    128,
+    3
+  ],
+  "dtype": "uint8",
+  "color_space": "RGB",
+  "target_bbox_xyxy": [
+    32,
+    16,
+    96,
+    80
+  ],
+  "reference_mask": "reference_mask.png",
+  "reference_mask_space": "target_roi",
+  "foreground": 255,
+  "bbox_cases": [
+    {
+      "id": "tight",
+      "bbox_xyxy": [
+        32,
+        16,
+        96,
+        80
+      ],
+      "clipped_xyxy": [
+        32,
+        16,
+        96,
+        80
+      ],
+      "valid_after_clip": true
+    },
+    {
+      "id": "edge",
+      "bbox_xyxy": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "clipped_xyxy": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "valid_after_clip": true
+    },
+    {
+      "id": "outside",
+      "bbox_xyxy": [
+        -8,
+        -4,
+        140,
+        110
+      ],
+      "clipped_xyxy": [
+        0,
+        0,
+        128,
+        96
+      ],
+      "valid_after_clip": true
+    },
+    {
+      "id": "small",
+      "bbox_xyxy": [
+        1,
+        2,
+        20,
+        30
+      ],
+      "clipped_xyxy": [
+        1,
+        2,
+        20,
+        30
+      ],
+      "valid_after_clip": true,
+      "legacy_minimum_policy": "skip"
+    },
+    {
+      "id": "inverted",
+      "bbox_xyxy": [
+        50,
+        30,
+        20,
+        70
+      ],
+      "clipped_xyxy": [
+        50,
+        30,
+        20,
+        70
+      ],
+      "valid_after_clip": false
+    },
+    {
+      "id": "empty",
+      "bbox_xyxy": [
+        8,
+        8,
+        8,
+        20
+      ],
+      "clipped_xyxy": [
+        8,
+        8,
+        8,
+        20
+      ],
+      "valid_after_clip": false
+    }
+  ]
+}

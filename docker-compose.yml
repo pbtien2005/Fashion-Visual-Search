@@ -27,7 +27,7 @@ services:
     ports:
       - "8001:8001"
     volumes:
-      - ./models/object-detection:/models/object-detection
+      - ./object_detection/best.pt:/models/object-detection/best.pt:ro
     healthcheck:
       test:
         [

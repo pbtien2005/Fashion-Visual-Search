@@ -1,0 +1,45 @@
+{
+  "client_date": "2026-11-07",
+  "base_git_commit": "3247a5b33a016fd064ac9851410e7ec755d5e320",
+  "working_tree_has_uncommitted_m2_changes": true,
+  "image_id": "sha256:2041a2f15f8df30272144b3dd9ee6861382f4b2e67156c03c915521f60ae46b3",
+  "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+  "source_files_sha256": {
+    ".gitignore": "a727bd177c25c4a3e0388d0a9400aacfcdc42b94739964c6901867abb6c3b199",
+    "docker-compose.yml": "97c098482f87a8f84f49f9537ae54d4a18b501246adc6ca03c87296a28c8152d",
+    "object_detection/config.py": "da6b0acf378d1481c43ddae78c20af8a8014aca29671ad601ffb6ec78d743d7c",
+    "object_detection/detector.py": "e8b1631f832ac3dd533c6007fb02389c9621b8271e9c926159dc762ac5d4ca63",
+    "object_detection/api.py": "b9033d028d7a53f85700aec23fe680fa7dce018a62b65092adb1c91739a19d5b",
+    "object_detection/schemas.py": "55da97ef7b22896c9fcfdf08d0fcb56255540ab5c5c7bc9b906b77ff8715dc84",
+    "object_detection/utils.py": "64b8af7ff52539a0b4b3605b1937aac36681c187d562b53b11161244093af50c",
+    "object_detection/Dockerfile": "4b9eb6e8d1e5d4626d1e00466b8f13559f4c8903568a0bc4381a24cde94d5214",
+    "object_detection/.dockerignore": "f192e33f0f480b07f6265e2f0e700aa34d54ac94823709bc9d5be7ece823bcf6",
+    "object_detection/requirements-m2.txt": "e6c7b0ef1d5a8c9adf6dfe021acfd550b74f8587b100a96d6e551bf5b5069fef",
+    "evaluation/prepare_m2_phase1.py": "47ce172fcbe4a63e111d60df56c623ea22a826048d5d1a5f5b8115a26fe6a107",
+    "evaluation/run_m2_phase1_baseline.py": "1920e14595fcccd9d8a7d78712d011ffe971c46f6bcff159b460bb7d4a64308c",
+    "evaluation/check_m2_phase1_http.py": "043cc3a065e2d844ce23363e8a9807de376e46bd4dee3a9ad7b95cdb0ac5dce6",
+    "evaluation/m2/regression_manifest.json": "38e15ec9323894955f714d6ee7a148a0263374a05c17deeafe1a01b43a2acb27",
+    "tests/test_detection_model_path.py": "f88769b811bba783dff92e9b508d03f5696cd61cb979ac0c11cb296dd3e0de98",
+    "tests/test_detection_api_bootstrap.py": "d1519740119014fd9a5a493b7cd9a7a34fad22c526a5c18d794b551873dcbd17",
+    "tests/test_m2_contract_fixtures.py": "64c815b90f37c353ee61aa88a8247619cdaea422f1df172ed7fb80733ebe4f8a",
+    "docs/M2_CONTRACT.md": "41ccdff1f308eb1160873a1dcf294bd866ced77a57e0acd1cf7a6d66e4c8057b",
+    "docs/m2/phase1/requirements.lock.txt": "5953b05c06d2b5dfb76c11d07f184b9b08beef70a592d0f92ec299b6ac29cac4"
+  },
+  "data_scope": "16 previously-used regression images; no new independent test labels",
+  "final_baseline": "docs/m2/phase1/baseline_20261107_cpu/baseline.json",
+  "validation": {
+    "new_m2_tests_passed": 17,
+    "existing_related_tests_passed": 7,
+    "detection_coverage_percent": 88,
+    "new_config_coverage_percent": 100,
+    "pip_check": "passed",
+    "compile": "passed",
+    "real_http_smoke": "passed"
+  },
+  "not_validated": [
+    "CUDA inference",
+    "main API or DB retrieval",
+    "M1/M3 production integration",
+    "target recall/mAP/mask IoU"
+  ]
+}

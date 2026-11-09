@@ -58,3 +58,16 @@ web/fe/dist/
 !evaluation/queries/real_outfits/.gitkeep
 !evaluation/queries/starter_catalog/
 evaluation/results/
+
+# Workspace runtimes, extraction tools, and local baseline runs
+tmp/
+.coverage
+htmlcov/
+output/m2/runs/
+
+# M2 reproducible contract fixtures and reviewed evidence
+!tests/fixtures/m2/*.json
+!evaluation/m2/*.json
+!docs/m2/phase1/*.json
+!docs/m2/phase1/baseline_20261107_cpu/baseline.json
+!docs/m2/phase2/*.json
