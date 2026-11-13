@@ -1,6 +1,14 @@
+import logging
 import os
 from pathlib import Path
 
+try:
+    from .image_preprocessing import PreprocessConfig, prepare_image
+except ImportError:
+    from image_preprocessing import PreprocessConfig, prepare_image
+
+
+logger = logging.getLogger(__name__)
 
 CLASS_NAMES = {
     0: "short_sleeve_top",
@@ -39,7 +47,13 @@ def get_class_name_vi(class_name: str) -> str:
 
 
 class ClothingDetector:
-    def __init__(self, model_path: str | None = None, conf: float = 0.5, expand_ratio: float = 0.15):
+    def __init__(
+        self,
+        model_path: str | None = None,
+        conf: float = 0.5,
+        expand_ratio: float = 0.15,
+        preprocess_config: PreprocessConfig | None = None,
+    ):
         self.model_path = model_path or os.getenv(
             "OBJECT_DETECTION_MODEL_PATH",
             "/models/object-detection/best.pt",
@@ -47,6 +61,7 @@ class ClothingDetector:
         self.conf = conf
         self.expand_ratio = expand_ratio
         self.wide_expand_ratio = float(os.getenv("OBJECT_DETECTION_WIDE_EXPAND_RATIO", "0.30"))
+        self.preprocess_config = preprocess_config if preprocess_config is not None else PreprocessConfig.from_env()
         self._model = None
 
     @property
@@ -73,14 +88,15 @@ class ClothingDetector:
         return self._model
 
     def detect_from_bytes(self, image_bytes: bytes) -> list[dict]:
-        import cv2
-        import numpy as np
+        """Detect and crop using bbox coordinates after EXIF and resize."""
+        prepared = prepare_image(image_bytes, self.preprocess_config)
+        logger.debug("Query preprocessing geometry=%s quality=%s", prepared.geometry_meta, prepared.quality_meta)
 
-        nparr = np.frombuffer(image_bytes, np.uint8)
-        image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-        if image is None:
-            raise ValueError("Could not decode uploaded image bytes")
-        return self._process(image)
+        import cv2
+
+        source_bgr = cv2.cvtColor(prepared.source_rgb, cv2.COLOR_RGB2BGR)
+        detection_bgr = cv2.cvtColor(prepared.detection_rgb, cv2.COLOR_RGB2BGR)
+        return self._process(source_bgr, detection_bgr)
 
     def _make_crop_variant(
         self,
@@ -135,10 +151,10 @@ class ClothingDetector:
             "crop_strategy": strategy,
         }
 
-    def _process(self, image) -> list[dict]:
+    def _process(self, image, detection_image=None) -> list[dict]:
         model = self._ensure_model()
         height, width = image.shape[:2]
-        results = model.predict(image, conf=self.conf, verbose=False)
+        results = model.predict(image if detection_image is None else detection_image, conf=self.conf, verbose=False)
 
         crops = []
         for result in results:

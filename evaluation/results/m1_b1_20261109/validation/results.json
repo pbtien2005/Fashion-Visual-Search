@@ -1,0 +1,3532 @@
+{
+  "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+  "conf": 0.5,
+  "crop_config": {
+    "expand_ratio": 0.15,
+    "wide_expand_ratio": 0.3
+  },
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.15",
+  "labels": [
+    {
+      "query_id": "real_green_tshirt_01",
+      "image": "queries/real_outfits/real_green_tshirt_01_You_broke_the_site_again_211068750_.jpg.jpg",
+      "lighting_group": "dark",
+      "class_name": "short_sleeve_top",
+      "color": "green",
+      "bbox": [
+        0.29,
+        0.31,
+        0.8,
+        0.75
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22You_broke_the_site_again%22_%28211068750%29.jpg",
+      "license": "CC BY 2.0",
+      "author": "Domas Mituzas from Vilnius, Lithuania",
+      "sha256": "f26b568338c392c0ab8722f7b2e8bf257c0c05401c2d03bdfec7cd8dbeb3db4c"
+    },
+    {
+      "query_id": "real_black_dress_02",
+      "image": "queries/real_outfits/real_black_dress_02_An_Evening_with_Judd_Apatow_Leslie_Mann_8224252457_.jpg.jpg",
+      "lighting_group": "dark",
+      "class_name": "short_sleeve_dress",
+      "color": "black",
+      "bbox": [
+        0.35,
+        0.27,
+        0.62,
+        0.79
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+      "license": "CC BY 2.0",
+      "author": "Canadian Film Centre from Toronto, Canada",
+      "sha256": "208ce8b38d8b11b94be95503927dcd14cf259f8d1d016ec381cb739da298f6ce"
+    },
+    {
+      "query_id": "real_black_trousers_02",
+      "image": "queries/real_outfits/real_black_trousers_02_2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg.jpg",
+      "lighting_group": "dark",
+      "class_name": "trousers",
+      "color": "black",
+      "bbox": [
+        0.29,
+        0.43,
+        0.72,
+        0.94
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Stefan Brending (2eight)",
+      "sha256": "27f0e30f8a94156a1e5b6176db26daec9fb4d8e9c5cfe3ae69a711ac41ac7907"
+    },
+    {
+      "query_id": "real_white_shirt_02",
+      "image": "queries/real_outfits/real_white_shirt_02_Another_good_shot_-_Flickr_-_GeorgeTan_2...thanks_for_millionth_support.jpg.jpg",
+      "lighting_group": "normal",
+      "class_name": "short_sleeve_top",
+      "color": "white",
+      "bbox": [
+        0.33,
+        0.23,
+        0.68,
+        0.49
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22Another_good_shot%22_-_Flickr_-_GeorgeTan_%5E2...thanks_for_millionth_support.jpg",
+      "license": "Public domain",
+      "author": "GeorgeTan # 2...thanks for millionth support from Singapore",
+      "sha256": "f1efec1485f2a976a88c165e43451bfbae685f12ed535b8b7be08b5e4e7bb29f"
+    },
+    {
+      "query_id": "real_red_dress_02",
+      "image": "queries/real_outfits/real_red_dress_02_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg.jpg",
+      "lighting_group": "normal",
+      "class_name": "vest_dress",
+      "color": "red",
+      "bbox": [
+        0.22,
+        0.23,
+        0.71,
+        0.57
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg",
+      "license": "CC BY-SA 3.0 it",
+      "author": "Andrea Pavanello, Milano",
+      "sha256": "48a1aad15f9cf6a2334ed062e37bf5b40bc01e4140f62e4f6a2562337f6f2ef2"
+    }
+  ],
+  "runs": [
+    {
+      "name": "B0",
+      "config": {
+        "mode": "identity",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.35,
+        "gamma": 0.6
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 3,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": 133.7896000040928,
+          "warm_mean_ms": 61.56655000086175,
+          "warm_p95_ms": 75.7127050026611
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 61.576400003104936,
+          "warm_p95_ms": 69.99518000593525
+        }
+      },
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                64,
+                322,
+                735,
+                953
+              ],
+              "confidence": 0.8780480623245239
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                512,
+                103,
+                754,
+                363
+              ],
+              "confidence": 0.7022643685340881
+            }
+          ],
+          "best_class_iou": 0.5704643575627811,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 133.7896000040928,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 5,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                533,
+                227,
+                826,
+                604
+              ],
+              "confidence": 0.9394070506095886
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                81,
+                230,
+                404,
+                680
+              ],
+              "confidence": 0.9284353852272034
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                571,
+                533,
+                758,
+                1007
+              ],
+              "confidence": 0.9136969447135925
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                134,
+                552,
+                337,
+                1016
+              ],
+              "confidence": 0.8946921825408936
+            },
+            {
+              "class_name": "short_sleeve_dress",
+              "bbox": [
+                350,
+                286,
+                576,
+                799
+              ],
+              "confidence": 0.7453629374504089
+            }
+          ],
+          "best_class_iou": 0.6302516074791813,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 45.84859999886248,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1183
+              ],
+              "confidence": 0.951944887638092
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                179,
+                202,
+                544,
+                588
+              ],
+              "confidence": 0.8736075162887573
+            }
+          ],
+          "best_class_iou": 0.8893349766072306,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 77.28450000286102,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 52.22219999996014,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 70.93060000624973,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-01",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.3,
+        "gamma": 0.4
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 0.6666666666666666,
+          "first_preprocess_ms": 55.66579999867827,
+          "warm_mean_ms": 65.15110000327695,
+          "warm_p95_ms": 72.81433000898687
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 56.7590999926324,
+          "warm_p95_ms": 68.43281998808379
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-01-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                19,
+                127,
+                312,
+                423
+              ],
+              "confidence": 0.7151790857315063
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                57,
+                329,
+                733,
+                951
+              ],
+              "confidence": 0.6760736703872681
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                105,
+                755,
+                354
+              ],
+              "confidence": 0.5391010046005249
+            }
+          ],
+          "best_class_iou": 0.5670791585579578,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 55.66579999867827,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                527,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9399750232696533
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                227,
+                409,
+                684
+              ],
+              "confidence": 0.9396783113479614
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                533,
+                760,
+                1002
+              ],
+              "confidence": 0.9137047529220581
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                137,
+                548,
+                337,
+                1014
+              ],
+              "confidence": 0.8925576210021973
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 56.636399996932596,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1183
+              ],
+              "confidence": 0.951944887638092
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                179,
+                202,
+                544,
+                588
+              ],
+              "confidence": 0.8736075162887573
+            }
+          ],
+          "best_class_iou": 0.8893349766072306,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 73.66580000962131,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 43.78829999768641,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 69.72989998757839,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-02",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.3,
+        "gamma": 0.5
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 0.6666666666666666,
+          "first_preprocess_ms": 62.06179999571759,
+          "warm_mean_ms": 62.26310000056401,
+          "warm_p95_ms": 65.34911000344437
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 51.21779999899445,
+          "warm_p95_ms": 58.71363000696874
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-02-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                58,
+                322,
+                736,
+                953
+              ],
+              "confidence": 0.7689321637153625
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                18,
+                127,
+                312,
+                424
+              ],
+              "confidence": 0.6455182433128357
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                514,
+                105,
+                754,
+                355
+              ],
+              "confidence": 0.5616886615753174
+            }
+          ],
+          "best_class_iou": 0.5667982351825079,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 62.06179999571759,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                528,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9381745457649231
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                227,
+                407,
+                683
+              ],
+              "confidence": 0.9360740780830383
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1003
+              ],
+              "confidence": 0.9136744737625122
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                547,
+                338,
+                1015
+              ],
+              "confidence": 0.8926352262496948
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 58.83419999736361,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1183
+              ],
+              "confidence": 0.951944887638092
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                179,
+                202,
+                544,
+                588
+              ],
+              "confidence": 0.8736075162887573
+            }
+          ],
+          "best_class_iou": 0.8893349766072306,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 65.6920000037644,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 42.88909999013413,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 59.546500007854775,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-03",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.3,
+        "gamma": 0.6
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 0.6666666666666666,
+          "first_preprocess_ms": 47.75070000323467,
+          "warm_mean_ms": 62.71099999867147,
+          "warm_p95_ms": 69.39809000396053
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 59.659749997081235,
+          "warm_p95_ms": 66.27335499943001
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-03-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                61,
+                321,
+                736,
+                953
+              ],
+              "confidence": 0.8211435079574585
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                103,
+                755,
+                355
+              ],
+              "confidence": 0.607641339302063
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                16,
+                127,
+                312,
+                424
+              ],
+              "confidence": 0.598882794380188
+            }
+          ],
+          "best_class_iou": 0.5683398180005789,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 47.75070000323467,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                528,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9367324709892273
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                228,
+                409,
+                682
+              ],
+              "confidence": 0.9357613325119019
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1003
+              ],
+              "confidence": 0.9126038551330566
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                550,
+                336,
+                1015
+              ],
+              "confidence": 0.9011368155479431
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 55.28089999279473,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1183
+              ],
+              "confidence": 0.951944887638092
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                179,
+                202,
+                544,
+                588
+              ],
+              "confidence": 0.8736075162887573
+            }
+          ],
+          "best_class_iou": 0.8893349766072306,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 70.1411000045482,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 52.31129999447148,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 67.00819999969099,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-04",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.3,
+        "gamma": 0.7
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 10,
+          "matches": 3,
+          "gamma_rate": 0.6666666666666666,
+          "first_preprocess_ms": 65.01639999623876,
+          "warm_mean_ms": 79.59639999899082,
+          "warm_p95_ms": 94.75996000110172
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 60.95955000637332,
+          "warm_p95_ms": 70.36504500501906
+        }
+      },
+      "changes": [],
+      "examples": [],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                62,
+                322,
+                735,
+                953
+              ],
+              "confidence": 0.8555234670639038
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                103,
+                755,
+                357
+              ],
+              "confidence": 0.6356015205383301
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                17,
+                127,
+                312,
+                425
+              ],
+              "confidence": 0.5220698714256287
+            }
+          ],
+          "best_class_iou": 0.5688517819000245,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 65.01639999623876,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 5,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                529,
+                227,
+                826,
+                603
+              ],
+              "confidence": 0.9376771450042725
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                81,
+                228,
+                408,
+                681
+              ],
+              "confidence": 0.934496283531189
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1004
+              ],
+              "confidence": 0.9127644300460815
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                553,
+                336,
+                1016
+              ],
+              "confidence": 0.9017884135246277
+            },
+            {
+              "class_name": "short_sleeve_dress",
+              "bbox": [
+                357,
+                287,
+                577,
+                799
+              ],
+              "confidence": 0.514352560043335
+            }
+          ],
+          "best_class_iou": 0.6151372020852266,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 62.747999996645376,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1183
+              ],
+              "confidence": 0.951944887638092
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                179,
+                202,
+                544,
+                588
+              ],
+              "confidence": 0.8736075162887573
+            }
+          ],
+          "best_class_iou": 0.8893349766072306,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 96.44480000133626,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 50.50900000787806,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 71.41010000486858,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-05",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.35,
+        "gamma": 0.4
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 1.0,
+          "first_preprocess_ms": 63.984699998400174,
+          "warm_mean_ms": 67.95275000331458,
+          "warm_p95_ms": 69.78951500204857
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 64.1754000025685,
+          "warm_p95_ms": 80.25309000440757
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-05-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                19,
+                127,
+                312,
+                423
+              ],
+              "confidence": 0.7151790857315063
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                57,
+                329,
+                733,
+                951
+              ],
+              "confidence": 0.6760736703872681
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                105,
+                755,
+                354
+              ],
+              "confidence": 0.5391010046005249
+            }
+          ],
+          "best_class_iou": 0.5670791585579578,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 63.984699998400174,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                527,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9399750232696533
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                227,
+                409,
+                684
+              ],
+              "confidence": 0.9396783113479614
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                533,
+                760,
+                1002
+              ],
+              "confidence": 0.9137047529220581
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                137,
+                548,
+                337,
+                1014
+              ],
+              "confidence": 0.8925576210021973
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 65.91190000472125,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                246,
+                505,
+                621,
+                1182
+              ],
+              "confidence": 0.9483862519264221
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                177,
+                205,
+                538,
+                575
+              ],
+              "confidence": 0.7296653985977173
+            }
+          ],
+          "best_class_iou": 0.8843883037785796,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 69.99360000190791,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 46.31130000052508,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 82.03950000461191,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-06",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.35,
+        "gamma": 0.5
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 1.0,
+          "first_preprocess_ms": 78.50820000749081,
+          "warm_mean_ms": 84.47600000363309,
+          "warm_p95_ms": 89.21630000404548
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 72.3301000034553,
+          "warm_p95_ms": 86.5252599985979
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-06-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                58,
+                322,
+                736,
+                953
+              ],
+              "confidence": 0.7689321637153625
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                18,
+                127,
+                312,
+                424
+              ],
+              "confidence": 0.6455182433128357
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                514,
+                105,
+                754,
+                355
+              ],
+              "confidence": 0.5616886615753174
+            }
+          ],
+          "best_class_iou": 0.5667982351825079,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 78.50820000749081,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                528,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9381745457649231
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                227,
+                407,
+                683
+              ],
+              "confidence": 0.9360740780830383
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1003
+              ],
+              "confidence": 0.9136744737625122
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                547,
+                338,
+                1015
+              ],
+              "confidence": 0.8926352262496948
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 79.20900000317488,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1182
+              ],
+              "confidence": 0.9503525495529175
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                177,
+                204,
+                539,
+                577
+              ],
+              "confidence": 0.7730798721313477
+            }
+          ],
+          "best_class_iou": 0.8879551679699924,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 89.7430000040913,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 56.55770000885241,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 88.10249999805819,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-07",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.35,
+        "gamma": 0.6
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 1.0,
+          "first_preprocess_ms": 73.90139999915846,
+          "warm_mean_ms": 68.18130000465317,
+          "warm_p95_ms": 84.78675000442308
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 54.967499992926605,
+          "warm_p95_ms": 65.42144999257289
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-07-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                61,
+                321,
+                736,
+                953
+              ],
+              "confidence": 0.8211435079574585
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                103,
+                755,
+                355
+              ],
+              "confidence": 0.607641339302063
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                16,
+                127,
+                312,
+                424
+              ],
+              "confidence": 0.598882794380188
+            }
+          ],
+          "best_class_iou": 0.5683398180005789,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 73.90139999915846,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                528,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9367324709892273
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                228,
+                409,
+                682
+              ],
+              "confidence": 0.9357613325119019
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1003
+              ],
+              "confidence": 0.9126038551330566
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                550,
+                336,
+                1015
+              ],
+              "confidence": 0.9011368155479431
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 49.730800004908815,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1182
+              ],
+              "confidence": 0.9514632225036621
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                177,
+                204,
+                539,
+                580
+              ],
+              "confidence": 0.7998442649841309
+            }
+          ],
+          "best_class_iou": 0.8879551679699924,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 86.63180000439752,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 43.35199999331962,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 66.58299999253359,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-08",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.35,
+        "gamma": 0.7
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 10,
+          "matches": 3,
+          "gamma_rate": 1.0,
+          "first_preprocess_ms": 64.65469999238849,
+          "warm_mean_ms": 69.31520000216551,
+          "warm_p95_ms": 81.03194000432268
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 58.18819999694824,
+          "warm_p95_ms": 67.75600999390008
+        }
+      },
+      "changes": [],
+      "examples": [],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                62,
+                322,
+                735,
+                953
+              ],
+              "confidence": 0.8555234670639038
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                103,
+                755,
+                357
+              ],
+              "confidence": 0.6356015205383301
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                17,
+                127,
+                312,
+                425
+              ],
+              "confidence": 0.5220698714256287
+            }
+          ],
+          "best_class_iou": 0.5688517819000245,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 64.65469999238849,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 5,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                529,
+                227,
+                826,
+                603
+              ],
+              "confidence": 0.9376771450042725
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                81,
+                228,
+                408,
+                681
+              ],
+              "confidence": 0.934496283531189
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1004
+              ],
+              "confidence": 0.9127644300460815
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                553,
+                336,
+                1016
+              ],
+              "confidence": 0.9017884135246277
+            },
+            {
+              "class_name": "short_sleeve_dress",
+              "bbox": [
+                357,
+                287,
+                577,
+                799
+              ],
+              "confidence": 0.514352560043335
+            }
+          ],
+          "best_class_iou": 0.6151372020852266,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 56.29659999976866,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1182
+              ],
+              "confidence": 0.9521157145500183
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                177,
+                204,
+                540,
+                582
+              ],
+              "confidence": 0.8008493185043335
+            }
+          ],
+          "best_class_iou": 0.8879551679699924,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 82.33380000456236,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 47.55730000033509,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 68.8190999935614,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-09",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.4,
+        "gamma": 0.4
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 1.0,
+          "first_preprocess_ms": 72.82740001392085,
+          "warm_mean_ms": 74.54030000371858,
+          "warm_p95_ms": 77.71703000325942
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 60.355100002198014,
+          "warm_p95_ms": 68.70674000456347
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-09-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                19,
+                127,
+                312,
+                423
+              ],
+              "confidence": 0.7151790857315063
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                57,
+                329,
+                733,
+                951
+              ],
+              "confidence": 0.6760736703872681
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                105,
+                755,
+                354
+              ],
+              "confidence": 0.5391010046005249
+            }
+          ],
+          "best_class_iou": 0.5670791585579578,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 72.82740001392085,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                527,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9399750232696533
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                227,
+                409,
+                684
+              ],
+              "confidence": 0.9396783113479614
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                533,
+                760,
+                1002
+              ],
+              "confidence": 0.9137047529220581
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                137,
+                548,
+                337,
+                1014
+              ],
+              "confidence": 0.8925576210021973
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 71.01060000422876,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                246,
+                505,
+                621,
+                1182
+              ],
+              "confidence": 0.9483862519264221
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                177,
+                205,
+                538,
+                575
+              ],
+              "confidence": 0.7296653985977173
+            }
+          ],
+          "best_class_iou": 0.8843883037785796,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 78.0700000032084,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 51.07549999956973,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 69.6347000048263,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-10",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.4,
+        "gamma": 0.5
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 1.0,
+          "first_preprocess_ms": 63.137699995422736,
+          "warm_mean_ms": 82.67760000308044,
+          "warm_p95_ms": 96.93297000485472
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 65.03080000402406,
+          "warm_p95_ms": 70.27132000221172
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-10-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                58,
+                322,
+                736,
+                953
+              ],
+              "confidence": 0.7689321637153625
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                18,
+                127,
+                312,
+                424
+              ],
+              "confidence": 0.6455182433128357
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                514,
+                105,
+                754,
+                355
+              ],
+              "confidence": 0.5616886615753174
+            }
+          ],
+          "best_class_iou": 0.5667982351825079,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 63.137699995422736,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                528,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9381745457649231
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                227,
+                407,
+                683
+              ],
+              "confidence": 0.9360740780830383
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1003
+              ],
+              "confidence": 0.9136744737625122
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                547,
+                338,
+                1015
+              ],
+              "confidence": 0.8926352262496948
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 66.83830000110902,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1182
+              ],
+              "confidence": 0.9503525495529175
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                177,
+                204,
+                539,
+                577
+              ],
+              "confidence": 0.7730798721313477
+            }
+          ],
+          "best_class_iou": 0.8879551679699924,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 98.51690000505187,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 59.208000006037764,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 70.85360000201035,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-11",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.4,
+        "gamma": 0.6
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 9,
+          "matches": 2,
+          "gamma_rate": 1.0,
+          "first_preprocess_ms": 60.78919999708887,
+          "warm_mean_ms": 87.65715000481578,
+          "warm_p95_ms": 96.07372500395286
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 72.61714999913238,
+          "warm_p95_ms": 85.5033950007055
+        }
+      },
+      "changes": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss"
+        }
+      ],
+      "examples": [
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "outcome": "loss",
+          "image": "B1-11-loss-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+          "author": "Canadian Film Centre from Toronto, Canada",
+          "license": "CC BY 2.0",
+          "license_url": null
+        }
+      ],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                61,
+                321,
+                736,
+                953
+              ],
+              "confidence": 0.8211435079574585
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                103,
+                755,
+                355
+              ],
+              "confidence": 0.607641339302063
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                16,
+                127,
+                312,
+                424
+              ],
+              "confidence": 0.598882794380188
+            }
+          ],
+          "best_class_iou": 0.5683398180005789,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 60.78919999708887,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 4,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                528,
+                226,
+                826,
+                603
+              ],
+              "confidence": 0.9367324709892273
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                80,
+                228,
+                409,
+                682
+              ],
+              "confidence": 0.9357613325119019
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1003
+              ],
+              "confidence": 0.9126038551330566
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                550,
+                336,
+                1015
+              ],
+              "confidence": 0.9011368155479431
+            }
+          ],
+          "best_class_iou": 0.0,
+          "matched": false,
+          "gamma_applied": true,
+          "preprocess_ms": 78.30540000577457,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1182
+              ],
+              "confidence": 0.9514632225036621
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                177,
+                204,
+                539,
+                580
+              ],
+              "confidence": 0.7998442649841309
+            }
+          ],
+          "best_class_iou": 0.8879551679699924,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 97.00890000385698,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 58.299099997384474,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 86.93520000088029,
+          "first_call": false
+        }
+      ]
+    },
+    {
+      "name": "B1-12",
+      "config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.4,
+        "gamma": 0.7
+      },
+      "summary": {
+        "dark": {
+          "images": 3,
+          "detections": 10,
+          "matches": 3,
+          "gamma_rate": 1.0,
+          "first_preprocess_ms": 68.72139999177307,
+          "warm_mean_ms": 69.20594999974128,
+          "warm_p95_ms": 81.12847499724012
+        },
+        "normal": {
+          "images": 2,
+          "detections": 3,
+          "matches": 1,
+          "gamma_rate": 0.0,
+          "first_preprocess_ms": null,
+          "warm_mean_ms": 52.63875000673579,
+          "warm_p95_ms": 62.842545007151784
+        }
+      },
+      "changes": [],
+      "examples": [],
+      "rows": [
+        {
+          "query_id": "real_green_tshirt_01",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            278.4,
+            396.8,
+            768.0,
+            960.0
+          ],
+          "detection_count": 3,
+          "predictions": [
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                62,
+                322,
+                735,
+                953
+              ],
+              "confidence": 0.8555234670639038
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                513,
+                103,
+                755,
+                357
+              ],
+              "confidence": 0.6356015205383301
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                17,
+                127,
+                312,
+                425
+              ],
+              "confidence": 0.5220698714256287
+            }
+          ],
+          "best_class_iou": 0.5688517819000245,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 68.72139999177307,
+          "first_call": true
+        },
+        {
+          "query_id": "real_black_dress_02",
+          "lighting_group": "dark",
+          "class_name": "short_sleeve_dress",
+          "target_bbox": [
+            336.0,
+            324.0,
+            595.2,
+            948.0
+          ],
+          "detection_count": 5,
+          "predictions": [
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                529,
+                227,
+                826,
+                603
+              ],
+              "confidence": 0.9376771450042725
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                81,
+                228,
+                408,
+                681
+              ],
+              "confidence": 0.934496283531189
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                570,
+                534,
+                759,
+                1004
+              ],
+              "confidence": 0.9127644300460815
+            },
+            {
+              "class_name": "trousers",
+              "bbox": [
+                136,
+                553,
+                336,
+                1016
+              ],
+              "confidence": 0.9017884135246277
+            },
+            {
+              "class_name": "short_sleeve_dress",
+              "bbox": [
+                357,
+                287,
+                577,
+                799
+              ],
+              "confidence": 0.514352560043335
+            }
+          ],
+          "best_class_iou": 0.6151372020852266,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 55.958700002520345,
+          "first_call": false
+        },
+        {
+          "query_id": "real_black_trousers_02",
+          "lighting_group": "dark",
+          "class_name": "trousers",
+          "target_bbox": [
+            247.07999999999998,
+            550.4,
+            613.4399999999999,
+            1203.1999999999998
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                247,
+                506,
+                621,
+                1182
+              ],
+              "confidence": 0.9521157145500183
+            },
+            {
+              "class_name": "long_sleeve_top",
+              "bbox": [
+                177,
+                204,
+                540,
+                582
+              ],
+              "confidence": 0.8008493185043335
+            }
+          ],
+          "best_class_iou": 0.8879551679699924,
+          "matched": true,
+          "gamma_applied": true,
+          "preprocess_ms": 82.45319999696221,
+          "first_call": false
+        },
+        {
+          "query_id": "real_white_shirt_02",
+          "lighting_group": "normal",
+          "class_name": "short_sleeve_top",
+          "target_bbox": [
+            316.8,
+            258.52000000000004,
+            652.8000000000001,
+            550.76
+          ],
+          "detection_count": 2,
+          "predictions": [
+            {
+              "class_name": "trousers",
+              "bbox": [
+                356,
+                455,
+                608,
+                1026
+              ],
+              "confidence": 0.8932934403419495
+            },
+            {
+              "class_name": "short_sleeve_top",
+              "bbox": [
+                432,
+                265,
+                628,
+                515
+              ],
+              "confidence": 0.6245610117912292
+            }
+          ],
+          "best_class_iou": 0.49901907108312793,
+          "matched": false,
+          "gamma_applied": false,
+          "preprocess_ms": 41.301200006273575,
+          "first_call": false
+        },
+        {
+          "query_id": "real_red_dress_02",
+          "lighting_group": "normal",
+          "class_name": "vest_dress",
+          "target_bbox": [
+            121.88,
+            294.40000000000003,
+            393.34,
+            729.5999999999999
+          ],
+          "detection_count": 1,
+          "predictions": [
+            {
+              "class_name": "vest_dress",
+              "bbox": [
+                132,
+                215,
+                386,
+                724
+              ],
+              "confidence": 0.8622387647628784
+            }
+          ],
+          "best_class_iou": 0.7889579436446714,
+          "matched": true,
+          "gamma_applied": false,
+          "preprocess_ms": 63.976300007198006,
+          "first_call": false
+        }
+      ]
+    }
+  ],
+  "selected_candidate": "B1-04",
+  "meets_validation_gate": false
+}

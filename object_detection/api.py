@@ -5,10 +5,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 try:
     from .detector import ClothingDetector
+    from .image_preprocessing import ImageDecodeError
     from .schemas import DetectionResponse, HealthResponse
     from .utils import crops_to_response
 except ImportError:
     from detector import ClothingDetector
+    from image_preprocessing import ImageDecodeError
     from schemas import DetectionResponse, HealthResponse
     from utils import crops_to_response
 
@@ -47,6 +49,8 @@ async def detect_from_upload(file: UploadFile = File(...)):
 
     try:
         crops = detector.detect_from_bytes(image_bytes)
+    except ImageDecodeError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
     except FileNotFoundError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
     except Exception as exc:

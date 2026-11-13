@@ -1,0 +1,209 @@
+{
+  "dark": {
+    "upload": "dark.png",
+    "modes": {
+      "identity": {
+        "source_rgb": "dark.identity.source_rgb.png",
+        "detection_rgb": "dark.identity.detection_rgb.png",
+        "schema_version": 1,
+        "geometry_meta": {
+          "raw_width": 96,
+          "raw_height": 64,
+          "exif_orientation": 1,
+          "exif_transposed": false,
+          "oriented_width": 96,
+          "oriented_height": 64,
+          "width": 96,
+          "height": 64,
+          "scale": 1.0,
+          "resized": false,
+          "resize_interpolation": "lanczos"
+        },
+        "quality_meta": {
+          "mode": "identity",
+          "mean_luma": 0.13420010914522063,
+          "median_luma": 0.13217647058823528,
+          "p5_luma": 0.13217647058823528,
+          "p95_luma": 0.15585882352941177,
+          "brightness_threshold": 0.35,
+          "brightness_stat": "mean_luma",
+          "input_mode": "RGB",
+          "alpha_composited": false,
+          "gamma_applied": false,
+          "gamma": null,
+          "preprocess_ms": null
+        }
+      },
+      "gamma": {
+        "source_rgb": "dark.gamma.source_rgb.png",
+        "detection_rgb": "dark.gamma.detection_rgb.png",
+        "schema_version": 1,
+        "geometry_meta": {
+          "raw_width": 96,
+          "raw_height": 64,
+          "exif_orientation": 1,
+          "exif_transposed": false,
+          "oriented_width": 96,
+          "oriented_height": 64,
+          "width": 96,
+          "height": 64,
+          "scale": 1.0,
+          "resized": false,
+          "resize_interpolation": "lanczos"
+        },
+        "quality_meta": {
+          "mode": "gamma",
+          "mean_luma": 0.13420010914522063,
+          "median_luma": 0.13217647058823528,
+          "p5_luma": 0.13217647058823528,
+          "p95_luma": 0.15585882352941177,
+          "brightness_threshold": 0.35,
+          "brightness_stat": "mean_luma",
+          "input_mode": "RGB",
+          "alpha_composited": false,
+          "gamma_applied": true,
+          "gamma": 0.6,
+          "preprocess_ms": null
+        }
+      }
+    }
+  },
+  "normal": {
+    "upload": "normal.png",
+    "modes": {
+      "identity": {
+        "source_rgb": "normal.identity.source_rgb.png",
+        "detection_rgb": "normal.identity.detection_rgb.png",
+        "schema_version": 1,
+        "geometry_meta": {
+          "raw_width": 96,
+          "raw_height": 64,
+          "exif_orientation": 1,
+          "exif_transposed": false,
+          "oriented_width": 96,
+          "oriented_height": 64,
+          "width": 96,
+          "height": 64,
+          "scale": 1.0,
+          "resized": false,
+          "resize_interpolation": "lanczos"
+        },
+        "quality_meta": {
+          "mode": "identity",
+          "mean_luma": 0.7639222713694852,
+          "median_luma": 0.780113725490196,
+          "p5_luma": 0.5906274509803923,
+          "p95_luma": 0.780113725490196,
+          "brightness_threshold": 0.35,
+          "brightness_stat": "mean_luma",
+          "input_mode": "RGB",
+          "alpha_composited": false,
+          "gamma_applied": false,
+          "gamma": null,
+          "preprocess_ms": null
+        }
+      },
+      "gamma": {
+        "source_rgb": "normal.gamma.source_rgb.png",
+        "detection_rgb": "normal.gamma.detection_rgb.png",
+        "schema_version": 1,
+        "geometry_meta": {
+          "raw_width": 96,
+          "raw_height": 64,
+          "exif_orientation": 1,
+          "exif_transposed": false,
+          "oriented_width": 96,
+          "oriented_height": 64,
+          "width": 96,
+          "height": 64,
+          "scale": 1.0,
+          "resized": false,
+          "resize_interpolation": "lanczos"
+        },
+        "quality_meta": {
+          "mode": "gamma",
+          "mean_luma": 0.7639222713694852,
+          "median_luma": 0.780113725490196,
+          "p5_luma": 0.5906274509803923,
+          "p95_luma": 0.780113725490196,
+          "brightness_threshold": 0.35,
+          "brightness_stat": "mean_luma",
+          "input_mode": "RGB",
+          "alpha_composited": false,
+          "gamma_applied": false,
+          "gamma": null,
+          "preprocess_ms": null
+        }
+      }
+    }
+  },
+  "exif6": {
+    "upload": "exif6.jpg",
+    "modes": {
+      "identity": {
+        "source_rgb": "exif6.identity.source_rgb.png",
+        "detection_rgb": "exif6.identity.detection_rgb.png",
+        "schema_version": 1,
+        "geometry_meta": {
+          "raw_width": 96,
+          "raw_height": 64,
+          "exif_orientation": 6,
+          "exif_transposed": true,
+          "oriented_width": 64,
+          "oriented_height": 96,
+          "width": 64,
+          "height": 96,
+          "scale": 1.0,
+          "resized": false,
+          "resize_interpolation": "lanczos"
+        },
+        "quality_meta": {
+          "mode": "identity",
+          "mean_luma": 0.7439427466299019,
+          "median_luma": 0.780113725490196,
+          "p5_luma": 0.35662745098039217,
+          "p95_luma": 0.780113725490196,
+          "brightness_threshold": 0.35,
+          "brightness_stat": "mean_luma",
+          "input_mode": "RGB",
+          "alpha_composited": false,
+          "gamma_applied": false,
+          "gamma": null,
+          "preprocess_ms": null
+        }
+      },
+      "gamma": {
+        "source_rgb": "exif6.gamma.source_rgb.png",
+        "detection_rgb": "exif6.gamma.detection_rgb.png",
+        "schema_version": 1,
+        "geometry_meta": {
+          "raw_width": 96,
+          "raw_height": 64,
+          "exif_orientation": 6,
+          "exif_transposed": true,
+          "oriented_width": 64,
+          "oriented_height": 96,
+          "width": 64,
+          "height": 96,
+          "scale": 1.0,
+          "resized": false,
+          "resize_interpolation": "lanczos"
+        },
+        "quality_meta": {
+          "mode": "gamma",
+          "mean_luma": 0.7439427466299019,
+          "median_luma": 0.780113725490196,
+          "p5_luma": 0.35662745098039217,
+          "p95_luma": 0.780113725490196,
+          "brightness_threshold": 0.35,
+          "brightness_stat": "mean_luma",
+          "input_mode": "RGB",
+          "alpha_composited": false,
+          "gamma_applied": false,
+          "gamma": null,
+          "preprocess_ms": null
+        }
+      }
+    }
+  }
+}
