@@ -1,0 +1,17 @@
+{
+  "targets": 20,
+  "label_status_counts": {
+    "pending_human_review": 20
+  },
+  "mask_status_counts": {
+    "not_annotated": 15,
+    "pending_human_review": 5
+  },
+  "assistant_polygon_suggestions": 5,
+  "reference_mask_files": 0,
+  "requested_masks_by_split": {
+    "validation": 2,
+    "test": 3
+  },
+  "independent_test": false
+}

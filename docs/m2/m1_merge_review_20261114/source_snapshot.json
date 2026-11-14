@@ -1,0 +1,29 @@
+﻿{
+    "date":  "2026-11-14",
+    "base_head":  "2129af116ea1a74a77e71174345c8eb6f424f0eb",
+    "merge_head":  "f97584dace7b9a09aa15c7cb52edb3be3093e8ee",
+    "runtime_image":  "sha256:516f3a0ede72e113a574dc66885e004c14cdfe91f0b1adf8bd341953f70af46d",
+    "test_environment_image":  "sha256:76fe255023309ed490cd638a3c75b9b6c8ca0c6d943e5bf5a0fc2e6f74c99b30",
+    "frozen_phase1_image":  "sha256:2041a2f15f8df30272144b3dd9ee6861382f4b2e67156c03c915521f60ae46b3",
+    "model_sha256":  "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+    "defaults":  {
+                     "preprocess":  "identity",
+                     "mask_calibration":  "pending",
+                     "mask":  "off"
+                 },
+    "source_sha256":  {
+                          "object_detection/api.py":  "c422b309ce9bdcf395170248519ab539dad45d198f5da4343292a5a450af62f9",
+                          "object_detection/detector.py":  "b3f35e55810a0d785b592d2360323774ec5929d8c28439e849172d4ba6f681cd",
+                          "object_detection/image_preprocessing.py":  "8423ac114ff6f6388825ae2822a453288183839762f9605f0a396c47ac5b4665",
+                          "object_detection/roi.py":  "4962996c31b52e7a015d764d3cf6b3992dc0d20a4b53466edad82c5edc97b149",
+                          "object_detection/segmentation.py":  "dbe38f6b979269eb7985d2341cb3a9910fdd713238b1587f5659a2d03518777a",
+                          "object_detection/schemas.py":  "230638408dfc0b40fde8a4e75ed55259a41f371b817c49137e86dfc1a4b46b45",
+                          "object_detection/utils.py":  "68963a3d00812b8ebfba2a78cb229cb7332f70eae5db9c42d21e3e01e11f6b51",
+                          "AI/features.py":  "91bacbff6be2db18beba3ae4a02c851167a0d3b0732e5fae3496d183ba27b97c",
+                          "AI/hsv_descriptor.py":  "6310632b0d92cd24442e535f542980c5cfa332cd71b611652191d249b34ff14f",
+                          "docker-compose.yml":  "daa6dcb11267baf9fb931f05d9116f52350ef6d4e788e611324c36e00b6e5190",
+                          "evaluation/check_m1_m2_m3_integration.py":  "9a311e6b3dbc40d85f3b46056b31e614a91da768827bc71b72b4703573446be9",
+                          "tests/test_m1_m2_m3_integration.py":  "188587a04f20e969a08cc2e0e2eb633a3f2879c029ec586230059e0a9a40d634"
+                      },
+    "scope":  "Real detection TCP plus offline suite; no live encoder, DB, retrieval quality or human mask GT"
+}

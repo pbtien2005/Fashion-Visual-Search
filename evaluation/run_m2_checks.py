@@ -14,11 +14,12 @@ ROOT = Path(__file__).resolve().parents[1]
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", default="docs/m2/phase3")
+    parser.add_argument("--coverage-source", default="object_detection,AI.features,AI.hsv_descriptor")
     args = parser.parse_args()
     output = ROOT / args.output
     output.mkdir(parents=True, exist_ok=True)
     command = [sys.executable, "-m", "coverage", "run", "--append",
-               "--source=object_detection,AI.features,AI.hsv_descriptor", "-m", "unittest", "discover", "-s", "tests", "-v"]
+               "--source=" + args.coverage_source, "-m", "unittest", "discover", "-s", "tests", "-v"]
     with (output / "tests.txt").open("w", encoding="utf-8") as stream:
         completed = subprocess.run(command, cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT)
     log = (output / "tests.txt").read_text(encoding="utf-8")

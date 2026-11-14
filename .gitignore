@@ -64,6 +64,8 @@ tmp/
 .coverage
 htmlcov/
 output/m2/runs/
+output/m2/review/
+output/m2/handoff/
 
 # M2 reproducible contract fixtures and reviewed evidence
 !tests/fixtures/m2/*.json
@@ -73,6 +75,15 @@ output/m2/runs/
 !docs/m2/phase2/*.json
 !docs/m2/m3_merge_review_20261109/evidence.json
 !docs/m2/phase3/*.json
+!docs/m2/m1_merge_review_20261114/*.json
+!docs/m2/phase4/*.json
+!docs/m2/phase4/regression_pending/*.json
+!docs/m2/phase4/review1/*.json
+!docs/m2/phase4/review2/*.json
+!docs/m2/phase5/*.json
+!docs/m2/phase5/validation/*.json
+!docs/m2/phase5/test/*.json
+!docs/m2/phase5/runtime_smoke/*.json
 # Reproducible M3 diagnostic reports (separate from production catalogs/caches)
 !docs/m3_results/**/report.json
 !docs/m3_results/catalog_manifest.json
@@ -82,3 +93,6 @@ output/m2/runs/
 !docs/m3_contract/*.json
 !docs/m3_handoff_evidence/*.json
 !docs/m3_production_evidence/*.json
+
+# Personal reading, reports, slides, plans and course materials stay local
+/docs/local/

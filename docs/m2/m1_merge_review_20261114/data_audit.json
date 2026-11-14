@@ -1,0 +1,45 @@
+{
+  "splits": {
+    "validation": {
+      "csv_sha256": "e09df77d53ee4f495db2abe46e058d8deb5b5b4693eef2ac8f427c46fb609f7b",
+      "count": 5,
+      "overlap_m2_development": [
+        "real_green_tshirt_01",
+        "real_black_dress_02",
+        "real_black_trousers_02",
+        "real_white_shirt_02",
+        "real_red_dress_02"
+      ],
+      "not_in_m2_regression": [],
+      "mask_reference_count": 0,
+      "review_status": "imported_M1_labels_require_M2_review_not_independent_M2_test"
+    },
+    "test": {
+      "csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "count": 15,
+      "overlap_m2_development": [
+        "real_green_tshirt_02",
+        "real_blue_jeans_02",
+        "real_black_dress_01",
+        "real_blue_jeans_01",
+        "real_black_trousers_01",
+        "real_white_shirt_01",
+        "real_black_skirt_01",
+        "real_black_skirt_02",
+        "real_shorts_01",
+        "real_shorts_02"
+      ],
+      "not_in_m2_regression": [
+        "m1_stage",
+        "m1_harajuku",
+        "m1_tony",
+        "m1_brisbane",
+        "m1_ostau"
+      ],
+      "mask_reference_count": 0,
+      "review_status": "imported_M1_labels_require_M2_review_not_independent_M2_test"
+    }
+  },
+  "validation_test_hash_overlap": [],
+  "limitation": "M1 report discloses AI-assisted initial labels; do not invent human cross-review or masks."
+}

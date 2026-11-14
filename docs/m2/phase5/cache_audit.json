@@ -1,0 +1,21 @@
+{
+  "production_cache": {
+    "host_source": "data/color_cache_hsv147.json",
+    "compose_target": "/app/color-cache/catalog.json",
+    "status": "missing",
+    "candidate_id_coverage": "not_verified_no_live_catalog_snapshot"
+  },
+  "diagnostic_cache": {
+    "entries": 28,
+    "sha256": "135eac04748c2d68c174f27e8d3d9830c0d13d26d0b1dd31a7e4294d34b52092",
+    "roi_policies": [
+      "whole_catalog_photo_v1"
+    ],
+    "status": "diagnostic_sample_only"
+  },
+  "sample_cache_is_production": false,
+  "product_retrieval": "not_measured",
+  "reason": "No verified live candidate/catalog/relevance snapshot; never substitute the 28-photo diagnostic cache.",
+  "missing_color_policy": "zero",
+  "reference_color_metric": "Real HSV147 Hellinger similarity to reviewed clothing pixels, not product retrieval."
+}

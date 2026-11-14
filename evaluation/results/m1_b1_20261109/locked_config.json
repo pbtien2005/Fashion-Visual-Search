@@ -1,0 +1,31 @@
+{
+  "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+  "conf": 0.5,
+  "crop_config": {
+    "expand_ratio": 0.15,
+    "wide_expand_ratio": 0.3
+  },
+  "validation_images": [
+    "208ce8b38d8b11b94be95503927dcd14cf259f8d1d016ec381cb739da298f6ce",
+    "27f0e30f8a94156a1e5b6176db26daec9fb4d8e9c5cfe3ae69a711ac41ac7907",
+    "48a1aad15f9cf6a2334ed062e37bf5b40bc01e4140f62e4f6a2562337f6f2ef2",
+    "f1efec1485f2a976a88c165e43451bfbae685f12ed535b8b7be08b5e4e7bb29f",
+    "f26b568338c392c0ab8722f7b2e8bf257c0c05401c2d03bdfec7cd8dbeb3db4c"
+  ],
+  "baseline": {
+    "mode": "identity",
+    "max_side": 1280,
+    "max_pixels": 50000000,
+    "brightness_stat": "mean_luma",
+    "brightness_threshold": 0.35,
+    "gamma": 0.6
+  },
+  "candidate": {
+    "mode": "gamma",
+    "max_side": 1280,
+    "max_pixels": 50000000,
+    "brightness_stat": "mean_luma",
+    "brightness_threshold": 0.3,
+    "gamma": 0.7
+  }
+}

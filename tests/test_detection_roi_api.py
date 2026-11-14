@@ -29,7 +29,7 @@ class DetectionROIAPITests(unittest.TestCase):
         self.assertEqual(crop["garment_id"], "http_fixture_g000")
         self.assertTrue(crop["source_crop_png_base64"])
         self.assertIsNone(crop["mask_png_base64"])
-        self.assertEqual(crop["roi_metadata"]["geometry_mode"], "legacy_identity")
+        self.assertEqual(crop["roi_metadata"]["geometry_mode"], "m1_prepared")
 
     def test_no_detection_keeps_legacy_behavior_and_new_request_metadata(self):
         with patch.object(type(detector), "model_available", new_callable=PropertyMock, return_value=True):

@@ -1,0 +1,35 @@
+{
+    "date":  "2026-11-14",
+    "base_head":  "2129af116ea1a74a77e71174345c8eb6f424f0eb",
+    "merge_head":  "f97584dace7b9a09aa15c7cb52edb3be3093e8ee",
+    "phase":  "4",
+    "status":  "code_and_pipeline_verified_human_review_pending",
+    "model_sha256":  "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+    "dependency_image":  "fashion-m2:phase3-tests",
+    "cpu_limit":  2,
+    "memory_limit":  "3GiB",
+    "dataset_kind":  "shared_M1_regression_not_independent",
+    "reviewed_targets":  0,
+    "reviewed_reference_masks":  0,
+    "assistant_mask_suggestions":  5,
+    "defaults":  {
+                     "preprocess":  "identity",
+                     "mask":  "off"
+                 },
+    "source_sha256":  {
+                          "evaluation/m2_annotations.py":  "8794be66a29c6ad310ec5067a3051fe9f3da87904a1512e3aa5ee1cede20329b",
+                          "evaluation/m2_metrics.py":  "c8982673c23b9c9b87cf39753bf33b2b5147ce00c4736dfa83c8647c452e752b",
+                          "evaluation/run_m2_eval.py":  "7ac42db32d4be11dfa3489a77cfe2f199fa307e5ae78dd68654590e00ea446eb",
+                          "evaluation/prepare_m2_annotations.py":  "2a9b48cf0ef416b347660408d05cea068f064c469f099d786594aec3f1b60da5",
+                          "evaluation/prepare_m2_mask_drafts.py":  "7457dd8fce7c34423ea36bfc9663c41483068ad0281c7a0958f2f5886a04808f",
+                          "evaluation/m2_review.html":  "4dacf957af83fd467cd0ef5d2189d9c5f296630a075178a7d413e44bd2aa69d5",
+                          "evaluation/check_m2_review_ui.py":  "72fa23bd977464443488739bda7ef5ea1fc92f2dbf8698442eba7842b2248a26",
+                          "evaluation/run_m2_checks.py":  "b21dca18b96da796c63e1a8d1fd8bd13ac4552164fd13329259c3113ddb6bd2c",
+                          "evaluation/m2/annotations.m1.pending.json":  "04486bc7f3145fd2a68858f0424a37c742d56c87e4aa34c1fa0be9fa7713df31",
+                          "evaluation/m2/mask_drafts.ai.json":  "5b0edac0f85d14cf94203f20ca78acc0afc20d5ce88a9de3761c5fb34d7f36d3",
+                          "evaluation/m2/annotations.m1.with_drafts.pending.json":  "cfebd4539fe749d37a61db00318a433c70840b1258fcf2cb4e260c6c10f31bac",
+                          "tests/test_m2_metrics.py":  "2b9c76d6b51756a2aebfffcedcf346f1da2d2ce4013568d937962f7e2556206f",
+                          "tests/test_m2_annotations.py":  "fc29ef51d288cc676b180631f047bc60fe47b84cbcada253dbbe6246fdc6df90",
+                          "tests/test_m2_eval.py":  "23cc574de6cbece34ef5c2329e5575beb1027926bca4956723adb1329d77aeae"
+                      }
+}

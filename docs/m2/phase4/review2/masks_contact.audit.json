@@ -1,0 +1,65 @@
+{
+  "scope": "reference_and_saved_prediction_masks_no_model_inference",
+  "checks": [
+    {
+      "query_id": "real_black_dress_02",
+      "mode": "raw",
+      "saved_IoU": 0.7138847343727591,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "real_black_dress_02",
+      "mode": "open_close",
+      "saved_IoU": 0.7179134222258747,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "real_white_shirt_02",
+      "mode": "raw",
+      "saved_IoU": 0.7187303324668217,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "real_white_shirt_02",
+      "mode": "open_close",
+      "saved_IoU": 0.726299778761062,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "m1_harajuku",
+      "mode": "raw",
+      "saved_IoU": 0.0,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "m1_harajuku",
+      "mode": "open_close",
+      "saved_IoU": 0.0,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "m1_brisbane",
+      "mode": "raw",
+      "saved_IoU": 0.9106027152722319,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "m1_brisbane",
+      "mode": "open_close",
+      "saved_IoU": 0.920757032282424,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "m1_ostau",
+      "mode": "raw",
+      "saved_IoU": 0.0,
+      "recomputed_exact": true
+    },
+    {
+      "query_id": "m1_ostau",
+      "mode": "open_close",
+      "saved_IoU": 0.0,
+      "recomputed_exact": true
+    }
+  ]
+}

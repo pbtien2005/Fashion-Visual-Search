@@ -144,10 +144,10 @@ class DetectionROITests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.detect(detector_with([]), quality_meta={"invalid": float("nan")})
 
-    def test_adapter_from_bytes_records_identity_and_returns_rgb_source(self):
+    def test_adapter_from_bytes_records_m1_geometry_and_returns_rgb_source(self):
         detector = detector_with([fake_box([32, 16, 96, 80])])
         batch = detector.detect_batch_from_bytes((FIXTURES / "source_rgb.png").read_bytes(), query_id="upload")
-        self.assertEqual(batch.crops[0]["roi_metadata"]["geometry_mode"], "legacy_identity")
+        self.assertEqual(batch.crops[0]["roi_metadata"]["geometry_mode"], "m1_prepared")
         self.assertTrue(np.array_equal(batch.crops[0]["source_rgb"], self.source[16:80, 32:96]))
         with self.assertRaises(ValueError):
             detector.detect_batch_from_bytes(b"not an image")

@@ -1,0 +1,94 @@
+{
+  "schema_version": "m2.phase5.lock.v1",
+  "input_fingerprint": "884d9c470ee7d64f9bcc2f1d7935e6a6f7eed1c9b1c8a3996ff313fcece8ed96",
+  "mask_modes": [
+    "off",
+    "raw",
+    "open_close"
+  ],
+  "mask_configs": {
+    "off": {
+      "mode": "off",
+      "min_side": 8,
+      "min_contrast": 15.0,
+      "min_area_fraction": 0.03,
+      "max_area_fraction": 0.95,
+      "min_center_fraction": 0.55,
+      "min_center_border_gap": 0.1,
+      "border_fraction": 0.05,
+      "max_change_fraction": 0.15,
+      "kernel_size": 3
+    },
+    "raw": {
+      "mode": "raw",
+      "min_side": 8,
+      "min_contrast": 15.0,
+      "min_area_fraction": 0.03,
+      "max_area_fraction": 0.95,
+      "min_center_fraction": 0.55,
+      "min_center_border_gap": 0.1,
+      "border_fraction": 0.05,
+      "max_change_fraction": 0.15,
+      "kernel_size": 3
+    },
+    "open_close": {
+      "mode": "open_close",
+      "min_side": 8,
+      "min_contrast": 15.0,
+      "min_area_fraction": 0.03,
+      "max_area_fraction": 0.95,
+      "min_center_fraction": 0.55,
+      "min_center_border_gap": 0.1,
+      "border_fraction": 0.05,
+      "max_change_fraction": 0.15,
+      "kernel_size": 3
+    }
+  },
+  "decision": {
+    "deployment_mode": "off",
+    "validation_reference_count": 2,
+    "criteria": {
+      "min_validation_references": 2,
+      "min_each_reference_mask_iou": 0.8,
+      "min_mean_color_similarity_gain": 0.02,
+      "max_each_color_similarity_loss": 0.01,
+      "require_all_reference_masks_delivered": true
+    },
+    "candidates": {
+      "raw": {
+        "eligible": false,
+        "reasons": [
+          "reference_mask_iou_below_engineering_guard"
+        ],
+        "mean_color_similarity_gain": 0.11949450160738062,
+        "mean_mask_iou": 0.7163075334197904
+      },
+      "open_close": {
+        "eligible": false,
+        "reasons": [
+          "reference_mask_iou_below_engineering_guard"
+        ],
+        "mean_color_similarity_gain": 0.12354336454813869,
+        "mean_mask_iou": 0.7221066004934684
+      }
+    },
+    "policy_scope": "Engineering guards for default activation; not a course requirement or statistical significance test."
+  },
+  "protocol_sha256": "fe18034d8750156b9b7dce845f49f76538bd369671a6b08d1aa16a5c9fa93930",
+  "validation_results_sha256": "e41e847434e7da953e98c93c1b6b2af55ce3df1b63a18a9c64fb04ff96653793",
+  "deployment_mask_config": {
+    "mode": "off",
+    "min_side": 8,
+    "min_contrast": 15.0,
+    "min_area_fraction": 0.03,
+    "max_area_fraction": 0.95,
+    "min_center_fraction": 0.55,
+    "min_center_border_gap": 0.1,
+    "border_fraction": 0.05,
+    "max_change_fraction": 0.15,
+    "kernel_size": 3
+  },
+  "prior_test_exposure": true,
+  "independent_test": false,
+  "lock_sha256": "483119df6159cc199c9870c82d4dc5db718bdd88b55116d64a6206d21e732bbf"
+}

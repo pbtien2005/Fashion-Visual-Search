@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "tests_run": 166,
+  "skipped": 1,
+  "passed": 165,
+  "seconds": 12.804,
+  "skip_reason": "pretrained encoder opt-in disabled; no model download or live DB in this suite",
+  "command": [
+    "-m",
+    "coverage",
+    "run",
+    "--append",
+    "--source=object_detection,AI.features,AI.hsv_descriptor,evaluation.m2_metrics,evaluation.m2_annotations,evaluation.run_m2_eval,evaluation.prepare_m2_annotations,evaluation.prepare_m2_mask_drafts",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ]
+}

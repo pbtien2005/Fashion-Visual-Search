@@ -1,10 +1,10 @@
 # Production migration: FashionCLIP + HSV147
 
-Base HEAD: `5a433e9e55201c89f5b3fa25e2dc6339d6ba66b2`, branch `vinh`. Existing handoff changes in the working tree were preserved. This change activates HSV in runtime code; the earlier independent-module reports remain historical snapshots.
+Current integration: see [M4 handoff](M4_HANDOFF.md). M1 prepares EXIF/RGB/resize once inside detection; M2 canonical source PNG takes priority for color. Production retrieval still needs a complete validated catalog/cache and live DB verification.
 
 ## Runtime flow
 
-1. `/api/search/upload` retains the uploaded RGB image after the unchanged detection call. It uses the same OpenCV decode/orientation path as M2, followed by explicit BGR→RGB, so JPEG EXIF rotation cannot silently move the bbox coordinate frame.
+1. `/api/search/upload` receives M2 detections. Canonical `source_crop_png_base64` is the authoritative color input on the M1 working canvas; the retained original RGB is only a compatibility fallback. Do not crop working-image bboxes on an upload with different EXIF/resize geometry.
 2. `extract_source_color()` selects source ROI payload, otherwise original-image bbox, otherwise explicitly recorded legacy crop. It uses the existing HSV147 extractor unchanged. A failed supplied ROI is unavailable, never RGB fallback.
 3. One query color descriptor is reused across tight/padded/wide encoder variants. `AI.features.extract_runtime_features()` runs the unchanged FashionCLIP encoder on each existing encoder crop. A valid descriptor yields the existing `M3Features` bundle; unavailable color yields an explicit `EmbeddingOnlyFeatures` result, not a fabricated histogram.
 4. Candidate retrieval remains model/version-filtered FashionCLIP/pgvector cosine search, same limits and category policy.
@@ -14,7 +14,7 @@ Base HEAD: `5a433e9e55201c89f5b3fa25e2dc6339d6ba66b2`, branch `vinh`. Existing h
 ## Ownership
 
 - M3: `AI/production_color.py`, `features.py`, `vectorizer.py`, `color_cache.py`, `rebuild_color_cache.py`, shared profile and extraction/cache tests.
-- M4 review boundary: `api/search_service.py` replaces only color preparation/lookup/similarity and derives color labels before existing text/style scoring. See [M4_HSV_INTEGRATION_REVIEW.md](M4_HSV_INTEGRATION_REVIEW.md). Category/image/text-style formulas, candidate limits, merging, match gates and weight configuration remain unchanged.
+- M4 review boundary: `api/search_service.py` replaces only color preparation/lookup/similarity and derives color labels before existing text/style scoring. See [M4_HANDOFF.md](M4_HANDOFF.md). Category/image/text-style formulas, candidate limits, merging, match gates and weight configuration remain unchanged.
 - API glue: `api/main.py` passes the original upload RGB into search; schemas and frontend files are unchanged.
 - DB compatibility: `db/database.py` retains the same columns and SQL structure. New display RGB/name metadata is derived from the HSV payload on import. Runtime search/list serialization overlays cached HSV display metadata, so old DB color values cannot re-enter scoring or display as a fallback.
 - Maintenance compatibility: `etl/backfill_product_colors.py` forwards to the color-only rebuild CLI (explicit catalog/output arguments); `db/backfill_color_names.py` refreshes display fields from the HSV sidecar instead of deriving names from legacy DB RGB.
@@ -104,13 +104,8 @@ Production tests exercise real API request/response serialization via in-process
 
 Live deployment remains dependent on full catalog images/cache, running PostgreSQL, YOLO weights/service and Docker engine. No production data was invented, no original cache overwritten, no RGB comparison benchmark run.
 
-## Final verification
+## Historical verification evidence
 
-- **72 tests passed, 0 failed, 0 skipped**, including opt-in real pretrained FashionCLIP catalog/query HTTP integration, EXIF coordinate alignment and configured detector URL handling. Final suite execution was 31.126 seconds excluding initial imports. Full [test log](m3_production_evidence/tests.txt).
-- The test environment used offline local weights; no model/processor substitutions. Only external M2/DB transport fixtures replace unavailable live services. RGB extraction/similarity/name functions were guarded with exceptions in production routing tests.
-- Color-only rebuild processed **28/28 local starter images**, 0 failures; all descriptors validated through the runtime cache reader. Detection was explicitly skipped, with original whole-image fallback and missing masks recorded. This is a sample artifact, not full production coverage or real segmentation validation.
-- `git diff --check`, `docker compose config --quiet` and scoped M4 patch reverse-apply check passed. HSV extractor, embedding model/processor module, YOLO, API schemas, frontend and previous cached artifacts have no diff from base HEAD.
-- Windows sandbox blocked asyncio's local socketpair, so HTTP/real-weight tests ran outside the sandbox; no implementation workaround was added for that host restriction.
-- Docker daemon was unavailable at check time. No live deployment, real PostgreSQL query or real YOLO inference was claimed.
+The earlier M3-only run recorded 72 passing tests including pretrained opt-in integration, with M2/DB transport fixtures. Its 28-image cache explicitly used whole-image fallback with detection skipped; it is diagnostic, not production coverage. These are historical results, not a new live deployment check.
 
-Machine-readable commands, source hashes, cache coverage and limitations: [validation.json](m3_production_evidence/validation.json). M4 review: [scoped patch](M4_HSV_INTEGRATION.patch).
+See [test log](m3_production_evidence/tests.txt) and [validation metadata](m3_production_evidence/validation.json). Current M2/M4 integration state and remaining checks are consolidated in [M4_HANDOFF](M4_HANDOFF.md).

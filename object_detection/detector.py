@@ -1,18 +1,22 @@
+import logging
 import os
 import math
 from pathlib import Path
 
 try:
     from .config import resolve_model_path
+    from .image_preprocessing import PreprocessConfig, prepare_image
     from .roi import (DetectionBatch, MINIMUM_VARIANT_SIDE, clip_bbox, copy_metadata,
                       make_roi_metadata, resolve_query_id, validate_prepared_images)
     from .segmentation import load_mask_config, segment_roi
 except ImportError:
     from config import resolve_model_path
+    from image_preprocessing import PreprocessConfig, prepare_image
     from roi import (DetectionBatch, MINIMUM_VARIANT_SIDE, clip_bbox, copy_metadata,
                      make_roi_metadata, resolve_query_id, validate_prepared_images)
     from segmentation import load_mask_config, segment_roi
 
+logger = logging.getLogger(__name__)
 
 CLASS_NAMES = {
     0: "short_sleeve_top",
@@ -51,11 +55,19 @@ def get_class_name_vi(class_name: str) -> str:
 
 
 class ClothingDetector:
-    def __init__(self, model_path: str | None = None, conf: float = 0.5, expand_ratio: float = 0.15, mask_config=None):
+    def __init__(
+        self,
+        model_path: str | None = None,
+        conf: float = 0.5,
+        expand_ratio: float = 0.15,
+        mask_config=None,
+        preprocess_config: PreprocessConfig | None = None,
+    ):
         self.model_path = resolve_model_path(model_path)
         self.conf = conf
         self.expand_ratio = expand_ratio
         self.wide_expand_ratio = float(os.getenv("OBJECT_DETECTION_WIDE_EXPAND_RATIO", "0.30"))
+        self.preprocess_config = preprocess_config if preprocess_config is not None else PreprocessConfig.from_env()
         self._model = None
         self.mask_config = mask_config if mask_config is not None else load_mask_config()
 
@@ -86,26 +98,32 @@ class ClothingDetector:
         return self.detect_batch_from_bytes(image_bytes, query_id=query_id).crops
 
     def detect_batch_from_bytes(self, image_bytes: bytes, query_id: str | None = None) -> DetectionBatch:
-        import cv2
-        import numpy as np
+        """Prepare once with M1; use its shared working canvas throughout M2/M3."""
+        prepared = prepare_image(image_bytes, self.preprocess_config)
+        logger.debug("Query preprocessing geometry=%s quality=%s", prepared.geometry_meta, prepared.quality_meta)
+        geometry = dict(
+            prepared.geometry_meta, mode="m1_prepared", schema_version=prepared.schema_version,
+            working_width=prepared.source_rgb.shape[1], working_height=prepared.source_rgb.shape[0],
+            scale_x=prepared.geometry_meta["width"] / prepared.geometry_meta["oriented_width"],
+            scale_y=prepared.geometry_meta["height"] / prepared.geometry_meta["oriented_height"],
+        )
+        return self.detect_prepared(
+            prepared.source_rgb, prepared.detection_rgb, query_id=query_id,
+            geometry_meta=geometry, quality_meta=prepared.quality_meta,
+        )
 
-        if not image_bytes:
-            raise ValueError("Could not decode empty uploaded image bytes")
-        nparr = np.frombuffer(image_bytes, np.uint8)
-        image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-        if image is None:
-            raise ValueError("Could not decode uploaded image bytes")
-        return self._batch_from_bgr(image, query_id=query_id)
-
-    def _batch_from_bgr(self, image, query_id=None) -> DetectionBatch:
+    def _batch_from_bgr(self, image, query_id=None, detection_image=None) -> DetectionBatch:
         import cv2
 
         source_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        detection_rgb = source_rgb if detection_image is None else cv2.cvtColor(detection_image, cv2.COLOR_BGR2RGB)
         return self.detect_prepared(
-            source_rgb, source_rgb, query_id=query_id,
-            geometry_meta={"mode": "legacy_identity", "working_width": image.shape[1],
+            source_rgb, detection_rgb, query_id=query_id,
+            geometry_meta={"mode": "legacy_identity" if detection_image is None else "prepared_bgr",
+                           "working_width": image.shape[1],
                            "working_height": image.shape[0], "exif_policy": "legacy_opencv_unverified"},
-            quality_meta={"preprocessing_mode": "legacy_identity", "gamma_enabled": False},
+            quality_meta={"preprocessing_mode": "legacy_identity" if detection_image is None else "caller_prepared",
+                          "gamma_enabled": False if detection_image is None else None},
         )
 
     def _make_crop_variant(
@@ -161,9 +179,9 @@ class ClothingDetector:
             "crop_strategy": strategy,
         }
 
-    def _process(self, image) -> list[dict]:
+    def _process(self, image, detection_image=None) -> list[dict]:
         """Backward-compatible BGR entry point for existing offline callers."""
-        return self._batch_from_bgr(image).crops
+        return self._batch_from_bgr(image, detection_image=detection_image).crops
 
     def detect_prepared(
         self, source_rgb, detection_rgb, *, query_id=None, geometry_meta=None, quality_meta=None,

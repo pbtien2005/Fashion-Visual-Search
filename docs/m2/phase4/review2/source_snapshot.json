@@ -1,0 +1,25 @@
+{
+    "date":  "2026-11-14",
+    "base_head":  "2129af116ea1a74a77e71174345c8eb6f424f0eb",
+    "merge_head":  "f97584dace7b9a09aa15c7cb52edb3be3093e8ee",
+    "model_sha256":  "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+    "HSV_version":  "hsv-hs-v1-147-b0681e3cbf842188",
+    "reviewed_targets":  20,
+    "reviewed_reference_masks":  5,
+    "independent_test":  false,
+    "runtime":  "Docker CPU dependency image fashion-m2:phase3-tests with workspace source",
+    "cpu_limit":  2,
+    "memory_limit":  "3GiB",
+    "defaults":  {
+                     "preprocess":  "identity",
+                     "mask":  "off"
+                 },
+    "source_sha256":  {
+                          "evaluation/m2/annotations.review2.json":  "abed394805e5bfa9d97dd05b5d33236aeeaa5378b27317e9d3b2707a3aedd58f",
+                          "evaluation/render_m2_reference_contact.py":  "a0cab328449412dc6608eff022895aca4faf5a47afac4091325eab2106d308eb",
+                          "evaluation/m2_annotations.py":  "8794be66a29c6ad310ec5067a3051fe9f3da87904a1512e3aa5ee1cede20329b",
+                          "evaluation/m2_metrics.py":  "c8982673c23b9c9b87cf39753bf33b2b5147ce00c4736dfa83c8647c452e752b",
+                          "evaluation/run_m2_eval.py":  "7ac42db32d4be11dfa3489a77cfe2f199fa307e5ae78dd68654590e00ea446eb"
+                      },
+    "verification":  "20 targets 60 mode rows 0 errors; 10 mask overlay IoUs reproduced exactly; 5 binary reference checksums verified"
+}

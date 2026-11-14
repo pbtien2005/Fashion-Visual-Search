@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "health": {
+    "status": "ok",
+    "model_path": "/models/object-detection/best.pt",
+    "model_available": true,
+    "model_loaded": false
+  },
+  "http_status": 200,
+  "default_preprocess_mode": "identity",
+  "default_mask_mode": "off",
+  "crops": [
+    {
+      "garment_id": "tcp_merge_g000",
+      "source_png_exact": true,
+      "HSV_valid_pixels": 424704
+    },
+    {
+      "garment_id": "tcp_merge_g001",
+      "source_png_exact": true,
+      "HSV_valid_pixels": 63423
+    }
+  ],
+  "invalid_upload_after_model_load": 400,
+  "scope": "live_TCP_detection_service_to_M3_no_encoder_DB"
+}
