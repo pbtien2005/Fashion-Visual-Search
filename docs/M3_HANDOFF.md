@@ -1,5 +1,7 @@
 # M3 — Feature Extraction: bàn giao độc lập
 
+> Cập nhật M2 phase 3 (09/11/2026): adapter ưu tiên `source_crop_png_base64`/`mask_png_base64`, giữ alias cũ; metadata M2 nằm dưới `m2_roi_metadata`, runtime ưu tiên garment_id. Xem [hợp đồng hiện tại](M2_CONTRACT.md) và [kiểm chứng phase 3](m2/phase3/RESULTS.md). HSV147/encoder/ranking formula không đổi trong phần nối này; kết quả gốc bên dưới vẫn là snapshot handoff.
+
 > Cập nhật sau quyết định chuyển production sang HSV147: xem [M3_HSV_PRODUCTION.md](M3_HSV_PRODUCTION.md) và [M4_HSV_INTEGRATION_REVIEW.md](M4_HSV_INTEGRATION_REVIEW.md). Các nhận xét “API chưa nối HSV” bên dưới là snapshot của giai đoạn handoff trước, không mô tả code production sau cập nhật.
 
 Ngày kiểm chứng: 2026-11-08. Base branch `vinh`, commit `5a433e9e55201c89f5b3fa25e2dc6339d6ba66b2`; thay đổi handoff nằm trên working tree sau commit này. Báo cáo inference ghi source hashes để xác định đúng code đã chạy.

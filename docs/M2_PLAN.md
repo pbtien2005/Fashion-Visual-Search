@@ -4,6 +4,10 @@ Ngày lập: 05/11/2026. Chủ việc: Người 2. Hạn theo tài liệu bàn g
 
 Cập nhật 07/11/2026: phase 1 và phase 2 đã hoàn thành bằng Docker CPU; ROI nguồn/PNG HTTP và legacy JPEG đã được kiểm trên model thật. Xem `M2_PROGRESS.md`, `M2_ENVIRONMENT.md` và `docs/m2/phase2/RESULTS.md`; bước tiếp theo là phase 3. Các mốc trong bảng lịch ban đầu chỉ là dự trù, không phải trạng thái hoàn thành.
 
+**Cập nhật ưu tiên 09/11/2026 sau merge M3 (`2962f21`):** giữ phase 1–2 đã hoàn thành, không làm lại. Phase 3 bắt đầu bằng sửa adapter M2→M3 vì tên trường PNG đang lệch và mask sẽ bị bỏ qua; sau đó mới thêm Otsu. Tái sử dụng HSV147/cache/runtime đã merge, không xây lại M3. Phase 5 đo trên baseline sau merge với HSV/candidate/ranking cố định. Chi tiết và bằng chứng: `M2_M3_MERGE_REVIEW.md`.
+
+**Trạng thái mới sau thực hiện phase 3 ngày 09/11:** adapter đã tương thích, Otsu/morphology/PNG mask/fallback đã triển khai và qua test + HTTP/model thật. Cấu hình còn provisional, chưa chọn bằng validation thật; giữ default off. Bước tiếp theo phase 4 lấy nhãn/metric, rồi phase 5 mới khóa/bật cấu hình. Xem `docs/m2/phase3/RESULTS.md`.
+
 ## Cách tiếp tục bằng một câu
 
 Khi người dùng gõ **“làm phase n”**, đọc file này và `docs/M2_PROGRESS.md`, kiểm tra code/diff hiện tại rồi thực hiện trọn phase n: code, kiểm thử liên quan, lưu đầu ra và cập nhật tiến độ. Không dừng ở đề xuất kế hoạch và không hỏi lại những lựa chọn đã chốt ở đây.
@@ -32,18 +36,20 @@ Giới hạn phạm vi: một phương pháp Otsu, một kernel morphology nhỏ
 - Cập nhật sau khi người dùng bổ sung model ngày 05/11: đã xác nhận `object_detection/best.pt` (52.020.562 byte). Cấu hình hiện tại vẫn trỏ `/models/object-detection/best.pt` trong container; phase 1 cần nối đúng đường dẫn/mount trước khi chạy thật. Chưa kiểm chứng tính hợp lệ hoặc class của weights. Không có thư mục venv ở root. Python mặc định là MSYS2; chưa có bằng chứng môi trường detection chạy được. Docker CLI có sẵn nhưng daemon/runtime chưa kiểm tra. Không lấy trạng thái máy ngày 28/10 trong PDF làm hiện trạng hôm nay.
 - Lượt lập kế hoạch chưa thay code sản phẩm hoặc chạy test. Sau đó phase 1 đã sửa model path/Docker và chạy kiểm chứng thật; hiện trạng mới nằm trong `M2_PROGRESS.md`.
 
-## Lịch gợi ý
+## Lịch cập nhật ngày 09/11
 
 | Phase | Nội dung | Dự trù | Mốc gợi ý |
 |---|---|---:|---|
-| 1 | Môi trường, hợp đồng và fixture | 1,5–2 giờ | 05/11 |
-| 2 | ROI nguồn và response HTTP | 3–4 giờ | 05–06/11 |
-| 3 | Otsu, morphology và fallback | 3–4 giờ | 06–07/11 |
-| 4 | Nhãn, target matching và đánh giá M2 | 4–6 giờ | 07–08/11 |
-| 5 | Thực nghiệm và tích hợp M1/M3 | 3–5 giờ | 08–09/11 |
-| 6 | Báo cáo, slide và bàn giao | 2–3 giờ | 09/11; chạy lại 10/11 |
+| 1 | Môi trường, hợp đồng và fixture | Đã xong | 07/11 |
+| 2 | ROI nguồn và response HTTP | Đã xong | 07/11 |
+| 3 | Nối đúng M3, Otsu, morphology và fallback | Đã triển khai/kiểm thử | 09/11; calibration còn ở phase 4–5 |
+| 4 | Nhãn, target matching và đánh giá M2 | 4–6 giờ | 09–10/11 |
+| 5 | Đối chứng mask trên HSV147 đã merge | 2–3 giờ | 10/11 |
+| 6 | Báo cáo, slide và bàn giao | 1–2 giờ | 10/11; dành thời gian kiểm tra trước 11/11 |
 
 Mỗi phase tạo một đầu ra có thể kiểm tra; bắt đầu với bản chạy được trước, mở rộng khi tiêu chí tối thiểu đã đạt.
+
+Sau phase 3, phần còn lại dự trù 7–11 giờ, phụ thuộc nhãn người kiểm tra và catalog/cache có sẵn. Không mở thuật toán mới; nếu thiếu DB/cache, hoàn thành thí nghiệm màu/segmentation offline và ghi retrieval chưa đo. Không giảm tiêu chí hình học/nhãn thật để chạy thêm cấu hình.
 
 ## Phase 1 — Chốt đầu vào, dựng đường chạy tối thiểu
 
@@ -79,17 +85,20 @@ Mỗi phase tạo một đầu ra có thể kiểm tra; bắt đầu với bản
 
 **Lệnh:** `làm phase 3`
 
+0. **Sửa hợp đồng M2→M3 trước khi thêm mask.** `AI/features.py:color_input_from_detection` ưu tiên `source_crop_png_base64`/`mask_png_base64` của M2; giữ `source_roi_base64`/`mask_base64` như alias tương thích. PNG nguồn hợp lệ phải thắng `original_rgb` và `original_bbox` legacy. Trường nguồn được cung cấp nhưng lỗi không được âm thầm chuyển về JPEG. Mask decode grayscale/binary đúng ROI; lỗi theo policy M3, ghi rõ provenance. Giữ `roi_metadata` (mask config/status/fallback, hình học) trong metadata M3 mà không ghi đè config HSV. Ưu tiên `garment_id` của M2 khi tạo FeatureBundle/log, thay vì lấy tên class làm identity. Chỉ sửa glue cần thiết, không viết lại extractor/ranking.
+   Chạy `python -m evaluation.check_m2_m3_contract`; gate phải chuyển từ `needs_alignment` sang `compatible`. Test chính: ROI PNG 64×64 đúng pixel, case original bbox legacy 63×63 vẫn dùng PNG 64×64; mask hợp lệ được dùng thật (`mask_status=valid`), alias cũ vẫn hoạt động. Giữ phase 2 fixture làm đầu vào, không đổi producer sang tên alias để che lệch hợp đồng.
+
 1. Tạo helper `object_detection/segmentation.py`, config nhỏ có version; hàm thuần nhận ROI nguồn RGB, trả mask thô, mask sau xử lý và metadata. Không trộn thuật toán vào serializer.
-2. Chuyển gray, Otsu phân hai miền. Chốt quy tắc chọn foreground trên validation dựa vào giả định nền quanh biên và vùng trong ROI, không cố định quần áo luôn tối hoặc luôn sáng. Lưu threshold, polarity và lý do chọn. Với ROI không đủ tương phản/không đủ bằng chứng, dùng fallback.
+2. Chuyển gray, Otsu phân hai miền. Dùng quy tắc khởi điểm chọn foreground từ tâm/viền, thử cả sáng/tối; kiểm bằng fixture trong phase 3. Chốt quy tắc/ngưỡng bằng validation thật ở phase 4–5 trước khi bật mặc định, vì hiện chưa có nhãn. Lưu threshold, polarity và lý do chọn. Với ROI không đủ tương phản/không đủ bằng chứng, dùng fallback.
 3. Thử tối đa bốn chế độ: raw; opening; closing; opening rồi closing. Kernel khởi điểm ellipse 3×3, mỗi phép 1 vòng; không quét hàng loạt kernel. Có `off` để đo đối chứng.
 4. Đặt kiểm tra rỗng/toàn ảnh, ROI quá nhỏ, tỷ lệ diện tích và mức thay đổi sau morphology; ngưỡng chọn trên validation, ghi trong config. Không tự fill mọi lỗ, không mặc định chỉ giữ component lớn nhất. Các gate này chỉ là heuristic, không xác nhận mask đúng món đồ.
-5. Fallback trả `mask_png_base64=null`, `roi_status`, `fallback_reason`; M3 tiếp tục dùng ROI nguồn đầy đủ. Tách no detection khỏi mask fallback để thống kê đúng.
+5. Fallback trả `mask_png_base64=null`, `roi_status`, `fallback_reason`; M3 tiếp tục dùng ROI nguồn đầy đủ với HSV147 hiện có. Giữ `HSVConfig`/profile `docs/m3_contract/hsv147.json` cố định; không thay bins/threshold/mask policy M3 khi đánh giá M2. Tách no detection khỏi mask fallback; giữ cả lý do của M2 và `mask_status`/fallback M3 để phát hiện mask bị bỏ qua hoặc sai kích thước.
 6. Nối mask PNG nhị phân 0/255, shape bằng ROI nguồn; thêm thời gian segmentation và thông tin phương pháp. Test cả ảnh sáng/tối, áo trắng, hai polarity, mask rỗng/toàn ảnh, morphology làm mất vùng; giữ raw mask phục vụ phân tích offline.
 7. Sinh contact sheet đầu tiên: ROI, mask raw, sau morphology, overlay; gồm ít nhất một ca thất bại. Kiểm tra hình bằng mắt trước khi coi thuật toán chạy đúng.
 
-**Đầu ra:** code mask, cấu hình, test, ảnh minh họa và response mẫu có/không mask.
+**Đầu ra:** adapter M2→M3 đọc đúng canonical PNG + alias cũ, code mask, cấu hình, test liên module, ảnh minh họa và response mẫu có/không mask.
 
-**Nghiệm thu:** Otsu chạy độc lập; mask đúng tọa độ/nhị phân; fallback không làm lỗi pipeline; có công tắc off/raw/morph. Đối chiếu M2-03, M2-04, M2-05 và hoàn tất M2-06.
+**Nghiệm thu:** audit M2→M3 tương thích; mask hợp lệ thay đổi đúng tập pixel đi vào HSV, không chỉ xuất PNG trong response. Otsu chạy độc lập; mask đúng tọa độ/nhị phân; fallback không làm lỗi pipeline; có công tắc off/raw/morph. Đối chiếu M2-03, M2-04, M2-05 và hoàn tất M2-06.
 
 ## Phase 4 — Dữ liệu và evaluator đúng target
 
@@ -103,6 +112,7 @@ Mỗi phase tạo một đầu ra có thể kiểm tra; bắt đầu với bản
 6. Ground truth và prediction phải cùng canvas: lưu mask nhãn trong ảnh chuẩn hóa hoặc lưu bbox/crop transform đầy đủ; đặt predicted ROI mask về canvas chung trước khi tính IoU. Không resize mask GT vào bbox dự đoán rồi bỏ qua sai lệch detection.
 7. Báo riêng IoU có điều kiện trên ca ghép đúng/có mask và IoU end-to-end với ca thiếu detection/mask tính 0 theo policy công bố. Thêm phân tích mask trên bbox GT cố định để tách lỗi segmentation khỏi lỗi detector.
 8. Test metric bằng hình học biết trước: IoU 0/1/một phần, sai class, box sai món, không detection, mask lệch tọa độ, fallback, tránh chia 0. Lưu schema/example, thông tin split và config cùng CSV/JSON.
+9. Tận dụng `evaluation/run_color_benchmark.py` và HSV extractor M3 để đo phần màu trên cùng ROI/mask; không xây descriptor hoặc benchmark màu thứ hai. Runner M2 vẫn sở hữu target matching/IoU. Ghi thêm `garment_id`, `mask_status`, `valid_pixels`, ROI source và mask config; nếu API chính chưa trả ID, ghép bằng class+bbox theo protocol hoặc bổ sung metadata tối thiểu, không gộp các áo cùng class. Nhãn/mask cần người kiểm tra vẫn giữ nguyên; số liệu tổng hợp/mask tổng hợp của M3 không thay thế chúng.
 
 **Đầu ra:** manifest, nhãn/mask có provenance, runner offline, metric helper/tests; ảnh overlay nhãn để kiểm chéo. Người 2 kiểm nhãn Người 3; Người 1 kiểm phần Người 2 theo vòng bàn giao, khi có dữ liệu.
 
@@ -112,16 +122,17 @@ Mỗi phase tạo một đầu ra có thể kiểm tra; bắt đầu với bản
 
 **Lệnh:** `làm phase 5`
 
-1. Nối M1 thật khi có; kiểm tra hai nhánh, EXIF/resize và bbox bằng fixture chung. Nối M3 decoder/source ROI/mask với fixture PNG ở phase 2–3. M3 sở hữu descriptor; không tự thay descriptor/ranking để có điểm đẹp.
-2. Dựng chuỗi so sánh tách yếu tố: **B0** pipeline cũ chạy lại; **R0** ROI nguồn không mask; **B2** cùng R0 + raw mask; **B3** cùng R0 + mask morphology. R0 là control thêm để không gán lợi ích bỏ padding/JPEG cho mask. Báo B0→R0 riêng, B2/B3 so với R0 mới là tác động mask.
-3. Với thử nghiệm M2, đóng băng model/bbox/crop variants/embedding/candidate pool/descriptor/ranking. Tính B2/B3 trên cùng ROI của mỗi ảnh. Dùng cùng policy fallback trên query và catalog; M3 quản lý cache version riêng nếu cần. Không ghi đè vector gốc hoặc đổi index giữa các cấu hình.
+1. Tái sử dụng M3 runtime đã merge: `extract_source_color`, `extract_runtime_features`, HSV147/Hellinger và cache reader. Không làm lại extractor/FeatureBundle/decoder sau khi phase 3 đã nối xong. Nối M1 thật khi có; PNG working ROI của M2 là nguồn ưu tiên, không cắt bbox ảnh normalized trên upload gốc khác hình học.
+2. Baseline hiện hành là **H0**: commit sau merge M3 + adapter đã sửa, mask off, nguồn ROI PNG và cùng HSV147. **B2** = H0 + raw mask; **B3** = H0 + morphology. Giữ tên **B0/R0** cho mốc lịch sử trước merge nếu cần trình bày, nhưng không dùng chênh lệch RGB→HSV/penalty/display/text-style để kết luận tác dụng mask. Rerun control sau merge; không so điểm cũ với điểm HSV rồi gán cho M2.
+3. Đóng băng model/bbox/crop variants/embedding/candidate pool, profile HSV147, ranking/trọng số/ngưỡng, catalog và cache. Phép thử nhanh đầu tiên chỉ thay query mask, cùng catalog cache cho H0/B2/B3. Nếu thử mask catalog, dùng cache mới cho từng cấu hình và báo riêng; giữ candidate pool và text/style scores/labels cố định khi cần tách tác dụng xếp hạng. Không ghi đè vector/cache gốc; chỉ rebuild màu khi encoder không đổi.
 4. Chọn polarity/gate/morphology chỉ trên validation. So raw/morph/off; khóa config và snapshot trước test. Chỉ chạy test cuối sau khóa, không tune tiếp từ lỗi test rồi gọi đó là test độc lập.
 5. Đo mask IoU/coverage/fallback/latency; phối hợp M3 đo màu và tác động retrieval cùng target. Không có M3/DB thì vẫn chạy phần mask offline; bảng màu/retrieval ghi **chưa đo**, có script/fixture và yêu cầu đầu vào cụ thể. Phase 5 chưa hoàn thành phần tích hợp thực nếu mới có mock.
 6. Có bảng từng ca + tổng hợp, hình tốt/xấu (nền sáng, nền phức tạp, trắng trên trắng, nhiều lớp/da); lưu `config_id`, commit/model hash, split/catalog hash, phần cứng, cold/warm. Không khẳng định mask phân biệt được da trong mọi tình huống.
 7. Chọn mặc định bằng bằng chứng validation và giới hạn rủi ro; nếu không hơn control hoặc lỗi nghiêm trọng, để `off`/fallback làm mặc định, vẫn giữ thuật toán và kết quả phục vụ báo cáo.
 8. Chạy test cũ và mới liên quan, HTTP contract/API smoke và detection thật khi model đã có. Ghi lỗi dịch vụ/dữ liệu cùng mẫu số, không bỏ query âm thầm.
+9. Kiểm tra cache thật trước retrieval: profile/model/version/ROI policy, coverage candidate IDs và nguồn ROI/mask. Default `data/color_cache_hsv147.json` chưa có ở lượt review 09/11; có thể tồn tại override chưa kiểm tra. Cache mẫu 28 ảnh/whole-image không chứng minh coverage catalog. Với `HSV_MISSING_POLICY=zero`, thiếu descriptor làm màu đóng góp 0; không được dùng kết quả đó để nói mask không có ích. Dùng strict policy cho kiểm tra fixture/coverage; nếu chưa có cache đủ, vẫn bàn giao mask IoU/màu offline và ghi retrieval chưa đo. Việc chuẩn bị cache catalog đầy đủ thuộc phần phối hợp M3/M4, không mặc định chuyển toàn bộ cho Người 2.
 
-**Đầu ra:** bảng B0/R0/B2/B3, cấu hình đã khóa, CSV/JSON, overlay, ghi chú bàn giao M1/M3; kết luận có/không bật morphology/mask.
+**Đầu ra:** bảng H0/B2/B3 trên M3 đã merge (B0/R0 lịch sử nếu có, ghi riêng), cấu hình đã khóa, CSV/JSON, overlay, ghi chú bàn giao M1/M3; kết luận có/không bật morphology/mask.
 
 **Nghiệm thu:** có bằng chứng chạy thật cho phần được kết luận; IoU từ mask nhãn người kiểm tra; không đồng thời thay descriptor/ranking; không gọi detection_success_rate là mAP/recall.
 
@@ -136,6 +147,7 @@ Mỗi phase tạo một đầu ra có thể kiểm tra; bắt đầu với bản
 5. Gom mẫu 5–10 ảnh phù hợp với gói nhóm, mask/overlay tiêu biểu, config, nhãn và số liệu của M2 vào thư mục bàn giao riêng. Kiểm tra `.gitignore` đang bỏ `*.json`, `models/`, `evaluation/results/`; đưa artifact cần tái lập vào gói hoặc whitelist hẹp theo file, không mở ignore toàn bộ dữ liệu.
 6. Chạy lại theo hướng dẫn từ checkout/thư mục tạm sạch hoặc môi trường sẵn có được ghi rõ; không xóa thay đổi hiện tại. Kiểm tra đường dẫn tương đối, không có secrets, có hướng dẫn lấy model hợp lệ. Phân biệt chạy mô phỏng và demo YOLO thật.
 7. Cập nhật progress cuối; liệt kê hạng mục còn phụ thuộc nhóm. M2 hoàn tất khi code/tests/evidence/report/handoff đều đủ, không yêu cầu tự viết báo cáo/slide cả nhóm.
+8. Mô tả đúng phần M3 được tái sử dụng và phần Người 2 làm: nối hợp đồng, mask/ROI, kiểm thử liên module, target matching/IoU và ablation mask. Đính kèm kết quả sau merge, không đổi tên số liệu M3 trước merge thành kết quả M2.
 
 **Đầu ra:** ba tài liệu M2, hình và bảng kết quả, gói bàn giao cá nhân có hướng dẫn tái lập. Nếu cần xuất PDF/PPTX riêng, thực hiện khi người dùng yêu cầu định dạng đó; bản Markdown trước giúp ghép báo cáo nhóm nhanh.
 
@@ -154,7 +166,7 @@ Mỗi phase tạo một đầu ra có thể kiểm tra; bắt đầu với bản
 |---|---|---|
 | best.pt đúng model quần áo | Đã có `object_detection/best.pt` | Phase 1 nối đường dẫn runtime và kiểm tra load/classes; nếu load lỗi, tiếp tục fixture và ghi lỗi thật |
 | PreparedImage và geometry | Người 1 | Adapter identity có ghi mode và fixture hai nhánh |
-| Decoder + màu dùng ROI/mask | Người 3 | Bàn giao PNG/round-trip, chạy IoU offline; màu/retrieval để chưa đo |
+| Decoder + màu dùng ROI/mask | M3 đã merge, adapter đang lệch tên trường | Phase 3 sửa glue canonical PNG + alias, chạy audit trước khi thêm mask; tái sử dụng HSV147 |
 | Catalog/candidate snapshot | Người 3/4 | Giữ thí nghiệm segmentation độc lập, chưa kết luận retrieval |
 | Nhãn và kiểm chéo | Người dùng/nhóm | Tạo công cụ/overlay, người xem xác nhận; không gọi pseudo-label là GT |
 | Tổng ≥50 ảnh đánh giá theo đề | Cả nhóm | Người 2 góp 20 ảnh; tập chung theo bàn giao 20 val + 60 test sau khử trùng |

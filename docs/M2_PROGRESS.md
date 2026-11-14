@@ -1,6 +1,6 @@
 # Tiến độ M2
 
-Kế hoạch chuẩn: [M2_PLAN.md](M2_PLAN.md). Cập nhật ngày 07/11/2026.
+Kế hoạch chuẩn: [M2_PLAN.md](M2_PLAN.md). Cập nhật ngày 09/11/2026.
 
 ## Trạng thái
 
@@ -8,16 +8,16 @@ Kế hoạch chuẩn: [M2_PLAN.md](M2_PLAN.md). Cập nhật ngày 07/11/2026.
 |---|---|---|
 | 1 — Môi trường/hợp đồng | Hoàn thành | Docker/model thật, contract, fixture, manifest, 24 test qua, HTTP smoke, baseline 16 ảnh; xem `M2_ENVIRONMENT.md` |
 | 2 — ROI/HTTP | Hoàn thành | Hai nhánh RGB, clip/ROI/ID/PNG HTTP; 40 test qua; 54 ROI và 161 JPEG đã kiểm trên ảnh thật; xem `docs/m2/phase2/RESULTS.md` |
-| 3 — Mask/morphology | Chưa bắt đầu | Chưa có segmentation |
+| 3 — Mask/morphology | Hoàn thành triển khai/kiểm thử | Adapter compatible, Otsu/morphology/fallback, HTTP/model thật; config provisional và default off tới validation phase 4–5 |
 | 4 — Dữ liệu/evaluator | Chưa bắt đầu | Nhãn cũ chưa có target bbox/mask |
-| 5 — Thực nghiệm/tích hợp | Chưa bắt đầu | Chưa chạy baseline hoặc đối chứng mới |
+| 5 — Thực nghiệm/tích hợp | Chưa bắt đầu | M3 runtime đã merge; cần H0 sau merge/adapter fix rồi đối chứng mask, kiểm cache thật |
 | 6 — Báo cáo/bàn giao | Chưa bắt đầu | Mới có kế hoạch |
 
 ## Đầu vào còn thiếu hoặc chưa xác minh
 
 - Model `object_detection/best.pt` đã load bằng Ultralytics 8.4.31, task detect, mapping đủ 10 lớp khớp project; hash trước/sau không đổi. Docker đã mount file read-only; health và upload thật hoạt động.
 - Chưa cấu hình CUDA; baseline chạy CPU Docker. DB/encoder/main API/frontend không bật trong phase 1.
-- Hợp đồng M2 đã lưu tại `M2_CONTRACT.md`, chưa được M1/M3 cùng nghiệm thu. M2 đã có `detect_prepared` và PNG response; upload dùng `legacy_identity` khi chưa có M1. M3 decoder/descriptor chưa sửa; mask production hiện null.
+- M2 có `detect_prepared`, PNG ROI/mask và Otsu/morphology/fallback. M3 đã đọc canonical PNG đúng tọa độ, giữ alias/metadata/garment_id. Audit joint compatible. Upload còn `legacy_identity` khi chưa có M1; mask default off vì chưa có calibration thật.
 - Cần 20 ảnh phần Người 2 (5 validation + 15 test), 5 mask tham chiếu (2 validation + 3 test) và kiểm chéo; manifest nháp đang rỗng. 16 ảnh outfit cũ chỉ là regression.
 
 ## Lượt lập kế hoạch
@@ -54,6 +54,31 @@ Kế hoạch chuẩn: [M2_PLAN.md](M2_PLAN.md). Cập nhật ngày 07/11/2026.
 - Artifacts: `tests/fixtures/m2/phase2_response.json`; `docs/m2/phase2/{RESULTS.md,regression.json,http_smoke.json,coverage.txt,source_snapshot.json}`. Hợp đồng và README fixture đã cập nhật; tag `fashion-m2:phase1` giữ nguyên để làm đối chứng.
 - Không có nhãn bbox/mask thật mới; manifest 20 ảnh vẫn pending theo phase 4. Chưa triển khai Otsu/morphology.
 - **Tiếp theo: `làm phase 3`** — mask Otsu có điều kiện, morphology nhẹ, PNG mask/fallback theo contract.
+
+## Review merge M3 — 09/11/2026
+
+- Commit merge `2962f21`, M2 trước merge `500bedf`. `object_detection/` không thay đổi qua merge; phase 1–2 giữ trạng thái hoàn thành.
+- Đã đọc code M3 độc lập và production: HSV147, FeatureBundle, adapter, source color, cache/catalog, API/search glue, tests và báo cáo. Không sửa code production trong lượt review này.
+- Audit chạy trực tiếp decoder/HSV M3 với fixture M2: canonical PNG 64×64 bị bỏ qua, fallback thành JPEG 224×224 hoặc legacy bbox 63×63; canonical mask bị ghi missing (4.096 pixel thay vì 2.816 foreground). Alias M3 cũ dùng cùng payload thì đúng. Đây là lỗi nối contract cần sửa, chưa phải lỗi thuật toán HSV.
+- Đã chạy lại **53 test liên quan qua**: 33 M2 detection/contract và 20 histogram/adapter M3. Audit joint contract cố ý báo `needs_alignment`; không coi test riêng qua là tích hợp hoàn tất. Chưa chạy toàn suite API/encoder/DB sau merge.
+- Thêm `evaluation/check_m2_m3_contract.py`; evidence ở `docs/m2/m3_merge_review_20261109/evidence.json`; phân tích ở `docs/M2_M3_MERGE_REVIEW.md`.
+- Cập nhật plan giữ số phase: phase 3 ưu tiên canonical keys + alias, hình học, ID/provenance trước Otsu; phase 4 tái sử dụng benchmark màu M3; phase 5 H0/B2/B3 trên HSV147 đã merge, cố định cache/candidate/ranking, không xây lại M3. Phase 6 phân công và số liệu sau merge rõ ràng.
+- Default cache `data/color_cache_hsv147.json` chưa có; chưa kiểm tra override `.env`, chưa kết luận runtime cache hỏng. Phải kiểm coverage trước retrieval vì missing policy zero cho color score 0.
+- Lịch mới ưu tiên code/nhãn ngày 09/11, đánh giá/báo cáo/bàn giao ngày 10/11. Không train, thêm model hoặc thay HSVConfig để tối ưu M2.
+- **Tiếp theo vẫn là `làm phase 3`**, bắt đầu từ bước 0 trong plan. Chưa triển khai phase 3 trong lượt review.
+
+## Phase 3 — Triển khai/kiểm thử xong ngày 09/11/2026
+
+- Sửa `AI/features.py`: canonical ROI/mask ưu tiên hơn alias/original/legacy crop, null mask không nhặt alias cũ; source hỏng không đổi sang JPEG; giữ metadata M2 và ID. `api/search_service.py` ưu tiên garment_id tại hai điểm gọi. Không đổi HSV147 hoặc công thức ranking.
+- Thêm `object_detection/segmentation.py`: off/raw/opening/closing/open_close; Otsu + chọn polarity theo tâm/viền, kernel ellipse 3×3 một vòng, gate tương phản/kích thước/diện tích/thay đổi. Không largest-component hoặc fill mọi lỗ. Config có hash/version và flag provisional.
+- Nối detector → serializer PNG mask 0/255 cùng ROI. `roi_metadata.segmentation` có config/threshold/polarity/diện tích/latency. Mask lỗi/không đủ điều kiện trả null và lý do; M3 dùng toàn source ROI, giữ cả reason M2 và status M3.
+- Audit từ review `needs_alignment` đã chuyển `compatible`; PNG source đúng 64×64 và mask dùng đúng 2.816 foreground pixels; alias cũ còn hoạt động.
+- Test-first cho adapter, standalone segmentation và detector/HTTP transport; full offline suite gồm test API/FeatureBundle/query đã chạy: **132 ca, 131 qua, 1 pretrained opt-in bỏ qua**, native exit code 0. Có test garment_id thực sự đi qua cả 3 encoder variants. Kết quả tại `docs/m2/phase3/test_summary.json`; không tải FashionCLIP. Coverage các module được đo 94%, segmentation 98%, features 96%.
+- Regression model thật: 16 ảnh/54 ROI, 4 mode cùng nguồn. Raw/opening mỗi mode 40 mask +14 fallback; closing/open_close mỗi mode 39 mask +15 fallback. Mỗi mask được kiểm tra số pixel thật trong HSV. Đây không phải accuracy/IoU thật; hình có ca da/nền vẫn lọt mask.
+- HTTP container raw riêng: YOLO thật trả 1 mask +1 fallback, PNG đúng shape/0–255 và M3 dùng đúng foreground. Đã xóa container smoke; service thường giữ `M2_MASK_MODE=off`.
+- Artifacts `docs/m2/phase3/`: RESULTS, contract audit, raw/morph/reference tổng hợp, contact sheets tổng hợp/ảnh thật, smoke/regression, config candidate, test/coverage/lock/snapshot. Fixture computed `tests/fixtures/m2/phase3_responses.json` có raw/morph/fallback/off.
+- Cấu hình **chưa được chọn trên validation thật**; calibration/IoU quần áo thật và quyết định bật default còn ở phase 4–5. Không có GT thật mới, không khẳng định cải thiện retrieval, không chạy DB/main API/encoder thật trong smoke này.
+- **Tiếp theo: `làm phase 4`** — chuẩn bị/kiểm nhãn, target matching, mask IoU và dữ liệu validation/test. Không làm lại code mask hoặc mở model khác.
 
 ## Mẫu cập nhật sau mỗi phase
 

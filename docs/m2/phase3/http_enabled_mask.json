@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "query_id": "real_green_tshirt_01",
+  "mode": "raw",
+  "HTTP": 200,
+  "masked_crops": 1,
+  "fallback_crops": 1,
+  "real_yolo_and_http": true,
+  "real_m3_HSV_pixel_selection": true,
+  "encoder_or_DB": false
+}

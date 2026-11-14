@@ -71,6 +71,8 @@ output/m2/runs/
 !docs/m2/phase1/*.json
 !docs/m2/phase1/baseline_20261107_cpu/baseline.json
 !docs/m2/phase2/*.json
+!docs/m2/m3_merge_review_20261109/evidence.json
+!docs/m2/phase3/*.json
 # Reproducible M3 diagnostic reports (separate from production catalogs/caches)
 !docs/m3_results/**/report.json
 !docs/m3_results/catalog_manifest.json

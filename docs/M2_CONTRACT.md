@@ -1,6 +1,8 @@
 # Hợp đồng M1 → M2 → M3, phiên bản m2.roi.v1
 
-Ngày chốt triển khai M2: 07/11/2026. Phase 2 đã triển khai ROI nguồn, ID, metadata và PNG trong API; mask hiện luôn null với `mask_disabled`. M1/M3 chưa cùng nghiệm thu phiên bản này. Fixture thật của phase 2: `tests/fixtures/m2/phase2_response.json`; các candidate fixture cũ là bản ví dụ từ phase 1.
+Ngày chốt triển khai M2: 07/11/2026; cập nhật phase 3 ngày 09/11. API đã có ROI nguồn, ID, metadata và mask PNG tùy chọn. Mode off mặc định trả null/mask_disabled; mode thử trả mask hoặc null/fallback theo gate. M1/M3 chưa cùng người phụ trách nghiệm thu; audit M2→M3 đã qua bằng code thực. Fixture phase 3: `tests/fixtures/m2/phase3_responses.json`.
+
+**Lỗi review merge đã sửa trong phase 3:** M3 ưu tiên canonical PNG và vẫn đọc alias cũ. Gate `evaluation/check_m2_m3_contract.py` hiện báo `compatible`; evidence cũ needs_alignment được giữ tại thư mục review riêng. Báo cáo mới: `docs/m2/phase3/RESULTS.md`.
 
 ## M1 → M2 trong bộ nhớ
 
@@ -40,10 +42,12 @@ PNG/JPEG đều là **raw base64**, không tiền tố `data:image/...`. OpenCV 
 
 `roi_metadata` bắt buộc khi có ROI mới: `bbox_xyxy`, `working_width`, `working_height`, `roi_width`, `roi_height`, `coordinate_space='m1_working_image'`, `color_space='RGB'`, `roi_source`, `roi_status`, `fallback_reason`, `mask_method`, `mask_config_id`, `geometry_mode`. Thông tin transform M1 đi kèm khi có; nếu chưa có thì ghi mode thiếu, evaluator không đo GT khác hệ tọa độ.
 
+Phase 3 bổ sung `segmentation` chứa config/version, flag provisional, threshold/polarity, contrast/area/change, latency và error_type khi có. Raw/processed masks chỉ giữ trong bộ nhớ hoặc artifact offline, không nhét array vào JSON. M3 giữ nguyên metadata này dưới `color.metadata.m2_roi_metadata`, cùng query/garment ID; không để dữ liệu M2 ghi đè `roi_policy`/config HSV. Null canonical mask không được thay bằng mask alias cũ; source canonical cung cấp mà lỗi không âm thầm fallback JPEG.
+
 | Trạng thái | Mask | Consumer màu |
 |---|---|---|
 | `masked` | PNG hợp lệ | Chỉ pixel foreground của ROI nguồn |
-| `unmasked` | Null, lý do `mask_disabled` | Toàn ROI nguồn; control R0 |
+| `unmasked` | Null, lý do `mask_disabled` | Toàn ROI nguồn; control H0 sau merge (R0 là tên lịch sử) |
 | `fallback` | Null, lý do cụ thể | Toàn ROI nguồn và ghi nhận fallback |
 | Không có trường mới | Không có | Policy legacy công bố rõ, không giả vờ đã chạy mask |
 
@@ -84,4 +88,4 @@ M1 bổ sung transform/EXIF đầy đủ vào geometry metadata thật; ví dụ
 
 Upload hỗ trợ `POST /detect/upload?query_id=query_001`. ID tối đa 128 ký tự, bắt đầu bằng chữ/số ASCII, phần còn lại có thể chứa `_.:-`; ID sai trả 422. Bytes không decode được trả 400. Không có detection vẫn trả HTTP 200, `success=false`, crop rỗng như cũ, cộng query/diagnostics.
 
-M3 decode `source_crop_png_base64` thành RGB và dùng toàn ROI khi mask null; chưa sửa decoder/ranking của M3 trong phase 2. Ví dụ masked fixture chỉ kiểm tra hợp đồng schema, chưa phải output segmentation production. Báo cáo kiểm chứng: `docs/m2/phase2/RESULTS.md`.
+Consumer đã nối: M3 decode `source_crop_png_base64` thành RGB và dùng mask hợp lệ đúng ROI; mask null dùng toàn ROI theo policy HSV đang có. Alias cũ giữ tương thích. Schema input M3 đã cập nhật trong `docs/m3_contract/m2_input.schema.json`. Phase 1 candidate masked vẫn chỉ là reference tổng hợp; fixture phase 3 chứa mask Otsu tính thật. Không có mask GT thật hoặc calibration validation trong phase 3; xem báo cáo kết quả.

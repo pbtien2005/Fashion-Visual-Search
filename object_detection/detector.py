@@ -6,10 +6,12 @@ try:
     from .config import resolve_model_path
     from .roi import (DetectionBatch, MINIMUM_VARIANT_SIDE, clip_bbox, copy_metadata,
                       make_roi_metadata, resolve_query_id, validate_prepared_images)
+    from .segmentation import load_mask_config, segment_roi
 except ImportError:
     from config import resolve_model_path
     from roi import (DetectionBatch, MINIMUM_VARIANT_SIDE, clip_bbox, copy_metadata,
                      make_roi_metadata, resolve_query_id, validate_prepared_images)
+    from segmentation import load_mask_config, segment_roi
 
 
 CLASS_NAMES = {
@@ -49,12 +51,13 @@ def get_class_name_vi(class_name: str) -> str:
 
 
 class ClothingDetector:
-    def __init__(self, model_path: str | None = None, conf: float = 0.5, expand_ratio: float = 0.15):
+    def __init__(self, model_path: str | None = None, conf: float = 0.5, expand_ratio: float = 0.15, mask_config=None):
         self.model_path = resolve_model_path(model_path)
         self.conf = conf
         self.expand_ratio = expand_ratio
         self.wide_expand_ratio = float(os.getenv("OBJECT_DETECTION_WIDE_EXPAND_RATIO", "0.30"))
         self._model = None
+        self.mask_config = mask_config if mask_config is not None else load_mask_config()
 
     @property
     def model_available(self) -> bool:
@@ -227,6 +230,11 @@ class ClothingDetector:
                 if class_name is None:
                     class_name = getattr(model, "names", {}).get(class_id, f"class_{class_id}")
 
+                source_roi = source_rgb[bbox[1]:bbox[3], bbox[0]:bbox[2]].copy()
+                segmentation = segment_roi(source_roi, self.mask_config)
+                roi_metadata = make_roi_metadata(source_rgb, bbox, raw_bbox, geometry_meta, quality_meta)
+                roi_metadata.update(segmentation.metadata)
+
                 crops.append(
                     {
                         "image": primary["image"],
@@ -245,9 +253,11 @@ class ClothingDetector:
                         "crop_strategy": primary["crop_strategy"],
                         "variants": variants,
                         "query_id": query_id,
-                        "source_rgb": source_rgb[bbox[1]:bbox[3], bbox[0]:bbox[2]].copy(),
-                        "mask": None,
-                        "roi_metadata": make_roi_metadata(source_rgb, bbox, raw_bbox, geometry_meta, quality_meta),
+                        "source_rgb": source_roi,
+                        "mask": segmentation.mask,
+                        "raw_mask": segmentation.raw_mask,
+                        "processed_mask": segmentation.processed_mask,
+                        "roi_metadata": roi_metadata,
                     }
                 )
 

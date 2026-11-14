@@ -24,6 +24,7 @@ services:
     restart: unless-stopped
     environment:
       OBJECT_DETECTION_MODEL_PATH: /models/object-detection/best.pt
+      M2_MASK_MODE: ${M2_MASK_MODE:-off}
     ports:
       - "8001:8001"
     volumes:

@@ -1,11 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "M2 detection input accepted by M3 adapter v1",
-  "description": "image_base64 is the existing encoder crop. Source RGB original image may instead be supplied as an in-process original_rgb argument. Source ROI PNG and ROI-coordinate binary mask PNG are recommended. This is a handoff contract, not an installed M2 HTTP schema.",
+  "description": "M2 m2.roi.v1 canonical PNG fields take priority; legacy source_roi_base64/mask_base64 aliases remain supported. image_base64 is the unchanged encoder crop. Original RGB bbox fallback requires the same geometry. A null canonical mask overrides a legacy mask alias.",
   "type": "object",
   "required": ["image_base64"],
   "properties": {
     "image_base64": {"type": "string", "minLength": 1},
+    "source_crop_png_base64": {"type": ["string", "null"], "minLength": 1, "description": "Canonical raw base64 PNG source ROI, RGB; preferred over original image and aliases."},
+    "mask_png_base64": {"type": ["string", "null"], "minLength": 1, "description": "Canonical binary grayscale PNG in source ROI coordinates, foreground=255; null means unmasked/fallback."},
+    "query_id": {"type": ["string", "null"]},
+    "garment_id": {"type": ["string", "null"]},
+    "roi_metadata": {"type": ["object", "null"], "description": "M2 geometry/config/status/fallback retained under m2_roi_metadata in the color descriptor."},
     "source_roi_base64": {"type": "string", "minLength": 1},
     "mask_base64": {"type": "string", "minLength": 1, "description": "Plain base64 PNG, single-channel, binary 0/1/255, same H/W and origin as the selected source ROI. Not a full-image mask."},
     "bbox": {"$ref": "#/$defs/bbox"},

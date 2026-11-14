@@ -2,7 +2,7 @@ import os
 from urllib.parse import quote, urlparse
 
 from AI.embedding_model import encode_texts, get_embedding_config
-from AI.features import extract_runtime_features
+from AI.features import detection_identity, extract_runtime_features
 from AI.hsv_descriptor import histogram_similarity
 from AI.production_color import (extract_source_color, descriptor_display, product_color,
                                  unavailable, validate_production_color)
@@ -748,7 +748,7 @@ def _search_single_crop_variant(
     query_color=None,
 ) -> tuple[list[dict], tuple[int, int, int] | None, str | None]:
     image = image_from_base64(variant["image_base64"])
-    features = extract_runtime_features(str(crop.get("id") or crop.get("class_name") or "query"),
+    features = extract_runtime_features(detection_identity(crop),
                                         image, query_color)
     query_color_rgb, query_color_name = descriptor_display(features.color)
     vector = features.embedding
@@ -784,7 +784,7 @@ def search_match_for_crop(crop: dict, top_k: int = 5, original_rgb=None) -> dict
     embedding_config = get_embedding_config()
     # One source-ROI color descriptor for all encoder variants; no padded
     # variant can redefine query color when the original upload is available.
-    query_color = extract_source_color(original_rgb, crop, crop.get("id") or crop.get("class_name"))
+    query_color = extract_source_color(original_rgb, crop, detection_identity(crop))
     category_terms = get_category_terms(crop.get("class_name", ""))
     ranked_variants = []
     query_color_rgb = None

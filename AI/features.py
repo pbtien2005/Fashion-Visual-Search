@@ -1,5 +1,6 @@
 """M3 contract: keep encoder input separate from source color ROI."""
 from dataclasses import asdict, dataclass
+from copy import deepcopy
 from io import BytesIO
 import base64
 
@@ -11,39 +12,63 @@ from AI.hsv_descriptor import ColorDescriptor, extract_hsv_descriptor, validate_
 M3_CONTRACT_VERSION = "m3-features-v1"
 
 
-def _decode_rgb(payload):
+def _decode_rgb(payload, require_png=False):
     try:
         if not isinstance(payload, str) or not payload:
             raise ValueError("Image payload must be a nonempty base64 string")
         payload = payload.split(",", 1)[-1] if payload.startswith("data:image") else payload
         with Image.open(BytesIO(base64.b64decode(payload, validate=True))) as image:
+            if require_png and image.format != "PNG":
+                raise ValueError("Canonical source ROI must be PNG")
             return np.asarray(image.convert("RGB")).copy()
     except Exception as exc:
         raise ValueError("Invalid RGB image payload") from exc
 
 
-def color_input_from_detection(detection, original_rgb=None):
-    """Accept future lossless ROI payload; reconstruct bbox from original when available.
+def detection_identity(detection):
+    return str(detection.get("garment_id") or detection.get("id") or detection.get("class_name") or "query")
 
-    mask_base64 must be a binary single-channel PNG in ROI coordinates.
-    Invalid mask bytes are passed to the configured invalid-mask policy.
+
+def _decode_mask(payload):
+    if payload is None:
+        return None
+    try:
+        raw = base64.b64decode(payload, validate=True)
+        with Image.open(BytesIO(raw)) as image:
+            if image.format != "PNG" or image.mode not in {"L", "1"}:
+                raise ValueError("Mask must be a single-channel PNG")
+            return np.asarray(image).copy()
+    except Exception:
+        # The existing HSVConfig policy decides how invalid masks are handled.
+        return np.array([], dtype=np.uint8)
+
+
+def color_input_from_detection(detection, original_rgb=None):
+    """Prefer canonical M2 source PNG/mask, retaining old payload aliases.
+
+    Supplied but corrupt source PNG is an error; it cannot silently use JPEG.
+    A null canonical mask deliberately overrides any stale legacy mask alias.
     """
-    mask = None
-    if detection.get("mask_base64"):
-        try:
-            raw = base64.b64decode(detection["mask_base64"], validate=True)
-            with Image.open(BytesIO(raw)) as image:
-                if image.format != "PNG":
-                    raise ValueError("mask_base64 must contain a PNG")
-                mask = np.asarray(image).copy()
-        except Exception:
-            mask = np.array([], dtype=np.uint8)
-    if detection.get("source_roi_base64"):
+    m2_metadata = deepcopy(detection.get("roi_metadata") or {})
+    if not isinstance(m2_metadata, dict):
+        raise ValueError("roi_metadata must be an object")
+    mask_key = "mask_png_base64" if "mask_png_base64" in detection else "mask_base64"
+    mask = _decode_mask(detection.get(mask_key))
+    canonical = detection.get("source_crop_png_base64") is not None
+    if canonical:
+        roi = _decode_rgb(detection["source_crop_png_base64"], require_png=True)
+        source = "source_crop_png_base64"
+        if (m2_metadata.get("roi_width", roi.shape[1]) != roi.shape[1]
+                or m2_metadata.get("roi_height", roi.shape[0]) != roi.shape[0]):
+            raise ValueError("ROI PNG and roi_metadata have different geometry")
+    elif detection.get("source_roi_base64") is not None:
         roi = _decode_rgb(detection["source_roi_base64"])
         source = "source_roi_base64"
     elif original_rgb is not None:
         from AI.hsv_descriptor import validate_roi
         validate_roi(original_rgb)
+        if m2_metadata.get("geometry_mode", "legacy_identity") != "legacy_identity":
+            raise ValueError("A working-image ROI PNG is required for non-identity geometry")
         bbox = detection.get("original_bbox") or detection.get("bbox")
         if (not isinstance(bbox, (list, tuple)) or len(bbox) != 4
                 or any(type(x) is not int for x in bbox)):
@@ -57,9 +82,13 @@ def color_input_from_detection(detection, original_rgb=None):
     else:
         roi = _decode_rgb(detection["image_base64"])
         source = "legacy_processed_crop"
-    return roi, mask, {"roi_source": source, "roi_policy": "source_roi_v1",
-                       "roi_fallback_reason": "source_roi_unavailable" if
-                       source == "legacy_processed_crop" else None}
+    metadata = {"roi_source": source, "roi_policy": "source_roi_v1",
+                "roi_fallback_reason": "source_roi_unavailable" if source == "legacy_processed_crop" else None,
+                "mask_payload_key": mask_key, "m2_roi_metadata": m2_metadata}
+    for key in ("query_id", "garment_id"):
+        if detection.get(key) is not None:
+            metadata[key] = detection[key]
+    return roi, mask, metadata
 
 
 @dataclass
@@ -160,4 +189,4 @@ def extract_detection_features(garment_id, detection, original_rgb=None, config=
     metadata["class_name"] = detection.get("class_name")
     metadata["bbox"] = detection.get("original_bbox") or detection.get("bbox")
     embedding_image = Image.fromarray(_decode_rgb(detection["image_base64"]))
-    return extract_features(garment_id, embedding_image, roi, mask, config, metadata)
+    return extract_features(detection.get("garment_id") or garment_id, embedding_image, roi, mask, config, metadata)

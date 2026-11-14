@@ -1,0 +1,46 @@
+{
+  "client_date": "2026-11-09",
+  "base_commit": "2962f21277b9a8dceb9782028172223c7da589fd",
+  "working_tree_changes": true,
+  "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+  "regular_detection_image_id": "sha256:0615eca8d9cff12b57722b88039710ae25b6c7edbd3e45367fe516b2bac232b3",
+  "test_image_id": "sha256:76fe255023309ed490cd638a3c75b9b6c8ca0c6d943e5bf5a0fc2e6f74c99b30",
+  "regular_mask_mode": "off",
+  "config_status": "provisional_not_selected_on_real_validation",
+  "files_sha256": {
+    "AI/features.py": "91bacbff6be2db18beba3ae4a02c851167a0d3b0732e5fae3496d183ba27b97c",
+    "AI/hsv_descriptor.py": "6310632b0d92cd24442e535f542980c5cfa332cd71b611652191d249b34ff14f",
+    "AI/production_color.py": "5160689598ca52dddc5f009af2f7ef81ed92f8cd9e58c099e83ac8d343301c1b",
+    "api/search_service.py": "38bab653eaeb94a71fa27a84b5ca6eb2af9ede2f6dd5399bb975832d261add27",
+    "object_detection/segmentation.py": "6f1944ba892159681960ce51823d2cce604958992a963801abd6e5d635d24e54",
+    "object_detection/detector.py": "d20094809730d699394cee8e58775cd801373f5f5638a9f1959012d252be2590",
+    "object_detection/utils.py": "68963a3d00812b8ebfba2a78cb229cb7332f70eae5db9c42d21e3e01e11f6b51",
+    "object_detection/schemas.py": "230638408dfc0b40fde8a4e75ed55259a41f371b817c49137e86dfc1a4b46b45",
+    "object_detection/Dockerfile.tests": "35b3f062e68fc0bc06a667d794fd4e4817c4aa1a01ee72c68807c75661e74581",
+    "docker-compose.yml": "3e41612aa682c37398fd7ffc910dd634d05f69b049a609dea303ecbde93070ae",
+    "docs/m3_contract/m2_input.schema.json": "72b5e0082601a8cd6ba5fc71a03b827bf5b209523502c4d9c754ca836c77483f",
+    "evaluation/check_m2_phase3.py": "025ee858d6009d89a3e7cc7f551c01e91cb6eb392135f165c13a7478d55a9a99",
+    "evaluation/run_m2_checks.py": "bbd6b2d8e851dcb454758a2fff5d1eb08ea966c04481ff3282bd3efad2e24e45",
+    "tests/test_segmentation.py": "1863dd5313bbbe63ee9f7cd71224fef7a763fc44d40ace19cdf38206e6155646",
+    "tests/test_m2_m3_adapter.py": "8e86461b7a4a5db72f714d58d037c5b3d6314f754d5f7e2998ecd321d88c91fa",
+    "tests/test_detection_segmentation.py": "0698e48b0e73ef44f2bc1be78a49a9a2d83619470dfaf30442a9cb893541d51c",
+    "tests/test_m3_runtime_garment_id.py": "26242be91efeb837b33d6fe42651f67673b0eaac7ab8fb7c50c73e9b62a1d51c",
+    "tests/fixtures/m2/phase3_responses.json": "227cbadbe24796808c31f590c76ae59cb5f0988918c75ba97bc9344f1d160089"
+  },
+  "checks": {
+    "test_run": 132,
+    "passed": 131,
+    "pretrained_opt_in_skipped": 1,
+    "scoped_coverage_percent": 94,
+    "joint_contract": "compatible",
+    "real_YOLO_HTTP_mask_smoke": "passed",
+    "regression_rois": 54,
+    "compile": "passed"
+  },
+  "not_measured": [
+    "real_GT_mask_IoU",
+    "independent_test_accuracy",
+    "retrieval_improvement",
+    "live_encoder_or_DB_in_smoke"
+  ]
+}

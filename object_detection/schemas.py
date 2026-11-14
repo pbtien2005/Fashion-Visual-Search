@@ -31,6 +31,7 @@ class RoiMetadata(BaseModel):
     geometry_mode: str
     geometry_meta: dict = Field(default_factory=dict)
     quality_meta: dict = Field(default_factory=dict)
+    segmentation: dict = Field(default_factory=dict)
 
 
 class DetectionDiagnostics(BaseModel):

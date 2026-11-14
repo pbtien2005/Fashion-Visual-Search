@@ -1,0 +1,4 @@
+# Build the current CPU detection image first; this adds API imports for offline tests only.
+ARG DETECTION_TEST_BASE=fashion-visual-search-object-detection:latest
+FROM ${DETECTION_TEST_BASE}
+RUN pip install --no-cache-dir transformers==4.57.0 boto3==1.42.78 python-dotenv==1.0.1 "psycopg[binary]==3.2.3" pgvector==0.4.2
