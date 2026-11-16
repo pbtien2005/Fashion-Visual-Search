@@ -8,7 +8,7 @@ from AI.production_color import (extract_source_color, descriptor_display, produ
                                  unavailable, validate_production_color)
 from AI.vectorizer import image_from_base64
 from api.category_mapping import get_category_terms
-from db.database import search_similar_by_vector, validate_vector_dimension
+from db.database import list_color_search_products, search_similar_by_vector, validate_vector_dimension
 
 CANDIDATE_LIMIT = 100
 PER_VARIANT_RERANK_LIMIT = 20
@@ -26,6 +26,8 @@ NO_CONFIDENT_MATCH_MESSAGE = "Detected item, but no confident product match foun
 # Default guardrails: avoid showing visually weak matches just because metadata boosted them.
 DEFAULT_MATCH_SCORE_THRESHOLD = 0.70
 DEFAULT_MIN_IMAGE_SIMILARITY = 0.60
+RETRIEVAL_MODES = {"histogram_only", "embedding_only", "hybrid"}
+RETRIEVAL_ACCEPT_THRESHOLD = 0.60
 
 SUBTYPE_KEYWORDS = {
     "button_down": [
@@ -677,6 +679,8 @@ def apply_match_threshold(
     products: list[dict],
     threshold: float | None = None,
     min_image_similarity: float | None = None,
+    strict: bool = False,
+    require_image_similarity: bool = True,
 ) -> dict:
     threshold = get_match_score_threshold() if threshold is None else threshold
     min_image_similarity = get_min_image_similarity() if min_image_similarity is None else min_image_similarity
@@ -686,9 +690,9 @@ def apply_match_threshold(
 
     if not products:
         reject_reasons.append("no_candidates")
-    if products and top_score < threshold:
+    if products and (top_score <= threshold if strict else top_score < threshold):
         reject_reasons.append("final_score_too_low")
-    if products and top_image_similarity < min_image_similarity:
+    if products and require_image_similarity and top_image_similarity < min_image_similarity:
         reject_reasons.append("image_similarity_too_low")
 
     if reject_reasons:
@@ -701,7 +705,7 @@ def apply_match_threshold(
             "top_final_score": top_score if products else None,
             "top_image_similarity": top_image_similarity if products else None,
             "match_score_threshold": threshold,
-            "min_image_similarity": min_image_similarity,
+            "min_image_similarity": min_image_similarity if require_image_similarity else None,
         }
 
     return {
@@ -713,8 +717,28 @@ def apply_match_threshold(
         "top_final_score": top_score,
         "top_image_similarity": top_image_similarity,
         "match_score_threshold": threshold,
-        "min_image_similarity": min_image_similarity,
+        "min_image_similarity": min_image_similarity if require_image_similarity else None,
     }
+
+
+def search_by_histogram(query_color, embedding_config, top_k: int) -> list[dict]:
+    """Score every compatible catalog item; CLIP does not select candidates."""
+    if query_color is None:
+        return []
+    validate_production_color(query_color)
+    ranked = []
+    for product in list_color_search_products(embedding_config.model_name, embedding_config.version):
+        color = product_color(product["id"], embedding_config.model_name, embedding_config.version)
+        if color is None:
+            continue
+        score = histogram_similarity(query_color, color)
+        rgb, name = descriptor_display(color)
+        ranked.append({**product, "dominant_color_rgb": list(rgb) if rgb else None,
+                       "dominant_color_name": name, "_hsv_display": True,
+                       "color_score": score, "final_score": score, "similarity": score,
+                       "match_reason": "HSV histogram similarity"})
+    ranked.sort(key=lambda product: (-product["final_score"], str(product["id"])))
+    return ranked[:top_k]
 
 
 def crop_variants_for_search(crop: dict) -> list[dict]:
@@ -746,6 +770,7 @@ def _search_single_crop_variant(
     category_terms: list[str],
     embedding_config,
     query_color=None,
+    mode: str = "hybrid",
 ) -> tuple[list[dict], tuple[int, int, int] | None, str | None]:
     image = image_from_base64(variant["image_base64"])
     features = extract_runtime_features(detection_identity(crop),
@@ -761,6 +786,15 @@ def _search_single_crop_variant(
         embedding_model=embedding_config.model_name,
         embedding_version=embedding_config.version,
     )
+    if mode == "embedding_only":
+        ranked = []
+        for product in products:
+            score = float(product.get("similarity") or 0.0)
+            ranked.append({**product, "dominant_color_rgb": None,
+                           "dominant_color_name": None, "_hsv_display": True,
+                           "image_similarity": score, "final_score": score,
+                           "match_reason": "FashionCLIP cosine similarity"})
+        return ranked[:max(top_k, PER_VARIANT_RERANK_LIMIT)], None, None
     ranked = rerank_products(
         products,
         category_terms=category_terms,
@@ -776,15 +810,28 @@ def _search_single_crop_variant(
     return ranked, query_color_rgb, query_color_name
 
 
-def search_match_for_crop(crop: dict, top_k: int = 5, original_rgb=None) -> dict:
+def search_match_for_crop(crop: dict, top_k: int = 5, original_rgb=None,
+                          mode: str = "hybrid") -> dict:
+    if mode not in RETRIEVAL_MODES:
+        raise ValueError(f"Unknown retrieval mode: {mode}")
     variants = crop_variants_for_search(crop)
-    if not variants:
+    if mode != "histogram_only" and not variants:
         raise ValueError(f"Missing crop image payload for class {crop.get('class_name')}")
 
     embedding_config = get_embedding_config()
     # One source-ROI color descriptor for all encoder variants; no padded
     # variant can redefine query color when the original upload is available.
-    query_color = extract_source_color(original_rgb, crop, detection_identity(crop))
+    query_color = (extract_source_color(original_rgb, crop, detection_identity(crop))
+                   if mode != "embedding_only" else None)
+    if mode == "histogram_only":
+        products = search_by_histogram(query_color, embedding_config, top_k)
+        result = apply_match_threshold(products, threshold=0.0,
+                                       require_image_similarity=False)
+        rgb, name = descriptor_display(query_color)
+        result.update(query_style_label=None, query_color_rgb=list(rgb) if rgb else None,
+                      query_color_name=name, search_variants=["source_roi"],
+                      search_variant_count=1, search_mode=mode)
+        return result
     category_terms = get_category_terms(crop.get("class_name", ""))
     ranked_variants = []
     query_color_rgb = None
@@ -800,6 +847,7 @@ def search_match_for_crop(crop: dict, top_k: int = 5, original_rgb=None) -> dict
                 category_terms=category_terms,
                 embedding_config=embedding_config,
                 query_color=query_color,
+                mode=mode,
             )
         except Exception as exc:
             errors.append(f"{variant.get('name')}: {exc}")
@@ -814,7 +862,16 @@ def search_match_for_crop(crop: dict, top_k: int = 5, original_rgb=None) -> dict
         raise ValueError("; ".join(errors) or f"No searchable crop variants for class {crop.get('class_name')}")
 
     products = merge_variant_rankings(ranked_variants, top_k=top_k)
-    match_result = apply_match_threshold(products)
+    match_result = apply_match_threshold(products, threshold=RETRIEVAL_ACCEPT_THRESHOLD,
+                                         strict=True, require_image_similarity=False)
+    if match_result["is_confident_match"]:
+        match_result["similar_products"] = [
+            serialize_product(product) for product in products
+            if _rank_score(product) > RETRIEVAL_ACCEPT_THRESHOLD
+        ]
+    else:
+        match_result["low_confidence_products"] = []
+    match_result["search_mode"] = mode
     match_result["query_style_label"] = next(
         (product.get("query_style_label") for product in products if product.get("query_style_label")),
         None,

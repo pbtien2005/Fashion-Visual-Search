@@ -49,11 +49,14 @@ async def health_check():
 
 
 @app.post("/api/search/upload", response_model=SearchUploadResponse)
-async def search_upload(file: UploadFile = File(...), top_k: int = 5):
+async def search_upload(file: UploadFile = File(...), top_k: int = 5,
+                        mode: str = "hybrid"):
     if not file.content_type or not file.content_type.startswith("image/"):
         raise HTTPException(status_code=400, detail="File must be an image")
     if top_k < 1 or top_k > 20:
         raise HTTPException(status_code=400, detail="top_k must be between 1 and 20")
+    if mode not in {"histogram_only", "embedding_only", "hybrid"}:
+        raise HTTPException(status_code=400, detail="Invalid retrieval mode")
 
     image_bytes = await file.read()
     if len(image_bytes) > MAX_UPLOAD_BYTES:
@@ -85,7 +88,8 @@ async def search_upload(file: UploadFile = File(...), top_k: int = 5):
         raise HTTPException(status_code=400, detail="Could not decode uploaded RGB image") from exc
     for crop in crops:
         try:
-            match_result = search_match_for_crop(crop, top_k=top_k, original_rgb=original_rgb)
+            match_result = search_match_for_crop(crop, top_k=top_k, original_rgb=original_rgb,
+                                                 mode=mode)
         except Exception as exc:
             raise HTTPException(status_code=500, detail=f"Search failed for crop {crop.get('class_name')}: {exc}") from exc
 
@@ -119,6 +123,7 @@ async def search_upload(file: UploadFile = File(...), top_k: int = 5):
                 crop_variants=crop.get("crop_variants") or [],
                 search_variants=match_result.get("search_variants", []),
                 search_variant_count=match_result.get("search_variant_count"),
+                search_mode=mode,
             )
         )
 

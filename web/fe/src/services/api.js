@@ -4,11 +4,11 @@ async function parseJson(response) {
   return response.json().catch(() => ({}))
 }
 
-export async function searchUpload(file) {
+export async function searchUpload(file, mode = 'hybrid') {
   const formData = new FormData()
   formData.append('file', file)
 
-  const response = await fetch(`${API_URL}/api/search/upload`, {
+  const response = await fetch(`${API_URL}/api/search/upload?mode=${encodeURIComponent(mode)}`, {
     method: 'POST',
     body: formData,
   })

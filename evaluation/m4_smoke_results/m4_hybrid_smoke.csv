@@ -1,0 +1,8 @@
+query_id,status,latency_ms,detected_count,detection_success,category_at_5,color_at_5,recall_at_5,reciprocal_rank,error
+starter_B0GGYQ4J5Z,ok,1420.6814850040246,2,True,True,False,True,1.0,
+starter_B0D2K2FWDZ,ok,1022.2743470003479,2,True,True,False,True,1.0,
+starter_B0C3838ZBF,ok,989.4840619963361,2,True,True,True,True,1.0,
+starter_B076JFJCL4,ok,807.2793020037352,2,True,True,False,True,1.0,
+starter_B07HNVV8MV,ok,745.2472240038333,2,True,True,False,True,1.0,
+starter_B0G6CZ3RV9,ok,1015.3824369990616,2,True,True,False,True,1.0,
+starter_B0FZJ583QN,ok,689.850408998609,1,True,True,False,True,1.0,

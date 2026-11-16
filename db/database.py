@@ -231,6 +231,27 @@ def search_similar_by_vector(
         conn.close()
 
 
+def list_color_search_products(embedding_model: str, embedding_version: int) -> list[dict]:
+    """Return the full compatible catalog for an independent HSV baseline."""
+    conn = get_db_connection()
+    if not conn:
+        raise RuntimeError("Database connection failed")
+    try:
+        rows = conn.execute(
+            """SELECT id, title, brand, price, category, product_url, r2_image_url,
+                      NULL::double precision AS similarity,
+                      dominant_color_rgb, dominant_color_name,
+                      embedding_model, embedding_version
+               FROM fashion_items
+               WHERE embedding_model = %s AND embedding_version = %s
+               ORDER BY id""",
+            (embedding_model, embedding_version),
+        ).fetchall()
+        return _rows_to_products(rows)
+    finally:
+        conn.close()
+
+
 def list_products(limit: int = 50, offset: int = 0, q: str | None = None, category: str | None = None):
     """List products from the catalog with optional text/category filters."""
     limit = max(1, min(int(limit), 100))

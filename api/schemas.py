@@ -43,6 +43,7 @@ class CropVariantResult(BaseModel):
 
 
 class DetectedItemResult(BaseModel):
+    search_mode: str | None = None
     class_name: str
     class_name_vi: str
     confidence: float
