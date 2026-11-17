@@ -1,0 +1,18 @@
+field,value
+timestamp,2026-11-16T12:11:41.469215+00:00
+commit,f97584dace7b9a09aa15c7cb52edb3be3093e8ee
+python,3.13.5
+platform,Windows-11-10.0.26200-SP0
+model_sha256,d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe
+catalog_sha256,2c04617b42b8f31ecc07d1a89487d7610042e85914d62cfc5f5167316eb380e7
+manifest_sha256,3eb6e680cc40d3171ff787e784858838eb416da81da52f96dded0bace7c7214a
+conf,0.5
+crop_config,"{'expand_ratio': 0.15, 'wide_expand_ratio': 0.3, 'output_size': 224}"
+torch,2.11.0
+ultralytics,8.4.215
+transformers,4.57.6
+torchvision,0.26.0
+opencv-python-headless,5.0.0.93
+device,CPU
+OMP_NUM_THREADS,4
+MKL_NUM_THREADS,4

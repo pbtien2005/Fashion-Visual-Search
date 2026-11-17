@@ -58,3 +58,8 @@ web/fe/dist/
 !evaluation/queries/real_outfits/.gitkeep
 !evaluation/queries/starter_catalog/
 evaluation/results/
+evaluation/benchmark/cache/
+!docs/benchmark/**/locked_config.json
+
+# Benchmark evidence JSON (locked config, thresholds, product judgments)
+!docs/benchmark/main/*.json

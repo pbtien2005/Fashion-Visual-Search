@@ -1,0 +1,6206 @@
+{
+ "grader": "Claude (AI, claude-sonnet-5-5) - nhan do AI cham, can nguoi xac nhan",
+ "exported_at": "2026-11-17T10:27:36.942660+00:00",
+ "pairs": [
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DYDH1K3Z",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0C6X4V87X",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0CDKFC89Z",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0GL1BW8QB",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0CYLKBGTD",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B07K28TQP1",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0CVRL6985",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DJNKGPLF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B09T3SG4L4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0C3M13416",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0GGGK8SQ8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DJNJHQG2",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0CPBKW2XS",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B09QX3X6F5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0G3NV97KZ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0C4BCN3HB",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DF7RHNRP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DGWX59V8",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DJNJH74X",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0FVXLG9HW",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0C36XXXS6",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0CLL2PHV4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0G53914QT",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DPJPNYGN",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DJNJY36B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DWDX4LQ8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0GC3H62HC",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0CSYVKX62",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B074NH9P5K",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DRV8LNXF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DTYVZ3H5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0BVZ4Y74F",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0GFCJVKXP",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DR2PT9PT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B005DIHOWQ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0G4M6P3CN",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0DJNJ9QKX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0F29J9CQM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0FQPDJXZG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0BW2YNL4W",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0FXXSH31W",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_01",
+   "product_id": "B0D2ZMQ8QY",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B09MMY7S28",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0CNK6DKSV",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FCTQ8RPT",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FHWKGS1M",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0DZ5XJYQG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0CPY46LFM",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FMK5K4P8",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0CXM42BGR",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FX4R2DLZ",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FDB5V2CJ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FD3GC7N4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0C8SXD4X4",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FWRJHGRZ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0DS228PXT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B08TM6WFB6",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0BQ2C3QNH",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0CYQ29FSG",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0D9K4H45Y",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FBFSZ3JP",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0BRCHFG9J",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0DBPTVNKQ",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0F3XH714Q",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B09Y8XVYP7",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0GMLNJ3ZM",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FWRHNQQ4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0D2TC9XH8",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FHH3L84M",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FCR21KM8",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0GKNR4JMT",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0CWGCHDGK",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FQPDJXZG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FV7NJXMK",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0GKW8SRQP",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0G11HSFDP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0DH3D725Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0F6CTQJWZ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FT7PN33B",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0CDGZ7HYX",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0CNSV2458",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "product_id": "B0FWJH3BX5",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0GHR83ZKL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0C6XTWBZ4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B079HPGLH1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0F654DWM7",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0DLVRNLFD",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0GKW8SRQP",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0018OFKJS",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0GN7XWXSK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0DCZFWZ96",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B07JYZHNMV",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0GCF36ZM6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B07XBCK13H",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0GT59L9TK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0CSFS8CFS",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0G349FWXP",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0FBFSZ3JP",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0FQPDJXZG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0BW874HYD",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0FLXPW71X",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0F8QJ6K5W",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B005GSYHBO",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B07BJL4TYV",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0CQXF8QW5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0DMV3LC1T",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0GGH2MPW8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0G347KJNP",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B09NPMTPJJ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0GGXJCFSJ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0CZLHLZ9X",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0CZLH231C",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0D2TC9XH8",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0G2BL7BZN",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0CN8MY8ZN",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B08TM6WFB6",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B00UV3TGUG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B07C827YPY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0FDG86B1D",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0DC6CV33S",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0FGDB74G6",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0GL1Z2CZJ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0BND7J6KK",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B09ZJ1QCSK",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B07F1D2KMY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B076JFJCL4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0DLVRM71M",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "product_id": "B0FQP9H9FH",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0CSFS8CFS",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0G256GBFJ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0FZB28B7D",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B093HB8QXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0C6XTWBZ4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B09QX3W1YX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0DDXTLVW4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0CJXV2MGJ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0G2QS9HGS",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0DLVRM71M",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0BVQL1KKN",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0CRR1H7XB",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0BD4BJ28T",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0F2S9PP8P",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B09LR97TQY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0CJXVZ5ZP",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B07Q29541S",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0GF1MF2GD",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B08X6FF18Z",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0DP4S2DHT",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0BRMX92KJ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0CQXF8QW5",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0DFCJ41SW",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0753CWG12",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B09QX3X6F5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0CLNM5SLP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0FY29PSK4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0BY8HCND8",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0D83FZSQJ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0D837DJBL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B084SPDTMW",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0G4DRPQ1N",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0894Q1JHT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B09XX7GGQK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0G8YZGTNK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0F8QJ6K5W",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0DLWJT977",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0D83P9DBV",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0G53914QT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0F24FMCLR",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0B1TT3D64",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0FY2FLV2F",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "product_id": "B0F5PHHK8N",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B09MMY7S28",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0G2L1FKKL",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B09V7FQQRT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0CYQ29FSG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B08Y6TY26P",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0B3LY3BXK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0D3LS7T5J",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0CKQV5NSN",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0FWRF77KW",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0G8X6Y6GY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B09MFSWVLF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0FMK5K4P8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0F6CTQJWZ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B09PDH93R7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0F8QYPTGV",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B09T8Z947N",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0DH3D725Y",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0FWRJHGRZ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0DHCT6C4H",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0GPXMYN7Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0C276VYGX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B08PFLV6FF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0FWRHNQQ4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "product_id": "B0GPX968J7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0G65137V1",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0DPJPNYGN",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0G8J7R7R1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0D8ZQG36Z",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07K28TQP1",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B014MEWF3Y",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0D2ZMQ8QY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07HQZHYFP",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0F1MWXCWQ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0CVX2SN35",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0745F76BY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0FN7277WF",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0DTHD9XHL",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07XG5GNFH",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0CP8C8PJR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B00I40CLJQ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07H9RGRN8",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0FBLYXY8B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0G3NV97KZ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B00XH7IO88",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07HRH4QH5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07B12SPMR",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0GGH2MPW8",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B071R4LT2B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0CVRL6985",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0G392Q632",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07BJM3GXB",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0DGWX59V8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07VC5HFTP",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0D4YSM8GB",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0894Q1JHT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B073Y41K8T",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0CDKFC89Z",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B09T3SG4L4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0F654DWM7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0DR93NGCY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0FXXSH31W",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0DX1456TW",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B07XF7QXPW",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B09NPMTPJJ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "product_id": "B0G4M6P3CN",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0F5HBJ6VP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0C4JFRVSC",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0G4CV64LP",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0F7QXP6XR",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0GFD1TW26",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0FPFRPT4D",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0BSBMHB1T",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0DF7RHNRP",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0G4VRFZ6P",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0GFCJVKXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0F98GVSK5",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0GL1J3NVT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0F7PT31G6",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0CS683PMN",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0FL787RJC",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0FBL5ZRH3",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0CXM42BGR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0DX22NNWP",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0FFP8WWCJ",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0G8HXN9PF",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B09QC3VDK6",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0FCFVZ5XV",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0FMFFZMKX",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B08H7MBG14",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0C9DT4KMF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0G53914QT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0C3838ZBF",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B09PVGX4ST",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "product_id": "B0FG4VK1ZW",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0CNGKMQSW",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FHH3L84M",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FCTQ8RPT",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0D48GJ4KM",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0DH3D725Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0B3LY3BXK",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0DPFF5L9Z",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B09Y8XVYP7",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0G8X6Y6GY",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0F1RN81NF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0DPW27WQH",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FQBYV4Y2",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FWRF77KW",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B09MMY7S28",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B08Y6TY26P",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0CXM42BGR",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FWRHNQQ4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0CNK6DKSV",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B09J2FPS67",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FCR21KM8",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0F6CTQJWZ",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0DPW32YBK",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FMK5K4P8",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FYL4X9KB",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0GKNR4JMT",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FCMRY9N2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FWRJHGRZ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0G2L1FKKL",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0G53914QT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0FLX835KM",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0BN8YR5X3",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B08PFLV6FF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0CYQ29FSG",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "product_id": "B0DBPTVNKQ",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0C46TYTZ9",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B005GSYHBO",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0FPFRPT4D",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B09WXXQBFF",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07JYZHNMV",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B09TKZNSWG",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0DF7RHNRP",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0G8HXN9PF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07BJL4TYV",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B098QL3ZFV",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0CXM42BGR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B089LJQJJC",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B00UV3TGUG",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0FPQC9CML",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B079HPGLH1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B08HCKT956",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07Y1DMHJQ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07F1D2KMY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0018OFKJS",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0CHZZ434C",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0G53914QT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07YH3N4BR",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0CJ145R3F",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B01NALVW1P",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B09PVGX4ST",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0D95SYCS8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07C827YPY",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07VNTJ8FS",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07XBCK13H",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B09PFK2D8P",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B083GK5T14",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B076JFJCL4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07Y186TPH",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B09QC3VDK6",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0FX3BX71B",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0CJC19TWG",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0D16VJFZS",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0FJB9V63S",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B07VQF781J",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B09MVGF14B",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0D8KW5TML",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B09TL5WCJ3",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "product_id": "B0GFCJVKXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0FPQC9CML",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0FGCZT9WX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0GW8LTHKD",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B083GK5T14",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B09Y8HF555",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0FKBPDPLZ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0C6XTWBZ4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0GFW8QPZH",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B06XP7NMKW",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B08HCKT956",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B07F2MRFMG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B00UV3TGUG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0BWFNSG33",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0G5XPXYKZ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B07Y186TPH",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0CSFS8CFS",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B088P8LVYZ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B07V2C2Q1M",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0DX7DFSMP",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B07YH3N4BR",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0FKBF1LS8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0FT2QZ3KK",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0BD8699KV",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0FVKWP2XZ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0CDXJDS8W",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B076JFJCL4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B098QL3ZFV",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B09HRKNLW6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B08H7MBG14",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0FZ3M2R4J",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0GN7XWXSK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B075NZTCKF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B07Y1DMHJQ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0BX8T4BBC",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B0D9K4H45Y",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "product_id": "B08939LS33",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0CTD5MZ54",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0C4BCN3HB",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0D22PG4RR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0G53914QT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0G256GBFJ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0D83FZSQJ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0DJ19G46S",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0DHS7K2G8",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0FK5H48TW",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B079HPGLH1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B09XXNSK8F",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0BYZNFY3W",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0F5HBJ6VP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0CLL2PHV4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0D83P9DBV",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0D837DJBL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0GFM71LW1",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0FX9W1734",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0BX8T4BBC",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0CYLKBGTD",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B074NH9P5K",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0FPQC9CML",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0BRCHFG9J",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0G1MCZF8S",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0GFMFRB61",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B005DIHOWQ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0B1TT3D64",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0C4YHSQQQ",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0BW2YNL4W",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0G8DSQGFY",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B07D4FMV7G",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0B5XCWNBL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0G1T5HFGR",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0CF1PYSM3",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0BVZ4Y74F",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0D7VYQYS6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0CPSCVTSM",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0G8HXN9PF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0G8J161PD",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0BWFNSG33",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0CPBKW2XS",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0DF1TRTXD",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0DTHFZ8YS",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0GFCJVKXP",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0C36XXXS6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B08NFCS3P4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0C6X4V87X",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0DLFDFXS5",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0GH6N9R8Z",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "product_id": "B0GRHCRVZ1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0G6CZ3RV9",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0DTB37R2X",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0BW874HYD",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0FDB5V2CJ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0DH3D725Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B08JTH92KZ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0CTQ233MR",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0B5SGQ2Y7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0FT7PN33B",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B08TM6WFB6",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0FQPDJXZG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0CYQ29FSG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0GJPHQRC8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0GKW8SRQP",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0FBFSZ3JP",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0FX4R2DLZ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0C8SXD4X4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0G57SQ5T9",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0BRCHFG9J",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0D2TC9XH8",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0FMK5K4P8",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0D544HHQR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B093HB8QXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0D9K4H45Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0C9DT4KMF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0D8KW5TML",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "product_id": "B0GL1J3NVT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0DPXCVSL9",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B07D4FMV7G",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0G6CZ3RV9",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0C65NTFTM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0B5SGQ2Y7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0GDXMVQ5B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0D9K4H45Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B08TM6WFB6",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B08NFCS3P4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0GL1J3NVT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0BRCHFG9J",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0CPSRKWB7",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B07RFS26Y4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B08JTH92KZ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0FT2QZ3KK",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0FP28D68S",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0GF7HJCPS",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0CN4KY5P3",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B07RNCBTSY",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0FHH8BH9W",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0CF5K4JKF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0C65J9WQS",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B01LYUAERK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0FX494125",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0GPX968J7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B09WKJRXCJ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0G8HXN9PF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B09QC3VDK6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0CXM42BGR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B08BNK2BW6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "product_id": "B0GPXMYN7Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0CRDRG2MZ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0CQVRMMY6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0CVRL6985",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0CSPSV33V",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G8J7R7R1",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0CLP8235G",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B07FHBPQCG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B07BLPFSYS",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G41R44B1",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0GN7XWXSK",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B07VL22NGM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0F5HBJ6VP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G32478CC",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0F48K94F6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0GRHCRVZ1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0CXM42BGR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0GFW8GTN3",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G8HXN9PF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G53914QT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0DHBPM4BL",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0GFCJVKXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B075NZTCKF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0B1Z1QQ1G",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G473FJ5H",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G3282XK5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B07HNVV8MV",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G34V2KL2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0FNMV2YHV",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0CTBS1MQS",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B01NB10VCL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0F7HR61XH",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B09PFK2D8P",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0BX8T4BBC",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0FTMNSCMN",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0DKD2MWGG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B079HPGLH1",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0G2BL7BZN",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_01",
+   "product_id": "B0GFVBR3VX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B01H7ENEEU",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0G53914QT",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0G1T5HFGR",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0DX1456TW",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B079HPGLH1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B09HRKNLW6",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B09QX3X6F5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0DF7RHNRP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0DJNJHQG2",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B07C827YPY",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0G41XZW31",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0F7HR61XH",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0FX2M4GV3",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B073JRH7HR",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0DJNJY36B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0DJNKGPLF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B005GSYHBO",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B07FHBPQCG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B06VWXCF67",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0047FESLG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B004HV6OG2",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B005DIHOWQ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B007GBZC5O",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "real_shorts_02",
+   "product_id": "B0DJNJ9QKX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B005DIHOWQ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B07K28TQP1",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0F29J9CQM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0GGH2MPW8",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0C4BCN3HB",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B09QX3X6F5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0CPBKW2XS",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0G41XZW31",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0D2ZMQ8QY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0DSDFDFT1",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0DRNWVX2G",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0BXRJGTLF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0F654DWM7",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0CVX2SN35",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0FTMNSCMN",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B00WK0THTI",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0FGBX1RQC",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0CXPPKJJX",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0G3NV97KZ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B09NPMTPJJ",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0BW2YNL4W",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0D4YSM8GB",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0DPJPNYGN",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0BVZ4Y74F",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B09T3SG4L4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B074NH9P5K",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0G64WCCSD",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0F1MWXCWQ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0FHBDNLXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0C6X4V87X",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0G1T5HFGR",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0DJNJY36B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0DTHJTZWG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0F2TC7Y6F",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B07VC5HFTP",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0CN8MY8ZN",
+   "type_ok": 0,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B07M8DC8WQ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0FDQVKS86",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0CLL2PHV4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B07J9M1Q2S",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0CYLKBGTD",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0D2H9Y5Z2",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0FXXSH31W",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0DSVX7799",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B07H9RGRN8",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0C36XXXS6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "product_id": "B0CP7R49Z2",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B09ZQKJYSX",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0F9W1M6WL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0GGFQR39H",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0F8TW41T9",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0F8V4ZSJ4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0C4JFRVSC",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0GGGK8SQ8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0B5XCWNBL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0DYDH1K3Z",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0GBX2DMG7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0BWFNSG33",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0DR93NGCY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0CSFS9VNS",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0F29J9CQM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0DJNJY36B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B06VWM8HD4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0BF4GKS2Y",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0CNX3T6BB",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0BS9HM31K",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0861FB19D",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B073Y41K8T",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B08X6FF18Z",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B07P2CCX4J",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0CSYVKX62",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0F8R7DRB8",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0G3NV97KZ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B08H7MBG14",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0C6SYT8QT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0FQPDJXZG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0G4M6P3CN",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B07HRHK1CK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0FX2NR7NF",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0D2ZMQ8QY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0CLGMQ31Z",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B07P16ZW4T",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0FN7CSLXD",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0F98Q3Z29",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0GK14LCHG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0CVRL6985",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B06W57VDYM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0BF3FVX33",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0F29J4C61",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B09PFK2D8P",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0FGCZT9WX",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B09LR96BDT",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0D3FD6ZM3",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B07BN4WN4J",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0GHBNYSXD",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B08Q39WVF8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B09T3SG4L4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0DJNJ9QKX",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0DJNKGPLF",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "product_id": "B0GBLN7CVT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0FCFZSML9",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0FX2NR7NF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0G1T5HFGR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B09G9JPX5S",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0D9HDTMSR",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0FJR78J5L",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0FCFVZ5XV",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0G1SM5FPQ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0F3XH714Q",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0DDCJYL7F",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0C2MQSSYN",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0FQPDJXZG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0FMFFZMKX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0C8SXD4X4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0F1T41T8X",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0GN7XWXSK",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0CYGK9ZNT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0DTB37R2X",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0F2T7XM1H",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0CD2B31H9",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0DYDH1K3Z",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B08QD46ZFC",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B07VGQTMYD",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0DQ8GG6N7",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B00JUM4DKC",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B08H7MBG14",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0FJXVMPZ2",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "product_id": "B0DK13DXTG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0BGPT68NQ",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0FX2M4GV3",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B07YP9TWCX",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0DX1456TW",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B07H9RGRN8",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B083GK5T14",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B08CVHBGW6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B07BLPFSYS",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0DJ565YGY",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0047FESLG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0DP6TQTQT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0BQV1B7QD",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B09QX3X6F5",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0F9KBSYJ9",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0F9L4D6HX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0CXPPKJJX",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0FXKQXKHD",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0F8W173FM",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0FT7FK1RW",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B08GWS3LR7",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B083DBY1JH",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B01NALVW1P",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0BWFNSG33",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0D7ZXZ17Z",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "product_id": "B0F8PCZPQJ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0CSYVKX62",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0D2ZMQ8QY",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B07HNVV8MV",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B01JQTBSU6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0G37CG5J8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B07M63842S",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0F8V4ZSJ4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0G32478CC",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0G8J7R7R1",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0G41R44B1",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B07F2B45Z6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B075NZTCKF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0DDT2HX7M",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0F6LLNMQ5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0DHBPM4BL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0F48K94F6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B079HPGLH1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0GKHP43T1",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B07FHBPQCG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0DJFQ1PSV",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0DDT2DSJT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B08H7MBG14",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0C2MQSSYN",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0CLP8235G",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0B1Z1QQ1G",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B01NB10VCL",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B017URQNWE",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B07DZWVSVM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0G79V6GR9",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0CSPSV33V",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0G473FJ5H",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0G3282XK5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0CVRL6985",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0FDQVKS86",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0DQ8GG6N7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0DKD2MWGG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0F8TW41T9",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "product_id": "B0GF6JWHRS",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DF7RHNRP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B07VC5HFTP",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DDT2DSJT",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DJNKGPLF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0000ANHT7",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B07J9M1Q2S",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DJNJHQG2",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B07FHBPQCG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B00WK0THTI",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0F67GCJTR",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B09HRKNLW6",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B07P4LXSC7",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0F2T7XM1H",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DXKFKFKT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DYDH1K3Z",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0B1JSJSXJ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DRV8LNXF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0BF4GKS2Y",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0F7WW4X1X",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0BF3FVX33",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0C8SXD4X4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DDT2HX7M",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B09LRBX14X",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DDP3X8LT",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DJNJ9QKX",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DF7DQG23",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B06VWXCF67",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0FY2P5WM7",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0F18Y6Z2J",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B07XF7QXPW",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0CP7R49Z2",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0FVXLG9HW",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0G37CG5J8",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0G1T3Y48K",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0F3QWH47N",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0F13B4DGN",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0F7RLQRBM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0GK72F5FB",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0G53914QT",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B09Y8V2Q7K",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DJNJY36B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B07H9RGRN8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0CQZ5W28Z",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B00NOY3G7S",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B09QX3X6F5",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0G3NV97KZ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0CYZ3KY4R",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0C3RY2GG3",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0DX22N9D1",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "product_id": "B0D6G9TRGR",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0C65J9WQS",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0C65NTFTM",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0CN4KY5P3",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B07RFS26Y4",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0G8J161PD",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0GDXMVQ5B",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B08TM6WFB6",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0GL1J3NVT",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0FMK5K4P8",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0D9K4H45Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0CNK6DKSV",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0FDB5V2CJ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0FT7PN33B",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0FHH8BH9W",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B08JTH92KZ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0G6CZ3RV9",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0CF5K4JKF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0DPXCVSL9",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0CPSRKWB7",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0GPXMYN7Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B07D4FMV7G",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0FBFSZ3JP",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0BRCHFG9J",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B01LYUAERK",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0FD3GC7N4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0GFCJVKXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0G2L1FKKL",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0B5SGQ2Y7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0G8HXN9PF",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0CXM42BGR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B08BNK2BW6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B09QC3VDK6",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0D2TC9XH8",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B07RNCBTSY",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0GF7HJCPS",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B08NFCS3P4",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B09WKJRXCJ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "product_id": "B0GPX968J7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0G2LQSRY2",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0CXM42BGR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0CYGL75XZ",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0FC68PPD7",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0G6CZ3RV9",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B093HB8QXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0F7WW4X1X",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0CNK6DKSV",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B07QNB97XH",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0GFCJVKXP",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0DH3D725Y",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0GPXMYN7Y",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B08Y6TY26P",
+   "type_ok": 1,
+   "color_ok": 1,
+   "acceptable": 1
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0894Q1JHT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0D2TC9XH8",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0G2L1FKKL",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0GJPHQRC8",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0G3NST9R4",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0FMK5K4P8",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0CYQ29FSG",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0F6CTQJWZ",
+   "type_ok": 1,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0G2LV2WPG",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0DYNSWMZW",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0FRS2M9QR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0CTQ233MR",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "product_id": "B0GL1J3NVT",
+   "type_ok": 0,
+   "color_ok": 0,
+   "acceptable": 0
+  }
+ ],
+ "queries": [
+  {
+   "query_id": "real_green_tshirt_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_black_dress_02",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_black_trousers_02",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_white_shirt_02",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_red_dress_02",
+   "no_match": true,
+   "expanded_reviewed": true
+  },
+  {
+   "query_id": "real_green_tshirt_02",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_blue_jeans_02",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_black_dress_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_blue_jeans_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_black_trousers_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_white_shirt_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_black_skirt_01",
+   "no_match": false,
+   "expanded_reviewed": true
+  },
+  {
+   "query_id": "real_black_skirt_02",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_shorts_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "real_shorts_02",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "bench_green_tshirt_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "bench_green_tshirt_02",
+   "no_match": false,
+   "expanded_reviewed": true
+  },
+  {
+   "query_id": "bench_green_tshirt_03",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "bench_green_tshirt_05",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "bench_green_tshirt_06",
+   "no_match": false,
+   "expanded_reviewed": true
+  },
+  {
+   "query_id": "bench_shorts_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "bench_black_skirt_01",
+   "no_match": false,
+   "expanded_reviewed": false
+  },
+  {
+   "query_id": "bench_red_dress_03",
+   "no_match": false,
+   "expanded_reviewed": true
+  }
+ ]
+}

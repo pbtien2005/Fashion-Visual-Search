@@ -1,0 +1,313 @@
+config,query_id,relevance_status,lighting_group,matched,accepted,ranked_ids,unjudged_at_5,hit_at_5,rr_at_5,acceptable_count,joint_at_5,hit_after_at_5,rr_after_at_5,candidate_hit_at_100,label_color,predicted_color,detect_measured,failure
+A0_whole_image,m1_stage,has_match,dark,True,True,"[""B0G2LQSRY2"", ""B08HCKT956"", ""B0D2TC9XH8"", ""B07BLPFSYS"", ""B08VDVRG53""]",0,True,0.5,1,True,True,0.5,True,black,,False,hit
+A0_whole_image,m1_harajuku,has_match,normal,True,True,"[""B0FWCKGD5P"", ""B0FJR78J5L"", ""B0FX2NR7NF"", ""B0FJXVMPZ2"", ""B0GN7XWXSK""]",0,False,0.0,0,False,False,0.0,True,navy,,False,rank_miss
+A0_whole_image,m1_tony,has_match,dark,True,True,"[""B0FM6WW223"", ""B0FL787RJC"", ""B0FBL5ZRH3"", ""B0F1T41T8X"", ""B0G8RMZVHZ""]",0,False,0.0,0,True,False,0.0,True,black,,False,rank_miss
+A0_whole_image,m1_brisbane,has_match,normal,True,True,"[""B0BSBMHB1T"", ""B0CXM42BGR"", ""B0FC5MSL1L"", ""B09PVGX4ST"", ""B0F7PT31G6""]",0,True,1.0,1,True,True,1.0,True,blue,,False,hit
+A0_whole_image,m1_ostau,has_match,normal,True,True,"[""B0BQ2C3QNH"", ""B0FM2KF35R"", ""B0FV7NJXMK"", ""B0BRCHFG9J"", ""B0FDB5V2CJ""]",0,False,0.0,0,False,False,0.0,True,brown,,False,rank_miss
+A0_whole_image,bench_green_tshirt_07,has_match,normal,True,True,"[""B0DX1456TW"", ""B07H9RGRN8"", ""B0BQV1B7QD"", ""B0DGWX59V8"", ""B0CQZ5W28Z""]",0,True,0.5,1,True,True,0.5,True,olive,,False,hit
+A0_whole_image,bench_green_tshirt_08,has_match,normal,True,True,"[""B0GGGRNWZX"", ""B0CDKFC89Z"", ""B07B12SPMR"", ""B0BRFVV3BC"", ""B0DGWX59V8""]",0,True,0.5,2,True,True,0.5,True,olive,,False,hit
+A0_whole_image,bench_green_tshirt_09,has_match,dark,True,True,"[""B0CXPPKJJX"", ""B0CQZ5W28Z"", ""B0FX2M4GV3"", ""B0CP8C8PJR"", ""B0FHKSWNJC""]",0,False,0.0,0,False,False,0.0,True,olive,,False,rank_miss
+A0_whole_image,bench_white_shirt_01,has_match,normal,True,True,"[""B0FQBYV4Y2"", ""B0F5HBJ6VP"", ""B0GFCJVKXP"", ""B0G53914QT"", ""B09PVGX4ST""]",0,False,0.0,0,False,False,0.0,True,white,,False,rank_miss
+A0_whole_image,bench_white_shirt_04,has_match,normal,True,True,"[""B07MR5KVVY"", ""B0F3TQKPDX"", ""B01H7ENEEU"", ""B0G53914QT"", ""B09QX3X6F5""]",0,False,0.0,0,True,False,0.0,True,white,,False,rank_miss
+A0_whole_image,bench_white_shirt_05,has_match,normal,True,True,"[""B0G53914QT"", ""B0GFCJVKXP"", ""B0GFVG1KRC"", ""B09PVGX4ST"", ""B0F8R7DRB8""]",0,True,1.0,2,True,True,1.0,True,white,,False,hit
+A0_whole_image,bench_white_shirt_06,has_match,normal,True,True,"[""B0GFCJVKXP"", ""B0FQBYV4Y2"", ""B0G8HXN9PF"", ""B0G6CZ3RV9"", ""B0DW3VJLR8""]",0,False,0.0,0,False,False,0.0,True,white,,False,rank_miss
+A0_whole_image,bench_white_shirt_07,has_match,normal,True,True,"[""B0F8TW41T9"", ""B0F8V4ZSJ4"", ""B0F635PJFX"", ""B0C3T9V55L"", ""B0C2MQSSYN""]",0,True,0.3333333333333333,2,True,True,0.3333333333333333,True,white,,False,hit
+A0_whole_image,bench_white_shirt_08,has_match,normal,True,True,"[""B0DYDH1K3Z"", ""B0F6CKPPKB"", ""B0CD2B31H9"", ""B0GC3H62HC"", ""B0DTB37R2X""]",0,True,0.5,2,True,True,0.5,True,white,,False,hit
+A0_whole_image,bench_white_shirt_09,has_match,normal,True,True,"[""B0D837DJBL"", ""B0D83FZSQJ"", ""B0GFVG1KRC"", ""B0CPY46LFM"", ""B0D7VYQYS6""]",0,True,0.2,1,True,True,0.2,True,white,,False,hit
+A0_whole_image,bench_white_shirt_10,has_match,normal,True,True,"[""B0G53914QT"", ""B0FPQC9CML"", ""B07BLPFSYS"", ""B0F5HBJ6VP"", ""B0DGQ32Z34""]",0,True,0.2,1,True,True,0.2,True,black,,False,hit
+A0_whole_image,bench_blue_jeans_01,has_match,normal,True,True,"[""B0G41R44B1"", ""B0CVRL6985"", ""B0FX2NR7NF"", ""B0G41XZW31"", ""B09T3SG4L4""]",0,False,0.0,0,False,False,0.0,False,navy,,False,candidate_miss
+A0_whole_image,bench_blue_jeans_03,no_match,normal,True,True,"[""B0FG4VK1ZW"", ""B0FCFVZ5XV"", ""B0FFP8WWCJ"", ""B0GL1BW8QB"", ""B0FCFZSML9""]",0,,,,False,,,,pink,,False,
+A0_whole_image,bench_blue_jeans_04,has_match,normal,True,True,"[""B09QX3X6F5"", ""B08H7MBG14"", ""B0FCFVZ5XV"", ""B09HRKNLW6"", ""B0FG4VK1ZW""]",0,False,0.0,0,False,False,0.0,True,gray,,False,rank_miss
+A0_whole_image,bench_blue_jeans_05,has_match,normal,True,True,"[""B0DYDH1K3Z"", ""B0CD2B31H9"", ""B0GRHCRVZ1"", ""B0GC3H62HC"", ""B0B7X2RM1Q""]",0,False,0.0,0,False,False,0.0,False,orange,,False,candidate_miss
+A0_whole_image,bench_blue_jeans_06,has_match,normal,True,True,"[""B0G53914QT"", ""B0DF7RHNRP"", ""B0GFCJVKXP"", ""B005GSYHBO"", ""B08H7MBG14""]",0,True,0.5,1,True,True,0.5,True,blue,,False,hit
+A0_whole_image,bench_blue_jeans_07,has_match,normal,True,True,"[""B0DF7RHNRP"", ""B0G53914QT"", ""B08H7MBG14"", ""B0FMFFZMKX"", ""B0FDQVKS86""]",0,True,1.0,1,True,True,1.0,True,blue,,False,hit
+A0_whole_image,bench_blue_jeans_09,has_match,normal,True,True,"[""B0FL787RJC"", ""B073JRH7HR"", ""B0GTV8KZMW"", ""B0FDRT2SDJ"", ""B0DX22NNWP""]",0,True,1.0,2,True,True,1.0,True,navy,,False,hit
+A0_whole_image,bench_blue_jeans_10,has_match,normal,True,True,"[""B0FL787RJC"", ""B0FDRT2SDJ"", ""B0FBL5ZRH3"", ""B07HL1LVTL"", ""B0DX22NNWP""]",0,True,1.0,5,True,True,1.0,True,navy,,False,hit
+A0_whole_image,bench_black_trousers_01,has_match,normal,True,True,"[""B0FX2NR7NF"", ""B0GN7XWXSK"", ""B0DQ8GG6N7"", ""B0F1T41T8X"", ""B0FBFSZ3JP""]",0,True,0.3333333333333333,2,True,True,0.3333333333333333,True,black,,False,hit
+A0_whole_image,bench_black_trousers_02,has_match,normal,True,True,"[""B08H7MBG14"", ""B0F1T41T8X"", ""B0FM6WW223"", ""B0DTB37R2X"", ""B0CD2B31H9""]",0,True,0.5,1,True,True,0.5,True,black,,False,hit
+A0_whole_image,bench_black_trousers_03,has_match,normal,True,True,"[""B0G1T5HFGR"", ""B0GW8LTHKD"", ""B097GVKYML"", ""B0FZ3M2R4J"", ""B0G2BL7BZN""]",0,False,0.0,0,False,False,0.0,True,black,,False,rank_miss
+A0_whole_image,bench_black_trousers_04,has_match,normal,True,True,"[""B0F1T41T8X"", ""B08H7MBG14"", ""B0FJXVMPZ2"", ""B0FWCKGD5P"", ""B0FMFFZMKX""]",0,False,0.0,0,False,False,0.0,True,cream,,False,rank_miss
+A0_whole_image,bench_black_trousers_07,has_match,normal,True,True,"[""B0G2BL7BZN"", ""B0GN7XWXSK"", ""B097GVKYML"", ""B0GGXJCFSJ"", ""B0G1T5HFGR""]",0,False,0.0,0,False,False,0.0,True,brown,,False,rank_miss
+A0_whole_image,bench_black_trousers_08,has_match,normal,True,True,"[""B0G2BL7BZN"", ""B0GN7XWXSK"", ""B097GVKYML"", ""B06XP7NMKW"", ""B0G1T5HFGR""]",0,False,0.0,0,False,False,0.0,True,brown,,False,rank_miss
+A0_whole_image,bench_black_trousers_09,has_match,normal,True,True,"[""B09QX3X6F5"", ""B0DJWTTHJV"", ""B0D2H9Y5Z2"", ""B0GBVGMWNT"", ""B0DQDLFD3G""]",0,False,0.0,0,False,False,0.0,True,white,,False,rank_miss
+A0_whole_image,bench_black_trousers_10,has_match,normal,True,True,"[""B0DPXWXT3Q"", ""B0F4SPD8J7"", ""B0FP53GKN8"", ""B0FWCKGD5P"", ""B07YP5SNQ3""]",0,False,0.0,0,False,False,0.0,False,gray,,False,candidate_miss
+A0_whole_image,bench_shorts_02,no_match,normal,True,True,"[""B07H9RGRN8"", ""B07K28TQP1"", ""B0CQZ5W28Z"", ""B0CVX2SN35"", ""B0FZK1JWXF""]",0,,,,False,,,,blue,,False,
+A0_whole_image,bench_shorts_03,has_match,normal,True,True,"[""B0GK14LCHG"", ""B07PVDT181"", ""B0G53914QT"", ""B0GCNJC46K"", ""B0CQZ5W28Z""]",0,False,0.0,0,True,False,0.0,True,white,,False,rank_miss
+A0_whole_image,bench_shorts_05,has_match,normal,True,True,"[""B0F4MCCTL8"", ""B0GFW8GTN3"", ""B0GFW8QPZH"", ""B0DGQ32Z34"", ""B0CSYPM1L3""]",0,False,0.0,0,False,False,0.0,False,black,,False,candidate_miss
+A0_whole_image,bench_shorts_06,has_match,normal,True,True,"[""B0FWCKGD5P"", ""B0FDQVKS86"", ""B0018OFKJS"", ""B0DJNJHQG2"", ""B0DJNJY36B""]",0,False,0.0,0,False,False,0.0,True,navy,,False,rank_miss
+A0_whole_image,bench_shorts_07,unconfirmed,normal,True,True,"[""B0FWCKGD5P"", ""B07FHBPQCG"", ""B0FDQVKS86"", ""B0F48K94F6"", ""B01NB10VCL""]",0,,,,False,,,,white,,False,
+A0_whole_image,bench_shorts_10,has_match,normal,True,True,"[""B0FDQVKS86"", ""B08H7MBG14"", ""B0G53914QT"", ""B07GP5QGCJ"", ""B0CQZ5W28Z""]",0,False,0.0,0,False,False,0.0,True,navy,,False,rank_miss
+A0_whole_image,bench_black_skirt_04,no_match,normal,True,True,"[""B0GFCJVKXP"", ""B0F1N5SBTF"", ""B0D91YVVR5"", ""B0BWFNSG33"", ""B0F8QYMNVG""]",0,,,,True,,,,blue,,False,
+A0_whole_image,bench_black_skirt_05,has_match,normal,True,True,"[""B0DK13DXTG"", ""B0GFCJVKXP"", ""B0G6CZ3RV9"", ""B0D4YNRNP2"", ""B0F1N5SBTF""]",0,False,0.0,0,True,False,0.0,True,black,,False,rank_miss
+A0_whole_image,bench_black_skirt_06,has_match,normal,True,True,"[""B0D91YVVR5"", ""B0G6CZ3RV9"", ""B08KWC4Z2G"", ""B09QC3VDK6"", ""B0F7PT31G6""]",0,False,0.0,0,False,False,0.0,False,blue,,False,candidate_miss
+A0_whole_image,bench_red_dress_04,no_match,normal,True,True,"[""B0GFVG1KRC"", ""B0CTQ233MR"", ""B09W5SHPP1"", ""B0FZB28B7D"", ""B0G2LQSRY2""]",0,,,,False,,,,yellow,,False,
+A0_whole_image,bench_red_dress_05,has_match,normal,True,True,"[""B0D7HTV3YC"", ""B0CWGCHDGK"", ""B0DWSC43NJ"", ""B0GFVG1KRC"", ""B09W5SHPP1""]",0,False,0.0,0,False,False,0.0,True,red,,False,rank_miss
+A0_whole_image,bench_red_dress_06,has_match,normal,True,True,"[""B0C276VYGX"", ""B09W5SHPP1"", ""B0CWGCHDGK"", ""B0F2HWSH4F"", ""B0G38BJ9D5""]",0,True,1.0,1,True,True,1.0,True,white,,False,hit
+A0_whole_image,bench_red_dress_08,has_match,normal,True,True,"[""B09W5SHPP1"", ""B0CWGCHDGK"", ""B0G38BJ9D5"", ""B0DWSC43NJ"", ""B0D3LS7T5J""]",0,False,0.0,0,False,False,0.0,False,beige,,False,candidate_miss
+A0_whole_image,bench_red_dress_09,has_match,normal,True,True,"[""B09W5SHPP1"", ""B0DH3D725Y"", ""B0DWSC43NJ"", ""B0CWGCHDGK"", ""B0G2LQSRY2""]",0,False,0.0,0,False,False,0.0,False,black,,False,candidate_miss
+A0_whole_image,bench_black_dress_01,has_match,normal,True,True,"[""B0G6CZ3RV9"", ""B09PVGX4ST"", ""B0DPFF5L9Z"", ""B0GFCJVKXP"", ""B0CXM42BGR""]",0,False,0.0,0,False,False,0.0,True,black,,False,rank_miss
+A0_whole_image,bench_black_dress_05,has_match,normal,True,True,"[""B0DTB37R2X"", ""B0FDB5V2CJ"", ""B0F42SS6T3"", ""B0DK13DXTG"", ""B0BW874HYD""]",0,False,0.0,0,False,False,0.0,True,black,,False,rank_miss
+A0_whole_image,bench_black_dress_06,has_match,normal,True,True,"[""B0F8TW41T9"", ""B0F8V4ZSJ4"", ""B0G1SR1M3T"", ""B0C3T9V55L"", ""B0DK13DXTG""]",0,False,0.0,0,False,False,0.0,True,white,,False,rank_miss
+A0_whole_image,bench_black_dress_07,has_match,normal,True,True,"[""B081GB194M"", ""B0G2LQSRY2"", ""B093HB8QXP"", ""B0DK13DXTG"", ""B0D544HHQR""]",0,False,0.0,0,False,False,0.0,True,black,,False,rank_miss
+A0_whole_image,bench_black_dress_10,has_match,dark,True,True,"[""B0BRCHFG9J"", ""B0FBFSZ3JP"", ""B0G2LQSRY2"", ""B0D544HHQR"", ""B0D2TC9XH8""]",0,False,0.0,0,False,False,0.0,True,black,,False,rank_miss
+A0_whole_image,bench_shirt_03,has_match,normal,True,True,"[""B0G7Y6H5HJ"", ""B0DJQTXNTW"", ""B0FY2P5WM7"", ""B06VWXCF67"", ""B0FY2NWCR3""]",0,False,0.0,0,True,False,0.0,True,blue,,False,rank_miss
+C1p_color_only,m1_stage,has_match,dark,True,True,"[""B0DMV3LC1T"", ""B0GLFZDRDM"", ""B0GHY121HX"", ""B0FR4X86KM"", ""B0GD1CWPFH""]",0,False,0.0,0,True,False,0.0,True,black,black,True,rank_miss
+C1p_color_only,m1_harajuku,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+C1p_color_only,m1_tony,has_match,dark,True,True,"[""B0CGPW5VL8"", ""B0FCRSYYX9"", ""B0D4YH11F9"", ""B0FT2C7V3Y"", ""B0FB8BMBHL""]",0,False,0.0,0,False,False,0.0,False,black,brown,True,candidate_miss
+C1p_color_only,m1_brisbane,has_match,normal,True,True,"[""B01NB10VCL"", ""B075NZTCKF"", ""B079HPGLH1"", ""B07VL22NGM"", ""B0B1Z1QQ1G""]",0,False,0.0,0,True,False,0.0,True,blue,navy,True,rank_miss
+C1p_color_only,m1_ostau,has_match,normal,True,True,"[""B0CDGZ7HYX"", ""B0D9H1FSK6"", ""B0DBPTVNKQ"", ""B0FD3GC7N4"", ""B0FHH3L84M""]",0,False,0.0,0,False,False,0.0,True,brown,navy,True,rank_miss
+C1p_color_only,bench_green_tshirt_07,has_match,normal,True,True,"[""B0BND7J6KK"", ""B0CW3HTMFK"", ""B0F8N74RSQ"", ""B0FB9C2FLG"", ""B0G5Z1MB91""]",0,False,0.0,0,True,False,0.0,True,olive,brown,True,rank_miss
+C1p_color_only,bench_green_tshirt_08,has_match,normal,True,True,"[""B0CX1LXFP4"", ""B0FZBG9QCW"", ""B0F8N74RSQ"", ""B0FXXSH31W"", ""B07N4P6KJD""]",0,True,0.25,1,True,True,0.25,True,olive,brown,True,hit
+C1p_color_only,bench_green_tshirt_09,has_match,dark,True,True,"[""B0DTYVZ3H5"", ""B0DF7FM3CR"", ""B0DTHFZ8YS"", ""B0FC68PPD7"", ""B0FX9W1734""]",0,False,0.0,0,False,False,0.0,False,olive,black,True,candidate_miss
+C1p_color_only,bench_white_shirt_01,has_match,normal,True,True,"[""B0GLPKSN7P"", ""B0CT5PJ2LG"", ""B0G4M1CPDS"", ""B0FD3JR348"", ""B0FM2KF35R""]",0,True,1.0,1,True,True,1.0,True,white,gray,True,hit
+C1p_color_only,bench_white_shirt_04,has_match,normal,True,True,"[""B0BXRJGTLF"", ""B0DKF4L84P"", ""B0F8GX2SDT"", ""B0DPL5WK3Q"", ""B0DF7DQG23""]",0,False,0.0,0,False,False,0.0,False,white,black,True,candidate_miss
+C1p_color_only,bench_white_shirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C1p_color_only,bench_white_shirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C1p_color_only,bench_white_shirt_07,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+C1p_color_only,bench_white_shirt_08,has_match,normal,True,True,"[""B0D2MN69CR"", ""B0GGGK8SQ8"", ""B0D1FR9DTT"", ""B0GQL7F17D"", ""B075JWZ1KR""]",0,False,0.0,0,False,False,0.0,True,white,gray,True,rank_miss
+C1p_color_only,bench_white_shirt_09,has_match,normal,True,True,"[""B0F72KH85W"", ""B0CQ4WZ6LP"", ""B0FNC65KVY"", ""B0DRTZ5FVG"", ""B0G1XV8VZ5""]",0,False,0.0,0,False,False,0.0,True,white,gray,True,rank_miss
+C1p_color_only,bench_white_shirt_10,has_match,normal,True,True,"[""B0GHY121HX"", ""B08HCKT956"", ""B0FR4X86KM"", ""B0GD1CWPFH"", ""B0DMV3LC1T""]",0,True,0.2,1,True,True,0.2,True,black,black,True,hit
+C1p_color_only,bench_blue_jeans_01,has_match,normal,True,True,"[""B0GLFZDRDM"", ""B0DMV3LC1T"", ""B076JFJCL4"", ""B08HCKT956"", ""B0GHY121HX""]",0,False,0.0,0,False,False,0.0,True,navy,black,True,rank_miss
+C1p_color_only,bench_blue_jeans_03,no_match,normal,True,True,"[""B0C2ZD2G55"", ""B0C84H369R"", ""B0C8J1GV28"", ""B0CF62PKQ8"", ""B0CF66NW7S""]",0,,,,True,,,,pink,cream,True,
+C1p_color_only,bench_blue_jeans_04,has_match,normal,True,True,"[""B07Q29541S"", ""B084SPDTMW"", ""B09LR97TQY"", ""B09QX3W1YX"", ""B09QX3X6F5""]",0,False,0.0,0,False,False,0.0,False,gray,cream,True,candidate_miss
+C1p_color_only,bench_blue_jeans_05,has_match,normal,True,True,"[""B0D4YH11F9"", ""B08LP3ZKZN"", ""B09X1NNYQN"", ""B07PSGZJLH"", ""B014WBVBOG""]",0,False,0.0,0,False,False,0.0,False,orange,brown,True,candidate_miss
+C1p_color_only,bench_blue_jeans_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,no_detection
+C1p_color_only,bench_blue_jeans_07,has_match,normal,True,True,"[""B0G32478CC"", ""B0GJS55VDM"", ""B0F8J522PM"", ""B0G34V2KL2"", ""B09TKZNSWG""]",0,True,0.3333333333333333,2,True,True,0.3333333333333333,True,blue,gray,True,hit
+C1p_color_only,bench_blue_jeans_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+C1p_color_only,bench_blue_jeans_10,has_match,normal,True,True,"[""B0B214DX35"", ""B0B6C886PL"", ""B0BB2FSTV2"", ""B0BML5MZC9"", ""B0DBH1K3ZQ""]",0,False,0.0,0,True,False,0.0,True,navy,navy,True,rank_miss
+C1p_color_only,bench_black_trousers_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C1p_color_only,bench_black_trousers_02,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C1p_color_only,bench_black_trousers_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+C1p_color_only,bench_black_trousers_04,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,cream,,True,no_detection
+C1p_color_only,bench_black_trousers_07,has_match,normal,True,True,"[""B0BML5MZC9"", ""B0DPW32YBK"", ""B0DMSKBH1M"", ""B0DBLLBKMF"", ""B0B6C886PL""]",0,False,0.0,0,False,False,0.0,False,brown,black,True,candidate_miss
+C1p_color_only,bench_black_trousers_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,brown,,True,wrong_class
+C1p_color_only,bench_black_trousers_09,has_match,normal,True,True,"[""B0C2ZD2G55"", ""B0C84H369R"", ""B0C8J1GV28"", ""B0CF62PKQ8"", ""B0CF66NW7S""]",0,True,1.0,1,True,True,1.0,True,white,cream,True,hit
+C1p_color_only,bench_black_trousers_10,has_match,normal,True,True,"[""B0BR8SG1V4"", ""B0FHJLTRDF"", ""B0BRNHPFG9"", ""B0FX228JJV"", ""B08QHNYYXG""]",0,False,0.0,0,False,False,0.0,False,gray,black,True,candidate_miss
+C1p_color_only,bench_shorts_02,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+C1p_color_only,bench_shorts_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C1p_color_only,bench_shorts_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C1p_color_only,bench_shorts_06,has_match,normal,True,True,"[""B01NB10VCL"", ""B075NZTCKF"", ""B079HPGLH1"", ""B07VL22NGM"", ""B0B1Z1QQ1G""]",0,True,0.5,1,True,True,0.5,True,navy,navy,True,hit
+C1p_color_only,bench_shorts_07,unconfirmed,normal,True,True,"[""B0C2ZD2G55"", ""B0C84H369R"", ""B0C8J1GV28"", ""B0CF62PKQ8"", ""B0CF66NW7S""]",0,,,,False,,,,white,cream,True,
+C1p_color_only,bench_shorts_10,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,no_detection
+C1p_color_only,bench_black_skirt_04,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+C1p_color_only,bench_black_skirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+C1p_color_only,bench_black_skirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,wrong_class
+C1p_color_only,bench_red_dress_04,no_match,normal,False,False,[],0,,,,False,,,,yellow,,True,
+C1p_color_only,bench_red_dress_05,has_match,normal,True,True,"[""B0F8QYPTGV"", ""B0DH3D725Y"", ""B0CKQV5NSN"", ""B08PFLV6FF"", ""B08Y6TY26P""]",0,True,1.0,1,True,True,1.0,True,red,red,True,hit
+C1p_color_only,bench_red_dress_06,has_match,normal,True,True,"[""B09W5SHPP1"", ""B0C276VYGX"", ""B0D2VWHPXJ"", ""B0D544HHQR"", ""B0DLKD8J6Q""]",0,True,0.5,2,True,True,0.5,True,white,cream,True,hit
+C1p_color_only,bench_red_dress_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,beige,,True,no_detection
+C1p_color_only,bench_red_dress_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C1p_color_only,bench_black_dress_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C1p_color_only,bench_black_dress_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C1p_color_only,bench_black_dress_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+C1p_color_only,bench_black_dress_07,has_match,normal,True,True,"[""B0CYZM5RSM"", ""B0DLGP1M9B"", ""B076WWVFLT"", ""B0D9XH8F1G"", ""B010277HZQ""]",0,True,1.0,4,True,True,1.0,True,black,black,True,hit
+C1p_color_only,bench_black_dress_10,has_match,dark,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C1p_color_only,bench_shirt_03,has_match,normal,True,True,"[""B07Q29541S"", ""B084SPDTMW"", ""B09LR97TQY"", ""B09QX3W1YX"", ""B09QX3X6F5""]",0,True,0.25,1,True,True,0.25,True,blue,cream,True,hit
+C2_embedding_only,m1_stage,has_match,dark,True,False,"[""B0G53914QT"", ""B07YH3N4BR"", ""B0DF7RHNRP"", ""B083GK5T14"", ""B0GFCJVKXP""]",0,True,0.5,2,True,False,0.0,True,black,black,True,rejected
+C2_embedding_only,m1_harajuku,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+C2_embedding_only,m1_tony,has_match,dark,True,False,"[""B0DH2LP7RC"", ""B0FBL5ZRH3"", ""B08H7MBG14"", ""B0FL787RJC"", ""B0FR2V8C55""]",0,False,0.0,0,True,False,0.0,True,black,brown,True,rank_miss
+C2_embedding_only,m1_brisbane,has_match,normal,True,True,"[""B0GFCJVKXP"", ""B0BSBMHB1T"", ""B0F7QXP6XR"", ""B0G8HXN9PF"", ""B0F98GVSK5""]",0,True,0.5,4,True,True,0.5,True,blue,navy,True,hit
+C2_embedding_only,m1_ostau,has_match,normal,True,True,"[""B0BQ2C3QNH"", ""B09J2FPS67"", ""B0FT288NCH"", ""B0B71JF6LW"", ""B093PY2YVF""]",0,False,0.0,0,False,False,0.0,True,brown,navy,True,rank_miss
+C2_embedding_only,bench_green_tshirt_07,has_match,normal,True,True,"[""B07K28TQP1"", ""B0G392Q632"", ""B09T3SG4L4"", ""B0F1MWXCWQ"", ""B0DKT4X5SQ""]",0,True,1.0,4,True,True,1.0,True,olive,brown,True,hit
+C2_embedding_only,bench_green_tshirt_08,has_match,normal,True,False,"[""B07K28TQP1"", ""B0F1MWXCWQ"", ""B0DTHD9XHL"", ""B0FPF27WW4"", ""B0G392Q632""]",0,True,1.0,4,True,False,0.0,True,olive,brown,True,rejected
+C2_embedding_only,bench_green_tshirt_09,has_match,dark,True,False,"[""B0G1T5HFGR"", ""B0G53914QT"", ""B07K28TQP1"", ""B0CXPPKJJX"", ""B079HPGLH1""]",0,True,0.3333333333333333,1,True,False,0.0,True,olive,black,True,rejected
+C2_embedding_only,bench_white_shirt_01,has_match,normal,True,True,"[""B0CPP12B56"", ""B0CPSCVTSM"", ""B0GFMKCRTM"", ""B0DSVV2HVW"", ""B0F5HBJ6VP""]",0,True,0.3333333333333333,1,True,True,0.3333333333333333,True,white,gray,True,hit
+C2_embedding_only,bench_white_shirt_04,has_match,normal,True,False,"[""B0G53914QT"", ""B0G2LQSRY2"", ""B0F5HBJ6VP"", ""B0GFVG1KRC"", ""B0GFCJVKXP""]",0,False,0.0,0,True,False,0.0,True,white,black,True,rank_miss
+C2_embedding_only,bench_white_shirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C2_embedding_only,bench_white_shirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C2_embedding_only,bench_white_shirt_07,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+C2_embedding_only,bench_white_shirt_08,has_match,normal,True,False,"[""B0CNGKMQSW"", ""B0CPSCVTSM"", ""B0G53914QT"", ""B0D7VYQYS6"", ""B0GFCJVKXP""]",0,True,1.0,3,True,False,0.0,True,white,gray,True,rejected
+C2_embedding_only,bench_white_shirt_09,has_match,normal,True,False,"[""B0FG32DVPJ"", ""B0F2921LL9"", ""B0D837DJBL"", ""B0D83FZSQJ"", ""B0FXWZD6V9""]",0,False,0.0,0,False,False,0.0,True,white,gray,True,rank_miss
+C2_embedding_only,bench_white_shirt_10,has_match,normal,True,True,"[""B0DGQ32Z34"", ""B0G53914QT"", ""B0CSFS8CFS"", ""B0DGGT3Q72"", ""B0F1FMFFW8""]",0,True,1.0,2,True,True,1.0,True,black,black,True,hit
+C2_embedding_only,bench_blue_jeans_01,has_match,normal,True,True,"[""B005GSYHBO"", ""B09HRKNLW6"", ""B0FLJ73NW2"", ""B0DF7RHNRP"", ""B09WXXQBFF""]",0,True,1.0,3,True,True,1.0,True,navy,black,True,hit
+C2_embedding_only,bench_blue_jeans_03,no_match,normal,True,True,"[""B0GGNKQDJ2"", ""B0B7JX6J5C"", ""B0GCMDSLGX"", ""B0DR2DR3HZ"", ""B0C5JCFPP7""]",0,,,,False,,,,pink,cream,True,
+C2_embedding_only,bench_blue_jeans_04,has_match,normal,True,False,"[""B08H7MBG14"", ""B0FN7CSLXD"", ""B0F28J46SD"", ""B0FG8193F8"", ""B0F29J9CQM""]",0,True,0.3333333333333333,1,True,False,0.0,True,gray,cream,True,rejected
+C2_embedding_only,bench_blue_jeans_05,has_match,normal,True,False,"[""B0FHBDNLXP"", ""B0D8P31QXR"", ""B0D2ZMQ8QY"", ""B08H7MBG14"", ""B0DTYVZ3H5""]",0,True,0.5,1,True,False,0.0,True,orange,brown,True,rejected
+C2_embedding_only,bench_blue_jeans_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,no_detection
+C2_embedding_only,bench_blue_jeans_07,has_match,normal,True,False,"[""B0GFCJVKXP"", ""B0DF7RHNRP"", ""B0G53914QT"", ""B0C4JFRVSC"", ""B0F1K99SFW""]",0,True,0.5,2,True,False,0.0,True,blue,gray,True,rejected
+C2_embedding_only,bench_blue_jeans_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+C2_embedding_only,bench_blue_jeans_10,has_match,normal,True,False,"[""B0FL787RJC"", ""B0FBL5ZRH3"", ""B07HL1LVTL"", ""B0C3838ZBF"", ""B0DX22NNWP""]",0,True,1.0,5,True,False,0.0,True,navy,navy,True,rejected
+C2_embedding_only,bench_black_trousers_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C2_embedding_only,bench_black_trousers_02,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C2_embedding_only,bench_black_trousers_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+C2_embedding_only,bench_black_trousers_04,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,cream,,True,no_detection
+C2_embedding_only,bench_black_trousers_07,has_match,normal,True,True,"[""B07DGVJZB3"", ""B0G4W3XKW2"", ""B0FLCBY7P5"", ""B0D7GX9ZCD"", ""B0FJSJP42C""]",0,True,1.0,3,True,True,1.0,True,brown,black,True,hit
+C2_embedding_only,bench_black_trousers_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,brown,,True,wrong_class
+C2_embedding_only,bench_black_trousers_09,has_match,normal,True,False,"[""B0G53914QT"", ""B0775MH7ST"", ""B0GCMDSLGX"", ""B0G1T5HFGR"", ""B0D3M316PC""]",0,True,0.5,3,True,False,0.0,True,white,cream,True,rejected
+C2_embedding_only,bench_black_trousers_10,has_match,normal,True,False,"[""B0G7Y6H5HJ"", ""B09JKJMS1C"", ""B0C46TYTZ9"", ""B0FJXPF357"", ""B0F29J9CQM""]",0,False,0.0,0,False,False,0.0,False,gray,black,True,candidate_miss
+C2_embedding_only,bench_shorts_02,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+C2_embedding_only,bench_shorts_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C2_embedding_only,bench_shorts_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C2_embedding_only,bench_shorts_06,has_match,normal,True,False,"[""B0F48K94F6"", ""B0G79V6GR9"", ""B01NB10VCL"", ""B0G32478CC"", ""B0G3282XK5""]",0,False,0.0,0,False,False,0.0,True,navy,navy,True,rank_miss
+C2_embedding_only,bench_shorts_07,unconfirmed,normal,True,False,"[""B0G39WB1ZV"", ""B0DRV8LNXF"", ""B0F29J9CQM"", ""B0DJNJ9QKX"", ""B0DJNKGPLF""]",0,,,,False,,,,white,cream,True,
+C2_embedding_only,bench_shorts_10,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,no_detection
+C2_embedding_only,bench_black_skirt_04,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+C2_embedding_only,bench_black_skirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+C2_embedding_only,bench_black_skirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,wrong_class
+C2_embedding_only,bench_red_dress_04,no_match,normal,False,False,[],0,,,,False,,,,yellow,,True,
+C2_embedding_only,bench_red_dress_05,has_match,normal,True,False,"[""B09T8Z947N"", ""B09MMY7S28"", ""B0FWRJHGRZ"", ""B0FWRHNQQ4"", ""B0FYL4X9KB""]",0,False,0.0,0,False,False,0.0,True,red,red,True,rank_miss
+C2_embedding_only,bench_red_dress_06,has_match,normal,True,False,"[""B0CKQV5NSN"", ""B09W5SHPP1"", ""B0C276VYGX"", ""B09MMY7S28"", ""B0DWSC43NJ""]",0,True,1.0,2,True,False,0.0,True,white,cream,True,rejected
+C2_embedding_only,bench_red_dress_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,beige,,True,no_detection
+C2_embedding_only,bench_red_dress_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C2_embedding_only,bench_black_dress_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C2_embedding_only,bench_black_dress_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C2_embedding_only,bench_black_dress_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+C2_embedding_only,bench_black_dress_07,has_match,normal,True,False,"[""B081GB194M"", ""B0G1T5HFGR"", ""B0FNBQY6GG"", ""B0FX9W1734"", ""B0DBPTVNKQ""]",0,False,0.0,0,True,False,0.0,True,black,black,True,rank_miss
+C2_embedding_only,bench_black_dress_10,has_match,dark,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C2_embedding_only,bench_shirt_03,has_match,normal,True,True,"[""B0CDW7VN8S"", ""B0CYP888RF"", ""B0GH6N9R8Z"", ""B0FX3PJL5Q"", ""B0B5XCWNBL""]",0,True,1.0,3,True,True,1.0,True,blue,cream,True,hit
+B0_current,m1_stage,has_match,dark,True,False,"[""B0CDXJDS8W"", ""B07YH3N4BR"", ""B0DF7RHNRP"", ""B083GK5T14"", ""B08HCKT956""]",0,True,1.0,4,True,False,0.0,True,black,black,True,rejected
+B0_current,m1_harajuku,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+B0_current,m1_tony,has_match,dark,True,False,"[""B0DH2LP7RC"", ""B0FBL5ZRH3"", ""B0B5273QDJ"", ""B0FFMJ8YXY"", ""B08H7MBG14""]",0,True,0.3333333333333333,1,True,False,0.0,True,black,brown,True,rejected
+B0_current,m1_brisbane,has_match,normal,True,False,"[""B0BSBMHB1T"", ""B0DKBNYX2P"", ""B0B1Z1QQ1G"", ""B075NZTCKF"", ""B079HPGLH1""]",0,True,1.0,2,True,False,0.0,True,blue,navy,True,rejected
+B0_current,m1_ostau,has_match,normal,True,False,"[""B0BPM321DV"", ""B0FLX835KM"", ""B0FM2KF35R"", ""B0GKNR4JMT"", ""B0FV7NJXMK""]",0,False,0.0,0,False,False,0.0,True,brown,navy,True,rank_miss
+B0_current,bench_green_tshirt_07,has_match,normal,True,False,"[""B0F1MWXCWQ"", ""B0G392Q632"", ""B0DKT4X5SQ"", ""B0DTHD9XHL"", ""B0FTMNSCMN""]",0,True,1.0,3,True,False,0.0,True,olive,brown,True,rejected
+B0_current,bench_green_tshirt_08,has_match,normal,True,False,"[""B0F1MWXCWQ"", ""B0DTHD9XHL"", ""B0DKT4X5SQ"", ""B0D2ZMQ8QY"", ""B0GC5CKVFZ""]",0,True,1.0,2,True,False,0.0,True,olive,brown,True,rejected
+B0_current,bench_green_tshirt_09,has_match,dark,True,False,"[""B0G1T5HFGR"", ""B0D2ZMQ8QY"", ""B0G53914QT"", ""B0G3NV97KZ"", ""B0DYDH1K3Z""]",0,True,0.5,2,True,False,0.0,True,olive,black,True,rejected
+B0_current,bench_white_shirt_01,has_match,normal,True,False,"[""B0GFMKCRTM"", ""B0CYZM5RSM"", ""B0CPSCVTSM"", ""B0CPP12B56"", ""B0FKYVSN1W""]",0,True,1.0,1,True,False,0.0,True,white,gray,True,rejected
+B0_current,bench_white_shirt_04,has_match,normal,True,False,"[""B0G53914QT"", ""B0GFCJVKXP"", ""B09PVGX4ST"", ""B09ZQKJYSX"", ""B0GK8SZRWB""]",0,True,0.25,1,True,False,0.0,True,white,black,True,rejected
+B0_current,bench_white_shirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+B0_current,bench_white_shirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+B0_current,bench_white_shirt_07,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+B0_current,bench_white_shirt_08,has_match,normal,True,False,"[""B0D7VYQYS6"", ""B0CNGKMQSW"", ""B0CPSCVTSM"", ""B0DTYVZ3H5"", ""B0G53914QT""]",0,True,1.0,4,True,False,0.0,True,white,gray,True,rejected
+B0_current,bench_white_shirt_09,has_match,normal,True,False,"[""B0FXWZD6V9"", ""B0FG32DVPJ"", ""B0D837DJBL"", ""B0D83FZSQJ"", ""B0D83P9DBV""]",0,False,0.0,0,True,False,0.0,True,white,gray,True,rank_miss
+B0_current,bench_white_shirt_10,has_match,normal,True,False,"[""B0DGQ32Z34"", ""B0CSFS8CFS"", ""B0D44KXV8M"", ""B09ZJ1QCSK"", ""B0DGGT3Q72""]",0,True,1.0,4,True,False,0.0,True,black,black,True,rejected
+B0_current,bench_blue_jeans_01,has_match,normal,True,False,"[""B005GSYHBO"", ""B09HRKNLW6"", ""B0FLJ73NW2"", ""B07C827YPY"", ""B09WXXQBFF""]",0,True,1.0,3,True,False,0.0,True,navy,black,True,rejected
+B0_current,bench_blue_jeans_03,no_match,normal,True,False,"[""B0GCMDSLGX"", ""B0CF66NW7S"", ""B0CNCQ24L1"", ""B0G4M1CPDS"", ""B0G4XCTTTW""]",0,,,,False,,,,pink,cream,True,
+B0_current,bench_blue_jeans_04,has_match,normal,True,False,"[""B0F28J46SD"", ""B0GN2YNBJF"", ""B0DRTZ5FVG"", ""B0G543W1WH"", ""B0F82VQSD8""]",0,True,1.0,2,True,False,0.0,True,gray,cream,True,rejected
+B0_current,bench_blue_jeans_05,has_match,normal,True,False,"[""B0D2K2FWDZ"", ""B082454J2K"", ""B0F1XCT3ZM"", ""B0FFFZ1L7J"", ""B0FPF27WW4""]",0,False,0.0,0,False,False,0.0,True,orange,brown,True,rank_miss
+B0_current,bench_blue_jeans_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,no_detection
+B0_current,bench_blue_jeans_07,has_match,normal,True,False,"[""B0DF7RHNRP"", ""B0C4JFRVSC"", ""B0F8J522PM"", ""B0F1N5SBTF"", ""B0G34V2KL2""]",0,True,1.0,4,True,False,0.0,True,blue,gray,True,rejected
+B0_current,bench_blue_jeans_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+B0_current,bench_blue_jeans_10,has_match,normal,True,False,"[""B0FBL5ZRH3"", ""B0FL787RJC"", ""B0C3838ZBF"", ""B08H7MBG14"", ""B0FM6WW223""]",0,True,1.0,3,True,False,0.0,True,navy,navy,True,rejected
+B0_current,bench_black_trousers_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B0_current,bench_black_trousers_02,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B0_current,bench_black_trousers_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+B0_current,bench_black_trousers_04,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,cream,,True,no_detection
+B0_current,bench_black_trousers_07,has_match,normal,True,False,"[""B07DGVJZB3"", ""B0G4W3XKW2"", ""B0FLCBY7P5"", ""B0D7GX9ZCD"", ""B0FJSJP42C""]",0,True,1.0,3,True,False,0.0,True,brown,black,True,rejected
+B0_current,bench_black_trousers_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,brown,,True,wrong_class
+B0_current,bench_black_trousers_09,has_match,normal,True,False,"[""B0C2ZD2G55"", ""B0G4XCTTTW"", ""B0GCMDSLGX"", ""B0D3M316PC"", ""B0FCSC6SN3""]",0,True,1.0,4,True,False,0.0,True,white,cream,True,rejected
+B0_current,bench_black_trousers_10,has_match,normal,True,False,"[""B0FJXPF357"", ""B0FKGN22T8"", ""B0FPF27WW4"", ""B0DBHZZSP9"", ""B0FM8D382M""]",0,False,0.0,0,False,False,0.0,False,gray,black,True,candidate_miss
+B0_current,bench_shorts_02,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+B0_current,bench_shorts_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+B0_current,bench_shorts_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B0_current,bench_shorts_06,has_match,normal,True,False,"[""B0G473FJ5H"", ""B0F48K94F6"", ""B0B1Z1QQ1G"", ""B0G32478CC"", ""B0G3282XK5""]",0,True,1.0,1,True,False,0.0,True,navy,navy,True,rejected
+B0_current,bench_shorts_07,unconfirmed,normal,True,False,"[""B0F29J9CQM"", ""B0D6G9TRGR"", ""B0F2T7XM1H"", ""B0CVRL6985"", ""B0DRV8LNXF""]",0,,,,False,,,,white,cream,True,
+B0_current,bench_shorts_10,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,no_detection
+B0_current,bench_black_skirt_04,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+B0_current,bench_black_skirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+B0_current,bench_black_skirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,wrong_class
+B0_current,bench_red_dress_04,no_match,normal,False,False,[],0,,,,False,,,,yellow,,True,
+B0_current,bench_red_dress_05,has_match,normal,True,False,"[""B0FWRF77KW"", ""B09MMY7S28"", ""B0FWRJHGRZ"", ""B0FWRHNQQ4"", ""B09T8Z947N""]",0,False,0.0,0,False,False,0.0,True,red,red,True,rank_miss
+B0_current,bench_red_dress_06,has_match,normal,True,False,"[""B0CKQV5NSN"", ""B09W5SHPP1"", ""B0DS228PXT"", ""B09MMY7S28"", ""B0C276VYGX""]",0,True,1.0,3,True,False,0.0,True,white,cream,True,rejected
+B0_current,bench_red_dress_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,beige,,True,no_detection
+B0_current,bench_red_dress_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B0_current,bench_black_dress_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B0_current,bench_black_dress_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B0_current,bench_black_dress_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+B0_current,bench_black_dress_07,has_match,normal,True,False,"[""B081GB194M"", ""B0B8YFQ1MB"", ""B0B8YGT6HJ"", ""B0DTQ28Q8L"", ""B0FX9W1734""]",0,True,0.5,2,True,False,0.0,True,black,black,True,rejected
+B0_current,bench_black_dress_10,has_match,dark,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B0_current,bench_shirt_03,has_match,normal,True,False,"[""B0FXB1GWMF"", ""B0CDW7VN8S"", ""B0CYP888RF"", ""B0GL7R1HZ5"", ""B0FP2RFB93""]",0,True,0.5,3,True,False,0.0,True,blue,cream,True,rejected
+B1_gamma,m1_stage,has_match,dark,True,False,"[""B07YH3N4BR"", ""B0DF7RHNRP"", ""B0CDXJDS8W"", ""B0GL1BW8QB"", ""B083GK5T14""]",0,True,1.0,3,True,False,0.0,True,black,black,True,rejected
+B1_gamma,m1_harajuku,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+B1_gamma,m1_tony,has_match,dark,True,False,"[""B0DH2LP7RC"", ""B0FBL5ZRH3"", ""B0B5273QDJ"", ""B0FFMJ8YXY"", ""B08H7MBG14""]",0,True,0.3333333333333333,1,True,False,0.0,True,black,brown,True,rejected
+B1_gamma,m1_brisbane,has_match,normal,True,False,"[""B0BSBMHB1T"", ""B0DKBNYX2P"", ""B0B1Z1QQ1G"", ""B075NZTCKF"", ""B079HPGLH1""]",0,True,1.0,2,True,False,0.0,True,blue,navy,True,rejected
+B1_gamma,m1_ostau,has_match,normal,True,False,"[""B0FLX835KM"", ""B0BPM321DV"", ""B0FM2KF35R"", ""B0FV7NJXMK"", ""B0GKNR4JMT""]",0,False,0.0,0,False,False,0.0,True,brown,navy,True,rank_miss
+B1_gamma,bench_green_tshirt_07,has_match,normal,True,False,"[""B0F1MWXCWQ"", ""B0G392Q632"", ""B0DKT4X5SQ"", ""B0DTHD9XHL"", ""B0FTMNSCMN""]",0,True,1.0,3,True,False,0.0,True,olive,brown,True,rejected
+B1_gamma,bench_green_tshirt_08,has_match,normal,True,False,"[""B0F1MWXCWQ"", ""B0DTHD9XHL"", ""B0DKT4X5SQ"", ""B0D2ZMQ8QY"", ""B0GC5CKVFZ""]",0,True,1.0,2,True,False,0.0,True,olive,brown,True,rejected
+B1_gamma,bench_green_tshirt_09,has_match,dark,True,False,"[""B0G1T5HFGR"", ""B0D2ZMQ8QY"", ""B0G3NV97KZ"", ""B0G53914QT"", ""B0DYDH1K3Z""]",0,True,0.5,2,True,False,0.0,True,olive,black,True,rejected
+B1_gamma,bench_white_shirt_01,has_match,normal,True,False,"[""B0GFMKCRTM"", ""B0CYZM5RSM"", ""B0CPSCVTSM"", ""B0CPP12B56"", ""B0FKYVSN1W""]",0,True,1.0,1,True,False,0.0,True,white,gray,True,rejected
+B1_gamma,bench_white_shirt_04,has_match,normal,True,False,"[""B0G53914QT"", ""B0GFCJVKXP"", ""B09PVGX4ST"", ""B09ZQKJYSX"", ""B0GK8SZRWB""]",0,True,0.25,1,True,False,0.0,True,white,black,True,rejected
+B1_gamma,bench_white_shirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+B1_gamma,bench_white_shirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+B1_gamma,bench_white_shirt_07,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+B1_gamma,bench_white_shirt_08,has_match,normal,True,False,"[""B0D7VYQYS6"", ""B0CNGKMQSW"", ""B0CPSCVTSM"", ""B0DTYVZ3H5"", ""B0G53914QT""]",0,True,1.0,4,True,False,0.0,True,white,gray,True,rejected
+B1_gamma,bench_white_shirt_09,has_match,normal,True,False,"[""B0FXWZD6V9"", ""B0FG32DVPJ"", ""B0D837DJBL"", ""B0D83FZSQJ"", ""B0D83P9DBV""]",0,False,0.0,0,True,False,0.0,True,white,gray,True,rank_miss
+B1_gamma,bench_white_shirt_10,has_match,normal,True,False,"[""B0DGQ32Z34"", ""B0CSFS8CFS"", ""B0D44KXV8M"", ""B09ZJ1QCSK"", ""B0DGGT3Q72""]",0,True,1.0,4,True,False,0.0,True,black,black,True,rejected
+B1_gamma,bench_blue_jeans_01,has_match,normal,True,False,"[""B005GSYHBO"", ""B09HRKNLW6"", ""B0FLJ73NW2"", ""B07C827YPY"", ""B09WXXQBFF""]",0,True,1.0,3,True,False,0.0,True,navy,black,True,rejected
+B1_gamma,bench_blue_jeans_03,no_match,normal,True,False,"[""B0GCMDSLGX"", ""B0CF66NW7S"", ""B0CNCQ24L1"", ""B0G4M1CPDS"", ""B0G4XCTTTW""]",0,,,,False,,,,pink,cream,True,
+B1_gamma,bench_blue_jeans_04,has_match,normal,True,False,"[""B0F28J46SD"", ""B0GN2YNBJF"", ""B0DRTZ5FVG"", ""B0G543W1WH"", ""B0F82VQSD8""]",0,True,1.0,2,True,False,0.0,True,gray,cream,True,rejected
+B1_gamma,bench_blue_jeans_05,has_match,normal,True,False,"[""B0D2K2FWDZ"", ""B082454J2K"", ""B0F1XCT3ZM"", ""B0FFFZ1L7J"", ""B0FPF27WW4""]",0,False,0.0,0,False,False,0.0,True,orange,brown,True,rank_miss
+B1_gamma,bench_blue_jeans_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,no_detection
+B1_gamma,bench_blue_jeans_07,has_match,normal,True,False,"[""B0DF7RHNRP"", ""B0C4JFRVSC"", ""B0F8J522PM"", ""B0F1N5SBTF"", ""B0DYTZ9C4M""]",0,True,1.0,4,True,False,0.0,True,blue,gray,True,rejected
+B1_gamma,bench_blue_jeans_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+B1_gamma,bench_blue_jeans_10,has_match,normal,True,False,"[""B0FBL5ZRH3"", ""B0FL787RJC"", ""B0C3838ZBF"", ""B0FM6WW223"", ""B08H7MBG14""]",0,True,1.0,3,True,False,0.0,True,navy,navy,True,rejected
+B1_gamma,bench_black_trousers_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B1_gamma,bench_black_trousers_02,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B1_gamma,bench_black_trousers_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+B1_gamma,bench_black_trousers_04,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,cream,,True,no_detection
+B1_gamma,bench_black_trousers_07,has_match,normal,True,False,"[""B07DGVJZB3"", ""B0G4W3XKW2"", ""B0FLCBY7P5"", ""B0D7GX9ZCD"", ""B0FJSJP42C""]",0,True,1.0,3,True,False,0.0,True,brown,black,True,rejected
+B1_gamma,bench_black_trousers_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,brown,,True,wrong_class
+B1_gamma,bench_black_trousers_09,has_match,normal,True,False,"[""B0G4XCTTTW"", ""B0C2ZD2G55"", ""B0GCMDSLGX"", ""B0D3M316PC"", ""B0FCSC6SN3""]",0,True,1.0,4,True,False,0.0,True,white,cream,True,rejected
+B1_gamma,bench_black_trousers_10,has_match,normal,True,False,"[""B0FJXPF357"", ""B0DBHZZSP9"", ""B0FKGN22T8"", ""B0FPF27WW4"", ""B0FM8D382M""]",0,False,0.0,0,False,False,0.0,False,gray,black,True,candidate_miss
+B1_gamma,bench_shorts_02,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+B1_gamma,bench_shorts_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+B1_gamma,bench_shorts_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B1_gamma,bench_shorts_06,has_match,normal,True,False,"[""B0G473FJ5H"", ""B0F48K94F6"", ""B0B1Z1QQ1G"", ""B0G32478CC"", ""B0G3282XK5""]",0,True,1.0,1,True,False,0.0,True,navy,navy,True,rejected
+B1_gamma,bench_shorts_07,unconfirmed,normal,True,False,"[""B0F29J9CQM"", ""B0D6G9TRGR"", ""B0F2T7XM1H"", ""B0CVRL6985"", ""B0DRV8LNXF""]",0,,,,False,,,,white,cream,True,
+B1_gamma,bench_shorts_10,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,no_detection
+B1_gamma,bench_black_skirt_04,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+B1_gamma,bench_black_skirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+B1_gamma,bench_black_skirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,wrong_class
+B1_gamma,bench_red_dress_04,no_match,normal,False,False,[],0,,,,False,,,,yellow,,True,
+B1_gamma,bench_red_dress_05,has_match,normal,True,False,"[""B0FWRF77KW"", ""B09MMY7S28"", ""B0FWRJHGRZ"", ""B0FWRHNQQ4"", ""B09T8Z947N""]",0,False,0.0,0,False,False,0.0,True,red,red,True,rank_miss
+B1_gamma,bench_red_dress_06,has_match,normal,True,False,"[""B0CKQV5NSN"", ""B09W5SHPP1"", ""B0DS228PXT"", ""B09MMY7S28"", ""B0C276VYGX""]",0,True,1.0,3,True,False,0.0,True,white,cream,True,rejected
+B1_gamma,bench_red_dress_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,beige,,True,no_detection
+B1_gamma,bench_red_dress_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B1_gamma,bench_black_dress_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B1_gamma,bench_black_dress_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B1_gamma,bench_black_dress_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+B1_gamma,bench_black_dress_07,has_match,normal,True,False,"[""B081GB194M"", ""B0B8YFQ1MB"", ""B0B8YGT6HJ"", ""B0DTQ28Q8L"", ""B0FX9W1734""]",0,True,0.5,2,True,False,0.0,True,black,black,True,rejected
+B1_gamma,bench_black_dress_10,has_match,dark,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+B1_gamma,bench_shirt_03,has_match,normal,True,False,"[""B0FXB1GWMF"", ""B0CDW7VN8S"", ""B0CYP888RF"", ""B0GL7R1HZ5"", ""B0FP2RFB93""]",0,True,0.5,3,True,False,0.0,True,blue,cream,True,rejected
+C3_selected,m1_stage,has_match,dark,True,False,"[""B0CDXJDS8W"", ""B07YH3N4BR"", ""B0DF7RHNRP"", ""B083GK5T14"", ""B08HCKT956""]",0,True,1.0,4,True,False,0.0,True,black,black,True,rejected
+C3_selected,m1_harajuku,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+C3_selected,m1_tony,has_match,dark,True,False,"[""B0DH2LP7RC"", ""B0FBL5ZRH3"", ""B0B5273QDJ"", ""B08H7MBG14"", ""B0D7GX9ZCD""]",0,True,0.3333333333333333,2,True,False,0.0,True,black,brown,True,rejected
+C3_selected,m1_brisbane,has_match,normal,True,False,"[""B0BSBMHB1T"", ""B0DKBNYX2P"", ""B0B1Z1QQ1G"", ""B075NZTCKF"", ""B079HPGLH1""]",0,True,1.0,2,True,False,0.0,True,blue,navy,True,rejected
+C3_selected,m1_ostau,has_match,normal,True,False,"[""B0BPM321DV"", ""B0FLX835KM"", ""B0FM2KF35R"", ""B0GKNR4JMT"", ""B0FV7NJXMK""]",0,False,0.0,0,False,False,0.0,True,brown,navy,True,rank_miss
+C3_selected,bench_green_tshirt_07,has_match,normal,True,True,"[""B0F1MWXCWQ"", ""B0G392Q632"", ""B0DKT4X5SQ"", ""B09T3SG4L4"", ""B0DTHD9XHL""]",0,True,1.0,4,True,True,1.0,True,olive,brown,True,hit
+C3_selected,bench_green_tshirt_08,has_match,normal,True,False,"[""B0F1MWXCWQ"", ""B0DTHD9XHL"", ""B0DKT4X5SQ"", ""B0D2ZMQ8QY"", ""B0GC5CKVFZ""]",0,True,1.0,2,True,False,0.0,True,olive,brown,True,rejected
+C3_selected,bench_green_tshirt_09,has_match,dark,True,False,"[""B0G1T5HFGR"", ""B0G53914QT"", ""B0D2ZMQ8QY"", ""B0G3NV97KZ"", ""B0DYDH1K3Z""]",0,True,0.3333333333333333,2,True,False,0.0,True,olive,black,True,rejected
+C3_selected,bench_white_shirt_01,has_match,normal,True,False,"[""B0GFMKCRTM"", ""B0CPSCVTSM"", ""B0CPP12B56"", ""B0CYZM5RSM"", ""B0FQBYV4Y2""]",0,True,1.0,1,True,False,0.0,True,white,gray,True,rejected
+C3_selected,bench_white_shirt_04,has_match,normal,True,False,"[""B0G53914QT"", ""B0GFCJVKXP"", ""B09PVGX4ST"", ""B0GK8SZRWB"", ""B09ZQKJYSX""]",0,True,0.2,1,True,False,0.0,True,white,black,True,rejected
+C3_selected,bench_white_shirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C3_selected,bench_white_shirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C3_selected,bench_white_shirt_07,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+C3_selected,bench_white_shirt_08,has_match,normal,True,False,"[""B0D7VYQYS6"", ""B0CNGKMQSW"", ""B0CPSCVTSM"", ""B0DTYVZ3H5"", ""B0G53914QT""]",0,True,1.0,4,True,False,0.0,True,white,gray,True,rejected
+C3_selected,bench_white_shirt_09,has_match,normal,True,False,"[""B0FG32DVPJ"", ""B0FXWZD6V9"", ""B0D837DJBL"", ""B0D83FZSQJ"", ""B0D83P9DBV""]",0,False,0.0,0,True,False,0.0,True,white,gray,True,rank_miss
+C3_selected,bench_white_shirt_10,has_match,normal,True,False,"[""B0DGQ32Z34"", ""B0CSFS8CFS"", ""B0D44KXV8M"", ""B09ZJ1QCSK"", ""B0DGGT3Q72""]",0,True,1.0,4,True,False,0.0,True,black,black,True,rejected
+C3_selected,bench_blue_jeans_01,has_match,normal,True,True,"[""B005GSYHBO"", ""B09HRKNLW6"", ""B0FLJ73NW2"", ""B07C827YPY"", ""B09WXXQBFF""]",0,True,1.0,3,True,True,1.0,True,navy,black,True,hit
+C3_selected,bench_blue_jeans_03,no_match,normal,True,False,"[""B0GCMDSLGX"", ""B0CF66NW7S"", ""B0G4M1CPDS"", ""B0CNCQ24L1"", ""B0CF62PKQ8""]",0,,,,False,,,,pink,cream,True,
+C3_selected,bench_blue_jeans_04,has_match,normal,True,False,"[""B0F28J46SD"", ""B0GN2YNBJF"", ""B0DRTZ5FVG"", ""B0G543W1WH"", ""B0F82VQSD8""]",0,True,1.0,2,True,False,0.0,True,gray,cream,True,rejected
+C3_selected,bench_blue_jeans_05,has_match,normal,True,False,"[""B0D2K2FWDZ"", ""B082454J2K"", ""B0F1XCT3ZM"", ""B0FFFZ1L7J"", ""B0F7RLQRBM""]",0,False,0.0,0,False,False,0.0,True,orange,brown,True,rank_miss
+C3_selected,bench_blue_jeans_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,no_detection
+C3_selected,bench_blue_jeans_07,has_match,normal,True,False,"[""B0DF7RHNRP"", ""B0C4JFRVSC"", ""B0F8J522PM"", ""B0F1N5SBTF"", ""B0G34V2KL2""]",0,True,1.0,4,True,False,0.0,True,blue,gray,True,rejected
+C3_selected,bench_blue_jeans_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,wrong_class
+C3_selected,bench_blue_jeans_10,has_match,normal,True,False,"[""B0FBL5ZRH3"", ""B0FL787RJC"", ""B0C3838ZBF"", ""B08H7MBG14"", ""B0FM6WW223""]",0,True,1.0,3,True,False,0.0,True,navy,navy,True,rejected
+C3_selected,bench_black_trousers_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C3_selected,bench_black_trousers_02,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C3_selected,bench_black_trousers_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+C3_selected,bench_black_trousers_04,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,cream,,True,no_detection
+C3_selected,bench_black_trousers_07,has_match,normal,True,True,"[""B07DGVJZB3"", ""B0G4W3XKW2"", ""B0FLCBY7P5"", ""B0D7GX9ZCD"", ""B0FJSJP42C""]",0,True,1.0,3,True,True,1.0,True,brown,black,True,hit
+C3_selected,bench_black_trousers_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,brown,,True,wrong_class
+C3_selected,bench_black_trousers_09,has_match,normal,True,False,"[""B0C2ZD2G55"", ""B0GCMDSLGX"", ""B0G4XCTTTW"", ""B0D3M316PC"", ""B0FCSC6SN3""]",0,True,1.0,4,True,False,0.0,True,white,cream,True,rejected
+C3_selected,bench_black_trousers_10,has_match,normal,True,False,"[""B0FJXPF357"", ""B0FKGN22T8"", ""B0FPF27WW4"", ""B0DBHZZSP9"", ""B0FM8D382M""]",0,False,0.0,0,False,False,0.0,False,gray,black,True,candidate_miss
+C3_selected,bench_shorts_02,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+C3_selected,bench_shorts_03,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,wrong_class
+C3_selected,bench_shorts_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C3_selected,bench_shorts_06,has_match,normal,True,False,"[""B0F48K94F6"", ""B0G473FJ5H"", ""B0B1Z1QQ1G"", ""B0G32478CC"", ""B0G3282XK5""]",0,True,0.5,1,True,False,0.0,True,navy,navy,True,rejected
+C3_selected,bench_shorts_07,unconfirmed,normal,True,False,"[""B0F29J9CQM"", ""B0F2T7XM1H"", ""B0D6G9TRGR"", ""B0DRV8LNXF"", ""B0G39WB1ZV""]",0,,,,False,,,,white,cream,True,
+C3_selected,bench_shorts_10,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,navy,,True,no_detection
+C3_selected,bench_black_skirt_04,no_match,normal,False,False,[],0,,,,False,,,,blue,,True,
+C3_selected,bench_black_skirt_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,no_detection
+C3_selected,bench_black_skirt_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,blue,,True,wrong_class
+C3_selected,bench_red_dress_04,no_match,normal,False,False,[],0,,,,False,,,,yellow,,True,
+C3_selected,bench_red_dress_05,has_match,normal,True,False,"[""B09MMY7S28"", ""B0FWRF77KW"", ""B0FWRJHGRZ"", ""B0FWRHNQQ4"", ""B09T8Z947N""]",0,False,0.0,0,False,False,0.0,True,red,red,True,rank_miss
+C3_selected,bench_red_dress_06,has_match,normal,True,False,"[""B0CKQV5NSN"", ""B09W5SHPP1"", ""B0DS228PXT"", ""B09MMY7S28"", ""B0C276VYGX""]",0,True,1.0,3,True,False,0.0,True,white,cream,True,rejected
+C3_selected,bench_red_dress_08,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,beige,,True,no_detection
+C3_selected,bench_red_dress_09,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C3_selected,bench_black_dress_01,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C3_selected,bench_black_dress_05,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C3_selected,bench_black_dress_06,has_match,normal,False,False,[],0,False,0.0,0,False,False,0.0,False,white,,True,no_detection
+C3_selected,bench_black_dress_07,has_match,normal,True,False,"[""B081GB194M"", ""B0FX9W1734"", ""B0B8YFQ1MB"", ""B0B8YGT6HJ"", ""B0DTQ28Q8L""]",0,True,0.3333333333333333,2,True,False,0.0,True,black,black,True,rejected
+C3_selected,bench_black_dress_10,has_match,dark,False,False,[],0,False,0.0,0,False,False,0.0,False,black,,True,wrong_class
+C3_selected,bench_shirt_03,has_match,normal,True,False,"[""B0CDW7VN8S"", ""B0FXB1GWMF"", ""B0CYP888RF"", ""B0B5XCWNBL"", ""B0GL7R1HZ5""]",0,True,1.0,3,True,False,0.0,True,blue,cream,True,rejected

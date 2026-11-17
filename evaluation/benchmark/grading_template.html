@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chấm sản phẩm benchmark</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font: 16px/1.5 "Geist", system-ui, sans-serif; color: #172320; background: #f3f5f2; margin: 0; }
+  main { max-width: 1240px; margin: auto; padding: 1.5rem; }
+  header, .controls, .cards, .query { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; }
+  header { justify-content: space-between; }
+  h1 { margin: .4rem 0; font-size: 1.7rem; }
+  h2 { font-size: 1.25rem; }
+  button, input, select { font: inherit; }
+  button, select, input[type="text"] { padding: .4rem .65rem; border: 1px solid #8c9c94; border-radius: .35rem; background: white; }
+  button:enabled, summary, input[type="checkbox"]:enabled { cursor: pointer; }
+  button[aria-pressed="true"], #export { color: white; background: #145b46; border-color: #145b46; }
+  button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #4d81d0; }
+  progress { accent-color: #145b46; width: 9rem; }
+  .query { margin-top: 1rem; padding: 1rem; background: white; border-radius: .65rem; align-items: start; }
+  .query img { width: min(20rem, 100%); height: 240px; object-fit: contain; background: #edf0ed; }
+  .cards { align-items: stretch; display: grid; grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); }
+  .card { background: white; border: 1px solid #d5ddd9; border-radius: .65rem; padding: .75rem; }
+  .card img { width: 100%; height: 150px; object-fit: contain; }
+  .card p { margin: .25rem 0 .6rem; overflow-wrap: anywhere; }
+  .card button { font-size: .85rem; margin: .15rem; }
+  details { margin: 1.3rem 0 .8rem; }
+  summary { padding: .65rem; border-block: 1px solid #c6d0ca; }
+  #notice { color: #805003; }
+</style>
+<main>
+  <header>
+    <h1>Chấm sản phẩm <span id="stage"></span></h1>
+    <div class="controls">
+      <label>Tên người chấm <input id="grader" type="text" autocomplete="name"></label>
+      <button id="export" type="button">Xuất JSON</button>
+    </div>
+  </header>
+  <div class="controls">
+    <button id="prev" type="button">Ảnh trước</button>
+    <label>Truy vấn <select id="query-select"></select></label>
+    <button id="next" type="button">Ảnh sau</button>
+    <progress id="progress" aria-label="Số truy vấn đã chấm xong"></progress>
+    <span id="progress-text"></span>
+  </div>
+  <div class="query">
+    <img id="image" alt="Ảnh truy vấn và bbox mục tiêu màu xanh">
+    <div><h2 id="target"></h2><p id="status"></p>
+      <p>Chấp nhận khi đúng loại, màu chủ đạo và kiểu dáng hoặc họa tiết đủ gần.</p>
+      <label><input id="no-match" type="checkbox"> Không có sản phẩm phù hợp trong catalog</label>
+      <p id="reason">Mở danh sách mở rộng để xác nhận.</p>
+      <button id="done" type="button" aria-pressed="false">Đánh dấu đã chấm xong truy vấn này</button>
+      <p id="done-note">Chỉ truy vấn đã đánh dấu chấm xong mới được xuất.</p>
+    </div>
+  </div>
+  <p id="notice" role="status"></p>
+  <h2>Sản phẩm cần chấm</h2>
+  <div id="primary" class="cards"></div>
+  <details id="more">
+    <summary>Danh sách mở rộng để kiểm tra không có kết quả phù hợp</summary>
+    <div id="expanded" class="cards"></div>
+  </details>
+</main>
+<script id="data" type="application/json">__GRADING_DATA__</script>
+<script>
+"use strict";
+const byId = (id) => document.getElementById(id);
+const {stage, queries} = JSON.parse(byId("data").textContent);
+const storageKey = "fashion-benchmark-grades:" + location.href;
+const boxes = [["type_ok", "Đúng loại"], ["color_ok", "Đúng màu"], ["acceptable", "Chấp nhận được"]];
+let state = {grader: "", queryIndex: 0, judgments: {}};
+try {
+  const stored = JSON.parse(localStorage.getItem(storageKey));
+  if (stored && stored.judgments) state = stored;
+} catch {}
+let index = Math.min(Math.max(state.queryIndex, 0), queries.length - 1);
+const querySelect = byId("query-select");
+const expanded = byId("more");
+const noMatch = byId("no-match");
+const grader = byId("grader");
+grader.value = state.grader;
+byId("stage").textContent = stage;
+for (const query of queries) querySelect.add(new Option(query.id));
+
+function save() {
+  state.queryIndex = index;
+  state.grader = grader.value;
+  try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch {}
+}
+function getJudgment(query) {
+  return state.judgments[query.id] ??= {
+    pairs: {}, expandedReviewed: false, noMatch: query.existing_status === "no_match", done: false,
+  };
+}
+function refreshNoMatch(query) {
+  const review = getJudgment(query);
+  const hasMatch = query.previously_acceptable || Object.values(review.pairs).some((pair) => pair.acceptable);
+  if (hasMatch) review.noMatch = false;
+  noMatch.disabled = hasMatch || (!review.expandedReviewed && query.existing_status !== "no_match");
+  noMatch.checked = review.noMatch;
+  byId("reason").textContent = hasMatch ? "Đã có ít nhất một sản phẩm chấp nhận được."
+    : review.expandedReviewed ? "" : "Mở danh sách mở rộng để xác nhận.";
+}
+function refreshDone(query) {
+  const review = getJudgment(query);
+  const done = byId("done");
+  done.setAttribute("aria-pressed", Boolean(review.done));
+  done.textContent = review.done ? "Đã chấm xong (bấm để chấm tiếp)" : "Đánh dấu đã chấm xong truy vấn này";
+  const finished = queries.filter((item) => state.judgments[item.id]?.done).length;
+  byId("progress").max = queries.length;
+  byId("progress").value = finished;
+  byId("progress-text").textContent = finished + "/" + queries.length + " truy vấn đã chấm xong";
+  Array.from(querySelect.options).forEach((option, position) => {
+    option.textContent = (state.judgments[queries[position].id]?.done ? "✓ " : "") + queries[position].id;
+  });
+}
+function displayCards(container, query, cards) {
+  const review = getJudgment(query);
+  container.replaceChildren();
+  for (const product of cards) {
+    const flags = review.pairs[product.id] ??= {type_ok: 0, color_ok: 0, acceptable: 0};
+    const card = document.createElement("article");
+    card.className = "card";
+    card.dataset.productId = product.id;
+    if (product.image) {
+      const image = document.createElement("img");
+      image.src = product.image;
+      image.loading = "lazy";
+      image.alt = product.title;
+      card.append(image);
+    }
+    const title = document.createElement("p");
+    if (product.url) {
+      const link = document.createElement("a");
+      link.href = product.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = product.title;
+      title.append(link);
+    } else title.textContent = product.title;
+    card.append(title);
+    for (const [key, label] of boxes) {
+      const button = document.createElement("button");
+      button.dataset.flag = key;
+      button.type = "button";
+      button.textContent = label;
+      button.setAttribute("aria-pressed", Boolean(flags[key]));
+      button.onclick = () => {
+        flags[key] = Number(!flags[key]);
+        if (key === "acceptable" && flags.acceptable) flags.type_ok = 1;
+        if (key === "type_ok" && !flags.type_ok) flags.acceptable = 0;
+        const selector = `[data-product-id="${CSS.escape(product.id)}"] [data-flag]`;
+        for (const element of document.querySelectorAll(selector)) {
+          element.setAttribute("aria-pressed", Boolean(flags[element.dataset.flag]));
+        }
+        refreshNoMatch(query);
+        save();
+      };
+      card.append(button);
+    }
+    container.append(card);
+  }
+  if (!cards.length) container.textContent = "Không còn thẻ cần chấm trong danh sách này.";
+}
+function displayQuery() {
+  const query = queries[index];
+  querySelect.selectedIndex = index;
+  byId("prev").disabled = index === 0;
+  byId("next").disabled = index === queries.length - 1;
+  byId("image").src = query.image;
+  byId("target").textContent = query.class_name + " · " + query.color;
+  byId("status").textContent = query.existing_status === "no_match" ? "Đã xác nhận không có sản phẩm phù hợp."
+    : query.previously_acceptable ? "Đã chấm có sản phẩm phù hợp." : "";
+  expanded.open = false;
+  byId("expanded").replaceChildren();
+  displayCards(byId("primary"), query, query.primary);
+  refreshNoMatch(query);
+  refreshDone(query);
+  save();
+}
+expanded.addEventListener("toggle", () => {
+  if (!expanded.open) return;
+  const query = queries[index];
+  displayCards(byId("expanded"), query, query.expanded);
+  getJudgment(query).expandedReviewed = true;
+  refreshNoMatch(query);
+  save();
+});
+noMatch.onchange = () => {
+  getJudgment(queries[index]).noMatch = noMatch.checked;
+  save();
+};
+byId("done").onclick = () => {
+  const query = queries[index];
+  const review = getJudgment(query);
+  review.done = !review.done;
+  refreshDone(query);
+  save();
+};
+grader.oninput = save;
+byId("prev").onclick = () => { index -= 1; displayQuery(); window.scrollTo(0, 0); };
+byId("next").onclick = () => { index += 1; displayQuery(); window.scrollTo(0, 0); };
+querySelect.onchange = () => { index = querySelect.selectedIndex; displayQuery(); };
+byId("export").onclick = () => {
+  const name = grader.value.trim();
+  if (!name) {
+    byId("notice").textContent = "Nhập tên người chấm trước khi xuất.";
+    grader.focus();
+    return;
+  }
+  if (!queries.some((query) => state.judgments[query.id]?.done)) {
+    byId("notice").textContent = "Chưa có truy vấn nào được đánh dấu chấm xong.";
+    return;
+  }
+  const pairs = [];
+  const queriesExported = [];
+  for (const query of queries) {
+    const review = state.judgments[query.id];
+    // Only queries the grader explicitly finished are exported; opened-only cards stay unjudged.
+    if (!review?.done) continue;
+    const available = new Set([...query.primary, ...query.expanded].map((card) => card.id));
+    for (const [pid, flags] of Object.entries(review.pairs)) {
+      if (available.has(pid)) pairs.push({query_id: query.id, product_id: pid, ...flags});
+    }
+    queriesExported.push({query_id: query.id, no_match: review.noMatch,
+      expanded_reviewed: review.expandedReviewed || query.existing_status === "no_match"});
+  }
+  const payload = {grader: name, exported_at: new Date().toISOString(), pairs, queries: queriesExported};
+  const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], {type: "application/json"}));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "grades_" + stage + ".json";
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const pending = queries.length - queriesExported.length;
+  byId("notice").textContent = pairs.length + " cặp sản phẩm của " + queriesExported.length
+    + " truy vấn đã xuất." + (pending ? " Còn " + pending + " truy vấn chưa đánh dấu chấm xong, chưa được xuất." : "");
+};
+displayQuery();
+</script>
+</html>

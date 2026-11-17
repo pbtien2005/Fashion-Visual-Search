@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gán nhãn ảnh benchmark</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 "Geist", system-ui, sans-serif; color: #152821; background: #f3f5f2; }
+  main { max-width: 1160px; padding: 1.5rem; margin: auto; }
+  h1 { margin: .25rem 0 1rem; font-size: 1.7rem; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; margin: .6rem 0; }
+  .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 1rem; margin-top: 1rem; }
+  @media (max-width: 800px) { .workspace { grid-template-columns: 1fr; } }
+  .panel { padding: 1rem; background: white; border: 1px solid #d4ddd6; border-radius: .65rem; }
+  .image { display: grid; place-items: start center; background: #e6ece7; min-height: 12rem; overflow: hidden; }
+  canvas { display: block; max-width: 100%; max-height: 72vh; height: auto; cursor: crosshair; touch-action: none; }
+  select, input, button { font: inherit; }
+  select, button { border: 1px solid #8c9e94; border-radius: .35rem; background: white; padding: .35rem .65rem; }
+  button:enabled { cursor: pointer; }
+  #export { background: #145b46; color: white; border-color: #145b46; }
+  #export:disabled { opacity: .55; }
+  .fields label { display: grid; gap: .15rem; margin-bottom: .65rem; }
+  .fields h2 { margin: 0; font-size: 1.125rem; overflow-wrap: anywhere; }
+  .fields p { margin: .4rem 0 .65rem; }
+  #notice { color: #805003; }
+</style>
+<main>
+  <h1>Gán nhãn ảnh benchmark</h1>
+  <div class="panel">
+    <div class="row">
+      <label>Ứng viên CSV <input id="csv" type="file" accept=".csv,text/csv"></label>
+      <label>Thư mục ảnh <input id="folder" type="file" webkitdirectory multiple></label>
+    </div>
+    <div class="row">
+      <button id="prev" type="button" disabled>Ảnh trước ←</button>
+      <button id="next" type="button" disabled>Ảnh sau →</button>
+      <span id="progress">Chọn candidates.csv và thư mục bench.</span>
+      <button id="export" type="button" disabled>Xuất CSV</button>
+    </div>
+    <div id="notice" role="status"></div>
+  </div>
+  <div class="workspace">
+    <div class="panel image"><canvas id="canvas" width="1" height="1" aria-label="Ảnh để vẽ bbox"></canvas></div>
+    <div class="panel fields">
+      <h2 id="query">Món mục tiêu</h2>
+      <p><a id="source" hidden target="_blank" rel="noopener noreferrer">Nguồn ảnh</a></p>
+      <p>Kéo để vẽ một bbox quanh món đồ nhìn rõ nhất cần đánh giá. Vẽ lại để thay khung.</p>
+      <label>Loại <select id="class_name"></select></label>
+      <label>Màu chủ đạo <select id="color"></select></label>
+      <label>Ánh sáng hiện trường <select id="lighting_group"></select></label>
+      <label>Tập <select id="split"></select></label>
+      <p id="bbox">Chưa có bbox</p>
+      <button id="reject" type="button" disabled>Loại ảnh này</button>
+    </div>
+  </div>
+</main>
+<script>
+"use strict";
+const byId = (id) => document.getElementById(id);
+const fields = ["query_id","image","lighting_group","class_name","color","bbox","source","license","author","license_url"];
+const options = {
+  class_name: ["short_sleeve_top", "long_sleeve_top", "long_sleeve_outwear", "vest", "shorts",
+    "trousers", "skirt", "short_sleeve_dress", "long_sleeve_dress", "vest_dress"],
+  color: ["black", "navy", "white", "cream", "gray", "red", "pink", "orange", "yellow",
+    "green", "olive", "blue", "purple", "brown", "tan", "khaki", "beige"],
+  lighting_group: ["dark", "normal"],
+  split: ["validation", "test"],
+};
+const canvas = byId("canvas");
+const ctx = canvas.getContext("2d");
+let records = [], files = new Map(), labels = {}, key = "", index = 0;
+let bitmap = null, displayedId = null, drag = null, drawVersion = 0;
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [], cell = "", quoted = false;
+  text = text.replace(/^\uFEFF/, "");
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+    if (char === '"') {
+      if (quoted && text[i + 1] === '"') { cell += '"'; i += 1; }
+      else quoted = !quoted;
+    } else if (!quoted && char === ",") {
+      row.push(cell); cell = "";
+    } else if (!quoted && (char === "\r" || char === "\n")) {
+      if (char === "\r" && text[i + 1] === "\n") i += 1;
+      row.push(cell); rows.push(row); row = []; cell = "";
+    } else cell += char;
+  }
+  if (quoted) throw new Error("Dấu ngoặc kép chưa đóng trong CSV.");
+  if (cell || row.length) rows.push([...row, cell]);
+  if (rows[0]?.join(",") !== fields.join(",")) throw new Error("Cột CSV ứng viên không đúng.");
+  const ids = new Set();
+  return rows.slice(1).map((values) => {
+    if (values.length !== fields.length || !values[0] || ids.has(values[0])) {
+      throw new Error("Dòng ứng viên thiếu cột hoặc trùng query_id.");
+    }
+    ids.add(values[0]);
+    return Object.fromEntries(fields.map((field, i) => [field, values[i]]));
+  });
+}
+function current() {
+  return labels[records[index].query_id] ??= {};
+}
+function save() {
+  if (!key) return;
+  try { localStorage.setItem(key, JSON.stringify({labels, index})); } catch {}
+}
+function ready(label) {
+  return label && !label.rejected && label.bbox && Object.keys(options).every((field) => label[field]);
+}
+function refresh() {
+  if (!records.length) return;
+  const label = current();
+  byId("prev").disabled = index === 0;
+  byId("next").disabled = index === records.length - 1;
+  byId("reject").disabled = false;
+  byId("reject").textContent = label.rejected ? "Giữ lại ảnh này" : "Loại ảnh này";
+  byId("bbox").textContent = label.bbox ? label.bbox.map((value) => value.toFixed(4)).join(" ") : "Chưa có bbox";
+  const complete = records.filter((record) => ready(labels[record.query_id]));
+  const val = complete.filter((record) => labels[record.query_id].split === "validation").length;
+  const rejected = records.filter((record) => labels[record.query_id]?.rejected).length;
+  byId("progress").textContent = (index + 1) + "/" + records.length + " ảnh · validation " + val
+    + " · test " + (complete.length - val) + " · đã loại " + rejected;
+  byId("export").disabled = complete.length === 0;
+}
+function paint(box) {
+  if (!bitmap) return;
+  ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  if (!box) return;
+  ctx.strokeStyle = "#15e67d";
+  ctx.lineWidth = Math.max(3, canvas.width / 300);
+  ctx.strokeRect(box[0] * canvas.width, box[1] * canvas.height,
+    (box[2] - box[0]) * canvas.width, (box[3] - box[1]) * canvas.height);
+}
+async function show() {
+  if (!records.length) return;
+  const version = ++drawVersion;
+  const record = records[index];
+  displayedId = null;
+  drag = null;
+  bitmap?.close();
+  bitmap = null;
+  canvas.width = canvas.height = 1;
+  byId("query").textContent = record.query_id;
+  const source = byId("source");
+  source.hidden = !/^https?:\/\//i.test(record.source);
+  if (!source.hidden) source.href = record.source;
+  for (const field of Object.keys(options)) byId(field).value = current()[field] ?? "";
+  refresh();
+  save();
+  const name = record.image.split(/[\\/]/).at(-1);
+  const file = files.get(name);
+  if (!file) {
+    byId("notice").textContent = files.size ? "Thiếu ảnh " + name : "Chọn thư mục ảnh để vẽ bbox.";
+    return;
+  }
+  try {
+    const decoded = await createImageBitmap(file, {imageOrientation: "from-image"});
+    if (version !== drawVersion) { decoded.close(); return; }
+    bitmap = decoded;
+    displayedId = record.query_id;
+    const scale = Math.min(1, 1200 / Math.max(bitmap.width, bitmap.height));
+    canvas.width = Math.max(1, Math.round(scale * bitmap.width));
+    canvas.height = Math.max(1, Math.round(scale * bitmap.height));
+    paint(current().bbox);
+    byId("notice").textContent = "";
+  } catch {
+    if (version === drawVersion) byId("notice").textContent = "Không mở được ảnh " + name + ".";
+  }
+}
+function point(event) {
+  const rect = canvas.getBoundingClientRect();
+  const unit = (value) => Math.max(0, Math.min(1, value));
+  return [unit((event.clientX - rect.left) / rect.width), unit((event.clientY - rect.top) / rect.height)];
+}
+function corners(a, b) {
+  return [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[0], b[0]), Math.max(a[1], b[1])];
+}
+canvas.onpointerdown = (event) => {
+  if (!displayedId || event.button !== 0) return;
+  drag = {start: point(event), pointer: event.pointerId};
+  canvas.setPointerCapture(event.pointerId);
+};
+canvas.onpointermove = (event) => {
+  if (drag?.pointer === event.pointerId) paint(corners(drag.start, point(event)));
+};
+canvas.onpointerup = (event) => {
+  if (drag?.pointer !== event.pointerId) return;
+  const box = corners(drag.start, point(event)).map((value) => Number(value.toFixed(4)));
+  drag = null;
+  if (box[0] < box[2] && box[1] < box[3]) current().bbox = box;
+  paint(current().bbox);
+  refresh();
+  save();
+};
+canvas.onpointercancel = () => { drag = null; if (displayedId) paint(current().bbox); };
+for (const [field, choices] of Object.entries(options)) {
+  const menu = byId(field);
+  menu.add(new Option("Chọn…", ""));
+  for (const value of choices) menu.add(new Option(value, value));
+  menu.onchange = () => { if (records.length) { current()[field] = menu.value; refresh(); save(); } };
+}
+byId("csv").onchange = async (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+  try {
+    const parsed = parseCsv(await file.text());
+    if (!parsed.length) throw new Error("CSV không có ảnh ứng viên.");
+    records = parsed;
+    key = "fashion-benchmark-labels:" + location.pathname + ":" + file.name;
+    let stored;
+    try { stored = JSON.parse(localStorage.getItem(key)); } catch {}
+    labels = stored?.labels ?? {};
+    index = Math.max(0, Math.min(records.length - 1, stored?.index ?? 0));
+    await show();
+  } catch (error) { byId("notice").textContent = error.message; }
+};
+byId("folder").onchange = (event) => {
+  files = new Map(Array.from(event.target.files, (file) => [file.name, file]));
+  show();
+};
+function move(delta) {
+  if (index + delta < 0 || index + delta >= records.length) return;
+  index += delta;
+  show();
+}
+byId("prev").onclick = () => move(-1);
+byId("next").onclick = () => move(1);
+document.onkeydown = (event) => {
+  if (["INPUT", "SELECT", "BUTTON"].includes(event.target.tagName)) return;
+  if (event.key === "ArrowLeft") move(-1);
+  if (event.key === "ArrowRight") move(1);
+};
+byId("reject").onclick = () => {
+  current().rejected = !current().rejected;
+  refresh();
+  save();
+  if (current().rejected) move(1);
+};
+byId("export").onclick = () => {
+  const columns = [...fields, "split"];
+  const escape = (value) => '"' + String(value ?? "").replaceAll('"', '""') + '"';
+  const lines = [columns.join(",")];
+  for (const record of records) {
+    const label = labels[record.query_id];
+    if (!ready(label)) continue;
+    const row = {...record, ...label, bbox: label.bbox.map((value) => value.toFixed(4)).join(" ")};
+    lines.push(columns.map((column) => escape(row[column])).join(","));
+  }
+  const blob = new Blob(["\uFEFF" + lines.join("\r\n") + "\r\n"], {type: "text/csv;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "bench_labeled.csv";
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  byId("notice").textContent = (lines.length - 1) + " ảnh đủ nhãn đã xuất.";
+};
+</script>
+</html>

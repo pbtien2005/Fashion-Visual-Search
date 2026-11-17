@@ -1,0 +1,58 @@
+{
+ "rule": "max HitRate@5 after decision on validation; ties -> highest T, then highest M",
+ "validation_manifest_sha256": "8346600f0876789aa327f1d55e965f1c8a1f8c6f70c8d7857495af245de3840e",
+ "thresholds": {
+  "C2_embedding_only": {
+   "T": 0.5,
+   "M": 0.5,
+   "validation": {
+    "hit_after": 0.5,
+    "accepted_has_match": 15,
+    "has_match": 22,
+    "accepted_precision": 0.7333333333333333,
+    "coverage": 0.6956521739130435,
+    "false_acceptance": 1,
+    "no_match": 1
+   }
+  },
+  "B0_current": {
+   "T": 0.45,
+   "M": 0.4,
+   "validation": {
+    "hit_after": 0.5454545454545454,
+    "accepted_has_match": 16,
+    "has_match": 22,
+    "accepted_precision": 0.75,
+    "coverage": 0.7391304347826086,
+    "false_acceptance": 1,
+    "no_match": 1
+   }
+  },
+  "C3_w1": {
+   "T": 0.45,
+   "M": 0.4,
+   "validation": {
+    "hit_after": 0.5454545454545454,
+    "accepted_has_match": 16,
+    "has_match": 22,
+    "accepted_precision": 0.75,
+    "coverage": 0.7391304347826086,
+    "false_acceptance": 1,
+    "no_match": 1
+   }
+  },
+  "C3_w2": {
+   "T": 0.45,
+   "M": 0.4,
+   "validation": {
+    "hit_after": 0.5,
+    "accepted_has_match": 16,
+    "has_match": 22,
+    "accepted_precision": 0.6875,
+    "coverage": 0.7391304347826086,
+    "false_acceptance": 1,
+    "no_match": 1
+   }
+  }
+ }
+}

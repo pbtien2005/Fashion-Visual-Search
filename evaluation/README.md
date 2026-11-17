@@ -3,7 +3,11 @@
 This folder contains a small evaluation harness for the upload visual-search API.
 It does not depend on the frontend.
 
-For the strongest combined benchmark, see `evaluation/BENCHMARK.md` and run:
+See [BENCHMARK.md](BENCHMARK.md) for the target-level benchmark, annotation
+tools, validation lock, and robustness results. `run_eval.py` and
+`run_benchmark.py` remain the legacy regression suite for the upload API.
+
+To run the legacy suite:
 
 ```powershell
 python evaluation/run_benchmark.py --api-url http://localhost:8000 --run-prefix benchmark_current --timeout 300
