@@ -63,3 +63,9 @@ evaluation/benchmark/cache/
 
 # Benchmark evidence JSON (locked config, thresholds, product judgments)
 !docs/benchmark/main/*.json
+
+# AI working instructions, local-only compose overrides and course PDFs (kept on disk, not tracked)
+AGENTS.md
+docs/GIAO_VIEC_*_CHO_AI.md
+docker-compose.override.yml
+docs/*_XLA*.pdf
