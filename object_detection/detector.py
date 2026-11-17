@@ -1,12 +1,20 @@
 import logging
 import os
+import math
 from pathlib import Path
 
 try:
+    from .config import resolve_model_path
     from .image_preprocessing import PreprocessConfig, prepare_image
+    from .roi import (DetectionBatch, MINIMUM_VARIANT_SIDE, clip_bbox, copy_metadata,
+                      make_roi_metadata, resolve_query_id, validate_prepared_images)
+    from .segmentation import load_mask_config, segment_roi
 except ImportError:
+    from config import resolve_model_path
     from image_preprocessing import PreprocessConfig, prepare_image
-
+    from roi import (DetectionBatch, MINIMUM_VARIANT_SIDE, clip_bbox, copy_metadata,
+                     make_roi_metadata, resolve_query_id, validate_prepared_images)
+    from segmentation import load_mask_config, segment_roi
 
 logger = logging.getLogger(__name__)
 
@@ -52,21 +60,20 @@ class ClothingDetector:
         model_path: str | None = None,
         conf: float = 0.5,
         expand_ratio: float = 0.15,
+        mask_config=None,
         preprocess_config: PreprocessConfig | None = None,
     ):
-        self.model_path = model_path or os.getenv(
-            "OBJECT_DETECTION_MODEL_PATH",
-            "/models/object-detection/best.pt",
-        )
+        self.model_path = resolve_model_path(model_path)
         self.conf = conf
         self.expand_ratio = expand_ratio
         self.wide_expand_ratio = float(os.getenv("OBJECT_DETECTION_WIDE_EXPAND_RATIO", "0.30"))
         self.preprocess_config = preprocess_config if preprocess_config is not None else PreprocessConfig.from_env()
         self._model = None
+        self.mask_config = mask_config if mask_config is not None else load_mask_config()
 
     @property
     def model_available(self) -> bool:
-        return Path(self.model_path).exists()
+        return Path(self.model_path).is_file()
 
     @property
     def model_loaded(self) -> bool:
@@ -87,16 +94,37 @@ class ClothingDetector:
         self._model = YOLO(self.model_path)
         return self._model
 
-    def detect_from_bytes(self, image_bytes: bytes) -> list[dict]:
-        """Detect and crop using bbox coordinates after EXIF and resize."""
+    def detect_from_bytes(self, image_bytes: bytes, query_id: str | None = None) -> list[dict]:
+        return self.detect_batch_from_bytes(image_bytes, query_id=query_id).crops
+
+    def detect_batch_from_bytes(self, image_bytes: bytes, query_id: str | None = None) -> DetectionBatch:
+        """Prepare once with M1; use its shared working canvas throughout M2/M3."""
         prepared = prepare_image(image_bytes, self.preprocess_config)
         logger.debug("Query preprocessing geometry=%s quality=%s", prepared.geometry_meta, prepared.quality_meta)
+        geometry = dict(
+            prepared.geometry_meta, mode="m1_prepared", schema_version=prepared.schema_version,
+            working_width=prepared.source_rgb.shape[1], working_height=prepared.source_rgb.shape[0],
+            scale_x=prepared.geometry_meta["width"] / prepared.geometry_meta["oriented_width"],
+            scale_y=prepared.geometry_meta["height"] / prepared.geometry_meta["oriented_height"],
+        )
+        return self.detect_prepared(
+            prepared.source_rgb, prepared.detection_rgb, query_id=query_id,
+            geometry_meta=geometry, quality_meta=prepared.quality_meta,
+        )
 
+    def _batch_from_bgr(self, image, query_id=None, detection_image=None) -> DetectionBatch:
         import cv2
 
-        source_bgr = cv2.cvtColor(prepared.source_rgb, cv2.COLOR_RGB2BGR)
-        detection_bgr = cv2.cvtColor(prepared.detection_rgb, cv2.COLOR_RGB2BGR)
-        return self._process(source_bgr, detection_bgr)
+        source_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        detection_rgb = source_rgb if detection_image is None else cv2.cvtColor(detection_image, cv2.COLOR_BGR2RGB)
+        return self.detect_prepared(
+            source_rgb, detection_rgb, query_id=query_id,
+            geometry_meta={"mode": "legacy_identity" if detection_image is None else "prepared_bgr",
+                           "working_width": image.shape[1],
+                           "working_height": image.shape[0], "exif_policy": "legacy_opencv_unverified"},
+            quality_meta={"preprocessing_mode": "legacy_identity" if detection_image is None else "caller_prepared",
+                          "gamma_enabled": False if detection_image is None else None},
+        )
 
     def _make_crop_variant(
         self,
@@ -122,7 +150,7 @@ class ClothingDetector:
         crop_x2 = min(image_width, x2 + expand_x)
         crop_y2 = min(image_height, y2 + expand_y)
 
-        if (crop_x2 - crop_x1) < 50 or (crop_y2 - crop_y1) < 50:
+        if (crop_x2 - crop_x1) < MINIMUM_VARIANT_SIDE or (crop_y2 - crop_y1) < MINIMUM_VARIANT_SIDE:
             return None
 
         crop = image[crop_y1:crop_y2, crop_x1:crop_x2]
@@ -152,17 +180,45 @@ class ClothingDetector:
         }
 
     def _process(self, image, detection_image=None) -> list[dict]:
+        """Backward-compatible BGR entry point for existing offline callers."""
+        return self._batch_from_bgr(image, detection_image=detection_image).crops
+
+    def detect_prepared(
+        self, source_rgb, detection_rgb, *, query_id=None, geometry_meta=None, quality_meta=None,
+    ) -> DetectionBatch:
+        import cv2
+
+        validate_prepared_images(source_rgb, detection_rgb)
+        query_id = resolve_query_id(query_id)
+        geometry_meta = copy_metadata(geometry_meta, "geometry_meta")
+        quality_meta = copy_metadata(quality_meta, "quality_meta")
+        height, width = source_rgb.shape[:2]
+        if geometry_meta.get("working_width", width) != width or geometry_meta.get("working_height", height) != height:
+            raise ValueError("geometry_meta working size does not match prepared arrays")
         model = self._ensure_model()
-        height, width = image.shape[:2]
-        results = model.predict(image if detection_image is None else detection_image, conf=self.conf, verbose=False)
+        results = model.predict(cv2.cvtColor(detection_rgb, cv2.COLOR_RGB2BGR), conf=self.conf, verbose=False)
+        source_bgr = cv2.cvtColor(source_rgb, cv2.COLOR_RGB2BGR)
+        diagnostics = {"raw_box_count": 0, "invalid_bbox_count": 0, "invalid_prediction_count": 0,
+                       "no_valid_variant_count": 0, "skipped_variant_count": 0, "delivered_crop_count": 0}
 
         crops = []
         for result in results:
+            if result.boxes is None:
+                continue
             for box in result.boxes:
+                diagnostics["raw_box_count"] += 1
+                raw_bbox = [float(value) for value in box.xyxy[0]]
+                bbox = clip_bbox(raw_bbox, width, height)
+                if bbox is None:
+                    diagnostics["invalid_bbox_count"] += 1
+                    continue
+                if not math.isfinite(float(box.cls[0])) or not math.isfinite(float(box.conf[0])):
+                    diagnostics["invalid_prediction_count"] += 1
+                    continue
                 class_id = int(box.cls[0])
                 confidence = float(box.conf[0])
-                x1, y1, x2, y2 = map(int, box.xyxy[0])
-                original_bbox = [x1, y1, x2, y2]
+                # Preserve integer truncation for legacy JPEG variants; the source ROI rounds outward.
+                original_bbox = [int(value) for value in raw_bbox]
                 variant_specs = [
                     ("tight", 0.0),
                     ("padded", self.expand_ratio),
@@ -173,7 +229,7 @@ class ClothingDetector:
                     for name, expand_ratio in variant_specs
                     if (
                         variant := self._make_crop_variant(
-                            image=image,
+                            image=source_bgr,
                             bbox=original_bbox,
                             image_width=width,
                             image_height=height,
@@ -182,13 +238,20 @@ class ClothingDetector:
                         )
                     )
                 ]
+                diagnostics["skipped_variant_count"] += len(variant_specs) - len(variants)
                 if not variants:
+                    diagnostics["no_valid_variant_count"] += 1
                     continue
 
                 primary = next((variant for variant in variants if variant["name"] == "padded"), variants[0])
                 class_name = CLASS_NAMES.get(class_id)
                 if class_name is None:
                     class_name = getattr(model, "names", {}).get(class_id, f"class_{class_id}")
+
+                source_roi = source_rgb[bbox[1]:bbox[3], bbox[0]:bbox[2]].copy()
+                segmentation = segment_roi(source_roi, self.mask_config)
+                roi_metadata = make_roi_metadata(source_rgb, bbox, raw_bbox, geometry_meta, quality_meta)
+                roi_metadata.update(segmentation.metadata)
 
                 crops.append(
                     {
@@ -197,7 +260,7 @@ class ClothingDetector:
                         "class_name": class_name,
                         "class_name_vi": get_class_name_vi(class_name),
                         "confidence": confidence,
-                        "bbox": original_bbox,
+                        "bbox": bbox,
                         "original_bbox": original_bbox,
                         "expanded_bbox": primary["bbox"],
                         "padded_bbox": primary["bbox"],
@@ -207,7 +270,17 @@ class ClothingDetector:
                         "source_crop_height": primary["source_crop_height"],
                         "crop_strategy": primary["crop_strategy"],
                         "variants": variants,
+                        "query_id": query_id,
+                        "source_rgb": source_roi,
+                        "mask": segmentation.mask,
+                        "raw_mask": segmentation.raw_mask,
+                        "processed_mask": segmentation.processed_mask,
+                        "roi_metadata": roi_metadata,
                     }
                 )
 
-        return crops
+        crops.sort(key=lambda crop: (crop["class_id"], *crop["bbox"], -crop["confidence"]))
+        for index, crop in enumerate(crops):
+            crop["garment_id"] = f"{query_id}_g{index:03d}"
+        diagnostics["delivered_crop_count"] = len(crops)
+        return DetectionBatch(query_id=query_id, crops=crops, diagnostics=diagnostics)

@@ -1,0 +1,50 @@
+{
+  "status": "compatible",
+  "revision": "phase3_working_tree",
+  "execution": "real M3 decoder/HSV extractor; synthetic M2 fixtures; no YOLO, encoder or DB",
+  "canonical_source_png_without_original": {
+    "exact_source_roi": true,
+    "observed_shape": [
+      64,
+      64,
+      3
+    ],
+    "expected_shape": [
+      64,
+      64,
+      3
+    ],
+    "roi_source": "source_crop_png_base64"
+  },
+  "canonical_source_png_with_different_legacy_rounding": {
+    "exact_source_roi": true,
+    "observed_shape": [
+      64,
+      64,
+      3
+    ],
+    "expected_shape": [
+      64,
+      64,
+      3
+    ],
+    "roi_source": "source_crop_png_base64"
+  },
+  "canonical_mask_png": {
+    "mask_decoded_exactly": true,
+    "actual_mask_status": "valid",
+    "actual_valid_pixels": 2816,
+    "expected_valid_pixels": 2816,
+    "descriptor_matches_masked_reference": true
+  },
+  "legacy_alias_control": {
+    "exact_roi": true,
+    "exact_mask": true,
+    "descriptor_matches_reference": true
+  },
+  "does_not_measure": [
+    "real garment segmentation quality",
+    "retrieval quality",
+    "live API/cache readiness"
+  ]
+}

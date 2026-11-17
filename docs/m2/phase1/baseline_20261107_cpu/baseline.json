@@ -1,0 +1,1283 @@
+{
+  "run_name": "baseline_20261107_cpu",
+  "recorded_at_utc": "2026-11-07T11:47:16.207309+00:00",
+  "data_role": "regression_not_independent_test",
+  "schema_version": "m2.baseline.v1",
+  "coverage_instrumented": false,
+  "git_commit": "recorded_in_M2_ENVIRONMENT.md",
+  "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+  "model_filename": "best.pt",
+  "model_unchanged": true,
+  "manifest_sha256": "38e15ec9323894955f714d6ee7a148a0263374a05c17deeafe1a01b43a2acb27",
+  "model_task": "detect",
+  "class_names": {
+    "0": "short_sleeve_top",
+    "1": "long_sleeve_top",
+    "2": "long_sleeve_outwear",
+    "3": "vest",
+    "4": "shorts",
+    "5": "trousers",
+    "6": "skirt",
+    "7": "short_sleeve_dress",
+    "8": "long_sleeve_dress",
+    "9": "vest_dress"
+  },
+  "environment": {
+    "python": "3.12.12",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41",
+    "cpu_count": 16,
+    "torch": "2.11.0+cpu",
+    "torch_threads": 8,
+    "cuda_available": false,
+    "packages": {
+      "ultralytics": "8.4.31",
+      "torchvision": "0.26.0+cpu",
+      "opencv-python": "4.13.0.92",
+      "opencv-python-headless": "4.13.0.92",
+      "numpy": "2.2.6",
+      "pillow": "11.3.0",
+      "fastapi": "0.115.4",
+      "pydantic": "2.9.2"
+    }
+  },
+  "config": {
+    "conf": 0.5,
+    "iou": 0.7,
+    "imgsz": 640,
+    "device": "cpu",
+    "half": false,
+    "rect": true,
+    "max_det": 300,
+    "agnostic_nms": false
+  },
+  "crop_config": {
+    "expand_ratio": 0.15,
+    "wide_expand_ratio": 0.3,
+    "output_size": 224,
+    "minimum_variant_side": 50
+  },
+  "timing": {
+    "model_load_ms": 1468.3679389997906,
+    "blank_warmup_ms": 1977.3882500001037,
+    "warmup_calls": 1,
+    "mean_m2_ms": 948.0106671875319,
+    "median_m2_ms": 1010.9236079999846,
+    "p95_m2_ms": 1493.4487795001132,
+    "scope": "decode + YOLO + legacy crop + serialization; excludes HTTP, M1, embedding, DB and retrieval"
+  },
+  "summary": {
+    "total_images": 16,
+    "errors": 0,
+    "images_with_delivered_crops": 15,
+    "delivered_crop_image_rate": 0.9375,
+    "delivered_crops_by_class": {
+      "short_sleeve_top": 17,
+      "shorts": 5,
+      "skirt": 7,
+      "trousers": 10,
+      "long_sleeve_top": 5,
+      "long_sleeve_outwear": 1,
+      "vest_dress": 3,
+      "short_sleeve_dress": 4,
+      "vest": 2
+    },
+    "total_delivered_crops": 54
+  },
+  "unmeasured": [
+    "target_detection_recall",
+    "bbox_mAP",
+    "mask_IoU",
+    "color_accuracy",
+    "retrieval_metrics"
+  ],
+  "limitations": "No human target boxes/masks; delivered crops are predictions, not correct detections. Old regression data, small sample. CPU Docker latency is not GPU or end-to-end latency.",
+  "checkpoint_training_metadata_not_remeasured": {
+    "ultralytics_version": "8.4.31",
+    "date": "2026-03-30T11:55:02.937585",
+    "train_metrics": {
+      "metrics/precision(B)": 0.64225,
+      "metrics/recall(B)": 0.6444,
+      "metrics/mAP50(B)": 0.66404,
+      "metrics/mAP50-95(B)": 0.58065,
+      "val/box_loss": 0.54316,
+      "val/cls_loss": 1.01979,
+      "val/dfl_loss": 0.97137,
+      "fitness": 0.58065
+    },
+    "train_args": {
+      "epochs": 80,
+      "imgsz": 640,
+      "batch": 16,
+      "optimizer": "AdamW",
+      "lr0": 0.0005,
+      "seed": 0,
+      "close_mosaic": 10
+    },
+    "history_rows": 80
+  },
+  "queries": [
+    {
+      "query_id": "real_green_tshirt_01",
+      "image": "evaluation/queries/real_outfits/real_green_tshirt_01_You_broke_the_site_again_211068750_.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 941.4727040000344,
+      "serialization_ms": 86.23680699997749,
+      "total_m2_ms": 1027.7095110000118,
+      "payload_bytes": 212383,
+      "delivered_crop_count": 2,
+      "crops": [
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.8780478239059448,
+          "bbox": [
+            64,
+            322,
+            735,
+            953
+          ],
+          "expanded_bbox": [
+            0,
+            227,
+            836,
+            1048
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.7022636532783508,
+          "bbox": [
+            512,
+            103,
+            754,
+            363
+          ],
+          "expanded_bbox": [
+            476,
+            64,
+            790,
+            402
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_green_tshirt_02",
+      "image": "evaluation/queries/real_outfits/real_green_tshirt_02_1-6_MTX_5-15_Stream_Crossing_150914-M-OU200-018.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 611.9670709999809,
+      "serialization_ms": 12.831400000095528,
+      "total_m2_ms": 624.7984710000765,
+      "payload_bytes": 348095,
+      "delivered_crop_count": 3,
+      "crops": [
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.9268510341644287,
+          "bbox": [
+            217,
+            193,
+            418,
+            402
+          ],
+          "expanded_bbox": [
+            187,
+            162,
+            448,
+            433
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 4,
+          "class_name": "shorts",
+          "confidence": 0.8910909295082092,
+          "bbox": [
+            225,
+            380,
+            387,
+            524
+          ],
+          "expanded_bbox": [
+            201,
+            358,
+            411,
+            546
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.584705114364624,
+          "bbox": [
+            488,
+            177,
+            670,
+            409
+          ],
+          "expanded_bbox": [
+            461,
+            142,
+            697,
+            444
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_white_shirt_01",
+      "image": "evaluation/queries/real_outfits/real_white_shirt_01_Americana_2016_30044392184_.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 1586.5675770000962,
+      "serialization_ms": 8.73643899990384,
+      "total_m2_ms": 1595.304016,
+      "payload_bytes": 206672,
+      "delivered_crop_count": 2,
+      "crops": [
+        {
+          "class_id": 6,
+          "class_name": "skirt",
+          "confidence": 0.7889606356620789,
+          "bbox": [
+            530,
+            515,
+            919,
+            803
+          ],
+          "expanded_bbox": [
+            472,
+            472,
+            960,
+            846
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.6604008078575134,
+          "bbox": [
+            597,
+            389,
+            745,
+            551
+          ],
+          "expanded_bbox": [
+            575,
+            365,
+            767,
+            575
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_white_shirt_02",
+      "image": "evaluation/queries/real_outfits/real_white_shirt_02_Another_good_shot_-_Flickr_-_GeorgeTan_2...thanks_for_millionth_support.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 1089.5472050001445,
+      "serialization_ms": 52.17110400008096,
+      "total_m2_ms": 1141.7183090002254,
+      "payload_bytes": 185625,
+      "delivered_crop_count": 2,
+      "crops": [
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.8932934403419495,
+          "bbox": [
+            356,
+            455,
+            608,
+            1026
+          ],
+          "expanded_bbox": [
+            318,
+            369,
+            646,
+            1112
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.6245617270469666,
+          "bbox": [
+            432,
+            265,
+            629,
+            515
+          ],
+          "expanded_bbox": [
+            402,
+            227,
+            659,
+            553
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_blue_jeans_01",
+      "image": "evaluation/queries/real_outfits/real_blue_jeans_01_02015_0217_Herbst-Wintermode_2015-2016_Beskiden.JPG.jpg",
+      "error": null,
+      "detection_crop_ms": 1043.7443790001453,
+      "serialization_ms": 4.905079000081969,
+      "total_m2_ms": 1048.6494580002272,
+      "payload_bytes": 217344,
+      "delivered_crop_count": 2,
+      "crops": [
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.9162468314170837,
+          "bbox": [
+            427,
+            561,
+            730,
+            1227
+          ],
+          "expanded_bbox": [
+            382,
+            461,
+            775,
+            1327
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 1,
+          "class_name": "long_sleeve_top",
+          "confidence": 0.9105846285820007,
+          "bbox": [
+            229,
+            198,
+            842,
+            705
+          ],
+          "expanded_bbox": [
+            137,
+            122,
+            934,
+            781
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_blue_jeans_02",
+      "image": "evaluation/queries/real_outfits/real_blue_jeans_02_02017_blue_jeans.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 1177.4574749999829,
+      "serialization_ms": 2.7439440000307513,
+      "total_m2_ms": 1180.2014190000136,
+      "payload_bytes": 215236,
+      "delivered_crop_count": 2,
+      "crops": [
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.9073343276977539,
+          "bbox": [
+            306,
+            816,
+            960,
+            1281
+          ],
+          "expanded_bbox": [
+            208,
+            746,
+            960,
+            1281
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 2,
+          "class_name": "long_sleeve_outwear",
+          "confidence": 0.8643273115158081,
+          "bbox": [
+            2,
+            304,
+            958,
+            1244
+          ],
+          "expanded_bbox": [
+            0,
+            163,
+            960,
+            1281
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_black_trousers_01",
+      "image": "evaluation/queries/real_outfits/real_black_trousers_01_2015_RiP_Bastille_Dan_Smith_by_2eight_-_3SC5305.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 465.2940270000272,
+      "serialization_ms": 2.2820910000973527,
+      "total_m2_ms": 467.57611800012455,
+      "payload_bytes": 176132,
+      "delivered_crop_count": 2,
+      "crops": [
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.9541670083999634,
+          "bbox": [
+            330,
+            903,
+            842,
+            1943
+          ],
+          "expanded_bbox": [
+            253,
+            747,
+            919,
+            2048
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.918839156627655,
+          "bbox": [
+            331,
+            359,
+            784,
+            1027
+          ],
+          "expanded_bbox": [
+            263,
+            259,
+            852,
+            1127
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_black_trousers_02",
+      "image": "evaluation/queries/real_outfits/real_black_trousers_02_2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 842.2404809998625,
+      "serialization_ms": 5.329643999857581,
+      "total_m2_ms": 847.5701249997201,
+      "payload_bytes": 243977,
+      "delivered_crop_count": 2,
+      "crops": [
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.9533833861351013,
+          "bbox": [
+            280,
+            570,
+            700,
+            1332
+          ],
+          "expanded_bbox": [
+            217,
+            456,
+            763,
+            1442
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 1,
+          "class_name": "long_sleeve_top",
+          "confidence": 0.9252923727035522,
+          "bbox": [
+            201,
+            226,
+            619,
+            667
+          ],
+          "expanded_bbox": [
+            138,
+            160,
+            682,
+            733
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_shorts_01",
+      "image": "evaluation/queries/real_outfits/real_shorts_01_0001_August_2016_in_Moscow_41.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 396.9614070001626,
+      "serialization_ms": 58.01419999988866,
+      "total_m2_ms": 454.97560700005124,
+      "payload_bytes": 510098,
+      "delivered_crop_count": 6,
+      "crops": [
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.8810908794403076,
+          "bbox": [
+            491,
+            265,
+            582,
+            407
+          ],
+          "expanded_bbox": [
+            477,
+            244,
+            596,
+            428
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.8290316462516785,
+          "bbox": [
+            233,
+            375,
+            292,
+            500
+          ],
+          "expanded_bbox": [
+            224,
+            356,
+            301,
+            519
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 4,
+          "class_name": "shorts",
+          "confidence": 0.8151282072067261,
+          "bbox": [
+            501,
+            372,
+            588,
+            457
+          ],
+          "expanded_bbox": [
+            488,
+            359,
+            601,
+            470
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.718804121017456,
+          "bbox": [
+            220,
+            285,
+            315,
+            391
+          ],
+          "expanded_bbox": [
+            206,
+            269,
+            329,
+            407
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.6784986853599548,
+          "bbox": [
+            555,
+            247,
+            645,
+            390
+          ],
+          "expanded_bbox": [
+            541,
+            226,
+            659,
+            411
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 4,
+          "class_name": "shorts",
+          "confidence": 0.6722961068153381,
+          "bbox": [
+            581,
+            368,
+            629,
+            438
+          ],
+          "expanded_bbox": [
+            574,
+            358,
+            636,
+            448
+          ],
+          "variant_count": 2
+        }
+      ]
+    },
+    {
+      "query_id": "real_shorts_02",
+      "image": "evaluation/queries/real_outfits/real_shorts_02_0078_29th_of_July_2016_in_Vladimir_Oblast_Russia.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 400.7528579998052,
+      "serialization_ms": 1.2664500000028056,
+      "total_m2_ms": 402.019307999808,
+      "payload_bytes": 126897,
+      "delivered_crop_count": 1,
+      "crops": [
+        {
+          "class_id": 6,
+          "class_name": "skirt",
+          "confidence": 0.6619091629981995,
+          "bbox": [
+            501,
+            371,
+            635,
+            510
+          ],
+          "expanded_bbox": [
+            481,
+            350,
+            655,
+            531
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_black_skirt_01",
+      "image": "evaluation/queries/real_outfits/real_black_skirt_01_G_I-DLE_2020_Young_05.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 1176.3342440001452,
+      "serialization_ms": 8.715217000144548,
+      "total_m2_ms": 1185.0494610002897,
+      "payload_bytes": 866238,
+      "delivered_crop_count": 8,
+      "crops": [
+        {
+          "class_id": 9,
+          "class_name": "vest_dress",
+          "confidence": 0.9066910147666931,
+          "bbox": [
+            619,
+            387,
+            745,
+            627
+          ],
+          "expanded_bbox": [
+            600,
+            351,
+            764,
+            663
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.9013714790344238,
+          "bbox": [
+            179,
+            381,
+            326,
+            523
+          ],
+          "expanded_bbox": [
+            157,
+            360,
+            348,
+            544
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 4,
+          "class_name": "shorts",
+          "confidence": 0.8261449337005615,
+          "bbox": [
+            334,
+            500,
+            461,
+            612
+          ],
+          "expanded_bbox": [
+            315,
+            483,
+            480,
+            629
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 7,
+          "class_name": "short_sleeve_dress",
+          "confidence": 0.7677468657493591,
+          "bbox": [
+            753,
+            379,
+            890,
+            600
+          ],
+          "expanded_bbox": [
+            732,
+            346,
+            911,
+            633
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.7492274641990662,
+          "bbox": [
+            320,
+            403,
+            463,
+            531
+          ],
+          "expanded_bbox": [
+            299,
+            384,
+            484,
+            550
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 6,
+          "class_name": "skirt",
+          "confidence": 0.5531583428382874,
+          "bbox": [
+            461,
+            491,
+            609,
+            627
+          ],
+          "expanded_bbox": [
+            439,
+            471,
+            631,
+            647
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 9,
+          "class_name": "vest_dress",
+          "confidence": 0.5490090847015381,
+          "bbox": [
+            194,
+            385,
+            308,
+            600
+          ],
+          "expanded_bbox": [
+            177,
+            353,
+            325,
+            632
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 7,
+          "class_name": "short_sleeve_dress",
+          "confidence": 0.5381320714950562,
+          "bbox": [
+            47,
+            358,
+            182,
+            632
+          ],
+          "expanded_bbox": [
+            27,
+            317,
+            202,
+            673
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_black_skirt_02",
+      "image": "evaluation/queries/real_outfits/real_black_skirt_02_160924_AOA_cropped_.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 844.0611209998679,
+      "serialization_ms": 26.52163700008714,
+      "total_m2_ms": 870.582757999955,
+      "payload_bytes": 1340474,
+      "delivered_crop_count": 11,
+      "crops": [
+        {
+          "class_id": 6,
+          "class_name": "skirt",
+          "confidence": 0.9311205148696899,
+          "bbox": [
+            458,
+            209,
+            676,
+            386
+          ],
+          "expanded_bbox": [
+            425,
+            182,
+            709,
+            413
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 6,
+          "class_name": "skirt",
+          "confidence": 0.9138638973236084,
+          "bbox": [
+            331,
+            232,
+            464,
+            361
+          ],
+          "expanded_bbox": [
+            311,
+            213,
+            484,
+            380
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 6,
+          "class_name": "skirt",
+          "confidence": 0.8973579406738281,
+          "bbox": [
+            196,
+            242,
+            333,
+            377
+          ],
+          "expanded_bbox": [
+            175,
+            222,
+            354,
+            397
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 6,
+          "class_name": "skirt",
+          "confidence": 0.8566513657569885,
+          "bbox": [
+            805,
+            218,
+            956,
+            372
+          ],
+          "expanded_bbox": [
+            782,
+            195,
+            960,
+            395
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.8335002064704895,
+          "bbox": [
+            204,
+            125,
+            348,
+            247
+          ],
+          "expanded_bbox": [
+            182,
+            107,
+            370,
+            265
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.7655907273292542,
+          "bbox": [
+            0,
+            115,
+            120,
+            261
+          ],
+          "expanded_bbox": [
+            0,
+            93,
+            138,
+            283
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.7429518699645996,
+          "bbox": [
+            598,
+            112,
+            740,
+            249
+          ],
+          "expanded_bbox": [
+            577,
+            91,
+            761,
+            270
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 3,
+          "class_name": "vest",
+          "confidence": 0.7291563153266907,
+          "bbox": [
+            807,
+            102,
+            949,
+            228
+          ],
+          "expanded_bbox": [
+            786,
+            83,
+            960,
+            247
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 3,
+          "class_name": "vest",
+          "confidence": 0.6888561844825745,
+          "bbox": [
+            479,
+            98,
+            599,
+            222
+          ],
+          "expanded_bbox": [
+            461,
+            79,
+            617,
+            241
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 4,
+          "class_name": "shorts",
+          "confidence": 0.6439813375473022,
+          "bbox": [
+            39,
+            209,
+            200,
+            395
+          ],
+          "expanded_bbox": [
+            15,
+            181,
+            224,
+            423
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.5998327136039734,
+          "bbox": [
+            325,
+            118,
+            461,
+            240
+          ],
+          "expanded_bbox": [
+            305,
+            100,
+            481,
+            258
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_red_dress_01",
+      "image": "evaluation/queries/real_outfits/real_red_dress_01_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_01_cropped_.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 558.929691000003,
+      "serialization_ms": 0.17063399991457118,
+      "total_m2_ms": 559.1003249999176,
+      "payload_bytes": 65,
+      "delivered_crop_count": 0,
+      "crops": []
+    },
+    {
+      "query_id": "real_red_dress_02",
+      "image": "evaluation/queries/real_outfits/real_red_dress_02_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 988.8011709999773,
+      "serialization_ms": 5.33653399998002,
+      "total_m2_ms": 994.1377049999574,
+      "payload_bytes": 86086,
+      "delivered_crop_count": 1,
+      "crops": [
+        {
+          "class_id": 9,
+          "class_name": "vest_dress",
+          "confidence": 0.8673587441444397,
+          "bbox": [
+            229,
+            372,
+            669,
+            1252
+          ],
+          "expanded_bbox": [
+            163,
+            240,
+            735,
+            1384
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_black_dress_01",
+      "image": "evaluation/queries/real_outfits/real_black_dress_01_GTA_Vice_City_Fashion_27520178494_.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 1434.829402000105,
+      "serialization_ms": 24.66763200004607,
+      "total_m2_ms": 1459.497034000151,
+      "payload_bytes": 600859,
+      "delivered_crop_count": 5,
+      "crops": [
+        {
+          "class_id": 7,
+          "class_name": "short_sleeve_dress",
+          "confidence": 0.9344187378883362,
+          "bbox": [
+            437,
+            214,
+            582,
+            499
+          ],
+          "expanded_bbox": [
+            415,
+            171,
+            604,
+            542
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 1,
+          "class_name": "long_sleeve_top",
+          "confidence": 0.9141422510147095,
+          "bbox": [
+            562,
+            220,
+            715,
+            387
+          ],
+          "expanded_bbox": [
+            539,
+            195,
+            738,
+            412
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.8700786828994751,
+          "bbox": [
+            609,
+            334,
+            704,
+            530
+          ],
+          "expanded_bbox": [
+            595,
+            305,
+            718,
+            559
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.8082934617996216,
+          "bbox": [
+            352,
+            312,
+            416,
+            404
+          ],
+          "expanded_bbox": [
+            342,
+            298,
+            426,
+            418
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 0,
+          "class_name": "short_sleeve_top",
+          "confidence": 0.756049394607544,
+          "bbox": [
+            320,
+            249,
+            411,
+            349
+          ],
+          "expanded_bbox": [
+            306,
+            234,
+            425,
+            364
+          ],
+          "variant_count": 3
+        }
+      ]
+    },
+    {
+      "query_id": "real_black_dress_02",
+      "image": "evaluation/queries/real_outfits/real_black_dress_02_An_Evening_with_Judd_Apatow_Leslie_Mann_8224252457_.jpg.jpg",
+      "error": null,
+      "detection_crop_ms": 1304.8949120000088,
+      "serialization_ms": 4.386137999972561,
+      "total_m2_ms": 1309.2810499999814,
+      "payload_bytes": 374175,
+      "delivered_crop_count": 5,
+      "crops": [
+        {
+          "class_id": 1,
+          "class_name": "long_sleeve_top",
+          "confidence": 0.9394068121910095,
+          "bbox": [
+            533,
+            227,
+            826,
+            604
+          ],
+          "expanded_bbox": [
+            489,
+            170,
+            870,
+            661
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 1,
+          "class_name": "long_sleeve_top",
+          "confidence": 0.9284355044364929,
+          "bbox": [
+            81,
+            230,
+            404,
+            680
+          ],
+          "expanded_bbox": [
+            33,
+            162,
+            452,
+            748
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.9136971831321716,
+          "bbox": [
+            571,
+            533,
+            758,
+            1007
+          ],
+          "expanded_bbox": [
+            543,
+            462,
+            786,
+            1078
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 5,
+          "class_name": "trousers",
+          "confidence": 0.8946923017501831,
+          "bbox": [
+            134,
+            552,
+            337,
+            1016
+          ],
+          "expanded_bbox": [
+            104,
+            482,
+            367,
+            1086
+          ],
+          "variant_count": 3
+        },
+        {
+          "class_id": 7,
+          "class_name": "short_sleeve_dress",
+          "confidence": 0.7453625798225403,
+          "bbox": [
+            350,
+            286,
+            576,
+            799
+          ],
+          "expanded_bbox": [
+            316,
+            209,
+            610,
+            876
+          ],
+          "variant_count": 3
+        }
+      ]
+    }
+  ]
+}

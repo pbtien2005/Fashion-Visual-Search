@@ -136,7 +136,8 @@ def summarize_detection_item(item: dict) -> dict:
     }
 
 
-def post_query_image(client: httpx.Client, api_url: str, image_path: Path, top_k: int) -> tuple[dict, float]:
+def post_query_image(client: httpx.Client, api_url: str, image_path: Path, top_k: int,
+                     mode: str = "hybrid") -> tuple[dict, float]:
     content_type = mimetypes.guess_type(image_path.name)[0] or "image/jpeg"
     endpoint = f"{api_url.rstrip('/')}/api/search/upload"
 
@@ -144,7 +145,7 @@ def post_query_image(client: httpx.Client, api_url: str, image_path: Path, top_k
         start = time.perf_counter()
         response = client.post(
             endpoint,
-            params={"top_k": top_k},
+            params={"top_k": top_k, "mode": mode},
             files={"file": (image_path.name, image_file, content_type)},
         )
         latency_ms = (time.perf_counter() - start) * 1000
@@ -153,7 +154,8 @@ def post_query_image(client: httpx.Client, api_url: str, image_path: Path, top_k
     return response.json(), latency_ms
 
 
-def evaluate_query(label: dict, client: httpx.Client, api_url: str, top_k: int) -> dict:
+def evaluate_query(label: dict, client: httpx.Client, api_url: str, top_k: int,
+                   mode: str = "hybrid") -> dict:
     query_id = str(label.get("query_id") or label.get("image") or "unknown")
     image_rel = label.get("image")
     image_path = None
@@ -182,7 +184,8 @@ def evaluate_query(label: dict, client: httpx.Client, api_url: str, top_k: int) 
         return base_result
 
     try:
-        api_response, latency_ms = post_query_image(client, api_url, image_path, top_k=top_k)
+        api_response, latency_ms = post_query_image(client, api_url, image_path,
+                                                    top_k=top_k, mode=mode)
     except Exception as exc:
         base_result["status"] = "api_error"
         base_result["error"] = str(exc)
@@ -334,6 +337,10 @@ def main():
     parser.add_argument("--run-name", default="current")
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument("--timeout", type=float, default=120.0)
+    parser.add_argument("--mode", choices=["histogram_only", "embedding_only", "hybrid"],
+                        default="hybrid")
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Use only the first N labels for a quick smoke run")
     args = parser.parse_args()
 
     labels_path = Path(args.labels)
@@ -345,10 +352,15 @@ def main():
         labels = [labels]
     if not isinstance(labels, list):
         raise ValueError("Labels file must contain a JSON list")
+    if args.limit is not None:
+        if args.limit < 1:
+            raise ValueError("--limit must be positive")
+        labels = labels[:args.limit]
 
     with httpx.Client(timeout=args.timeout) as client:
         per_query_results = [
-            evaluate_query(label, client=client, api_url=args.api_url, top_k=args.top_k)
+            evaluate_query(label, client=client, api_url=args.api_url, top_k=args.top_k,
+                           mode=args.mode)
             for label in labels
         ]
 
@@ -356,6 +368,7 @@ def main():
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "run_name": args.run_name,
         "api_url": args.api_url,
+        "mode": args.mode,
         "labels": str(labels_path),
         "total_queries": len(labels),
         "metrics": compute_metrics(per_query_results),

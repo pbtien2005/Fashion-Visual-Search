@@ -1,0 +1,54 @@
+{
+  "schema_version": "m2.phase5.protocol.v1",
+  "input_fingerprint": "884d9c470ee7d64f9bcc2f1d7935e6a6f7eed1c9b1c8a3996ff313fcece8ed96",
+  "inputs": {
+    "manifest_sha256": "abed394805e5bfa9d97dd05b5d33236aeeaa5378b27317e9d3b2707a3aedd58f",
+    "phase4_report_sha256": "2034583d1b7077e891c49aace064f83a1a08eb71b500403d6cd47681226fe1af",
+    "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+    "HSV_profile_sha256": "6d0b2cd8ac5c7f224a6e65b21c60be5f2e559e4c40173e00ea80afa0638ebb53",
+    "HSV_version": "hsv-hs-v1-147-b0681e3cbf842188",
+    "selection_criteria": {
+      "min_validation_references": 2,
+      "min_each_reference_mask_iou": 0.8,
+      "min_mean_color_similarity_gain": 0.02,
+      "max_each_color_similarity_loss": 0.01,
+      "require_all_reference_masks_delivered": true
+    },
+    "source_sha256": {
+      "object_detection/detector.py": "b3f35e55810a0d785b592d2360323774ec5929d8c28439e849172d4ba6f681cd",
+      "object_detection/image_preprocessing.py": "8423ac114ff6f6388825ae2822a453288183839762f9605f0a396c47ac5b4665",
+      "object_detection/segmentation.py": "dbe38f6b979269eb7985d2341cb3a9910fdd713238b1587f5659a2d03518777a",
+      "object_detection/utils.py": "68963a3d00812b8ebfba2a78cb229cb7332f70eae5db9c42d21e3e01e11f6b51",
+      "AI/features.py": "91bacbff6be2db18beba3ae4a02c851167a0d3b0732e5fae3496d183ba27b97c",
+      "AI/hsv_descriptor.py": "6310632b0d92cd24442e535f542980c5cfa332cd71b611652191d249b34ff14f",
+      "AI/production_color.py": "5160689598ca52dddc5f009af2f7ef81ed92f8cd9e58c099e83ac8d343301c1b",
+      "AI/color_cache.py": "255cfc5f537661719814e832c650af432e69b552b8b296a5c2b57372c3208ddc",
+      "evaluation/run_color_benchmark.py": "fab494c724566564485b2a813185421b761ab20dc4b92254e79a4fa1662e7081",
+      "evaluation/m2_phase5.py": "0d428b38cc4fe35c0375188345234a77abac26a4439f53ef23c5a14302a174c3",
+      "evaluation/run_m2_phase5.py": "5a31867fd716f52d28cff2e9047407ee294920c7cf31c6d089e6336e0e363ecd"
+    }
+  },
+  "mask_modes": [
+    "off",
+    "raw",
+    "open_close"
+  ],
+  "selection_criteria": {
+    "min_validation_references": 2,
+    "min_each_reference_mask_iou": 0.8,
+    "min_mean_color_similarity_gain": 0.02,
+    "max_each_color_similarity_loss": 0.01,
+    "require_all_reference_masks_delivered": true
+  },
+  "color_metric": "HSV147 Hellinger similarity against reviewed clothing-reference pixels; miss=0",
+  "comparison": {
+    "H0-M1": "off",
+    "B2": "raw",
+    "B3": "open_close"
+  },
+  "prior_test_exposure": true,
+  "independent_test": false,
+  "reuse_detection": "Frozen genuine phase4 YOLO boxes/IDs; no new inference, encoder or candidate search",
+  "limitations": "Shared 20-image regression; test masks/IoU already observed in phase4. Selection code filters validation only.",
+  "lock_sha256": "61576ccf4ef9193d9765166f555b0393dca38317ee0a87e3d837be54c3f01d5d"
+}

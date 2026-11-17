@@ -1,11 +1,14 @@
 import os
 from urllib.parse import quote, urlparse
 
-from AI.color_utils import color_similarity, extract_dominant_color, name_color
 from AI.embedding_model import encode_texts, get_embedding_config
-from AI.vectorizer import extract_vector, image_from_base64
+from AI.features import detection_identity, extract_runtime_features
+from AI.hsv_descriptor import histogram_similarity
+from AI.production_color import (extract_source_color, descriptor_display, product_color,
+                                 unavailable, validate_production_color)
+from AI.vectorizer import image_from_base64
 from api.category_mapping import get_category_terms
-from db.database import search_similar_by_vector, validate_vector_dimension
+from db.database import list_color_search_products, search_similar_by_vector, validate_vector_dimension
 
 CANDIDATE_LIMIT = 100
 PER_VARIANT_RERANK_LIMIT = 20
@@ -16,8 +19,6 @@ DEFAULT_IMAGE_WEIGHT = 0.60
 DEFAULT_CATEGORY_WEIGHT = 0.15
 DEFAULT_COLOR_WEIGHT = 0.15
 DEFAULT_TEXT_STYLE_WEIGHT = 0.10
-DEFAULT_COLOR_MISMATCH_THRESHOLD = 0.35
-DEFAULT_COLOR_MISMATCH_PENALTY = 0.08
 DEFAULT_OPPOSITE_CATEGORY_PENALTY = 0.10
 TEXT_SCORE_WEIGHT = 0.65
 STYLE_SCORE_WEIGHT = 0.35
@@ -25,6 +26,8 @@ NO_CONFIDENT_MATCH_MESSAGE = "Detected item, but no confident product match foun
 # Default guardrails: avoid showing visually weak matches just because metadata boosted them.
 DEFAULT_MATCH_SCORE_THRESHOLD = 0.70
 DEFAULT_MIN_IMAGE_SIMILARITY = 0.60
+RETRIEVAL_MODES = {"histogram_only", "embedding_only", "hybrid"}
+RETRIEVAL_ACCEPT_THRESHOLD = 0.60
 
 SUBTYPE_KEYWORDS = {
     "button_down": [
@@ -184,14 +187,6 @@ def get_rerank_weights() -> tuple[float, float, float, float]:
     )
 
 
-def get_color_mismatch_threshold() -> float:
-    return _env_float("COLOR_MISMATCH_THRESHOLD", DEFAULT_COLOR_MISMATCH_THRESHOLD)
-
-
-def get_color_mismatch_penalty() -> float:
-    return max(0.0, _env_float("COLOR_MISMATCH_PENALTY", DEFAULT_COLOR_MISMATCH_PENALTY))
-
-
 def get_opposite_category_penalty() -> float:
     return max(0.0, _env_float("OPPOSITE_CATEGORY_PENALTY", DEFAULT_OPPOSITE_CATEGORY_PENALTY))
 
@@ -231,6 +226,12 @@ def make_product_url(product: dict) -> str | None:
 
 
 def serialize_product(product: dict) -> dict:
+    if not product.get("_hsv_display"):
+        config = get_embedding_config()
+        color = product_color(product.get("id"), config.model_name, config.version)
+        rgb, name = descriptor_display(color)
+        product = {**product, "dominant_color_rgb": list(rgb) if rgb else None,
+                   "dominant_color_name": name}
     image_url = product.get("image_url")
     return {
         "id": product.get("id"),
@@ -488,13 +489,9 @@ def compute_color_penalty(
     query_color_name: str | None = None,
     product_color_name: str | None = None,
 ) -> float:
-    if not query_color_name or not product_color_name:
-        return 0.0
-    if query_color_name == product_color_name:
-        return 0.0
-    if color_score >= get_color_mismatch_threshold():
-        return 0.0
-    return get_color_mismatch_penalty()
+    # Kept as a compatibility symbol. RGB palette caps/thresholds have no
+    # calibrated meaning for Hellinger; do not transfer them to HSV ranking.
+    return 0.0
 
 
 def _match_reason(
@@ -535,8 +532,32 @@ def rerank_products(
     class_name: str | None = None,
     query_vector: list[float] | None = None,
     embedding_model: str | None = None,
+    query_color=None,
+    embedding_version: int | None = None,
 ) -> list[dict]:
     reranked = []
+    config = get_embedding_config()
+    embedding_model = embedding_model or config.model_name
+    embedding_version = embedding_version if embedding_version is not None else config.version
+    if query_color is None:
+        unavailable("query_descriptor_missing")
+    else:
+        try:
+            validate_production_color(query_color)
+        except (ValueError, TypeError) as exc:
+            query_color = unavailable(f"query_descriptor_invalid:{exc}")
+    # M4 integration boundary: only color input/score changes. Never use RGB
+    # fields from legacy DB rows, including in text/style color prompts.
+    color_by_id = {}
+    hsv_products = []
+    for product in products:
+        color = product_color(product.get("id"), embedding_model, embedding_version)
+        rgb, name = descriptor_display(color)
+        hsv_product = {**product, "dominant_color_rgb": list(rgb) if rgb else None,
+                       "dominant_color_name": name, "_hsv_display": True}
+        hsv_products.append(hsv_product)
+        color_by_id[_product_key(hsv_product)] = color
+    products = hsv_products
     image_weight, category_weight, color_weight, text_style_weight = get_rerank_weights()
     text_style_scores = compute_text_style_scores(
         products,
@@ -555,18 +576,15 @@ def rerank_products(
     for product in products:
         image_similarity = float(product.get("similarity") or 0.0)
         category_score = compute_category_score(product, category_terms, class_name=class_name)
-        color_score = color_similarity(
-            query_color_rgb,
-            product.get("dominant_color_rgb"),
-            query_name=query_color_name,
-            product_name=product.get("dominant_color_name"),
-        )
+        color = color_by_id.get(_product_key(product))
+        color_score = 0.0
+        if query_color is not None and color is not None:
+            try:
+                color_score = histogram_similarity(query_color, color)
+            except (ValueError, TypeError) as exc:
+                unavailable(f"similarity:{exc}", product.get("id"))
         category_penalty = compute_category_penalty(product, class_name=class_name)
-        color_penalty = compute_color_penalty(
-            color_score,
-            query_color_name=query_color_name,
-            product_color_name=product.get("dominant_color_name"),
-        )
+        color_penalty = 0.0  # No RGB mismatch penalty is reused for HSV.
         text_style_info = text_style_scores.get(_product_key(product), {})
         text_score = float(text_style_info.get("text_score") or 0.0)
         style_score = float(text_style_info.get("style_score") or 0.0)
@@ -661,6 +679,8 @@ def apply_match_threshold(
     products: list[dict],
     threshold: float | None = None,
     min_image_similarity: float | None = None,
+    strict: bool = False,
+    require_image_similarity: bool = True,
 ) -> dict:
     threshold = get_match_score_threshold() if threshold is None else threshold
     min_image_similarity = get_min_image_similarity() if min_image_similarity is None else min_image_similarity
@@ -670,9 +690,9 @@ def apply_match_threshold(
 
     if not products:
         reject_reasons.append("no_candidates")
-    if products and top_score < threshold:
+    if products and (top_score <= threshold if strict else top_score < threshold):
         reject_reasons.append("final_score_too_low")
-    if products and top_image_similarity < min_image_similarity:
+    if products and require_image_similarity and top_image_similarity < min_image_similarity:
         reject_reasons.append("image_similarity_too_low")
 
     if reject_reasons:
@@ -685,7 +705,7 @@ def apply_match_threshold(
             "top_final_score": top_score if products else None,
             "top_image_similarity": top_image_similarity if products else None,
             "match_score_threshold": threshold,
-            "min_image_similarity": min_image_similarity,
+            "min_image_similarity": min_image_similarity if require_image_similarity else None,
         }
 
     return {
@@ -697,8 +717,28 @@ def apply_match_threshold(
         "top_final_score": top_score,
         "top_image_similarity": top_image_similarity,
         "match_score_threshold": threshold,
-        "min_image_similarity": min_image_similarity,
+        "min_image_similarity": min_image_similarity if require_image_similarity else None,
     }
+
+
+def search_by_histogram(query_color, embedding_config, top_k: int) -> list[dict]:
+    """Score every compatible catalog item; CLIP does not select candidates."""
+    if query_color is None:
+        return []
+    validate_production_color(query_color)
+    ranked = []
+    for product in list_color_search_products(embedding_config.model_name, embedding_config.version):
+        color = product_color(product["id"], embedding_config.model_name, embedding_config.version)
+        if color is None:
+            continue
+        score = histogram_similarity(query_color, color)
+        rgb, name = descriptor_display(color)
+        ranked.append({**product, "dominant_color_rgb": list(rgb) if rgb else None,
+                       "dominant_color_name": name, "_hsv_display": True,
+                       "color_score": score, "final_score": score, "similarity": score,
+                       "match_reason": "HSV histogram similarity"})
+    ranked.sort(key=lambda product: (-product["final_score"], str(product["id"])))
+    return ranked[:top_k]
 
 
 def crop_variants_for_search(crop: dict) -> list[dict]:
@@ -729,16 +769,14 @@ def _search_single_crop_variant(
     top_k: int,
     category_terms: list[str],
     embedding_config,
+    query_color=None,
+    mode: str = "hybrid",
 ) -> tuple[list[dict], tuple[int, int, int] | None, str | None]:
     image = image_from_base64(variant["image_base64"])
-    query_color_rgb = extract_dominant_color(image)
-    query_color_name = name_color(query_color_rgb)
-    vector = extract_vector(image)
-    if vector is None:
-        raise ValueError(
-            f"Embedding extraction failed for crop class {crop.get('class_name')} "
-            f"variant {variant.get('name')}"
-        )
+    features = extract_runtime_features(detection_identity(crop),
+                                        image, query_color)
+    query_color_rgb, query_color_name = descriptor_display(features.color)
+    vector = features.embedding
 
     validate_vector_dimension(vector)
     products = search_similar_by_vector(
@@ -748,6 +786,15 @@ def _search_single_crop_variant(
         embedding_model=embedding_config.model_name,
         embedding_version=embedding_config.version,
     )
+    if mode == "embedding_only":
+        ranked = []
+        for product in products:
+            score = float(product.get("similarity") or 0.0)
+            ranked.append({**product, "dominant_color_rgb": None,
+                           "dominant_color_name": None, "_hsv_display": True,
+                           "image_similarity": score, "final_score": score,
+                           "match_reason": "FashionCLIP cosine similarity"})
+        return ranked[:max(top_k, PER_VARIANT_RERANK_LIMIT)], None, None
     ranked = rerank_products(
         products,
         category_terms=category_terms,
@@ -757,16 +804,34 @@ def _search_single_crop_variant(
         class_name=crop.get("class_name", ""),
         query_vector=vector,
         embedding_model=embedding_config.model_name,
+        query_color=features.color,
+        embedding_version=features.embedding_version,
     )
     return ranked, query_color_rgb, query_color_name
 
 
-def search_match_for_crop(crop: dict, top_k: int = 5) -> dict:
+def search_match_for_crop(crop: dict, top_k: int = 5, original_rgb=None,
+                          mode: str = "hybrid") -> dict:
+    if mode not in RETRIEVAL_MODES:
+        raise ValueError(f"Unknown retrieval mode: {mode}")
     variants = crop_variants_for_search(crop)
-    if not variants:
+    if mode != "histogram_only" and not variants:
         raise ValueError(f"Missing crop image payload for class {crop.get('class_name')}")
 
     embedding_config = get_embedding_config()
+    # One source-ROI color descriptor for all encoder variants; no padded
+    # variant can redefine query color when the original upload is available.
+    query_color = (extract_source_color(original_rgb, crop, detection_identity(crop))
+                   if mode != "embedding_only" else None)
+    if mode == "histogram_only":
+        products = search_by_histogram(query_color, embedding_config, top_k)
+        result = apply_match_threshold(products, threshold=0.0,
+                                       require_image_similarity=False)
+        rgb, name = descriptor_display(query_color)
+        result.update(query_style_label=None, query_color_rgb=list(rgb) if rgb else None,
+                      query_color_name=name, search_variants=["source_roi"],
+                      search_variant_count=1, search_mode=mode)
+        return result
     category_terms = get_category_terms(crop.get("class_name", ""))
     ranked_variants = []
     query_color_rgb = None
@@ -781,6 +846,8 @@ def search_match_for_crop(crop: dict, top_k: int = 5) -> dict:
                 top_k=top_k,
                 category_terms=category_terms,
                 embedding_config=embedding_config,
+                query_color=query_color,
+                mode=mode,
             )
         except Exception as exc:
             errors.append(f"{variant.get('name')}: {exc}")
@@ -795,7 +862,16 @@ def search_match_for_crop(crop: dict, top_k: int = 5) -> dict:
         raise ValueError("; ".join(errors) or f"No searchable crop variants for class {crop.get('class_name')}")
 
     products = merge_variant_rankings(ranked_variants, top_k=top_k)
-    match_result = apply_match_threshold(products)
+    match_result = apply_match_threshold(products, threshold=RETRIEVAL_ACCEPT_THRESHOLD,
+                                         strict=True, require_image_similarity=False)
+    if match_result["is_confident_match"]:
+        match_result["similar_products"] = [
+            serialize_product(product) for product in products
+            if _rank_score(product) > RETRIEVAL_ACCEPT_THRESHOLD
+        ]
+    else:
+        match_result["low_confidence_products"] = []
+    match_result["search_mode"] = mode
     match_result["query_style_label"] = next(
         (product.get("query_style_label") for product in products if product.get("query_style_label")),
         None,

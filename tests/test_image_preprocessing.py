@@ -210,7 +210,7 @@ class UploadTests(unittest.TestCase):
                 response = client.post("/detect/upload", files={"file": ("bad.jpg", b"garbage", "image/jpeg")})
                 self.assertEqual(response.status_code, 400)
                 self.assertIn("decode", response.json()["detail"])
-                with patch.object(detector, "detect_from_bytes", side_effect=RuntimeError("model error")):
+                with patch.object(detector, "detect_batch_from_bytes", side_effect=RuntimeError("model error")):
                     response = client.post("/detect/upload", files={"file": ("bad.jpg", b"garbage", "image/jpeg")})
                     self.assertEqual(response.status_code, 500)
             with patch.object(type(detector), "model_available", False):

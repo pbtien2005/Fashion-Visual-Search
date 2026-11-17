@@ -1,0 +1,421 @@
+{
+  "schema_version": "m2.manifest.v1",
+  "purpose": "phase1_baseline_regression_only",
+  "independent_test": false,
+  "queries": [
+    {
+      "query_id": "real_green_tshirt_01",
+      "image": "evaluation/queries/real_outfits/real_green_tshirt_01_You_broke_the_site_again_211068750_.jpg.jpg",
+      "sha256": "f26b568338c392c0ab8722f7b2e8bf257c0c05401c2d03bdfec7cd8dbeb3db4c",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "short_sleeve_top",
+          "expected_categories": [
+            "shirt",
+            "top",
+            "t-shirt",
+            "tee"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "green"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22You_broke_the_site_again%22_%28211068750%29.jpg",
+      "author": "Domas Mituzas from Vilnius, Lithuania",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "query_id": "real_green_tshirt_02",
+      "image": "evaluation/queries/real_outfits/real_green_tshirt_02_1-6_MTX_5-15_Stream_Crossing_150914-M-OU200-018.jpg.jpg",
+      "sha256": "7e2ffb367de72e3e258716ee0da54959a84b719a312ecca4a3931f37d7bfe7fd",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "short_sleeve_top",
+          "expected_categories": [
+            "shirt",
+            "top",
+            "t-shirt",
+            "tee"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "green"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1-6_MTX_5-15_Stream_Crossing_150914-M-OU200-018.jpg",
+      "author": "Cpl. Kelly Street",
+      "license": "Public domain",
+      "license_url": null
+    },
+    {
+      "query_id": "real_white_shirt_01",
+      "image": "evaluation/queries/real_outfits/real_white_shirt_01_Americana_2016_30044392184_.jpg.jpg",
+      "sha256": "6baf9abb4f23f05f97eb77f756c2d08cfed2f159826335c89f990420bffdabde",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "short_sleeve_top",
+          "expected_categories": [
+            "shirt",
+            "top",
+            "blouse"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "white"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22Americana%22_%282016%29_%2830044392184%29.jpg",
+      "author": "The Moving Architects",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    {
+      "query_id": "real_white_shirt_02",
+      "image": "evaluation/queries/real_outfits/real_white_shirt_02_Another_good_shot_-_Flickr_-_GeorgeTan_2...thanks_for_millionth_support.jpg.jpg",
+      "sha256": "f1efec1485f2a976a88c165e43451bfbae685f12ed535b8b7be08b5e4e7bb29f",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "short_sleeve_top",
+          "expected_categories": [
+            "shirt",
+            "top",
+            "blouse"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "white"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22Another_good_shot%22_-_Flickr_-_GeorgeTan_%5E2...thanks_for_millionth_support.jpg",
+      "author": "GeorgeTan # 2...thanks for millionth support from Singapore",
+      "license": "Public domain",
+      "license_url": null
+    },
+    {
+      "query_id": "real_blue_jeans_01",
+      "image": "evaluation/queries/real_outfits/real_blue_jeans_01_02015_0217_Herbst-Wintermode_2015-2016_Beskiden.JPG.jpg",
+      "sha256": "207b8e53814fbe8491b2e613d909d1484d984d2611438b68da205c00c876a996",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "trousers",
+          "expected_categories": [
+            "pants",
+            "trousers",
+            "jeans"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "blue"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:02015_0217_Herbst-Wintermode_2015-2016%2C_Beskiden.JPG",
+      "author": "Silar",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "query_id": "real_blue_jeans_02",
+      "image": "evaluation/queries/real_outfits/real_blue_jeans_02_02017_blue_jeans.jpg.jpg",
+      "sha256": "90bb92189b1cd76db971a55e8a5b554ea611336e1756aaaa7f9e54b4f07787c3",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "trousers",
+          "expected_categories": [
+            "pants",
+            "trousers",
+            "jeans"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "blue"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:02017_blue_jeans.jpg",
+      "author": "Silar",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "query_id": "real_black_trousers_01",
+      "image": "evaluation/queries/real_outfits/real_black_trousers_01_2015_RiP_Bastille_Dan_Smith_by_2eight_-_3SC5305.jpg.jpg",
+      "sha256": "90596369fc77f5778e30a4c639ab7916efbd40ab668bdc992b48bb05c5540e5c",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "trousers",
+          "expected_categories": [
+            "pants",
+            "trousers"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "black"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2015_RiP_Bastille_Dan_Smith_by_2eight_-_3SC5305.jpg",
+      "author": "Stefan Brending (2eight)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "query_id": "real_black_trousers_02",
+      "image": "evaluation/queries/real_outfits/real_black_trousers_02_2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg.jpg",
+      "sha256": "27f0e30f8a94156a1e5b6176db26daec9fb4d8e9c5cfe3ae69a711ac41ac7907",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "trousers",
+          "expected_categories": [
+            "pants",
+            "trousers"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "black"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg",
+      "author": "Stefan Brending (2eight)",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "query_id": "real_shorts_01",
+      "image": "evaluation/queries/real_outfits/real_shorts_01_0001_August_2016_in_Moscow_41.jpg.jpg",
+      "sha256": "7199be7d0703e6c520b60bf190baef5a6d5fdae49935b30a35df68023bf3f726",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "shorts",
+          "expected_categories": [
+            "shorts"
+          ],
+          "acceptable_product_ids": []
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:0001_August_2016_in_Moscow_41.jpg",
+      "author": "Rakoon",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "query_id": "real_shorts_02",
+      "image": "evaluation/queries/real_outfits/real_shorts_02_0078_29th_of_July_2016_in_Vladimir_Oblast_Russia.jpg.jpg",
+      "sha256": "1fd79549c9bde7449ab4a3e4f0a46e42d7ddba064cbfbaf183d544f92b0b47dd",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "shorts",
+          "expected_categories": [
+            "shorts"
+          ],
+          "acceptable_product_ids": []
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:0078_29th_of_July_2016_in_Vladimir_Oblast%2C_Russia.jpg",
+      "author": "Rakoon",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "query_id": "real_black_skirt_01",
+      "image": "evaluation/queries/real_outfits/real_black_skirt_01_G_I-DLE_2020_Young_05.jpg.jpg",
+      "sha256": "cf8e300a45b10d52df23d75620b7f759744cbe424397c6dc6b497471f221d1b1",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "skirt",
+          "expected_categories": [
+            "skirt"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "black"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%28G%29I-DLE_2020_%E5%8F%B0%E5%8D%97%E5%A5%BDYoung%E8%80%B6%E8%AA%95%E8%B7%A8%E5%B9%B4%E5%9F%8E_05.jpg",
+      "author": "sasaki_0217",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    {
+      "query_id": "real_black_skirt_02",
+      "image": "evaluation/queries/real_outfits/real_black_skirt_02_160924_AOA_cropped_.jpg.jpg",
+      "sha256": "f7bd08e86992c46143c75672f117caac819b1baf790226d257f2829b5ce72964",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "skirt",
+          "expected_categories": [
+            "skirt"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "black"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:160924_AOA_%EC%9D%B8%EC%B2%9C%ED%95%9C%EB%A5%98%EA%B4%80%EA%B4%91%EC%BD%98%EC%84%9C%ED%8A%B8_%28cropped%29.jpg",
+      "author": "shinjimindotcom",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
+      "query_id": "real_red_dress_01",
+      "image": "evaluation/queries/real_outfits/real_red_dress_01_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_01_cropped_.jpg.jpg",
+      "sha256": "a9eed33546cc66ea06cf847d31bce73a7faf4d36130c3e0dd01c3479685a4676",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "dress",
+          "expected_categories": [
+            "dress"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "red"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_01_%28cropped%29.jpg",
+      "author": "Andrea Pavanello, Milano",
+      "license": "CC BY-SA 3.0 it",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/it/deed.en"
+    },
+    {
+      "query_id": "real_red_dress_02",
+      "image": "evaluation/queries/real_outfits/real_red_dress_02_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg.jpg",
+      "sha256": "48a1aad15f9cf6a2334ed062e37bf5b40bc01e4140f62e4f6a2562337f6f2ef2",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "dress",
+          "expected_categories": [
+            "dress"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "red"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg",
+      "author": "Andrea Pavanello, Milano",
+      "license": "CC BY-SA 3.0 it",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/it/deed.en"
+    },
+    {
+      "query_id": "real_black_dress_01",
+      "image": "evaluation/queries/real_outfits/real_black_dress_01_GTA_Vice_City_Fashion_27520178494_.jpg.jpg",
+      "sha256": "d0cb2572582077b1c0e3f43ffe274ef8f63f22f10c9b76caf3faeb641300fa04",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "dress",
+          "expected_categories": [
+            "dress"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "black"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22GTA_Vice_City%22_Fashion_%2827520178494%29.jpg",
+      "author": "Coastal Elite from Halifax, Canada",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    {
+      "query_id": "real_black_dress_02",
+      "image": "evaluation/queries/real_outfits/real_black_dress_02_An_Evening_with_Judd_Apatow_Leslie_Mann_8224252457_.jpg.jpg",
+      "sha256": "208ce8b38d8b11b94be95503927dcd14cf259f8d1d016ec381cb739da298f6ce",
+      "split": "regression",
+      "previously_used_for_development": true,
+      "expected_items_legacy_unverified": [
+        {
+          "type": "dress",
+          "expected_categories": [
+            "dress"
+          ],
+          "acceptable_product_ids": [],
+          "expected_color": "black"
+        }
+      ],
+      "target_bbox_xyxy": null,
+      "mask_path": null,
+      "label_status": "needs_human_annotation",
+      "lighting_group": "unreviewed",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+      "author": "Canadian Film Centre from Toronto, Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0"
+    }
+  ]
+}

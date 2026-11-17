@@ -1,0 +1,52 @@
+test_evaluate_gates_reports_threshold_failures (test_benchmark_suite.BenchmarkSuiteTests.test_evaluate_gates_reports_threshold_failures) ... ok
+test_latency_score_rewards_fast_responses (test_benchmark_suite.BenchmarkSuiteTests.test_latency_score_rewards_fast_responses) ... ok
+test_suite_score_skips_missing_exact_match_metrics (test_benchmark_suite.BenchmarkSuiteTests.test_suite_score_skips_missing_exact_match_metrics) ... ok
+test_dominant_color_prioritizes_center_over_border_noise (test_color_utils.ColorUtilsTests.test_dominant_color_prioritizes_center_over_border_noise) ... ok
+test_khaki_is_not_similar_to_black (test_color_utils.ColorUtilsTests.test_khaki_is_not_similar_to_black) ... ok
+test_names_common_fashion_neutrals (test_color_utils.ColorUtilsTests.test_names_common_fashion_neutrals) ... ok
+test_olive_is_only_partly_similar_to_green (test_color_utils.ColorUtilsTests.test_olive_is_only_partly_similar_to_green) ... ok
+test_config_validation (test_hsv_descriptor.HistogramTests.test_config_validation) ... ok
+test_dark_saturated_fabric_retains_hue (test_hsv_descriptor.HistogramTests.test_dark_saturated_fabric_retains_hue) ... ok
+test_dimensions_l1_and_metadata (test_hsv_descriptor.HistogramTests.test_dimensions_l1_and_metadata) ... ok
+test_empty_similarity_is_zero (test_hsv_descriptor.HistogramTests.test_empty_similarity_is_zero) ... ok
+test_gray_black_low_saturation (test_hsv_descriptor.HistogramTests.test_gray_black_low_saturation) ... ok
+test_hellinger_formula_and_intersection (test_hsv_descriptor.HistogramTests.test_hellinger_formula_and_intersection) ... ok
+test_input_validation (test_hsv_descriptor.HistogramTests.test_input_validation) ... ok
+test_mask_area_upper_bound (test_hsv_descriptor.HistogramTests.test_mask_area_upper_bound) ... ok
+test_mask_excludes_background (test_hsv_descriptor.HistogramTests.test_mask_excludes_background) ... ok
+test_masks_missing_empty_invalid_and_insufficient (test_hsv_descriptor.HistogramTests.test_masks_missing_empty_invalid_and_insufficient) ... ok
+test_multicolor_mass_no_double_counting (test_hsv_descriptor.HistogramTests.test_multicolor_mass_no_double_counting) ... ok
+test_reject_invalid_descriptors (test_hsv_descriptor.HistogramTests.test_reject_invalid_descriptors) ... ok
+test_rgb_bgr_conversion_is_explicit (test_hsv_descriptor.HistogramTests.test_rgb_bgr_conversion_is_explicit) ... ok
+test_threshold_boundaries_mutually_exclusive (test_hsv_descriptor.HistogramTests.test_threshold_boundaries_mutually_exclusive) ... ok
+test_version_includes_thresholds_bins_and_policy (test_hsv_descriptor.HistogramTests.test_version_includes_thresholds_bins_and_policy) ... ok
+test_white_on_white_mask_preserves_garment (test_hsv_descriptor.HistogramTests.test_white_on_white_mask_preserves_garment) ... ok
+test_white_with_small_skin_region (test_hsv_descriptor.HistogramTests.test_white_with_small_skin_region) ... ok
+test_actual_encoder_path_normalizes_and_validates_outputs (test_hsv_descriptor.IntegrationTests.test_actual_encoder_path_normalizes_and_validates_outputs) ... ok
+test_adapter_legacy_and_invalid_mask_are_recorded (test_hsv_descriptor.IntegrationTests.test_adapter_legacy_and_invalid_mask_are_recorded) ... ok
+test_adapter_prefers_source_roi_to_legacy_crop (test_hsv_descriptor.IntegrationTests.test_adapter_prefers_source_roi_to_legacy_crop) ... ok
+test_adapter_reconstructs_source_bbox (test_hsv_descriptor.IntegrationTests.test_adapter_reconstructs_source_bbox) ... ok
+test_benchmark_factorial_and_failure_denominator (test_hsv_descriptor.IntegrationTests.test_benchmark_factorial_and_failure_denominator) ... ok
+test_benchmark_requires_labels_and_unique_ids (test_hsv_descriptor.IntegrationTests.test_benchmark_requires_labels_and_unique_ids) ... ok
+test_cache_coverage_versions_and_no_catalog_mutation (test_hsv_descriptor.IntegrationTests.test_cache_coverage_versions_and_no_catalog_mutation) ... ok
+test_cache_key_separates_all_contract_fields (test_hsv_descriptor.IntegrationTests.test_cache_key_separates_all_contract_fields) ... ok
+test_detection_entrypoint_uses_original_for_color_and_crop_for_encoder (test_hsv_descriptor.IntegrationTests.test_detection_entrypoint_uses_original_for_color_and_crop_for_encoder) ... ok
+test_embedding_validation (test_hsv_descriptor.IntegrationTests.test_embedding_validation) ... ok
+test_encoder_failure_propagates (test_hsv_descriptor.IntegrationTests.test_encoder_failure_propagates) ... ok
+test_unified_result_keeps_encoder_input_separate (test_hsv_descriptor.IntegrationTests.test_unified_result_keeps_encoder_input_separate) ... ok
+test_category_penalty_applies_to_opposite_product_type (test_search_service.SearchServiceTests.test_category_penalty_applies_to_opposite_product_type) ... ok
+test_color_penalty_only_applies_to_strong_mismatch (test_search_service.SearchServiceTests.test_color_penalty_only_applies_to_strong_mismatch) ... ok
+test_disabled_text_style_rerank_does_not_consume_score_weight (test_search_service.SearchServiceTests.test_disabled_text_style_rerank_does_not_consume_score_weight) ... ok
+test_merge_variant_rankings_keeps_best_product_score (test_search_service.SearchServiceTests.test_merge_variant_rankings_keeps_best_product_score) ... ok
+test_rerank_products_exposes_penalty_breakdown (test_search_service.SearchServiceTests.test_rerank_products_exposes_penalty_breakdown) ... ok
+test_rerank_products_uses_text_style_signal_without_filtering_candidates (test_search_service.SearchServiceTests.test_rerank_products_uses_text_style_signal_without_filtering_candidates) ... ok
+test_rerank_weight_defaults_prioritize_measured_real_eval_result (test_search_service.SearchServiceTests.test_rerank_weight_defaults_prioritize_measured_real_eval_result) ... ok
+test_rerank_weight_env_values_are_normalized (test_search_service.SearchServiceTests.test_rerank_weight_env_values_are_normalized) ... ok
+test_threshold_returns_low_confidence_suggestions (test_search_service.SearchServiceTests.test_threshold_returns_low_confidence_suggestions) ... ok
+test_choose_best_detection_crop_handles_empty_input (test_vectorizer_crop.VectorizerCropTests.test_choose_best_detection_crop_handles_empty_input) ... ok
+test_choose_best_detection_crop_prefers_confident_large_crop (test_vectorizer_crop.VectorizerCropTests.test_choose_best_detection_crop_prefers_confident_large_crop) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 0.483s
+
+OK

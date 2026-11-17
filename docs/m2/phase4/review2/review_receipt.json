@@ -1,0 +1,23 @@
+{
+    "date":  "2026-11-14",
+    "source_file":  "m2-review.json",
+    "received_sha256":  "3776c15676ab9468e8872f6d7da4001c03117290e47e4f4fbb0e0bc38cfc88c2",
+    "reviewer":  "tuấn anh",
+    "received_targets_reviewed":  20,
+    "received_masks_reviewed":  4,
+    "chat_confirmation":  {
+                              "result_mask_status":  "human_reviewed",
+                              "query_id":  "m1_ostau",
+                              "answer":  "Đã xem, xác nhận mask ảnh này"
+                          },
+    "final_manifest":  "evaluation/m2/annotations.review2.json",
+    "final_manifest_sha256":  "abed394805e5bfa9d97dd05b5d33236aeeaa5378b27317e9d3b2707a3aedd58f",
+    "final_targets_reviewed":  20,
+    "final_masks_reviewed":  5,
+    "final_mask_split":  {
+                             "test":  3,
+                             "validation":  2
+                         },
+    "original_file_modified":  false,
+    "notes_interpretation":  "User observations retained; annotation page shows one labeled target and optional reference mask, not every detector prediction; no new model, multi-person dedup or ranking changes were authorized by document notes."
+}

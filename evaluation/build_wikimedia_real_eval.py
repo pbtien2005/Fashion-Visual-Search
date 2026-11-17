@@ -242,7 +242,8 @@ def build_real_eval(api_limit_per_category: int, per_category: int, width: int, 
 
     labels_path = EVAL_DIR / "labels.real.json"
     sources_json_path = EVAL_DIR / "real_outfit_sources.json"
-    sources_md_path = EVAL_DIR / "real_outfit_sources.md"
+    sources_md_path = EVAL_DIR.parent / "docs" / "data_sources" / "real_outfits.md"
+    sources_md_path.parent.mkdir(parents=True, exist_ok=True)
 
     labels_path.write_text(json.dumps(labels, ensure_ascii=False, indent=2), encoding="utf-8")
     sources_json_path.write_text(json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8")

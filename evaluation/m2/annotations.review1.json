@@ -1,0 +1,2297 @@
+{
+  "schema_version": "m2.annotation.v2",
+  "dataset_kind": "shared_M1_regression_pending_M2_review",
+  "independent_test": false,
+  "preprocess_config": {
+    "mode": "identity",
+    "max_side": 1280,
+    "max_pixels": 50000000,
+    "brightness_stat": "mean_luma",
+    "brightness_threshold": 0.35,
+    "gamma": 0.6
+  },
+  "required_counts": {
+    "validation_images": 5,
+    "test_images": 15,
+    "validation_masks": 2,
+    "test_masks": 3
+  },
+  "queries": [
+    {
+      "query_id": "real_green_tshirt_01",
+      "target_id": "real_green_tshirt_01_target",
+      "image": "evaluation/queries/real_outfits/real_green_tshirt_01_You_broke_the_site_again_211068750_.jpg.jpg",
+      "sha256": "f26b568338c392c0ab8722f7b2e8bf257c0c05401c2d03bdfec7cd8dbeb3db4c",
+      "split": "validation",
+      "bbox_normalized": [
+        0.29,
+        0.31,
+        0.8,
+        0.75
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "short_sleeve_top",
+      "color_names": [
+        "green"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22You_broke_the_site_again%22_%28211068750%29.jpg",
+      "author": "Domas Mituzas from Vilnius, Lithuania",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:%22You_broke_the_site_again%22_%28211068750%29.jpg",
+      "source_csv": "evaluation/m1_validation.csv",
+      "source_csv_sha256": "e09df77d53ee4f495db2abe46e058d8deb5b5b4693eef2ac8f427c46fb609f7b",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 1280,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1280,
+        "width": 960,
+        "height": 1280,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "ảnh này không có vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_black_dress_02",
+      "target_id": "real_black_dress_02_target",
+      "image": "evaluation/queries/real_outfits/real_black_dress_02_An_Evening_with_Judd_Apatow_Leslie_Mann_8224252457_.jpg.jpg",
+      "sha256": "208ce8b38d8b11b94be95503927dcd14cf259f8d1d016ec381cb739da298f6ce",
+      "split": "validation",
+      "bbox_normalized": [
+        0.35,
+        0.27,
+        0.62,
+        0.79
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "short_sleeve_dress",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+      "author": "Canadian Film Centre from Toronto, Canada",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:%27An_Evening_with_Judd_Apatow_%26_Leslie_Mann%27_%288224252457%29.jpg",
+      "source_csv": "evaluation/m1_validation.csv",
+      "source_csv_sha256": "e09df77d53ee4f495db2abe46e058d8deb5b5b4693eef2ac8f427c46fb609f7b",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 1200,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1200,
+        "width": 960,
+        "height": 1200,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": true,
+      "mask_path": "evaluation/m2/reference_masks/review1/real_black_dress_02.png",
+      "mask_sha256": "bf388748c87641eeede715a3d0296a0c552c5c5bc04e00fb8c31a875e94ab591",
+      "mask_status": "human_reviewed",
+      "mask_reviewer": "tuấn anh",
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "Mask xanh ngọc là gợi ý AI, chưa phải ground truth; xem và sửa da/tóc/nền/vải nếu cần. Trong ảnh có 3 người, chỉ nhận diện được váy của người ở giữa, còn quần áo 2 người bên cạnh chưa nhận diện được,",
+      "mask_polygons": [
+        {
+          "points": [
+            [
+              454,
+              312
+            ],
+            [
+              503,
+              314
+            ],
+            [
+              518,
+              337
+            ],
+            [
+              527,
+              357
+            ],
+            [
+              542,
+              392
+            ],
+            [
+              543,
+              421
+            ],
+            [
+              535,
+              450
+            ],
+            [
+              533,
+              483
+            ],
+            [
+              534,
+              500
+            ],
+            [
+              543,
+              529
+            ],
+            [
+              551,
+              564
+            ],
+            [
+              556,
+              607
+            ],
+            [
+              552,
+              626
+            ],
+            [
+              546,
+              648
+            ],
+            [
+              546,
+              669
+            ],
+            [
+              546,
+              723
+            ],
+            [
+              536,
+              759
+            ],
+            [
+              535,
+              775
+            ],
+            [
+              521,
+              787
+            ],
+            [
+              488,
+              796
+            ],
+            [
+              452,
+              798
+            ],
+            [
+              427,
+              795
+            ],
+            [
+              411,
+              785
+            ],
+            [
+              405,
+              758
+            ],
+            [
+              403,
+              724
+            ],
+            [
+              398,
+              681
+            ],
+            [
+              399,
+              667
+            ],
+            [
+              392,
+              661
+            ],
+            [
+              395,
+              639
+            ],
+            [
+              399,
+              625
+            ],
+            [
+              396,
+              608
+            ],
+            [
+              389,
+              587
+            ],
+            [
+              384,
+              555
+            ],
+            [
+              387,
+              526
+            ],
+            [
+              395,
+              495
+            ],
+            [
+              393,
+              463
+            ],
+            [
+              394,
+              428
+            ],
+            [
+              394,
+              398
+            ],
+            [
+              410,
+              392
+            ],
+            [
+              432,
+              382
+            ],
+            [
+              451,
+              359
+            ],
+            [
+              462,
+              334
+            ]
+          ],
+          "subtract": false
+        },
+        {
+          "points": [
+            [
+              351,
+              378
+            ],
+            [
+              351,
+              356
+            ],
+            [
+              363,
+              326
+            ],
+            [
+              380,
+              312
+            ],
+            [
+              400,
+              308
+            ],
+            [
+              400,
+              329
+            ],
+            [
+              407,
+              352
+            ],
+            [
+              429,
+              371
+            ],
+            [
+              411,
+              384
+            ],
+            [
+              394,
+              391
+            ]
+          ],
+          "subtract": false
+        },
+        {
+          "points": [
+            [
+              528,
+              331
+            ],
+            [
+              546,
+              333
+            ],
+            [
+              564,
+              356
+            ],
+            [
+              565,
+              392
+            ],
+            [
+              546,
+              398
+            ],
+            [
+              537,
+              374
+            ],
+            [
+              531,
+              358
+            ]
+          ],
+          "subtract": false
+        }
+      ],
+      "mask_origin": "human_reviewed_assistant_polygon"
+    },
+    {
+      "query_id": "real_black_trousers_02",
+      "target_id": "real_black_trousers_02_target",
+      "image": "evaluation/queries/real_outfits/real_black_trousers_02_2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg.jpg",
+      "sha256": "27f0e30f8a94156a1e5b6176db26daec9fb4d8e9c5cfe3ae69a711ac41ac7907",
+      "split": "validation",
+      "bbox_normalized": [
+        0.29,
+        0.43,
+        0.72,
+        0.94
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "trousers",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg",
+      "author": "Stefan Brending (2eight)",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:2017_Deichbrand_-_Biffy_Clyro_-_Simon_Neil_-_by_2eight_-_DSC5134.jpg",
+      "source_csv": "evaluation/m1_validation.csv",
+      "source_csv_sha256": "e09df77d53ee4f495db2abe46e058d8deb5b5b4693eef2ac8f427c46fb609f7b",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 1442,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1442,
+        "width": 852,
+        "height": 1280,
+        "scale": 0.8875,
+        "resized": true,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "không thấy vùng xanh ngọc nào cả, chỉ có box thôi"
+    },
+    {
+      "query_id": "real_white_shirt_02",
+      "target_id": "real_white_shirt_02_target",
+      "image": "evaluation/queries/real_outfits/real_white_shirt_02_Another_good_shot_-_Flickr_-_GeorgeTan_2...thanks_for_millionth_support.jpg.jpg",
+      "sha256": "f1efec1485f2a976a88c165e43451bfbae685f12ed535b8b7be08b5e4e7bb29f",
+      "split": "validation",
+      "bbox_normalized": [
+        0.33,
+        0.23,
+        0.68,
+        0.49
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "short_sleeve_top",
+      "color_names": [
+        "white"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22Another_good_shot%22_-_Flickr_-_GeorgeTan_%5E2...thanks_for_millionth_support.jpg",
+      "author": "GeorgeTan # 2...thanks for millionth support from Singapore",
+      "license": "Public domain",
+      "license_url": "",
+      "source_group": "https://commons.wikimedia.org/wiki/File:%22Another_good_shot%22_-_Flickr_-_GeorgeTan_%5E2...thanks_for_millionth_support.jpg",
+      "source_csv": "evaluation/m1_validation.csv",
+      "source_csv_sha256": "e09df77d53ee4f495db2abe46e058d8deb5b5b4693eef2ac8f427c46fb609f7b",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 1124,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1124,
+        "width": 960,
+        "height": 1124,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": true,
+      "mask_path": "evaluation/m2/reference_masks/review1/real_white_shirt_02.png",
+      "mask_sha256": "b4cfd5d59d7a4482f3b0063dd6855aa037b49f7d74abf49fa9f0edbe3c7ad0fc",
+      "mask_status": "human_reviewed",
+      "mask_reviewer": "tuấn anh",
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "Mask xanh ngọc là gợi ý AI, chưa phải ground truth; xem và sửa da/tóc/nền/vải nếu cần. chỉ mới nhận diện được áo, chưa nhận diện được quần",
+      "mask_polygons": [
+        {
+          "points": [
+            [
+              493,
+              272
+            ],
+            [
+              520,
+              269
+            ],
+            [
+              518,
+              284
+            ],
+            [
+              577,
+              282
+            ],
+            [
+              604,
+              286
+            ],
+            [
+              622,
+              304
+            ],
+            [
+              616,
+              333
+            ],
+            [
+              609,
+              371
+            ],
+            [
+              606,
+              404
+            ],
+            [
+              608,
+              465
+            ],
+            [
+              601,
+              491
+            ],
+            [
+              588,
+              506
+            ],
+            [
+              562,
+              510
+            ],
+            [
+              539,
+              506
+            ],
+            [
+              511,
+              503
+            ],
+            [
+              490,
+              497
+            ],
+            [
+              475,
+              487
+            ],
+            [
+              463,
+              475
+            ],
+            [
+              452,
+              485
+            ],
+            [
+              445,
+              482
+            ],
+            [
+              453,
+              461
+            ],
+            [
+              463,
+              446
+            ],
+            [
+              471,
+              428
+            ],
+            [
+              450,
+              415
+            ],
+            [
+              457,
+              385
+            ],
+            [
+              469,
+              351
+            ],
+            [
+              477,
+              322
+            ],
+            [
+              484,
+              292
+            ]
+          ],
+          "subtract": false
+        },
+        {
+          "points": [
+            [
+              288,
+              381
+            ],
+            [
+              345,
+              379
+            ],
+            [
+              385,
+              400
+            ],
+            [
+              424,
+              414
+            ],
+            [
+              460,
+              420
+            ],
+            [
+              494,
+              425
+            ],
+            [
+              519,
+              430
+            ],
+            [
+              534,
+              439
+            ],
+            [
+              538,
+              449
+            ],
+            [
+              529,
+              460
+            ],
+            [
+              512,
+              464
+            ],
+            [
+              477,
+              454
+            ],
+            [
+              439,
+              443
+            ],
+            [
+              400,
+              432
+            ],
+            [
+              345,
+              429
+            ],
+            [
+              290,
+              414
+            ]
+          ],
+          "subtract": true
+        },
+        {
+          "points": [
+            [
+              515,
+              268
+            ],
+            [
+              571,
+              279
+            ],
+            [
+              548,
+              297
+            ],
+            [
+              521,
+              314
+            ],
+            [
+              499,
+              332
+            ],
+            [
+              488,
+              360
+            ],
+            [
+              476,
+              397
+            ],
+            [
+              479,
+              372
+            ],
+            [
+              486,
+              346
+            ],
+            [
+              489,
+              327
+            ],
+            [
+              500,
+              300
+            ]
+          ],
+          "subtract": true
+        }
+      ],
+      "mask_origin": "human_reviewed_assistant_polygon"
+    },
+    {
+      "query_id": "real_red_dress_02",
+      "target_id": "real_red_dress_02_target",
+      "image": "evaluation/queries/real_outfits/real_red_dress_02_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg.jpg",
+      "sha256": "48a1aad15f9cf6a2334ed062e37bf5b40bc01e4140f62e4f6a2562337f6f2ef2",
+      "split": "validation",
+      "bbox_normalized": [
+        0.22,
+        0.23,
+        0.71,
+        0.57
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "vest_dress",
+      "color_names": [
+        "red"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg",
+      "author": "Andrea Pavanello, Milano",
+      "license": "CC BY-SA 3.0 it",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/it/deed.en",
+      "source_group": "https://commons.wikimedia.org/wiki/File:%22_12_-_ITALY_-_FIAT_-_Girls_at_Bologna_Motorshow_2012_04.jpg",
+      "source_csv": "evaluation/m1_validation.csv",
+      "source_csv_sha256": "e09df77d53ee4f495db2abe46e058d8deb5b5b4693eef2ac8f427c46fb609f7b",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 2217,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 2217,
+        "width": 554,
+        "height": 1280,
+        "scale": 0.5770833333333333,
+        "resized": true,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_green_tshirt_02",
+      "target_id": "real_green_tshirt_02_target",
+      "image": "evaluation/queries/real_outfits/real_green_tshirt_02_1-6_MTX_5-15_Stream_Crossing_150914-M-OU200-018.jpg.jpg",
+      "sha256": "7e2ffb367de72e3e258716ee0da54959a84b719a312ecca4a3931f37d7bfe7fd",
+      "split": "test",
+      "bbox_normalized": [
+        0.23,
+        0.2,
+        0.43,
+        0.67
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "short_sleeve_top",
+      "color_names": [
+        "green"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1-6_MTX_5-15_Stream_Crossing_150914-M-OU200-018.jpg",
+      "author": "Cpl. Kelly Street",
+      "license": "Public domain",
+      "license_url": "",
+      "source_group": "https://commons.wikimedia.org/wiki/File:1-6_MTX_5-15_Stream_Crossing_150914-M-OU200-018.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 640,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 640,
+        "width": 960,
+        "height": 640,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được quần, đồng thời chỉ mới nhận diện được 1 người, đáng lẽ là phải nhận diện quần áo cả 4 người trong ảnh, sau đó nếu thấy sản phẩm giống nhau thì chỉ giữ lại 1 bản, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_blue_jeans_02",
+      "target_id": "real_blue_jeans_02_target",
+      "image": "evaluation/queries/real_outfits/real_blue_jeans_02_02017_blue_jeans.jpg.jpg",
+      "sha256": "90bb92189b1cd76db971a55e8a5b554ea611336e1756aaaa7f9e54b4f07787c3",
+      "split": "test",
+      "bbox_normalized": [
+        0.27,
+        0.65,
+        0.97,
+        1
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "shorts",
+      "color_names": [
+        "blue"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:02017_blue_jeans.jpg",
+      "author": "Silar",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:02017_blue_jeans.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 1281,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1281,
+        "width": 959,
+        "height": 1280,
+        "scale": 0.9989583333333333,
+        "resized": true,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được áo, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_black_dress_01",
+      "target_id": "real_black_dress_01_target",
+      "image": "evaluation/queries/real_outfits/real_black_dress_01_GTA_Vice_City_Fashion_27520178494_.jpg.jpg",
+      "sha256": "d0cb2572582077b1c0e3f43ffe274ef8f63f22f10c9b76caf3faeb641300fa04",
+      "split": "test",
+      "bbox_normalized": [
+        0.43,
+        0.3,
+        0.62,
+        0.68
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "short_sleeve_dress",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22GTA_Vice_City%22_Fashion_%2827520178494%29.jpg",
+      "author": "Coastal Elite from Halifax, Canada",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:%22GTA_Vice_City%22_Fashion_%2827520178494%29.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 759,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 759,
+        "width": 960,
+        "height": 759,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được quần áo của 2 người bên cạnh, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_blue_jeans_01",
+      "target_id": "real_blue_jeans_01_target",
+      "image": "evaluation/queries/real_outfits/real_blue_jeans_01_02015_0217_Herbst-Wintermode_2015-2016_Beskiden.JPG.jpg",
+      "sha256": "207b8e53814fbe8491b2e613d909d1484d984d2611438b68da205c00c876a996",
+      "split": "test",
+      "bbox_normalized": [
+        0.45,
+        0.5,
+        0.79,
+        0.89
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "trousers",
+      "color_names": [
+        "blue"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:02015_0217_Herbst-Wintermode_2015-2016%2C_Beskiden.JPG",
+      "author": "Silar",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:02015_0217_Herbst-Wintermode_2015-2016%2C_Beskiden.JPG",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 1330,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1330,
+        "width": 924,
+        "height": 1280,
+        "scale": 0.9625,
+        "resized": true,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được áo, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_black_trousers_01",
+      "target_id": "real_black_trousers_01_target",
+      "image": "evaluation/queries/real_outfits/real_black_trousers_01_2015_RiP_Bastille_Dan_Smith_by_2eight_-_3SC5305.jpg.jpg",
+      "sha256": "90596369fc77f5778e30a4c639ab7916efbd40ab668bdc992b48bb05c5540e5c",
+      "split": "test",
+      "bbox_normalized": [
+        0.25,
+        0.53,
+        0.88,
+        0.96
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "trousers",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2015_RiP_Bastille_Dan_Smith_by_2eight_-_3SC5305.jpg",
+      "author": "Stefan Brending (2eight)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:2015_RiP_Bastille_Dan_Smith_by_2eight_-_3SC5305.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 959,
+        "raw_height": 2048,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 959,
+        "oriented_height": 2048,
+        "width": 599,
+        "height": 1280,
+        "scale": 0.6246089676746611,
+        "resized": true,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được áo, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_white_shirt_01",
+      "target_id": "real_white_shirt_01_target",
+      "image": "evaluation/queries/real_outfits/real_white_shirt_01_Americana_2016_30044392184_.jpg.jpg",
+      "sha256": "6baf9abb4f23f05f97eb77f756c2d08cfed2f159826335c89f990420bffdabde",
+      "split": "test",
+      "bbox_normalized": [
+        0.63,
+        0.42,
+        0.75,
+        0.57
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "short_sleeve_top",
+      "color_names": [
+        "white"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%22Americana%22_%282016%29_%2830044392184%29.jpg",
+      "author": "The Moving Architects",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:%22Americana%22_%282016%29_%2830044392184%29.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 960,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 960,
+        "width": 960,
+        "height": 960,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được váy, chưa nhận diện được quần áo những người khác trong ảnh, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_black_skirt_01",
+      "target_id": "real_black_skirt_01_target",
+      "image": "evaluation/queries/real_outfits/real_black_skirt_01_G_I-DLE_2020_Young_05.jpg.jpg",
+      "sha256": "cf8e300a45b10d52df23d75620b7f759744cbe424397c6dc6b497471f221d1b1",
+      "split": "test",
+      "bbox_normalized": [
+        0.65,
+        0.5,
+        0.78,
+        0.65
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "skirt",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "dark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%28G%29I-DLE_2020_%E5%8F%B0%E5%8D%97%E5%A5%BDYoung%E8%80%B6%E8%AA%95%E8%B7%A8%E5%B9%B4%E5%9F%8E_05.jpg",
+      "author": "sasaki_0217",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:%28G%29I-DLE_2020_%E5%8F%B0%E5%8D%97%E5%A5%BDYoung%E8%80%B6%E8%AA%95%E8%B7%A8%E5%B9%B4%E5%9F%8E_05.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 960,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 960,
+        "width": 960,
+        "height": 960,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được quần áo những người khác trong ảnh, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_black_skirt_02",
+      "target_id": "real_black_skirt_02_target",
+      "image": "evaluation/queries/real_outfits/real_black_skirt_02_160924_AOA_cropped_.jpg.jpg",
+      "sha256": "f7bd08e86992c46143c75672f117caac819b1baf790226d257f2829b5ce72964",
+      "split": "test",
+      "bbox_normalized": [
+        0.34,
+        0.4,
+        0.48,
+        0.58
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "skirt",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:160924_AOA_%EC%9D%B8%EC%B2%9C%ED%95%9C%EB%A5%98%EA%B4%80%EA%B4%91%EC%BD%98%EC%84%9C%ED%8A%B8_%28cropped%29.jpg",
+      "author": "shinjimindotcom",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source_group": "https://commons.wikimedia.org/wiki/File:160924_AOA_%EC%9D%B8%EC%B2%9C%ED%95%9C%EB%A5%98%EA%B4%80%EA%B4%91%EC%BD%98%EC%84%9C%ED%8A%B8_%28cropped%29.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 617,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 617,
+        "width": 960,
+        "height": 617,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được quần áo những người khác trong ảnh, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_shorts_01",
+      "target_id": "real_shorts_01_target",
+      "image": "evaluation/queries/real_outfits/real_shorts_01_0001_August_2016_in_Moscow_41.jpg.jpg",
+      "sha256": "7199be7d0703e6c520b60bf190baef5a6d5fdae49935b30a35df68023bf3f726",
+      "split": "test",
+      "bbox_normalized": [
+        0.52,
+        0.62,
+        0.61,
+        0.72
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "shorts",
+      "color_names": [
+        "gray trộn với white"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:0001_August_2016_in_Moscow_41.jpg",
+      "author": "Rakoon",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_group": "https://commons.wikimedia.org/wiki/File:0001_August_2016_in_Moscow_41.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 636,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 636,
+        "width": 960,
+        "height": 636,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được quần áo những người khác trong ảnh, chưa nhận diện được áo của người đang được nhận diện, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "real_shorts_02",
+      "target_id": "real_shorts_02_target",
+      "image": "evaluation/queries/real_outfits/real_shorts_02_0078_29th_of_July_2016_in_Vladimir_Oblast_Russia.jpg.jpg",
+      "sha256": "1fd79549c9bde7449ab4a3e4f0a46e42d7ddba064cbfbaf183d544f92b0b47dd",
+      "split": "test",
+      "bbox_normalized": [
+        0.49,
+        0.38,
+        0.63,
+        0.61
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "short_sleeve_top",
+      "color_names": [
+        "navy"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:0078_29th_of_July_2016_in_Vladimir_Oblast%2C_Russia.jpg",
+      "author": "Rakoon",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_group": "https://commons.wikimedia.org/wiki/File:0078_29th_of_July_2016_in_Vladimir_Oblast%2C_Russia.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": true,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 960,
+        "raw_height": 636,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 636,
+        "width": 960,
+        "height": 636,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được quần, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "m1_stage",
+      "target_id": "m1_stage_target",
+      "image": "evaluation/queries/m1/stage.jpg",
+      "sha256": "d415591b200b83d4d0b29d55eaa022049e030a03e500bb012b994b1a9dd56d6b",
+      "split": "test",
+      "bbox_normalized": [
+        0.27,
+        0.59,
+        0.39,
+        0.92
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "trousers",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "dark",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Musicians_perform_live_on_stage_during_a_concert_at_a_local_venue.jpg",
+      "author": "Shixart1985 (Nenad Stojković)",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source_group": "https://commons.wikimedia.org/wiki/File:Musicians_perform_live_on_stage_during_a_concert_at_a_local_venue.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": false,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 1600,
+        "raw_height": 1067,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 1600,
+        "oriented_height": 1067,
+        "width": 1280,
+        "height": 854,
+        "scale": 0.8,
+        "resized": true,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được quần áo những người khác trong ảnh, chưa nhận diện được áo của người đang được nhận diện, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "m1_harajuku",
+      "target_id": "m1_harajuku_target",
+      "image": "evaluation/queries/m1/harajuku.jpg",
+      "sha256": "f208ab069ffcf417cb4c828534ab110a44d60d327e463df21508ae457d0cd8ee",
+      "split": "test",
+      "bbox_normalized": [
+        0.37,
+        0.16,
+        0.61,
+        0.6
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "long_sleeve_outwear",
+      "color_names": [
+        "navy"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Harajuku_Fashion_Street_Snap_%282018-01-03_18.18.04_by_Dick_Thomas_Johnson%29.jpg",
+      "author": "Dick Thomas Johnson",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source_group": "https://commons.wikimedia.org/wiki/File:Harajuku_Fashion_Street_Snap_%282018-01-03_18.18.04_by_Dick_Thomas_Johnson%29.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": false,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 1600,
+        "raw_height": 1067,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 1600,
+        "oriented_height": 1067,
+        "width": 1280,
+        "height": 854,
+        "scale": 0.8,
+        "resized": true,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": true,
+      "mask_path": "evaluation/m2/reference_masks/review1/m1_harajuku.png",
+      "mask_sha256": "c30249e7e772dc64b7e67c9655487477538f74a77caf6da5b514513933d22c29",
+      "mask_status": "human_reviewed",
+      "mask_reviewer": "tuấn anh",
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "Mask xanh ngọc là gợi ý AI, chưa phải ground truth; xem và sửa da/tóc/nền/vải nếu cần. chưa nhận diện được quần áo những người khác trong ảnh. chưa nhận diện được quần của người đang được nhận diện",
+      "mask_polygons": [
+        {
+          "points": [
+            [
+              577,
+              140
+            ],
+            [
+              550,
+              143
+            ],
+            [
+              517,
+              158
+            ],
+            [
+              526,
+              173
+            ],
+            [
+              543,
+              184
+            ],
+            [
+              522,
+              188
+            ],
+            [
+              503,
+              202
+            ],
+            [
+              490,
+              226
+            ],
+            [
+              487,
+              258
+            ],
+            [
+              483,
+              296
+            ],
+            [
+              482,
+              335
+            ],
+            [
+              478,
+              378
+            ],
+            [
+              478,
+              425
+            ],
+            [
+              481,
+              453
+            ],
+            [
+              483,
+              484
+            ],
+            [
+              490,
+              496
+            ],
+            [
+              517,
+              501
+            ],
+            [
+              530,
+              495
+            ],
+            [
+              535,
+              485
+            ],
+            [
+              557,
+              474
+            ],
+            [
+              582,
+              462
+            ],
+            [
+              612,
+              446
+            ],
+            [
+              643,
+              445
+            ],
+            [
+              675,
+              461
+            ],
+            [
+              701,
+              480
+            ],
+            [
+              717,
+              493
+            ],
+            [
+              728,
+              489
+            ],
+            [
+              731,
+              501
+            ],
+            [
+              753,
+              500
+            ],
+            [
+              767,
+              494
+            ],
+            [
+              776,
+              483
+            ],
+            [
+              781,
+              456
+            ],
+            [
+              782,
+              421
+            ],
+            [
+              781,
+              385
+            ],
+            [
+              777,
+              345
+            ],
+            [
+              776,
+              298
+            ],
+            [
+              773,
+              259
+            ],
+            [
+              763,
+              222
+            ],
+            [
+              743,
+              199
+            ],
+            [
+              720,
+              184
+            ],
+            [
+              712,
+              178
+            ],
+            [
+              731,
+              161
+            ],
+            [
+              736,
+              146
+            ],
+            [
+              704,
+              138
+            ],
+            [
+              677,
+              137
+            ],
+            [
+              673,
+              160
+            ],
+            [
+              666,
+              187
+            ],
+            [
+              654,
+              217
+            ],
+            [
+              638,
+              258
+            ],
+            [
+              628,
+              299
+            ],
+            [
+              621,
+              343
+            ],
+            [
+              616,
+              307
+            ],
+            [
+              607,
+              269
+            ],
+            [
+              598,
+              236
+            ],
+            [
+              584,
+              202
+            ],
+            [
+              574,
+              179
+            ],
+            [
+              573,
+              161
+            ]
+          ],
+          "subtract": false
+        }
+      ],
+      "mask_origin": "human_reviewed_assistant_polygon"
+    },
+    {
+      "query_id": "m1_tony",
+      "target_id": "m1_tony_target",
+      "image": "evaluation/queries/m1/tony.jpg",
+      "sha256": "e10c2027e3ca57990f269d522b91df9cf2eb672b33027eaa774455eaced95b03",
+      "split": "test",
+      "bbox_normalized": [
+        0.23,
+        0.23,
+        0.78,
+        0.64
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "long_sleeve_outwear",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tonyiommi.jpg",
+      "author": "Andrejk",
+      "license": "Public domain",
+      "license_url": "",
+      "source_group": "https://commons.wikimedia.org/wiki/File:Tonyiommi.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": false,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 428,
+        "raw_height": 587,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 428,
+        "oriented_height": 587,
+        "width": 428,
+        "height": 587,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": false,
+      "mask_path": null,
+      "mask_sha256": null,
+      "mask_status": "not_annotated",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "chưa nhận diện được quần cũng như áo lót trong của áo khoác, chưa thấy vùng xanh ngọc"
+    },
+    {
+      "query_id": "m1_brisbane",
+      "target_id": "m1_brisbane_target",
+      "image": "evaluation/queries/m1/brisbane.jpg",
+      "sha256": "2fd933d34ba788dcbb20584c6fc60593830d64804744f69c58a6d42ebc664da7",
+      "split": "test",
+      "bbox_normalized": [
+        0.43,
+        0.52,
+        0.64,
+        0.63
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "shorts",
+      "color_names": [
+        "blue"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Brisbane%2C_winter_female_street_fashion_in_2019%3B_t-shirt%2C_shorts_and_boots.jpg",
+      "author": "Chris Olszewski (Kgbo)",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_group": "https://commons.wikimedia.org/wiki/File:Brisbane%2C_winter_female_street_fashion_in_2019%3B_t-shirt%2C_shorts_and_boots.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": false,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 1130,
+        "raw_height": 1600,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 1130,
+        "oriented_height": 1600,
+        "width": 904,
+        "height": 1280,
+        "scale": 0.8,
+        "resized": true,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": true,
+      "mask_path": "evaluation/m2/reference_masks/review1/m1_brisbane.png",
+      "mask_sha256": "1b9b31717d78f5852084e40a69bac6507f1dd6f4f2daa7ffa5ca586732430a77",
+      "mask_status": "human_reviewed",
+      "mask_reviewer": "tuấn anh",
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "Mask xanh ngọc là gợi ý AI, chưa phải ground truth; xem và sửa da/tóc/nền/vải nếu cần.",
+      "mask_polygons": [
+        {
+          "points": [
+            [
+              401,
+              667
+            ],
+            [
+              425,
+              669
+            ],
+            [
+              449,
+              671
+            ],
+            [
+              480,
+              670
+            ],
+            [
+              511,
+              670
+            ],
+            [
+              540,
+              671
+            ],
+            [
+              556,
+              676
+            ],
+            [
+              561,
+              690
+            ],
+            [
+              565,
+              711
+            ],
+            [
+              569,
+              732
+            ],
+            [
+              573,
+              756
+            ],
+            [
+              573,
+              765
+            ],
+            [
+              565,
+              774
+            ],
+            [
+              550,
+              780
+            ],
+            [
+              531,
+              786
+            ],
+            [
+              513,
+              790
+            ],
+            [
+              494,
+              790
+            ],
+            [
+              477,
+              791
+            ],
+            [
+              468,
+              796
+            ],
+            [
+              450,
+              800
+            ],
+            [
+              430,
+              798
+            ],
+            [
+              413,
+              793
+            ],
+            [
+              403,
+              784
+            ],
+            [
+              396,
+              770
+            ],
+            [
+              393,
+              752
+            ],
+            [
+              394,
+              724
+            ],
+            [
+              396,
+              698
+            ]
+          ],
+          "subtract": false
+        }
+      ],
+      "mask_origin": "human_reviewed_assistant_polygon"
+    },
+    {
+      "query_id": "m1_ostau",
+      "target_id": "m1_ostau_target",
+      "image": "evaluation/queries/m1/ostau.jpg",
+      "sha256": "aa172c349609265eb896ff9770cac9584286ffea75bd3a999eefc7b638b12ba8",
+      "split": "test",
+      "bbox_normalized": [
+        0.23,
+        0.18,
+        0.85,
+        0.71
+      ],
+      "bbox_coordinate_space": "oriented_image_normalized",
+      "class_name": "long_sleeve_dress",
+      "color_names": [
+        "black"
+      ],
+      "lighting_group": "normal",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fashion_modefotografie_philipp_von_ostau.jpg",
+      "author": "Philipp von Ostau",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_group": "https://commons.wikimedia.org/wiki/File:Fashion_modefotografie_philipp_von_ostau.jpg",
+      "source_csv": "evaluation/m1_test.csv",
+      "source_csv_sha256": "b00b1a335703a9f82678477ca9732281d2c66592469d2225460cb8529075f5c9",
+      "label_origin": "M1_AI_assisted_initial_labels",
+      "previously_used_for_m2_development": false,
+      "previously_used_by_m1": true,
+      "label_status": "human_reviewed",
+      "reviewer": "tuấn anh",
+      "geometry_meta": {
+        "raw_width": 500,
+        "raw_height": 627,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 500,
+        "oriented_height": 627,
+        "width": 500,
+        "height": 627,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "mask_requested": true,
+      "mask_path": "evaluation/m2/reference_masks/review1/m1_ostau.png",
+      "mask_sha256": "4d4f69b0711c2874a0d4b16ecafae48a6465088b16fa09e3ee819da9bb3970cc",
+      "mask_status": "pending_human_review",
+      "mask_reviewer": null,
+      "mask_coordinate_space": "m1_working_image",
+      "notes": "Mask xanh ngọc là gợi ý AI, chưa phải ground truth; xem và sửa da/tóc/nền/vải nếu cần.",
+      "mask_polygons": [
+        {
+          "points": [
+            [
+              192,
+              124
+            ],
+            [
+              181,
+              131
+            ],
+            [
+              169,
+              150
+            ],
+            [
+              156,
+              174
+            ],
+            [
+              138,
+              197
+            ],
+            [
+              122,
+              214
+            ],
+            [
+              121,
+              226
+            ],
+            [
+              138,
+              233
+            ],
+            [
+              162,
+              239
+            ],
+            [
+              189,
+              244
+            ],
+            [
+              214,
+              244
+            ],
+            [
+              218,
+              259
+            ],
+            [
+              216,
+              276
+            ],
+            [
+              206,
+              300
+            ],
+            [
+              196,
+              330
+            ],
+            [
+              184,
+              360
+            ],
+            [
+              172,
+              390
+            ],
+            [
+              163,
+              416
+            ],
+            [
+              175,
+              426
+            ],
+            [
+              171,
+              436
+            ],
+            [
+              200,
+              443
+            ],
+            [
+              232,
+              446
+            ],
+            [
+              266,
+              447
+            ],
+            [
+              297,
+              443
+            ],
+            [
+              330,
+              440
+            ],
+            [
+              361,
+              431
+            ],
+            [
+              388,
+              422
+            ],
+            [
+              383,
+              406
+            ],
+            [
+              370,
+              381
+            ],
+            [
+              356,
+              355
+            ],
+            [
+              345,
+              329
+            ],
+            [
+              331,
+              304
+            ],
+            [
+              317,
+              282
+            ],
+            [
+              303,
+              263
+            ],
+            [
+              302,
+              238
+            ],
+            [
+              312,
+              240
+            ],
+            [
+              324,
+              256
+            ],
+            [
+              341,
+              267
+            ],
+            [
+              361,
+              275
+            ],
+            [
+              381,
+              286
+            ],
+            [
+              396,
+              289
+            ],
+            [
+              407,
+              278
+            ],
+            [
+              420,
+              272
+            ],
+            [
+              421,
+              263
+            ],
+            [
+              403,
+              256
+            ],
+            [
+              394,
+              248
+            ],
+            [
+              377,
+              231
+            ],
+            [
+              357,
+              210
+            ],
+            [
+              340,
+              186
+            ],
+            [
+              323,
+              167
+            ],
+            [
+              308,
+              149
+            ],
+            [
+              292,
+              134
+            ],
+            [
+              281,
+              125
+            ],
+            [
+              276,
+              147
+            ],
+            [
+              278,
+              159
+            ],
+            [
+              267,
+              154
+            ],
+            [
+              253,
+              147
+            ],
+            [
+              240,
+              135
+            ],
+            [
+              234,
+              124
+            ],
+            [
+              222,
+              127
+            ],
+            [
+              213,
+              127
+            ]
+          ],
+          "subtract": false
+        },
+        {
+          "points": [
+            [
+              165,
+              200
+            ],
+            [
+              182,
+              192
+            ],
+            [
+              202,
+              192
+            ],
+            [
+              206,
+              204
+            ],
+            [
+              190,
+              205
+            ],
+            [
+              173,
+              207
+            ]
+          ],
+          "subtract": true
+        },
+        {
+          "points": [
+            [
+              224,
+              229
+            ],
+            [
+              233,
+              241
+            ],
+            [
+              243,
+              255
+            ],
+            [
+              241,
+              261
+            ],
+            [
+              232,
+              254
+            ],
+            [
+              227,
+              253
+            ],
+            [
+              222,
+              244
+            ]
+          ],
+          "subtract": true
+        },
+        {
+          "points": [
+            [
+              193,
+              99
+            ],
+            [
+              213,
+              112
+            ],
+            [
+              223,
+              135
+            ],
+            [
+              233,
+              154
+            ],
+            [
+              250,
+              163
+            ],
+            [
+              245,
+              171
+            ],
+            [
+              230,
+              162
+            ],
+            [
+              214,
+              152
+            ],
+            [
+              205,
+              136
+            ],
+            [
+              193,
+              126
+            ],
+            [
+              189,
+              111
+            ]
+          ],
+          "subtract": true
+        },
+        {
+          "points": [
+            [
+              262,
+              87
+            ],
+            [
+              280,
+              101
+            ],
+            [
+              289,
+              123
+            ],
+            [
+              297,
+              141
+            ],
+            [
+              307,
+              155
+            ],
+            [
+              310,
+              166
+            ],
+            [
+              302,
+              162
+            ],
+            [
+              287,
+              140
+            ],
+            [
+              281,
+              126
+            ],
+            [
+              271,
+              116
+            ],
+            [
+              265,
+              99
+            ]
+          ],
+          "subtract": true
+        }
+      ],
+      "mask_origin": "assistant_polygon_suggestion_unreviewed"
+    }
+  ]
+}

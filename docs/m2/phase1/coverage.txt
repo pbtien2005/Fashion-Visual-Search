@@ -1,0 +1,10 @@
+﻿Name                           Stmts   Miss  Cover   Missing
+------------------------------------------------------------
+object_detection/__init__.py       0      0   100%
+object_detection/api.py           33     10    70%   10-13, 41, 49-52, 55
+object_detection/config.py         9      0   100%
+object_detection/detector.py      91      9    90%   6-7, 42-43, 71-72, 84, 172, 177
+object_detection/schemas.py       38      0   100%
+object_detection/utils.py         17      3    82%   9, 16-17
+------------------------------------------------------------
+TOTAL                            188     22    88%

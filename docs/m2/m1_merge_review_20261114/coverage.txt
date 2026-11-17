@@ -1,0 +1,15 @@
+Name                                      Stmts   Miss  Cover
+-------------------------------------------------------------
+AI/features.py                              137      5    96%
+AI/hsv_descriptor.py                        132      2    98%
+object_detection/__init__.py                  0      0   100%
+object_detection/api.py                      43      9    79%
+object_detection/config.py                    9      0   100%
+object_detection/detector.py                137     17    88%
+object_detection/image_preprocessing.py      89      5    94%
+object_detection/roi.py                      50      1    98%
+object_detection/schemas.py                  71      0   100%
+object_detection/segmentation.py            118      2    98%
+object_detection/utils.py                    45      9    80%
+-------------------------------------------------------------
+TOTAL                                       831     50    94%

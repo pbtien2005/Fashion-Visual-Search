@@ -3,6 +3,7 @@ import binascii
 import concurrent.futures
 import json
 import os
+import logging
 from io import BytesIO
 from urllib.parse import urlparse
 
@@ -10,8 +11,11 @@ import boto3
 import httpx
 from dotenv import load_dotenv
 from PIL import Image
+import numpy as np
 
-from AI.color_utils import extract_dominant_color, name_color
+from AI.features import extract_runtime_features
+from AI.production_color import extract_source_color, descriptor_display, production_config, ROI_POLICY
+from AI.color_cache import cache_from_extracted_items
 from AI.embedding_model import (
     DEFAULT_EMBEDDING_MODEL,
     EXPECTED_VECTOR_DIMENSION,
@@ -116,7 +120,7 @@ def get_product_crop_detection_url() -> str:
         return explicit_url.rstrip("/")
 
     object_detection_url = os.getenv("OBJECT_DETECTION_URL", "").strip()
-    if object_detection_url and "object-detection" not in object_detection_url:
+    if object_detection_url:
         return object_detection_url.rstrip("/")
 
     return "http://localhost:8001"
@@ -165,11 +169,12 @@ def detect_product_crop(image, item_id: str | None = None) -> dict | None:
     return choose_best_detection_crop(payload.get("crops") or [])
 
 
-def select_embedding_image(item: dict, image):
+def select_embedding_image(item: dict, image, best_crop=None, detection_attempted=False):
     if not env_flag("USE_PRODUCT_CROP_EMBEDDING", default=False):
         return image, {"embedding_source": "original_image"}
 
-    best_crop = detect_product_crop(image, item_id=str(item.get("id") or item.get("asin") or "product"))
+    if not detection_attempted:
+        best_crop = detect_product_crop(image, item_id=str(item.get("id") or item.get("asin") or "product"))
     if not best_crop:
         return image, {"embedding_source": "original_image"}
 
@@ -187,35 +192,55 @@ def select_embedding_image(item: dict, image):
     }
 
 
+def catalog_color_inputs(item, image, detect=True):
+    """Shared catalog preparation for vectorization and color-only rebuilds.
+
+    Embedding crop opt-in is unchanged; detection for raw color ROI is separate.
+    A staged M2 payload can be supplied as item['detection'].
+    """
+    best_crop = item.get("detection")
+    if best_crop is None and detect:
+        best_crop = detect_product_crop(image, str(item.get("id") or item.get("asin") or "product"))
+    color = extract_source_color(np.asarray(ensure_pil_rgb(image)), best_crop,
+                                 item.get("id") or item.get("asin"))
+    return best_crop, color
+
+
 def process_single_item(item: dict) -> dict:
+    item = dict(item)  # Never mutate a caller's catalog record or retain old RGB colors.
+    item.update(dominant_color_rgb=None, dominant_color_name=None, color_descriptor=None)
     image_url = item.get("r2_image_url")
     if not image_url:
         return item
 
     img = fetch_image_for_ai(image_url)
     if img:
-        embedding_image, embedding_metadata = select_embedding_image(item, img)
+        best_crop, color = catalog_color_inputs(item, img)
+        embedding_image, embedding_metadata = select_embedding_image(item, img, best_crop, True)
         item.update(embedding_metadata)
 
-        dominant_color = extract_dominant_color(embedding_image)
-        if dominant_color:
-            item["dominant_color_rgb"] = list(dominant_color)
-            item["dominant_color_name"] = name_color(dominant_color)
-
-        vector = extract_vector(embedding_image)
-        if vector:
-            validate_embedding_dimension(vector)
-            embedding_config = get_embedding_config()
-            item["embedding"] = vector
-            item["embedding_model"] = embedding_config.model_name
-            item["embedding_version"] = embedding_config.version
-            print(f"-> Created vector for ID: {item.get('id')}")
+        rgb, name = descriptor_display(color)
+        item.update(dominant_color_rgb=list(rgb) if rgb else None, dominant_color_name=name,
+                    color_descriptor=color.to_dict() if color else None)
+        try:
+            features = extract_runtime_features(str(item.get("id") or item.get("asin") or "product"),
+                                                embedding_image, color)
+            item["embedding"] = features.embedding
+            item["embedding_model"] = features.embedding_model
+            item["embedding_version"] = features.embedding_version
+        except (ValueError, RuntimeError) as exc:
+            logging.getLogger(__name__).error("Catalog embedding failed id=%s error=%s", item.get("id"), exc)
+            item.pop("embedding", None)
 
     return item
 
 
-def run_ai_pipeline(input_file="data/fashion_metadata.json", output_file="data/fashion_with_vectors.json"):
-    print("\n=== STAGE 2: VECTOR EXTRACTION ===")
+def run_ai_pipeline(input_file="data/fashion_metadata.json", output_file="data/fashion_with_hsv_vectors.json",
+                    color_cache_file="data/color_cache_hsv147.json"):
+    print("\n=== STAGE 2: FASHIONCLIP + HSV147 EXTRACTION ===")
+    # New artifacts only. Never overwrite the old catalog/vector/color caches.
+    if os.path.exists(output_file) or os.path.exists(color_cache_file):
+        raise FileExistsError("Use new vector output and HSV cache paths")
 
     try:
         with open(input_file, "r", encoding="utf-8") as f:
@@ -231,16 +256,22 @@ def run_ai_pipeline(input_file="data/fashion_metadata.json", output_file="data/f
     )
     print(f"Loaded {len(items)} products. Starting threaded vector extraction...")
     processed_items = []
+    all_items = []
 
     max_workers = int(os.getenv("VECTORIZER_MAX_WORKERS", "4"))
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
         results = executor.map(process_single_item, items)
 
         for result in results:
+            all_items.append(result)
             if "embedding" in result:
                 processed_items.append(result)
 
-    with open(output_file, "w", encoding="utf-8") as f:
+    cache = cache_from_extracted_items(all_items, production_config(),
+                                       embedding_config.model_name, embedding_config.version, ROI_POLICY)
+    with open(color_cache_file, "x", encoding="utf-8") as f:
+        json.dump(cache, f, ensure_ascii=False, allow_nan=False)
+    with open(output_file, "x", encoding="utf-8") as f:
         json.dump(processed_items, f, ensure_ascii=False)
 
     print(f"Done. Extracted {len(processed_items)} vectors.")

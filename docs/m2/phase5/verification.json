@@ -1,0 +1,10 @@
+{
+  "input_fingerprint_verified": true,
+  "protocol_integrity_verified": true,
+  "lock_integrity_verified": true,
+  "validation_checksum_verified": true,
+  "final_config_matches_lock": true,
+  "frozen_rows_verified": 60,
+  "default": "off",
+  "product_retrieval": "not_measured"
+}

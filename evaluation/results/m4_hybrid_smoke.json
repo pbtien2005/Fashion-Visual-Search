@@ -1,0 +1,1080 @@
+{
+  "timestamp": "2026-11-16T14:21:41.076843+00:00",
+  "run_name": "m4_hybrid_smoke",
+  "api_url": "http://localhost:8000",
+  "mode": "hybrid",
+  "labels": "evaluation/labels.retrieval_smoke.json",
+  "total_queries": 7,
+  "metrics": {
+    "detection_success_rate": 1.0,
+    "avg_detected_items": 1.8571428571428572,
+    "category_at_5": 1.0,
+    "color_at_5": 0.14285714285714285,
+    "recall_at_5": 1.0,
+    "mrr": 1.0,
+    "avg_latency_ms": 955.7427522865639,
+    "successful_api_queries": 7,
+    "failed_queries": 0
+  },
+  "per_query_results": [
+    {
+      "query_id": "starter_B0GGYQ4J5Z",
+      "image": "queries/starter_catalog/B0GGYQ4J5Z.jpg",
+      "status": "ok",
+      "latency_ms": 1420.6814850040246,
+      "detected_count": 2,
+      "detection_success": true,
+      "expected_item_results": [
+        {
+          "expected_index": 0,
+          "type": "short_sleeve_top",
+          "category_at_5": true,
+          "color_at_5": false,
+          "recall_at_5": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "detected_items": [
+        {
+          "class_name": "long_sleeve_top",
+          "class_name_vi": "Áo tay dài",
+          "confidence": 0.9727287888526917,
+          "bbox": [
+            0,
+            40,
+            342,
+            379
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "white",
+          "query_color_rgb": [
+            240,
+            240,
+            240
+          ],
+          "similar_product_count": 4,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B0GGYQ4J5Z",
+              "title": "Short sleeve top (B0GGYQ4J5Z)",
+              "category": "shirt, top, t-shirt, tee, polo, blouse",
+              "dominant_color_name": "white",
+              "image_similarity": 0.9362973849862039,
+              "category_score": 0.5,
+              "color_score": 0.8894955139030213,
+              "text_score": 0.5939900036621114,
+              "style_score": 1.0,
+              "text_style_score": 0.7360935023803724,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.8438121083152127,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "blouse",
+              "product_styles": [
+                "blouse",
+                "polo",
+                "tshirt"
+              ]
+            },
+            {
+              "rank": 2,
+              "id": "B0FRRYXKFC",
+              "title": "Short sleeve top (B0FRRYXKFC)",
+              "category": "shirt, top, t-shirt, tee, polo, blouse",
+              "dominant_color_name": "white",
+              "image_similarity": 0.7677996158599854,
+              "category_score": 0.5,
+              "color_score": 0.6247619417761455,
+              "text_score": 0.6562079753464587,
+              "style_score": 1.0,
+              "text_style_score": 0.7765351839751982,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.7070475791799329,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "blouse",
+              "product_styles": [
+                "blouse",
+                "polo",
+                "tshirt"
+              ]
+            },
+            {
+              "rank": 3,
+              "id": "B0FC6DVGHL",
+              "title": "Short sleeve top (B0FC6DVGHL)",
+              "category": "shirt, top, t-shirt, tee, polo, blouse",
+              "dominant_color_name": "white",
+              "image_similarity": 0.6931964159011841,
+              "category_score": 0.5,
+              "color_score": 0.7015893189324902,
+              "text_score": 0.6537492869109329,
+              "style_score": 1.0,
+              "text_style_score": 0.7749370364921064,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6736499510297946,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "blouse",
+              "product_styles": [
+                "blouse",
+                "polo",
+                "tshirt"
+              ]
+            },
+            {
+              "rank": 4,
+              "id": "B0D5DFHZVG",
+              "title": "Short sleeve top (B0D5DFHZVG)",
+              "category": "shirt, top, t-shirt, tee, polo, blouse",
+              "dominant_color_name": "white",
+              "image_similarity": 0.7442995601057535,
+              "category_score": 0.5,
+              "color_score": 0.4432534327786003,
+              "text_score": 0.6678760417716088,
+              "style_score": 1.0,
+              "text_style_score": 0.7841194271515457,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6664796936953967,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "blouse",
+              "product_styles": [
+                "blouse",
+                "polo",
+                "tshirt"
+              ]
+            }
+          ]
+        },
+        {
+          "class_name": "shorts",
+          "class_name_vi": "Quần short",
+          "confidence": 0.8655329942703247,
+          "bbox": [
+            59,
+            315,
+            290,
+            425
+          ],
+          "is_confident_match": false,
+          "message": "Detected item, but no confident product match found",
+          "query_color_name": "white",
+          "query_color_rgb": [
+            240,
+            240,
+            240
+          ],
+          "similar_product_count": 0,
+          "low_confidence_product_count": 0,
+          "top_products": []
+        }
+      ],
+      "error": null
+    },
+    {
+      "query_id": "starter_B0D2K2FWDZ",
+      "image": "queries/starter_catalog/B0D2K2FWDZ.jpg",
+      "status": "ok",
+      "latency_ms": 1022.2743470003479,
+      "detected_count": 2,
+      "detection_success": true,
+      "expected_item_results": [
+        {
+          "expected_index": 0,
+          "type": "long_sleeve_top",
+          "category_at_5": true,
+          "color_at_5": false,
+          "recall_at_5": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "detected_items": [
+        {
+          "class_name": "long_sleeve_top",
+          "class_name_vi": "Áo tay dài",
+          "confidence": 0.9726805090904236,
+          "bbox": [
+            1,
+            17,
+            274,
+            408
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "red",
+          "query_color_rgb": [
+            192,
+            84,
+            102
+          ],
+          "similar_product_count": 3,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B0D2K2FWDZ",
+              "title": "Long sleeve top (B0D2K2FWDZ)",
+              "category": "shirt, top, sweater, cardigan, pullover, long sleeve",
+              "dominant_color_name": "red",
+              "image_similarity": 0.8515253067016662,
+              "category_score": 0.85,
+              "color_score": 0.8839794905154653,
+              "text_score": 1.0,
+              "style_score": 0.14959537874172504,
+              "text_style_score": 0.7023583825596038,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.8412479458542799,
+              "match_reason": "category match boosted, text/style match",
+              "query_style_label": "henley",
+              "product_styles": [
+                "sweater"
+              ]
+            },
+            {
+              "rank": 2,
+              "id": "B0FM8D382M",
+              "title": "Long sleeve top (B0FM8D382M)",
+              "category": "shirt, top, sweater, cardigan, pullover, long sleeve",
+              "dominant_color_name": "pink",
+              "image_similarity": 0.8251051515215455,
+              "category_score": 0.85,
+              "color_score": 0.2454065913832807,
+              "text_score": 0.7747155640843931,
+              "style_score": 0.14959537874172504,
+              "text_style_score": 0.5559234992144594,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.7149664295418653,
+              "match_reason": "category match boosted",
+              "query_style_label": "henley",
+              "product_styles": [
+                "sweater"
+              ]
+            },
+            {
+              "rank": 3,
+              "id": "B0GK1LGTCW",
+              "title": "Long sleeve top (B0GK1LGTCW)",
+              "category": "shirt, top, sweater, cardigan, pullover, long sleeve",
+              "dominant_color_name": "red",
+              "image_similarity": 0.6131194695091879,
+              "category_score": 0.85,
+              "color_score": 0.2750799606859362,
+              "text_score": 0.9864405880337805,
+              "style_score": 0.14959537874172504,
+              "text_style_score": 0.6935447647815611,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6059881522865592,
+              "match_reason": "category match boosted",
+              "query_style_label": "henley",
+              "product_styles": [
+                "sweater"
+              ]
+            }
+          ]
+        },
+        {
+          "class_name": "trousers",
+          "class_name_vi": "Quần dài",
+          "confidence": 0.8447844386100769,
+          "bbox": [
+            23,
+            327,
+            238,
+            445
+          ],
+          "is_confident_match": false,
+          "message": "Detected item, but no confident product match found",
+          "query_color_name": "red",
+          "query_color_rgb": [
+            192,
+            84,
+            102
+          ],
+          "similar_product_count": 0,
+          "low_confidence_product_count": 0,
+          "top_products": []
+        }
+      ],
+      "error": null
+    },
+    {
+      "query_id": "starter_B0C3838ZBF",
+      "image": "queries/starter_catalog/B0C3838ZBF.jpg",
+      "status": "ok",
+      "latency_ms": 989.4840619963361,
+      "detected_count": 2,
+      "detection_success": true,
+      "expected_item_results": [
+        {
+          "expected_index": 0,
+          "type": "long_sleeve_outwear",
+          "category_at_5": true,
+          "color_at_5": true,
+          "recall_at_5": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "detected_items": [
+        {
+          "class_name": "long_sleeve_outwear",
+          "class_name_vi": "Áo khoác tay dài",
+          "confidence": 0.9653806686401367,
+          "bbox": [
+            0,
+            34,
+            266,
+            379
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "blue",
+          "query_color_rgb": [
+            156,
+            174,
+            192
+          ],
+          "similar_product_count": 3,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B0C3838ZBF",
+              "title": "Long sleeve outwear (B0C3838ZBF)",
+              "category": "jacket, coat, outwear, outerwear, blazer",
+              "dominant_color_name": "white",
+              "image_similarity": 0.8330746392563334,
+              "category_score": 0.85,
+              "color_score": 0.8847336298911634,
+              "text_score": 0.9418223828328449,
+              "style_score": 1.0,
+              "text_style_score": 0.9621845488413492,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.8562732829216094,
+              "match_reason": "category match boosted, text/style match",
+              "query_style_label": "jacket",
+              "product_styles": [
+                "jacket"
+              ]
+            },
+            {
+              "rank": 2,
+              "id": "B0G8SMR8WH",
+              "title": "Long sleeve outwear (B0G8SMR8WH)",
+              "category": "jacket, coat, outwear, outerwear, blazer",
+              "dominant_color_name": "white",
+              "image_similarity": 0.709224956677868,
+              "category_score": 0.85,
+              "color_score": 0.5928356274607689,
+              "text_score": 1.0,
+              "style_score": 1.0,
+              "text_style_score": 1.0,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.7419603181258362,
+              "match_reason": "category match boosted, text/style match",
+              "query_style_label": "jacket",
+              "product_styles": [
+                "jacket"
+              ]
+            },
+            {
+              "rank": 3,
+              "id": "B0FKNFKXRJ",
+              "title": "Long sleeve outwear (B0FKNFKXRJ)",
+              "category": "jacket, coat, outwear, outerwear, blazer",
+              "dominant_color_name": "orange",
+              "image_similarity": 0.70319668669681,
+              "category_score": 0.85,
+              "color_score": 0.2082752592831535,
+              "text_score": 0.7671027007375154,
+              "style_score": 1.0,
+              "text_style_score": 0.8486167554793851,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6655209764584976,
+              "match_reason": "category match boosted, text/style match",
+              "query_style_label": "jacket",
+              "product_styles": [
+                "jacket"
+              ]
+            }
+          ]
+        },
+        {
+          "class_name": "trousers",
+          "class_name_vi": "Quần dài",
+          "confidence": 0.9004902839660645,
+          "bbox": [
+            37,
+            284,
+            224,
+            445
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "white",
+          "query_color_rgb": [
+            240,
+            240,
+            240
+          ],
+          "similar_product_count": 3,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B09MVGF14B",
+              "title": "Trousers (B09MVGF14B)",
+              "category": "pants, trousers, jeans, chino, sweatpants",
+              "dominant_color_name": "white",
+              "image_similarity": 0.6040042998793304,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.5646213148451612,
+              "text_score": 1.0,
+              "style_score": 1.0,
+              "text_style_score": 1.0,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6520957771543724,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "jeans",
+              "product_styles": [
+                "chino",
+                "jeans",
+                "joggers",
+                "trousers"
+              ]
+            },
+            {
+              "rank": 2,
+              "id": "B076JFJCL4",
+              "title": "Trousers (B076JFJCL4)",
+              "category": "pants, trousers, jeans, chino, sweatpants",
+              "dominant_color_name": "white",
+              "image_similarity": 0.60113940245744,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.4769162360504441,
+              "text_score": 0.9920056839838595,
+              "style_score": 1.0,
+              "text_style_score": 0.9948036945895087,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6367014463409816,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "jeans",
+              "product_styles": [
+                "chino",
+                "jeans",
+                "joggers",
+                "trousers"
+              ]
+            },
+            {
+              "rank": 3,
+              "id": "B0D95SYCS8",
+              "title": "Trousers (B0D95SYCS8)",
+              "category": "pants, trousers, jeans, chino, sweatpants",
+              "dominant_color_name": "gray",
+              "image_similarity": 0.5756586961644502,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.49466042875611194,
+              "text_score": 0.6222837388962162,
+              "style_score": 1.0,
+              "text_style_score": 0.7544844302825405,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.600042725040341,
+              "match_reason": "weak visual similarity, broad category match, text/style match",
+              "query_style_label": "jeans",
+              "product_styles": [
+                "chino",
+                "jeans",
+                "joggers",
+                "trousers"
+              ]
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "query_id": "starter_B076JFJCL4",
+      "image": "queries/starter_catalog/B076JFJCL4.jpg",
+      "status": "ok",
+      "latency_ms": 807.2793020037352,
+      "detected_count": 2,
+      "detection_success": true,
+      "expected_item_results": [
+        {
+          "expected_index": 0,
+          "type": "trousers",
+          "category_at_5": true,
+          "color_at_5": false,
+          "recall_at_5": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "detected_items": [
+        {
+          "class_name": "long_sleeve_top",
+          "class_name_vi": "Áo tay dài",
+          "confidence": 0.9453865885734558,
+          "bbox": [
+            14,
+            0,
+            225,
+            104
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "white",
+          "query_color_rgb": [
+            240,
+            240,
+            240
+          ],
+          "similar_product_count": 2,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B079RDWBGD",
+              "title": "Long sleeve top (B079RDWBGD)",
+              "category": "shirt, top, sweater, cardigan, pullover, long sleeve",
+              "dominant_color_name": "gray",
+              "image_similarity": 0.6279000230997811,
+              "category_score": 0.85,
+              "color_score": 0.4739756566133846,
+              "text_score": 0.8298211617989429,
+              "style_score": 1.0,
+              "text_style_score": 0.8893837551693129,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6642747378688076,
+              "match_reason": "category match boosted, text/style match",
+              "query_style_label": "sweater",
+              "product_styles": [
+                "sweater"
+              ]
+            },
+            {
+              "rank": 2,
+              "id": "B0GK1LGTCW",
+              "title": "Long sleeve top (B0GK1LGTCW)",
+              "category": "shirt, top, sweater, cardigan, pullover, long sleeve",
+              "dominant_color_name": "red",
+              "image_similarity": 0.5442895564860379,
+              "category_score": 0.85,
+              "color_score": 0.4867136125611319,
+              "text_score": 0.7381597991794785,
+              "style_score": 1.0,
+              "text_style_score": 0.829803869466661,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6100611627224586,
+              "match_reason": "weak visual similarity, category match boosted, text/style match",
+              "query_style_label": "sweater",
+              "product_styles": [
+                "sweater"
+              ]
+            }
+          ]
+        },
+        {
+          "class_name": "trousers",
+          "class_name_vi": "Quần dài",
+          "confidence": 0.9373553991317749,
+          "bbox": [
+            32,
+            35,
+            209,
+            385
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "white",
+          "query_color_rgb": [
+            240,
+            240,
+            240
+          ],
+          "similar_product_count": 4,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B076JFJCL4",
+              "title": "Trousers (B076JFJCL4)",
+              "category": "pants, trousers, jeans, chino, sweatpants",
+              "dominant_color_name": "white",
+              "image_similarity": 0.9158698593339286,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.8645967130045942,
+              "text_score": 0.9443077396343832,
+              "style_score": 1.0,
+              "text_style_score": 0.9638000307623491,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.8805914256272812,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "jeans",
+              "product_styles": [
+                "chino",
+                "jeans",
+                "joggers",
+                "trousers"
+              ]
+            },
+            {
+              "rank": 2,
+              "id": "B0CDXJDS8W",
+              "title": "Trousers (B0CDXJDS8W)",
+              "category": "pants, trousers, jeans, chino, sweatpants",
+              "dominant_color_name": "white",
+              "image_similarity": 0.7391851544380188,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.6131028399027657,
+              "text_score": 0.9262723928269925,
+              "style_score": 1.0,
+              "text_style_score": 0.952077055337545,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.7356842241819808,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "jeans",
+              "product_styles": [
+                "chino",
+                "jeans",
+                "joggers",
+                "trousers"
+              ]
+            },
+            {
+              "rank": 3,
+              "id": "B0D95SYCS8",
+              "title": "Trousers (B0D95SYCS8)",
+              "category": "pants, trousers, jeans, chino, sweatpants",
+              "dominant_color_name": "gray",
+              "image_similarity": 0.6623261973469069,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.36783329527953845,
+              "text_score": 0.9973795922885438,
+              "style_score": 1.0,
+              "text_style_score": 0.9982967349875534,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6574003861988302,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "jeans",
+              "product_styles": [
+                "chino",
+                "jeans",
+                "joggers",
+                "trousers"
+              ]
+            },
+            {
+              "rank": 4,
+              "id": "B09MVGF14B",
+              "title": "Trousers (B09MVGF14B)",
+              "category": "pants, trousers, jeans, chino, sweatpants",
+              "dominant_color_name": "white",
+              "image_similarity": 0.6187872333418885,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.24235783508257047,
+              "text_score": 1.0,
+              "style_score": 1.0,
+              "text_style_score": 1.0,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6126260152675186,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "jeans",
+              "product_styles": [
+                "chino",
+                "jeans",
+                "joggers",
+                "trousers"
+              ]
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "query_id": "starter_B07HNVV8MV",
+      "image": "queries/starter_catalog/B07HNVV8MV.jpg",
+      "status": "ok",
+      "latency_ms": 745.2472240038333,
+      "detected_count": 2,
+      "detection_success": true,
+      "expected_item_results": [
+        {
+          "expected_index": 0,
+          "type": "shorts",
+          "category_at_5": true,
+          "color_at_5": false,
+          "recall_at_5": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "detected_items": [
+        {
+          "class_name": "short_sleeve_top",
+          "class_name_vi": "Áo tay ngắn",
+          "confidence": 0.5548076033592224,
+          "bbox": [
+            110,
+            0,
+            265,
+            43
+          ],
+          "is_confident_match": false,
+          "message": "Detected item, but no confident product match found",
+          "query_color_name": "red",
+          "query_color_rgb": [
+            192,
+            84,
+            102
+          ],
+          "similar_product_count": 0,
+          "low_confidence_product_count": 0,
+          "top_products": []
+        },
+        {
+          "class_name": "shorts",
+          "class_name_vi": "Quần short",
+          "confidence": 0.9480847120285034,
+          "bbox": [
+            85,
+            21,
+            269,
+            206
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "orange",
+          "query_color_rgb": [
+            192,
+            162,
+            132
+          ],
+          "similar_product_count": 4,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B07HNVV8MV",
+              "title": "Shorts (B07HNVV8MV)",
+              "category": "shorts",
+              "dominant_color_name": "white",
+              "image_similarity": 0.8456055613991299,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.592285707541736,
+              "text_score": 0.9881169871949326,
+              "style_score": 0.5,
+              "text_style_score": 0.8172760416767062,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.7829337971384089,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "shorts",
+              "product_styles": [
+                "shorts"
+              ]
+            },
+            {
+              "rank": 2,
+              "id": "B0G641WSM7",
+              "title": "Shorts (B0G641WSM7)",
+              "category": "shorts",
+              "dominant_color_name": "orange",
+              "image_similarity": 0.7953518033027649,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.6212500118249644,
+              "text_score": 1.0,
+              "style_score": 0.5,
+              "text_style_score": 0.825,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.7578985837554036,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "shorts",
+              "product_styles": [
+                "shorts"
+              ]
+            },
+            {
+              "rank": 3,
+              "id": "B0CSPSV33V",
+              "title": "Shorts (B0CSPSV33V)",
+              "category": "shorts",
+              "dominant_color_name": "white",
+              "image_similarity": 0.8553486466407776,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.3359570586902838,
+              "text_score": 0.9357299325440405,
+              "style_score": 0.5,
+              "text_style_score": 0.7832244561536263,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.7469251924033717,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "shorts",
+              "product_styles": [
+                "shorts"
+              ]
+            },
+            {
+              "rank": 4,
+              "id": "B0BX8T4BBC",
+              "title": "Shorts (B0BX8T4BBC)",
+              "category": "shorts",
+              "dominant_color_name": "white",
+              "image_similarity": 0.7817961210547725,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.3347035161790166,
+              "text_score": 0.9733476758403212,
+              "style_score": 0.5,
+              "text_style_score": 0.8076759892962089,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.7050507989893369,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "shorts",
+              "product_styles": [
+                "shorts"
+              ]
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "query_id": "starter_B0G6CZ3RV9",
+      "image": "queries/starter_catalog/B0G6CZ3RV9.jpg",
+      "status": "ok",
+      "latency_ms": 1015.3824369990616,
+      "detected_count": 2,
+      "detection_success": true,
+      "expected_item_results": [
+        {
+          "expected_index": 0,
+          "type": "skirt",
+          "category_at_5": true,
+          "color_at_5": false,
+          "recall_at_5": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "detected_items": [
+        {
+          "class_name": "vest",
+          "class_name_vi": "Áo vest",
+          "confidence": 0.6443192958831787,
+          "bbox": [
+            79,
+            0,
+            338,
+            119
+          ],
+          "is_confident_match": false,
+          "message": "Detected item, but no confident product match found",
+          "query_color_name": "white",
+          "query_color_rgb": [
+            240,
+            240,
+            240
+          ],
+          "similar_product_count": 0,
+          "low_confidence_product_count": 0,
+          "top_products": []
+        },
+        {
+          "class_name": "shorts",
+          "class_name_vi": "Quần short",
+          "confidence": 0.8737314343452454,
+          "bbox": [
+            0,
+            86,
+            339,
+            387
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "gray",
+          "query_color_rgb": [
+            128,
+            128,
+            128
+          ],
+          "similar_product_count": 1,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B0G6CZ3RV9",
+              "title": "Skirt (B0G6CZ3RV9)",
+              "category": "skirt",
+              "dominant_color_name": "white",
+              "image_similarity": 0.9664924184689023,
+              "category_score": 0.0,
+              "color_score": 0.8935138761088169,
+              "text_score": 1.0,
+              "style_score": 0.0,
+              "text_style_score": 0.65,
+              "category_penalty": 0.1,
+              "color_penalty": 0.0,
+              "final_score": 0.6789225324976639,
+              "match_reason": "opposite category penalty",
+              "query_style_label": "shorts",
+              "product_styles": [
+                "skirt"
+              ]
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "query_id": "starter_B0FZJ583QN",
+      "image": "queries/starter_catalog/B0FZJ583QN.jpg",
+      "status": "ok",
+      "latency_ms": 689.850408998609,
+      "detected_count": 1,
+      "detection_success": true,
+      "expected_item_results": [
+        {
+          "expected_index": 0,
+          "type": "dress",
+          "category_at_5": true,
+          "color_at_5": false,
+          "recall_at_5": true,
+          "reciprocal_rank": 1.0
+        }
+      ],
+      "detected_items": [
+        {
+          "class_name": "short_sleeve_dress",
+          "class_name_vi": "Đầm tay ngắn",
+          "confidence": 0.911850094795227,
+          "bbox": [
+            67,
+            20,
+            303,
+            433
+          ],
+          "is_confident_match": true,
+          "message": null,
+          "query_color_name": "white",
+          "query_color_rgb": [
+            240,
+            240,
+            240
+          ],
+          "similar_product_count": 4,
+          "low_confidence_product_count": 0,
+          "top_products": [
+            {
+              "rank": 1,
+              "id": "B0FZJ583QN",
+              "title": "Dress (B0FZJ583QN)",
+              "category": "dress",
+              "dominant_color_name": "white",
+              "image_similarity": 0.9185214863885782,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.8949304242893886,
+              "text_score": 1.0,
+              "style_score": 0.5,
+              "text_style_score": 0.825,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.8728524554765552,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "dress",
+              "product_styles": [
+                "dress"
+              ]
+            },
+            {
+              "rank": 2,
+              "id": "B0CK14HCM8",
+              "title": "Dress (B0CK14HCM8)",
+              "category": "dress",
+              "dominant_color_name": "white",
+              "image_similarity": 0.6724060573456894,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.39380330668459773,
+              "text_score": 0.9572198532088693,
+              "style_score": 0.5,
+              "text_style_score": 0.7971929045857651,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6472334208686797,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "dress",
+              "product_styles": [
+                "dress"
+              ]
+            },
+            {
+              "rank": 3,
+              "id": "B0D8B3DT6P",
+              "title": "Dress (B0D8B3DT6P)",
+              "category": "dress",
+              "dominant_color_name": "white",
+              "image_similarity": 0.6793208932067041,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.27970584104636065,
+              "text_score": 0.9808525920749012,
+              "style_score": 0.5,
+              "text_style_score": 0.8125541848486857,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6358038305658451,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "dress",
+              "product_styles": [
+                "dress"
+              ]
+            },
+            {
+              "rank": 4,
+              "id": "B0GWM9K9JC",
+              "title": "Dress (B0GWM9K9JC)",
+              "category": "dress",
+              "dominant_color_name": "white",
+              "image_similarity": 0.6053009213596859,
+              "category_score": 0.7000000000000001,
+              "color_score": 0.4676970636223954,
+              "text_score": 0.97477777998537,
+              "style_score": 0.5,
+              "text_style_score": 0.8086055569904904,
+              "category_penalty": 0.0,
+              "color_penalty": 0.0,
+              "final_score": 0.6191956680582199,
+              "match_reason": "broad category match, text/style match",
+              "query_style_label": "dress",
+              "product_styles": [
+                "dress"
+              ]
+            }
+          ]
+        }
+      ],
+      "error": null
+    }
+  ]
+}

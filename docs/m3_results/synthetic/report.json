@@ -1,0 +1,3101 @@
+{
+  "top_k": 5,
+  "catalog_count": 8,
+  "query_count": 24,
+  "variants": {
+    "rgb_roi": {
+      "config": {
+        "hue_bins": 18,
+        "saturation_bins": 8,
+        "achromatic": true,
+        "achromatic_s_max": 32,
+        "black_v_max": 40,
+        "white_v_min": 220,
+        "mask_policy": "roi",
+        "min_mask_fraction": 0.001,
+        "max_mask_fraction": 1.0,
+        "min_pixels": 1,
+        "h_range": [
+          0,
+          180
+        ],
+        "s_range": [
+          0,
+          256
+        ],
+        "normalization": "L1",
+        "conversion": "OpenCV_RGB2HSV_uint8",
+        "groups": [
+          "black",
+          "gray",
+          "white"
+        ]
+      },
+      "version": "hsv-hs-v1-147-b0681e3cbf842188",
+      "masked": false,
+      "metric": "legacy_rgb",
+      "metrics": {
+        "hit_at_1": 0.75,
+        "hit_at_k": 0.9166666666666666,
+        "recall_at_k": 0.9166666666666666,
+        "reciprocal_rank": 0.8368055555555555
+      },
+      "catalog_coverage": 1.0,
+      "query_coverage": 1.0,
+      "mask_status_counts": {
+        "catalog:missing": 8,
+        "query:missing": 24
+      },
+      "failures": [],
+      "extraction_ms_p50": 16.24334999360144,
+      "extraction_ms_p95": 25.481540022883564,
+      "per_query": [
+        {
+          "id": "white_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "white",
+            "blue",
+            "multicolor"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "white_30",
+          "hit_at_1": 0,
+          "hit_at_k": 0,
+          "recall_at_k": 0.0,
+          "reciprocal_rank": 0.125,
+          "ranking": [
+            "blue",
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "white_180",
+          "hit_at_1": 0,
+          "hit_at_k": 0,
+          "recall_at_k": 0.0,
+          "reciprocal_rank": 0.125,
+          "ranking": [
+            "multicolor",
+            "red",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "dark_blue",
+            "black",
+            "white"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "dark_blue",
+            "black",
+            "white"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "dark_blue",
+            "black",
+            "white"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "dark_blue",
+            "black",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "dark_blue",
+            "black",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "dark_blue",
+            "black",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "low_saturation",
+            "gray",
+            "white",
+            "dark_blue",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "low_saturation",
+            "gray",
+            "white",
+            "dark_blue",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "low_saturation",
+            "gray",
+            "white",
+            "dark_blue",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "multicolor",
+            "red",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "multicolor",
+            "red",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "multicolor",
+            "red",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "red",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "red",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "red",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        }
+      ]
+    },
+    "hs_roi": {
+      "config": {
+        "hue_bins": 18,
+        "saturation_bins": 8,
+        "achromatic": false,
+        "achromatic_s_max": 32,
+        "black_v_max": 40,
+        "white_v_min": 220,
+        "mask_policy": "roi",
+        "min_mask_fraction": 0.001,
+        "max_mask_fraction": 1.0,
+        "min_pixels": 1,
+        "h_range": [
+          0,
+          180
+        ],
+        "s_range": [
+          0,
+          256
+        ],
+        "normalization": "L1",
+        "conversion": "OpenCV_RGB2HSV_uint8",
+        "groups": []
+      },
+      "version": "hsv-hs-v1-144-94ba6c2037b08b33",
+      "masked": false,
+      "metric": "hellinger",
+      "metrics": {
+        "hit_at_1": 0.375,
+        "hit_at_k": 0.9583333333333334,
+        "recall_at_k": 0.9583333333333334,
+        "reciprocal_rank": 0.5840277777777777
+      },
+      "catalog_coverage": 1.0,
+      "query_coverage": 1.0,
+      "mask_status_counts": {
+        "catalog:missing": 8,
+        "query:missing": 24
+      },
+      "failures": [],
+      "extraction_ms_p50": 0.6044500041753054,
+      "extraction_ms_p95": 0.7839348865672945,
+      "per_query": [
+        {
+          "id": "white_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.25,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "white_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.25,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "white_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.25,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_255",
+          "hit_at_1": 0,
+          "hit_at_k": 0,
+          "recall_at_k": 0.0,
+          "reciprocal_rank": 0.16666666666666666,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.2,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "red"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.2,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.2,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "multicolor"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        }
+      ]
+    },
+    "hsa_roi": {
+      "config": {
+        "hue_bins": 18,
+        "saturation_bins": 8,
+        "achromatic": true,
+        "achromatic_s_max": 32,
+        "black_v_max": 40,
+        "white_v_min": 220,
+        "mask_policy": "roi",
+        "min_mask_fraction": 0.001,
+        "max_mask_fraction": 1.0,
+        "min_pixels": 1,
+        "h_range": [
+          0,
+          180
+        ],
+        "s_range": [
+          0,
+          256
+        ],
+        "normalization": "L1",
+        "conversion": "OpenCV_RGB2HSV_uint8",
+        "groups": [
+          "black",
+          "gray",
+          "white"
+        ]
+      },
+      "version": "hsv-hs-v1-147-b0681e3cbf842188",
+      "masked": false,
+      "metric": "hellinger",
+      "metrics": {
+        "hit_at_1": 0.5416666666666666,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.7569444444444443
+      },
+      "catalog_coverage": 1.0,
+      "query_coverage": 1.0,
+      "mask_status_counts": {
+        "catalog:missing": 8,
+        "query:missing": 24
+      },
+      "failures": [],
+      "extraction_ms_p50": 0.5703499773517251,
+      "extraction_ms_p95": 0.7619750685989857,
+      "per_query": [
+        {
+          "id": "white_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "white_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "white_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "white",
+            "gray",
+            "low_saturation",
+            "black",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "gray_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "blue",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "black_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "blue",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "white",
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "dark_blue_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "white",
+            "gray",
+            "low_saturation",
+            "black",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "low_saturation_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "white",
+            "red",
+            "multicolor",
+            "black",
+            "blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "red_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "white",
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "white",
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        },
+        {
+          "id": "multicolor_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "missing",
+          "fallback_reason": "mask_missing"
+        }
+      ]
+    },
+    "rgb_mask": {
+      "config": {
+        "hue_bins": 18,
+        "saturation_bins": 8,
+        "achromatic": true,
+        "achromatic_s_max": 32,
+        "black_v_max": 40,
+        "white_v_min": 220,
+        "mask_policy": "roi",
+        "min_mask_fraction": 0.001,
+        "max_mask_fraction": 1.0,
+        "min_pixels": 1,
+        "h_range": [
+          0,
+          180
+        ],
+        "s_range": [
+          0,
+          256
+        ],
+        "normalization": "L1",
+        "conversion": "OpenCV_RGB2HSV_uint8",
+        "groups": [
+          "black",
+          "gray",
+          "white"
+        ]
+      },
+      "version": "hsv-hs-v1-147-b0681e3cbf842188",
+      "masked": true,
+      "metric": "legacy_rgb",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "catalog_coverage": 1.0,
+      "query_coverage": 1.0,
+      "mask_status_counts": {
+        "catalog:valid": 8,
+        "query:valid": 24
+      },
+      "failures": [],
+      "extraction_ms_p50": 1.2937500141561031,
+      "extraction_ms_p95": 2.47953002108261,
+      "per_query": [
+        {
+          "id": "white_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "low_saturation",
+            "gray",
+            "blue",
+            "multicolor"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "white_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "low_saturation",
+            "gray",
+            "blue",
+            "multicolor"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "white_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "low_saturation",
+            "gray",
+            "blue",
+            "multicolor"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "dark_blue",
+            "black",
+            "white"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "dark_blue",
+            "black",
+            "white"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "dark_blue",
+            "black",
+            "white"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "dark_blue",
+            "black",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "dark_blue",
+            "black",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "dark_blue",
+            "black",
+            "gray",
+            "low_saturation",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "low_saturation",
+            "gray",
+            "white",
+            "dark_blue",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "low_saturation",
+            "gray",
+            "white",
+            "dark_blue",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "low_saturation",
+            "gray",
+            "white",
+            "dark_blue",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "black",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        }
+      ]
+    },
+    "hs_mask": {
+      "config": {
+        "hue_bins": 18,
+        "saturation_bins": 8,
+        "achromatic": false,
+        "achromatic_s_max": 32,
+        "black_v_max": 40,
+        "white_v_min": 220,
+        "mask_policy": "roi",
+        "min_mask_fraction": 0.001,
+        "max_mask_fraction": 1.0,
+        "min_pixels": 1,
+        "h_range": [
+          0,
+          180
+        ],
+        "s_range": [
+          0,
+          256
+        ],
+        "normalization": "L1",
+        "conversion": "OpenCV_RGB2HSV_uint8",
+        "groups": []
+      },
+      "version": "hsv-hs-v1-144-94ba6c2037b08b33",
+      "masked": true,
+      "metric": "hellinger",
+      "metrics": {
+        "hit_at_1": 0.5,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.6979166666666666
+      },
+      "catalog_coverage": 1.0,
+      "query_coverage": 1.0,
+      "mask_status_counts": {
+        "catalog:valid": 8,
+        "query:valid": 24
+      },
+      "failures": [],
+      "extraction_ms_p50": 0.5681500770151615,
+      "extraction_ms_p95": 0.8731999434530734,
+      "per_query": [
+        {
+          "id": "white_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.25,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "white_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.25,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "white_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.25,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "ranking": [
+            "black",
+            "gray",
+            "low_saturation",
+            "white",
+            "blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        }
+      ]
+    },
+    "hsa_mask": {
+      "config": {
+        "hue_bins": 18,
+        "saturation_bins": 8,
+        "achromatic": true,
+        "achromatic_s_max": 32,
+        "black_v_max": 40,
+        "white_v_min": 220,
+        "mask_policy": "roi",
+        "min_mask_fraction": 0.001,
+        "max_mask_fraction": 1.0,
+        "min_pixels": 1,
+        "h_range": [
+          0,
+          180
+        ],
+        "s_range": [
+          0,
+          256
+        ],
+        "normalization": "L1",
+        "conversion": "OpenCV_RGB2HSV_uint8",
+        "groups": [
+          "black",
+          "gray",
+          "white"
+        ]
+      },
+      "version": "hsv-hs-v1-147-b0681e3cbf842188",
+      "masked": true,
+      "metric": "hellinger",
+      "metrics": {
+        "hit_at_1": 0.75,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.875
+      },
+      "catalog_coverage": 1.0,
+      "query_coverage": 1.0,
+      "mask_status_counts": {
+        "catalog:valid": 8,
+        "query:valid": 24
+      },
+      "failures": [],
+      "extraction_ms_p50": 0.5301999626681209,
+      "extraction_ms_p95": 0.6775251007638872,
+      "per_query": [
+        {
+          "id": "white_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "white_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "white_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "blue",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "blue",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "blue",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        }
+      ]
+    },
+    "hsa_mask_intersection": {
+      "config": {
+        "hue_bins": 18,
+        "saturation_bins": 8,
+        "achromatic": true,
+        "achromatic_s_max": 32,
+        "black_v_max": 40,
+        "white_v_min": 220,
+        "mask_policy": "roi",
+        "min_mask_fraction": 0.001,
+        "max_mask_fraction": 1.0,
+        "min_pixels": 1,
+        "h_range": [
+          0,
+          180
+        ],
+        "s_range": [
+          0,
+          256
+        ],
+        "normalization": "L1",
+        "conversion": "OpenCV_RGB2HSV_uint8",
+        "groups": [
+          "black",
+          "gray",
+          "white"
+        ]
+      },
+      "version": "hsv-hs-v1-147-b0681e3cbf842188",
+      "masked": true,
+      "metric": "intersection",
+      "metrics": {
+        "hit_at_1": 0.75,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.875
+      },
+      "catalog_coverage": 1.0,
+      "query_coverage": 1.0,
+      "mask_status_counts": {
+        "catalog:valid": 8,
+        "query:valid": 24
+      },
+      "failures": [],
+      "extraction_ms_p50": 0.6800501141697168,
+      "extraction_ms_p95": 1.0326499701477587,
+      "per_query": [
+        {
+          "id": "white_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "white_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "white_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "white",
+            "black",
+            "blue",
+            "dark_blue",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "gray_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "blue",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "blue",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "black_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "black",
+            "blue",
+            "dark_blue",
+            "gray",
+            "low_saturation"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "dark_blue_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_255",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_30",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "low_saturation_180",
+          "hit_at_1": 0,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "ranking": [
+            "gray",
+            "low_saturation",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "red_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "red",
+            "multicolor",
+            "black",
+            "blue",
+            "dark_blue"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "blue_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "blue",
+            "dark_blue",
+            "multicolor",
+            "black",
+            "gray"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_255",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_30",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        },
+        {
+          "id": "multicolor_180",
+          "hit_at_1": 1,
+          "hit_at_k": 1,
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "ranking": [
+            "multicolor",
+            "blue",
+            "dark_blue",
+            "red",
+            "black"
+          ],
+          "mask_status": "valid",
+          "fallback_reason": null
+        }
+      ]
+    }
+  },
+  "paired_ablation": {
+    "hs_roi -> hsa_roi": {
+      "mrr_delta_cluster_mean": 0.17291666666666666,
+      "bootstrap_95_ci": [
+        0.01666666666666667,
+        0.37013888888888885
+      ],
+      "clusters": 8,
+      "seed": 20261107,
+      "resamples": 2000
+    },
+    "hs_mask -> hsa_mask": {
+      "mrr_delta_cluster_mean": 0.17708333333333334,
+      "bootstrap_95_ci": [
+        0.0,
+        0.38567708333333195
+      ],
+      "clusters": 8,
+      "seed": 20261107,
+      "resamples": 2000
+    },
+    "hs_roi -> hs_mask": {
+      "mrr_delta_cluster_mean": 0.1138888888888889,
+      "bootstrap_95_ci": [
+        0.03333333333333333,
+        0.2
+      ],
+      "clusters": 8,
+      "seed": 20261107,
+      "resamples": 2000
+    },
+    "hsa_roi -> hsa_mask": {
+      "mrr_delta_cluster_mean": 0.11805555555555555,
+      "bootstrap_95_ci": [
+        0.06944444444444445,
+        0.16666666666666666
+      ],
+      "clusters": 8,
+      "seed": 20261107,
+      "resamples": 2000
+    },
+    "rgb_roi -> hsa_roi": {
+      "mrr_delta_cluster_mean": -0.07986111111111109,
+      "bootstrap_95_ci": [
+        -0.3611111111111111,
+        0.21527777777777782
+      ],
+      "clusters": 8,
+      "seed": 20261107,
+      "resamples": 2000
+    }
+  },
+  "suite": "synthetic",
+  "input_hashes": {},
+  "environment": {
+    "python": "3.12.10",
+    "numpy": "2.1.3",
+    "opencv": "5.0.0",
+    "pillow": "11.3.0"
+  },
+  "commit": "3247a5b33a016fd064ac9851410e7ec755d5e320",
+  "git_status": " M .gitignore\n M AI/embedding_model.py\n M requirements.txt\n?? AI/color_cache.py\n?? AI/features.py\n?? AI/hsv_descriptor.py\n?? docs/M3_AUDIT.md\n?? docs/M3_HSV_REPORT.md\n?? docs/m3_results/\n?? evaluation/run_color_benchmark.py\n?? tests/test_hsv_descriptor.py\n",
+  "source_hashes": {
+    "AI\\hsv_descriptor.py": "f970747b65c9520d2f8674b2035fa874c86e76f3e8825ea8dd5b136b209a2a9f",
+    "AI\\color_utils.py": "85cf58f3125a8f35039c3d4b1fc7467615f1982b92f984ab366b406e395987cd",
+    "AI\\features.py": "626bf9cb85e092ccdef91a8f1704235a0b7e9ae713b7be456525bf2d0d0d7db4",
+    "AI\\color_cache.py": "66514b989fe98f62ebb251a729016411acf3809d47c74a59f46dfa8bd922e0be",
+    "AI\\embedding_model.py": "05b5863e157d8fab98606d288a97180a89e38243688f8070c444d0cc3b755de6",
+    "evaluation\\run_color_benchmark.py": "b70446843417f0e5f4a34de7d160dd3df2eca84336447e4124243d8039218bd6"
+  },
+  "limitations": "Color-only diagnostic; no FashionCLIP/M4 integration or independent user-query improvement claim. Photo suite uses transformed same-image queries and placement masks; synthetic suite uses known fixture masks."
+}

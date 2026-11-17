@@ -4,7 +4,8 @@ import psycopg
 from pgvector.psycopg import register_vector
 from dotenv import load_dotenv
 
-from AI.color_utils import name_color
+from AI.hsv_descriptor import ColorDescriptor
+from AI.production_color import descriptor_display, production_config, ROI_POLICY
 
 load_dotenv()
 
@@ -88,7 +89,7 @@ def init_db():
     conn.close()
     print("-> Database schema is ready.")
 
-def load_data_to_db(input_file="data/fashion_with_vectors.json"):
+def load_data_to_db(input_file="data/fashion_with_hsv_vectors.json"):
     """Đọc file JSON và đẩy vào PostgreSQL"""
     if not os.path.exists(input_file):
         print(f"Missing input file: {input_file}.")
@@ -114,8 +115,15 @@ def load_data_to_db(input_file="data/fashion_with_vectors.json"):
         validate_vector_dimension(vector)
             
         price = item.get("price")
-        dominant_color_rgb = item.get("dominant_color_rgb")
-        dominant_color_name = name_color(dominant_color_rgb) or item.get("dominant_color_name")
+        # Preserve DB columns/API shape, but derive new display metadata only
+        # from verified HSV. Legacy RGB values are not a descriptor fallback.
+        dominant_color_rgb, dominant_color_name = None, None
+        if item.get("color_descriptor"):
+            color = ColorDescriptor(**item["color_descriptor"])
+            if color.config != production_config().spec() or color.roi_policy != ROI_POLICY:
+                raise ValueError("Catalog HSV config/ROI policy mismatch")
+            rgb, dominant_color_name = descriptor_display(color)
+            dominant_color_rgb = list(rgb) if rgb else None
         
         try:
             conn.execute("""
@@ -218,6 +226,27 @@ def search_similar_by_vector(
             LIMIT %s;
         """
         rows = conn.execute(query, (vector, embedding_model, embedding_version, vector, top_k)).fetchall()
+        return _rows_to_products(rows)
+    finally:
+        conn.close()
+
+
+def list_color_search_products(embedding_model: str, embedding_version: int) -> list[dict]:
+    """Return the full compatible catalog for an independent HSV baseline."""
+    conn = get_db_connection()
+    if not conn:
+        raise RuntimeError("Database connection failed")
+    try:
+        rows = conn.execute(
+            """SELECT id, title, brand, price, category, product_url, r2_image_url,
+                      NULL::double precision AS similarity,
+                      dominant_color_rgb, dominant_color_name,
+                      embedding_model, embedding_version
+               FROM fashion_items
+               WHERE embedding_model = %s AND embedding_version = %s
+               ORDER BY id""",
+            (embedding_model, embedding_version),
+        ).fetchall()
         return _rows_to_products(rows)
     finally:
         conn.close()

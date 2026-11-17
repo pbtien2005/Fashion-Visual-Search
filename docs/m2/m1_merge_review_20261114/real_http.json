@@ -1,0 +1,229 @@
+{
+  "status": "passed",
+  "query_id": "real_green_tshirt_01",
+  "image_sha256": "f26b568338c392c0ab8722f7b2e8bf257c0c05401c2d03bdfec7cd8dbeb3db4c",
+  "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+  "HSV_version": "hsv-hs-v1-147-b0681e3cbf842188",
+  "checks": [
+    {
+      "preprocess_config": {
+        "mode": "identity",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.3,
+        "gamma": 0.7
+      },
+      "mask_mode": "off",
+      "geometry": {
+        "raw_width": 960,
+        "raw_height": 1280,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1280,
+        "width": 960,
+        "height": 1280,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "gamma_applied": false,
+      "predict_calls_per_upload": 1,
+      "crops": [
+        {
+          "garment_id": "merge_http_g000",
+          "bbox": [
+            64,
+            322,
+            736,
+            954
+          ],
+          "roi_shape": [
+            632,
+            672,
+            3
+          ],
+          "source_png_exact": true,
+          "roi_status": "unmasked",
+          "fallback_reason": "mask_disabled",
+          "HSV_mask_status": "missing",
+          "HSV_valid_pixels": 424704
+        },
+        {
+          "garment_id": "merge_http_g001",
+          "bbox": [
+            512,
+            103,
+            755,
+            364
+          ],
+          "roi_shape": [
+            261,
+            243,
+            3
+          ],
+          "source_png_exact": true,
+          "roi_status": "unmasked",
+          "fallback_reason": "mask_disabled",
+          "HSV_mask_status": "missing",
+          "HSV_valid_pixels": 63423
+        }
+      ]
+    },
+    {
+      "preprocess_config": {
+        "mode": "identity",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.3,
+        "gamma": 0.7
+      },
+      "mask_mode": "raw",
+      "geometry": {
+        "raw_width": 960,
+        "raw_height": 1280,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1280,
+        "width": 960,
+        "height": 1280,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "gamma_applied": false,
+      "predict_calls_per_upload": 1,
+      "crops": [
+        {
+          "garment_id": "merge_http_g000",
+          "bbox": [
+            64,
+            322,
+            736,
+            954
+          ],
+          "roi_shape": [
+            632,
+            672,
+            3
+          ],
+          "source_png_exact": true,
+          "roi_status": "masked",
+          "fallback_reason": null,
+          "HSV_mask_status": "valid",
+          "HSV_valid_pixels": 255466
+        },
+        {
+          "garment_id": "merge_http_g001",
+          "bbox": [
+            512,
+            103,
+            755,
+            364
+          ],
+          "roi_shape": [
+            261,
+            243,
+            3
+          ],
+          "source_png_exact": true,
+          "roi_status": "fallback",
+          "fallback_reason": "ambiguous_foreground",
+          "HSV_mask_status": "missing",
+          "HSV_valid_pixels": 63423
+        }
+      ]
+    },
+    {
+      "preprocess_config": {
+        "mode": "gamma",
+        "max_side": 1280,
+        "max_pixels": 50000000,
+        "brightness_stat": "mean_luma",
+        "brightness_threshold": 0.3,
+        "gamma": 0.7
+      },
+      "mask_mode": "raw",
+      "geometry": {
+        "raw_width": 960,
+        "raw_height": 1280,
+        "exif_orientation": 1,
+        "exif_transposed": false,
+        "oriented_width": 960,
+        "oriented_height": 1280,
+        "width": 960,
+        "height": 1280,
+        "scale": 1.0,
+        "resized": false,
+        "resize_interpolation": "lanczos"
+      },
+      "gamma_applied": true,
+      "predict_calls_per_upload": 1,
+      "crops": [
+        {
+          "garment_id": "merge_http_g000",
+          "bbox": [
+            17,
+            127,
+            313,
+            426
+          ],
+          "roi_shape": [
+            299,
+            296,
+            3
+          ],
+          "source_png_exact": true,
+          "roi_status": "masked",
+          "fallback_reason": null,
+          "HSV_mask_status": "valid",
+          "HSV_valid_pixels": 74494
+        },
+        {
+          "garment_id": "merge_http_g001",
+          "bbox": [
+            62,
+            322,
+            736,
+            954
+          ],
+          "roi_shape": [
+            632,
+            674,
+            3
+          ],
+          "source_png_exact": true,
+          "roi_status": "masked",
+          "fallback_reason": null,
+          "HSV_mask_status": "valid",
+          "HSV_valid_pixels": 255847
+        },
+        {
+          "garment_id": "merge_http_g002",
+          "bbox": [
+            513,
+            103,
+            756,
+            358
+          ],
+          "roi_shape": [
+            255,
+            243,
+            3
+          ],
+          "source_png_exact": true,
+          "roi_status": "fallback",
+          "fallback_reason": "ambiguous_foreground",
+          "HSV_mask_status": "missing",
+          "HSV_valid_pixels": 61965
+        }
+      ]
+    }
+  ],
+  "invalid_upload_after_model_load": 400,
+  "scope": "real_YOLO_ASGI_HTTP_serializer_M3_HSV_no_encoder_DB_or_external_TCP",
+  "quality_metrics": "not_measured"
+}

@@ -1,0 +1,289 @@
+{
+  "status": "passed",
+  "data_role": "old_regression_no_target_ground_truth",
+  "model_sha256": "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+  "model_unchanged": true,
+  "reference": "frozen /app code from fashion-m2:phase1 image; same model, conf=0.5/imgsz=640/iou=0.7/CPU",
+  "images": 16,
+  "total_crops": 54,
+  "legacy_variants_pixel_and_jpeg_equal": 161,
+  "source_rois_exact": 54,
+  "bbox_outward_rounding_changes": 53,
+  "legacy_payload_bytes": 5704986,
+  "phase2_payload_bytes": 19538625,
+  "limitations": "No recall/mAP/IoU/retrieval metrics; no M1 production module or M3 decoder involved. PNG payload cost is measured, not assumed negligible.",
+  "queries": [
+    {
+      "query_id": "real_green_tshirt_01",
+      "delivered_crops": 2,
+      "legacy_variants_pixel_and_jpeg_equal": 6,
+      "source_rois_exact": 2,
+      "bbox_outward_rounding_changes": 2,
+      "legacy_payload_bytes": 212181,
+      "phase2_payload_bytes": 1169122,
+      "diagnostics": {
+        "raw_box_count": 2,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 2
+      }
+    },
+    {
+      "query_id": "real_green_tshirt_02",
+      "delivered_crops": 3,
+      "legacy_variants_pixel_and_jpeg_equal": 9,
+      "source_rois_exact": 3,
+      "bbox_outward_rounding_changes": 3,
+      "legacy_payload_bytes": 347795,
+      "phase2_payload_bytes": 662214,
+      "diagnostics": {
+        "raw_box_count": 3,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 3
+      }
+    },
+    {
+      "query_id": "real_white_shirt_01",
+      "delivered_crops": 2,
+      "legacy_variants_pixel_and_jpeg_equal": 6,
+      "source_rois_exact": 2,
+      "bbox_outward_rounding_changes": 2,
+      "legacy_payload_bytes": 206470,
+      "phase2_payload_bytes": 549313,
+      "diagnostics": {
+        "raw_box_count": 2,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 2
+      }
+    },
+    {
+      "query_id": "real_white_shirt_02",
+      "delivered_crops": 2,
+      "legacy_variants_pixel_and_jpeg_equal": 6,
+      "source_rois_exact": 2,
+      "bbox_outward_rounding_changes": 2,
+      "legacy_payload_bytes": 185423,
+      "phase2_payload_bytes": 679718,
+      "diagnostics": {
+        "raw_box_count": 2,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 2
+      }
+    },
+    {
+      "query_id": "real_blue_jeans_01",
+      "delivered_crops": 2,
+      "legacy_variants_pixel_and_jpeg_equal": 6,
+      "source_rois_exact": 2,
+      "bbox_outward_rounding_changes": 2,
+      "legacy_payload_bytes": 217142,
+      "phase2_payload_bytes": 1615892,
+      "diagnostics": {
+        "raw_box_count": 2,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 2
+      }
+    },
+    {
+      "query_id": "real_blue_jeans_02",
+      "delivered_crops": 2,
+      "legacy_variants_pixel_and_jpeg_equal": 6,
+      "source_rois_exact": 2,
+      "bbox_outward_rounding_changes": 1,
+      "legacy_payload_bytes": 215034,
+      "phase2_payload_bytes": 3098721,
+      "diagnostics": {
+        "raw_box_count": 2,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 2
+      }
+    },
+    {
+      "query_id": "real_black_trousers_01",
+      "delivered_crops": 2,
+      "legacy_variants_pixel_and_jpeg_equal": 6,
+      "source_rois_exact": 2,
+      "bbox_outward_rounding_changes": 2,
+      "legacy_payload_bytes": 175930,
+      "phase2_payload_bytes": 2164039,
+      "diagnostics": {
+        "raw_box_count": 2,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 2
+      }
+    },
+    {
+      "query_id": "real_black_trousers_02",
+      "delivered_crops": 2,
+      "legacy_variants_pixel_and_jpeg_equal": 6,
+      "source_rois_exact": 2,
+      "bbox_outward_rounding_changes": 2,
+      "legacy_payload_bytes": 243775,
+      "phase2_payload_bytes": 1568425,
+      "diagnostics": {
+        "raw_box_count": 2,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 2
+      }
+    },
+    {
+      "query_id": "real_shorts_01",
+      "delivered_crops": 6,
+      "legacy_variants_pixel_and_jpeg_equal": 17,
+      "source_rois_exact": 6,
+      "bbox_outward_rounding_changes": 6,
+      "legacy_payload_bytes": 509523,
+      "phase2_payload_bytes": 672365,
+      "diagnostics": {
+        "raw_box_count": 6,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 1,
+        "delivered_crop_count": 6
+      }
+    },
+    {
+      "query_id": "real_shorts_02",
+      "delivered_crops": 1,
+      "legacy_variants_pixel_and_jpeg_equal": 3,
+      "source_rois_exact": 1,
+      "bbox_outward_rounding_changes": 1,
+      "legacy_payload_bytes": 126793,
+      "phase2_payload_bytes": 184829,
+      "diagnostics": {
+        "raw_box_count": 1,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 1
+      }
+    },
+    {
+      "query_id": "real_black_skirt_01",
+      "delivered_crops": 8,
+      "legacy_variants_pixel_and_jpeg_equal": 24,
+      "source_rois_exact": 8,
+      "bbox_outward_rounding_changes": 8,
+      "legacy_payload_bytes": 865448,
+      "phase2_payload_bytes": 1455037,
+      "diagnostics": {
+        "raw_box_count": 8,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 8
+      }
+    },
+    {
+      "query_id": "real_black_skirt_02",
+      "delivered_crops": 11,
+      "legacy_variants_pixel_and_jpeg_equal": 33,
+      "source_rois_exact": 11,
+      "bbox_outward_rounding_changes": 11,
+      "legacy_payload_bytes": 1339390,
+      "phase2_payload_bytes": 2068051,
+      "diagnostics": {
+        "raw_box_count": 11,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 11
+      }
+    },
+    {
+      "query_id": "real_red_dress_01",
+      "delivered_crops": 0,
+      "legacy_variants_pixel_and_jpeg_equal": 0,
+      "source_rois_exact": 0,
+      "bbox_outward_rounding_changes": 0,
+      "legacy_payload_bytes": 58,
+      "phase2_payload_bytes": 282,
+      "diagnostics": {
+        "raw_box_count": 0,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 0
+      }
+    },
+    {
+      "query_id": "real_red_dress_02",
+      "delivered_crops": 1,
+      "legacy_variants_pixel_and_jpeg_equal": 3,
+      "source_rois_exact": 1,
+      "bbox_outward_rounding_changes": 1,
+      "legacy_payload_bytes": 85982,
+      "phase2_payload_bytes": 959671,
+      "diagnostics": {
+        "raw_box_count": 1,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 1
+      }
+    },
+    {
+      "query_id": "real_black_dress_01",
+      "delivered_crops": 5,
+      "legacy_variants_pixel_and_jpeg_equal": 15,
+      "source_rois_exact": 5,
+      "bbox_outward_rounding_changes": 5,
+      "legacy_payload_bytes": 600363,
+      "phase2_payload_bytes": 929464,
+      "diagnostics": {
+        "raw_box_count": 5,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 5
+      }
+    },
+    {
+      "query_id": "real_black_dress_02",
+      "delivered_crops": 5,
+      "legacy_variants_pixel_and_jpeg_equal": 15,
+      "source_rois_exact": 5,
+      "bbox_outward_rounding_changes": 5,
+      "legacy_payload_bytes": 373679,
+      "phase2_payload_bytes": 1761482,
+      "diagnostics": {
+        "raw_box_count": 5,
+        "invalid_bbox_count": 0,
+        "invalid_prediction_count": 0,
+        "no_valid_variant_count": 0,
+        "skipped_variant_count": 0,
+        "delivered_crop_count": 5
+      }
+    }
+  ]
+}

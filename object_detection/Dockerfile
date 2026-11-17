@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12.12-slim
 
 WORKDIR /app
 
@@ -8,14 +8,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY pyproject.toml ./
-RUN pip install --no-cache-dir \
-    fastapi \
-    uvicorn \
-    python-multipart \
-    ultralytics \
-    opencv-python-headless \
-    numpy \
-    pillow
+COPY requirements-m2.txt ./
+RUN pip install --no-cache-dir torch==2.11.0+cpu torchvision==0.26.0+cpu \
+    --index-url https://download.pytorch.org/whl/cpu \
+    && pip install --no-cache-dir -r requirements-m2.txt
 
 COPY . .
 

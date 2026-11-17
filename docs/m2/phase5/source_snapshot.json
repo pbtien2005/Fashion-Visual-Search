@@ -1,0 +1,30 @@
+{
+    "date":  "2026-11-14",
+    "phase":  5,
+    "status":  "mask_color_offline_locked_and_verified_product_retrieval_not_measured",
+    "base_head":  "2129af116ea1a74a77e71174345c8eb6f424f0eb",
+    "merge_head":  "f97584dace7b9a09aa15c7cb52edb3be3093e8ee",
+    "model_sha256":  "d0d45d5299395d3a3ed0202596d3b22fa11494190a271c5b5adf429d6a9391fe",
+    "dependency_image":  "sha256:76fe255023309ed490cd638a3c75b9b6c8ca0c6d943e5bf5a0fc2e6f74c99b30",
+    "runtime_detection_image":  "sha256:516f3a0ede72e113a574dc66885e004c14cdfe91f0b1adf8bd341953f70af46d",
+    "frozen_phase1_image":  "sha256:2041a2f15f8df30272144b3dd9ee6861382f4b2e67156c03c915521f60ae46b3",
+    "preprocess_mode":  "identity",
+    "deployment_mask_mode":  "off",
+    "prior_test_exposure":  true,
+    "independent_test":  false,
+    "retrieval":  "not_measured_missing_verified_production_cache_candidate_catalog_relevance",
+    "cpu_limit":  2,
+    "memory_limit":  "3GiB",
+    "artifact_source_sha256":  {
+                                   "docs/m2/phase5/protocol.json":  "fe18034d8750156b9b7dce845f49f76538bd369671a6b08d1aa16a5c9fa93930",
+                                   "docs/m2/phase5/locked_config.json":  "6ad4ba698eca86b6a059185223fc4a72a709a058912ba70e50bc38bdeb2e5cf2",
+                                   "docs/m2/phase5/mask_config.final.json":  "c88712d264165c3bc5f3fb227ecbe3d8eaf2c90680689a9271d5231559c512b2",
+                                   "docs/m2/phase5/validation/results.json":  "e41e847434e7da953e98c93c1b6b2af55ce3df1b63a18a9c64fb04ff96653793",
+                                   "docs/m2/phase5/test/results.json":  "e3100e8c9faa2f13c60011cf17ca066aa250f675b8e54e9cf0415da412ba943f",
+                                   "docs/m2/phase5/cache_audit.json":  "0fed607807eff604e19de843b04037432888d1c9980bdabf9291466480894355",
+                                   "evaluation/m2_phase5.py":  "0d428b38cc4fe35c0375188345234a77abac26a4439f53ef23c5a14302a174c3",
+                                   "evaluation/run_m2_phase5.py":  "5a31867fd716f52d28cff2e9047407ee294920c7cf31c6d089e6336e0e363ecd",
+                                   "evaluation/plot_m2_phase5.py":  "82bd7a93d5293edc6d855df80ef2304bde5be63dd7a416f24c976702776ead1c",
+                                   "tests/test_m2_phase5.py":  "d8fe57a054dc2a787b21f1d137b7f1ef630299c7c91cae5c01171bfca6eee1a4"
+                               }
+}

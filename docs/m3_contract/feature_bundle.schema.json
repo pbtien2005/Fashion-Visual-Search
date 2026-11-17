@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M3 FeatureBundle v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "garment_id", "embedding", "embedding_model", "embedding_version", "color", "metadata"],
+  "properties": {
+    "schema_version": {"const": "m3-features-v1"},
+    "garment_id": {"type": "string", "minLength": 1},
+    "embedding": {"type": "array", "items": {"type": "number"}, "minItems": 512, "maxItems": 512, "description": "Finite, unit L2 norm within 1e-4, checked by FeatureBundle.from_dict; JSON schema alone cannot check norm."},
+    "embedding_model": {"type": "string", "minLength": 1},
+    "embedding_version": {"type": "integer", "minimum": 1},
+    "metadata": {"type": "object"},
+    "color": {
+      "type": "object", "additionalProperties": false,
+      "required": ["values", "version", "config", "roi_source", "roi_policy", "mask_status", "fallback_reason", "valid_pixels", "total_pixels", "mask_fraction", "metadata"],
+      "properties": {
+        "values": {"type": "array", "items": {"type": "number", "minimum": 0}, "oneOf": [{"minItems": 144, "maxItems": 144}, {"minItems": 147, "maxItems": 147}], "description": "Shared handoff profile is 18x8, with optional 3 achromatic bins. Runtime validates config/version and L1 normalization."},
+        "version": {"type": "string", "pattern": "^hsv-hs-v1-"},
+        "config": {"type": "object"},
+        "roi_source": {"type": "string", "minLength": 1},
+        "roi_policy": {"type": "string", "minLength": 1},
+        "mask_status": {"enum": ["valid", "missing", "invalid", "empty", "insufficient"]},
+        "fallback_reason": {"type": ["string", "null"]},
+        "valid_pixels": {"type": "integer", "minimum": 0},
+        "total_pixels": {"type": "integer", "minimum": 1},
+        "mask_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "metadata": {"type": "object"}
+      }
+    }
+  }
+}

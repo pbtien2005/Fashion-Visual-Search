@@ -5,6 +5,7 @@ import { searchUpload } from '../services/api'
 
 export function SearchView({ onSaveHistory }) {
   const [file, setFile] = useState(null)
+  const [mode, setMode] = useState('hybrid')
   const [previewUrl, setPreviewUrl] = useState(null)
   const [result, setResult] = useState(null)
   const [error, setError] = useState('')
@@ -31,7 +32,7 @@ export function SearchView({ onSaveHistory }) {
     setResult(null)
 
     try {
-      const data = await searchUpload(file)
+      const data = await searchUpload(file, mode)
       setResult(data)
       onSaveHistory(file.name, data)
     } catch (err) {
@@ -51,6 +52,11 @@ export function SearchView({ onSaveHistory }) {
           </div>
 
           <form onSubmit={handleSubmit} className="upload-form">
+            <select value={mode} onChange={(event) => setMode(event.target.value)} aria-label="Retrieval method">
+              <option value="histogram_only">Histogram only</option>
+              <option value="embedding_only">Embedding only</option>
+              <option value="hybrid">Hybrid</option>
+            </select>
             <label className="file-drop">
               <input type="file" accept="image/*" onChange={handleFileChange} />
               <span>{file ? file.name : 'Choose outfit image'}</span>

@@ -1,4 +1,5 @@
 import os
+import math
 import threading
 from dataclasses import dataclass
 
@@ -92,6 +93,14 @@ def validate_embedding_dimension(vector: list[float], model_name: str | None = N
             f"{actual_dimension}, but database schema is VECTOR({EXPECTED_VECTOR_DIMENSION}). "
             "Do not change the pgvector schema automatically; create a separate migration/table plan first."
         )
+    try:
+        if not all(math.isfinite(float(value)) for value in vector):
+            raise ValueError("Embedding contains NaN or Inf")
+        norm = math.sqrt(sum(float(value) ** 2 for value in vector))
+    except (TypeError, OverflowError) as exc:
+        raise ValueError("Invalid embedding values") from exc
+    if not math.isclose(norm, 1.0, abs_tol=1e-4):
+        raise ValueError(f"Embedding must have unit L2 norm, got {norm}")
 
 
 def encode_image(image, model_name: str | None = None) -> list[float]:

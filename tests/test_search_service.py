@@ -1,5 +1,7 @@
 import unittest
 from unittest.mock import patch
+import numpy as np
+from AI.hsv_descriptor import extract_hsv_descriptor
 
 from api.search_service import (
     apply_match_threshold,
@@ -12,6 +14,13 @@ from api.search_service import (
 
 
 class SearchServiceTests(unittest.TestCase):
+    def setUp(self):
+        self.gray = extract_hsv_descriptor(np.full((8, 8, 3), 128, np.uint8))
+        self.black = extract_hsv_descriptor(np.zeros((8, 8, 3), np.uint8))
+        color_patch = patch("api.search_service.product_color", return_value=self.gray)
+        color_patch.start()
+        self.addCleanup(color_patch.stop)
+
     def test_threshold_returns_low_confidence_suggestions(self):
         products = [
             {
@@ -80,7 +89,7 @@ class SearchServiceTests(unittest.TestCase):
         self.assertAlmostEqual(color_weight, 1 / 6)
         self.assertAlmostEqual(text_style_weight, 1 / 6)
 
-    def test_color_penalty_only_applies_to_strong_mismatch(self):
+    def test_rgb_name_penalty_is_not_transferred_to_hsv(self):
         self.assertEqual(
             compute_color_penalty(0.90, query_color_name="black", product_color_name="gray"),
             0.0,
@@ -89,7 +98,7 @@ class SearchServiceTests(unittest.TestCase):
             compute_color_penalty(0.10, query_color_name="black", product_color_name="black"),
             0.0,
         )
-        self.assertGreater(
+        self.assertEqual(
             compute_color_penalty(0.10, query_color_name="black", product_color_name="white"),
             0.0,
         )
@@ -115,13 +124,13 @@ class SearchServiceTests(unittest.TestCase):
             products,
             category_terms=["shirt", "top"],
             top_k=1,
-            query_color_rgb=(20, 20, 20),
+            query_color=self.black,
             query_color_name="black",
             class_name="short_sleeve_top",
         )
 
         self.assertGreater(ranked[0]["category_penalty"], 0.0)
-        self.assertGreater(ranked[0]["color_penalty"], 0.0)
+        self.assertEqual(ranked[0]["color_penalty"], 0.0)
         self.assertIn("penalty", ranked[0]["match_reason"])
 
     def test_rerank_products_uses_text_style_signal_without_filtering_candidates(self):
@@ -167,7 +176,7 @@ class SearchServiceTests(unittest.TestCase):
                 products,
                 category_terms=["shirt", "top"],
                 top_k=2,
-                query_color_rgb=(120, 120, 120),
+                query_color=self.gray,
                 query_color_name="gray",
                 class_name="short_sleeve_top",
                 query_vector=[0.0] * 512,
@@ -194,7 +203,7 @@ class SearchServiceTests(unittest.TestCase):
                 [product],
                 category_terms=["shirt", "top"],
                 top_k=1,
-                query_color_rgb=(120, 120, 120),
+                query_color=self.gray,
                 query_color_name="gray",
                 class_name="short_sleeve_top",
                 query_vector=[0.0] * 512,
