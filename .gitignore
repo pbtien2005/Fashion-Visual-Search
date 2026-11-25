@@ -69,3 +69,8 @@ AGENTS.md
 docs/GIAO_VIEC_*_CHO_AI.md
 docker-compose.override.yml
 docs/*_XLA*.pdf
+
+# Embedding-model benchmark: product photos, vectors and raw run JSON stay local
+evaluation_new/cache/
+evaluation_new/results/
+evaluation_new/results_v1/

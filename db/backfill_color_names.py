@@ -26,9 +26,9 @@ def backfill_color_names():
         result = conn.execute(
             """
             UPDATE fashion_items
-            SET dominant_color_name = %s, dominant_color_rgb = %s
+            SET dominant_color_name = %s, dominant_color_rgb = %s::int[]
             WHERE id = %s
-              AND (dominant_color_name IS DISTINCT FROM %s OR dominant_color_rgb IS DISTINCT FROM %s);
+              AND (dominant_color_name IS DISTINCT FROM %s OR dominant_color_rgb IS DISTINCT FROM %s::int[]);
             """,
             (new_name, list(rgb), product_id, new_name, list(rgb)),
         )
