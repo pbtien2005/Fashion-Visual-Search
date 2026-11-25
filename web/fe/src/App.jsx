@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import { ClockIcon, GridIcon, HangerIcon, SearchIcon } from './components/Icons'
 import { clearStoredHistory, readHistory, writeHistory } from './services/historyStorage'
 import { HistoryView } from './views/HistoryView'
 import { ProductsView } from './views/ProductsView'
@@ -29,24 +30,50 @@ function App() {
     clearStoredHistory()
   }
 
-  return (
-    <main className="app-shell">
-      <nav className="tabs" aria-label="Main views">
-        <button type="button" className={activeTab === 'search' ? 'active' : ''} onClick={() => setActiveTab('search')}>
-          Search
-        </button>
-        <button type="button" className={activeTab === 'products' ? 'active' : ''} onClick={() => setActiveTab('products')}>
-          Products
-        </button>
-        <button type="button" className={activeTab === 'history' ? 'active' : ''} onClick={() => setActiveTab('history')}>
-          History
-        </button>
-      </nav>
+  const tabs = [
+    { id: 'search', label: 'Search', icon: SearchIcon },
+    { id: 'products', label: 'Catalog', icon: GridIcon },
+    { id: 'history', label: 'History', icon: ClockIcon, count: history.length },
+  ]
 
-      {activeTab === 'search' && <SearchView onSaveHistory={saveHistory} />}
-      {activeTab === 'products' && <ProductsView />}
-      {activeTab === 'history' && <HistoryView history={history} onClearHistory={clearHistory} />}
-    </main>
+  return (
+    <div className="app">
+      <header className="topbar">
+        <div className="topbar-inner">
+          <a className="brand" href="/" onClick={(event) => { event.preventDefault(); setActiveTab('search') }}>
+            <span className="brand-mark"><HangerIcon size={18} /></span>
+            <span className="brand-name">Fashion<em>Visual</em>Search</span>
+          </a>
+
+          <nav className="tabs" aria-label="Main views">
+            {tabs.map(({ id, label, icon: TabIcon, count }) => (
+              <button
+                key={id}
+                type="button"
+                className={activeTab === id ? 'tab active' : 'tab'}
+                aria-current={activeTab === id ? 'page' : undefined}
+                onClick={() => setActiveTab(id)}
+              >
+                <TabIcon size={17} />
+                <span>{label}</span>
+                {count > 0 && <span className="tab-count">{count}</span>}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <main className="page">
+        {activeTab === 'search' && <SearchView onSaveHistory={saveHistory} />}
+        {activeTab === 'products' && <ProductsView />}
+        {activeTab === 'history' && <HistoryView history={history} onClearHistory={clearHistory} />}
+      </main>
+
+      <footer className="footer">
+        <span>Fashion Visual Search</span>
+        <span>YOLOv8 detection · FashionCLIP + HSV · pgvector ranking</span>
+      </footer>
+    </div>
   )
 }
 

@@ -1,13 +1,17 @@
 import { formatColorLabel, formatPercent, formatRgb } from '../utils/formatters'
+import { ChevronIcon } from './Icons'
 import { ProductCard } from './ProductCard'
 
 function DetectionDebug({ item, debugRows, queryColor }) {
   return (
-    <details className="debug-panel">
-      <summary>Detection debug</summary>
-      <div className="debug-grid">
+    <details className="disclosure debug-panel">
+      <summary>
+        <span>Detection details</span>
+        <ChevronIcon size={15} />
+      </summary>
+      <div className="kv-grid kv-wide">
         {debugRows.map(([label, value]) => (
-          <div className="debug-row" key={label}>
+          <div className="kv-row" key={label}>
             <span>{label}</span>
             <strong className={label === 'Query color' ? 'color-value' : undefined}>
               {label === 'Query color' && queryColor && (
@@ -17,17 +21,17 @@ function DetectionDebug({ item, debugRows, queryColor }) {
             </strong>
           </div>
         ))}
-        {item.crop_variants?.length > 0 && (
-          <div className="crop-variants">
-            {item.crop_variants.map((variant) => (
-              <figure className="crop-variant" key={`${variant.name}-${variant.crop_strategy}`}>
-                <img src={`data:image/jpeg;base64,${variant.image_base64}`} alt={variant.name} />
-                <figcaption>{variant.name}</figcaption>
-              </figure>
-            ))}
-          </div>
-        )}
       </div>
+      {item.crop_variants?.length > 0 && (
+        <div className="crop-variants">
+          {item.crop_variants.map((variant) => (
+            <figure className="crop-variant" key={`${variant.name}-${variant.crop_strategy}`}>
+              <img src={`data:image/jpeg;base64,${variant.image_base64}`} alt={variant.name} />
+              <figcaption>{variant.name}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
     </details>
   )
 }
@@ -42,8 +46,9 @@ function ProductResults({ products }) {
   )
 }
 
-export function DetectedItem({ item }) {
+export function DetectedItem({ item, index = 0 }) {
   const confidence = formatPercent(item.confidence)
+  const confidenceWidth = typeof item.confidence === 'number' ? Math.max(0, Math.min(1, item.confidence)) * 100 : null
   const cropSrc = `data:image/jpeg;base64,${item.crop_image_base64}`
   const hasProducts = Boolean(item.similar_products?.length)
   const lowConfidenceProducts = item.low_confidence_products || []
@@ -54,6 +59,7 @@ export function DetectedItem({ item }) {
   const emptyMessage = noConfidentMatch
     ? item.message || 'Detected, but no confident product match found'
     : 'No similar products found for this item.'
+  const productCount = hasProducts ? item.similar_products.length : lowConfidenceProducts.length
   const debugRows = [
     ['Class', item.class_name],
     ['Confidence', confidence],
@@ -79,34 +85,49 @@ export function DetectedItem({ item }) {
 
   return (
     <section className="detected-item">
-      <div className="crop-panel">
-        <img src={cropSrc} alt={item.class_name_vi || item.class_name} />
-      </div>
+      <aside className="crop-column">
+        <div className="crop-panel">
+          <img src={cropSrc} alt={item.class_name_vi || item.class_name} />
+          <span className="crop-index">{String(index + 1).padStart(2, '0')}</span>
+        </div>
+        <div className="crop-meta">
+          <h2>{item.class_name_vi || item.class_name}</h2>
+          {item.class_name_vi && <p>{item.class_name}</p>}
+          {confidence && (
+            <div className="confidence" title={`Detection confidence ${confidence}`}>
+              <div className="confidence-bar"><span style={{ width: `${confidenceWidth}%` }} /></div>
+              <span>{confidence}</span>
+            </div>
+          )}
+          {queryColor && (
+            <span className="color-value query-color">
+              <span className="color-swatch" style={{ backgroundColor: queryColor }} />
+              {item.query_color_name || 'Detected color'}
+            </span>
+          )}
+        </div>
+      </aside>
+
       <div className="item-results">
         <div className="item-header">
-          <div>
-            <h2>{item.class_name_vi || item.class_name}</h2>
-            <p>{item.class_name}</p>
-          </div>
-          <div className="badges">
-            {confidence && <span>{confidence}</span>}
-            <span>[{item.bbox?.join(', ')}]</span>
-          </div>
+          <h3>{hasProducts ? 'Similar products' : hasLowConfidenceProducts ? 'Suggestions' : 'No match'}</h3>
+          {productCount > 0 && <span className="pill">{productCount} found</span>}
         </div>
-        <DetectionDebug item={item} debugRows={debugRows} queryColor={queryColor} />
+
         {hasProducts ? (
           <ProductResults products={item.similar_products} />
         ) : hasLowConfidenceProducts ? (
           <div className="low-confidence-panel">
-            <div className="threshold-message">
+            <div className="notice notice-warn">
               {emptyMessage}. Showing low confidence suggestions for review.
             </div>
-            <div className="low-confidence-title">Low confidence suggestions</div>
             <ProductResults products={lowConfidenceProducts} />
           </div>
         ) : (
-          <div className={noConfidentMatch ? 'empty-inline threshold-message' : 'empty-inline'}>{emptyMessage}</div>
+          <div className={noConfidentMatch ? 'notice notice-warn' : 'empty-inline'}>{emptyMessage}</div>
         )}
+
+        <DetectionDebug item={item} debugRows={debugRows} queryColor={queryColor} />
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import { ArrowIcon, GridIcon, SearchIcon } from '../components/Icons'
 import { ProductCard } from '../components/ProductCard'
 import { fetchProducts } from '../services/api'
 
@@ -46,35 +47,70 @@ export function ProductsView() {
   }
 
   return (
-    <section className="panel-stack">
+    <section className="view">
+      <div className="section-head">
+        <div>
+          <p className="eyebrow">Browse</p>
+          <h1 className="view-title">Product catalog</h1>
+        </div>
+        <span className="pill pill-lg">{total.toLocaleString()} products</span>
+      </div>
+
       <form className="filter-bar" onSubmit={handleSubmit}>
-        <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search title or brand" />
-        <input value={category} onChange={(event) => setCategory(event.target.value)} placeholder="Category" />
-        <button type="submit" disabled={loading}>{loading ? 'Loading...' : 'Filter'}</button>
+        <label className="field field-grow">
+          <SearchIcon size={17} />
+          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search title or brand" />
+        </label>
+        <label className="field">
+          <GridIcon size={17} />
+          <input value={category} onChange={(event) => setCategory(event.target.value)} placeholder="Category" />
+        </label>
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+          {loading ? 'Loading…' : 'Apply'}
+        </button>
       </form>
 
-      {error && <div className="error-state">{error}</div>}
-      <div className="list-summary">{total} products in database</div>
+      {error && <div className="notice notice-error" role="alert">{error}</div>}
 
       {products.length ? (
-        <div className="product-grid catalog-grid">
+        <div className={loading ? 'product-grid catalog-grid is-loading' : 'product-grid catalog-grid'}>
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       ) : (
-        !loading && <div className="status-panel empty-state">No products found.</div>
+        !loading && (
+          <div className="empty-card">
+            <span className="empty-icon"><GridIcon size={24} /></span>
+            <h2>No products found</h2>
+            <p>Try a different keyword or clear the category filter.</p>
+          </div>
+        )
       )}
 
-      <div className="pager">
-        <button type="button" disabled={loading || offset === 0} onClick={() => loadProducts(Math.max(0, offset - PAGE_SIZE))}>
-          Previous
-        </button>
-        <span>{offset + 1}-{Math.min(offset + PAGE_SIZE, total)} of {total}</span>
-        <button type="button" disabled={loading || offset + PAGE_SIZE >= total} onClick={() => loadProducts(offset + PAGE_SIZE)}>
-          Next
-        </button>
-      </div>
+      {total > PAGE_SIZE && (
+        <div className="pager">
+          <button
+            type="button"
+            className="btn btn-outline"
+            disabled={loading || offset === 0}
+            onClick={() => loadProducts(Math.max(0, offset - PAGE_SIZE))}
+          >
+            <ArrowIcon size={16} className="flip" />
+            Previous
+          </button>
+          <span>{offset + 1}–{Math.min(offset + PAGE_SIZE, total)} of {total.toLocaleString()}</span>
+          <button
+            type="button"
+            className="btn btn-outline"
+            disabled={loading || offset + PAGE_SIZE >= total}
+            onClick={() => loadProducts(offset + PAGE_SIZE)}
+          >
+            Next
+            <ArrowIcon size={16} />
+          </button>
+        </div>
+      )}
     </section>
   )
 }

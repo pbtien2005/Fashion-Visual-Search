@@ -6,20 +6,24 @@ import {
   isPublicImageUrl,
   resolveApiUrl,
 } from '../utils/formatters'
+import { ChevronIcon, ExternalIcon, ImageIcon } from './Icons'
 
 function ScoreRows({ rows, productColor, productColorLabel }) {
   return (
-    <details className="score-panel">
-      <summary>Score</summary>
-      <div className="score-grid">
+    <details className="disclosure score-panel">
+      <summary>
+        <span>Score details</span>
+        <ChevronIcon size={15} />
+      </summary>
+      <div className="kv-grid">
         {rows.map(([label, value]) => (
-          <div className="score-row" key={label}>
+          <div className="kv-row" key={label}>
             <span>{label}</span>
             <strong>{value}</strong>
           </div>
         ))}
         {productColorLabel && (
-          <div className="score-row">
+          <div className="kv-row">
             <span>Product color</span>
             <strong className="color-value">
               {productColor && <span className="color-swatch" style={{ backgroundColor: productColor }} />}
@@ -32,7 +36,7 @@ function ScoreRows({ rows, productColor, productColorLabel }) {
   )
 }
 
-function ProductCardContent({ product }) {
+function ProductCardContent({ product, linked }) {
   const imageUrl = resolveApiUrl(product.usable_image_url)
   const similarity = formatPercent(product.similarity)
   const productColor = formatRgb(product.dominant_color_rgb)
@@ -53,24 +57,39 @@ function ProductCardContent({ product }) {
     ['Product styles', Array.isArray(product.product_styles) ? product.product_styles.join(', ') : null],
     ['Reason', product.match_reason],
   ].filter(([, value]) => value)
+  const hasPrice = product.price !== null && product.price !== undefined
 
   return (
     <>
       <div className="product-media">
         {imageUrl ? (
-          <img src={imageUrl} alt={product.title || product.id || 'Product'} />
+          <img src={imageUrl} alt={product.title || product.id || 'Product'} loading="lazy" />
         ) : (
-          <div className="product-placeholder">No public image</div>
+          <div className="product-placeholder">
+            <ImageIcon size={28} />
+            <span>No public image</span>
+          </div>
+        )}
+        {similarity && <span className="match-badge">{similarity} match</span>}
+        {linked && (
+          <span className="open-badge" aria-hidden="true">
+            <ExternalIcon size={15} />
+          </span>
         )}
       </div>
       <div className="product-body">
+        {product.brand && <span className="product-brand">{product.brand}</span>}
         <h3>{product.title || product.name || product.id || 'Untitled product'}</h3>
-        <div className="product-meta">
-          {product.brand && <span>{product.brand}</span>}
-          {product.price !== null && product.price !== undefined && <span>${product.price}</span>}
-          {similarity && <span>{similarity} match</span>}
+        <div className="product-foot">
+          {hasPrice && <span className="product-price">${product.price}</span>}
+          {product.category && <span className="product-category">{product.category}</span>}
         </div>
-        {product.category && <p className="category">{product.category}</p>}
+        {productColor && (
+          <span className="color-value product-color">
+            <span className="color-swatch" style={{ backgroundColor: productColor }} />
+            {product.dominant_color_name || 'Color'}
+          </span>
+        )}
         {scoreRows.length > 0 && (
           <ScoreRows rows={scoreRows} productColor={productColor} productColorLabel={productColorLabel} />
         )}
@@ -82,15 +101,22 @@ function ProductCardContent({ product }) {
 
 export function ProductCard({ product }) {
   const productUrl = isPublicImageUrl(product.product_url) ? product.product_url : null
-  const content = <ProductCardContent product={product} />
 
   if (productUrl) {
     return (
-      <a className="product-card product-link" href={productUrl} target="_blank" rel="noreferrer">
-        {content}
-      </a>
+      <div className="product-card product-link">
+        <ProductCardContent product={product} linked />
+        <a className="product-open" href={productUrl} target="_blank" rel="noreferrer" aria-label="Open product page">
+          <span>View product</span>
+          <ExternalIcon size={14} />
+        </a>
+      </div>
     )
   }
 
-  return <article className="product-card">{content}</article>
+  return (
+    <article className="product-card">
+      <ProductCardContent product={product} />
+    </article>
+  )
 }

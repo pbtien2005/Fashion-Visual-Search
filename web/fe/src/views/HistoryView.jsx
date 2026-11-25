@@ -1,12 +1,23 @@
+import { ClockIcon, TrashIcon } from '../components/Icons'
+
+function formatDate(value) {
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return ''
+  return date.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })
+}
+
 export function HistoryView({ history, onClearHistory }) {
   return (
-    <section className="panel-stack">
-      <div className="section-toolbar">
+    <section className="view">
+      <div className="section-head">
         <div>
-          <h1>Search History</h1>
-          <p>Recent searches saved in this browser.</p>
+          <p className="eyebrow">Saved in this browser</p>
+          <h1 className="view-title">Search history</h1>
         </div>
-        <button type="button" disabled={!history.length} onClick={onClearHistory}>Clear</button>
+        <button type="button" className="btn btn-ghost" disabled={!history.length} onClick={onClearHistory}>
+          <TrashIcon size={16} />
+          Clear all
+        </button>
       </div>
 
       {history.length ? (
@@ -16,9 +27,11 @@ export function HistoryView({ history, onClearHistory }) {
               <div className="history-card-head">
                 <div>
                   <h2>{entry.file_name || 'Uploaded image'}</h2>
-                  <p>{new Date(entry.created_at).toLocaleString()}</p>
+                  <p>{formatDate(entry.created_at)}</p>
                 </div>
-                <span>{entry.detected_items.length} items</span>
+                <span className="pill">
+                  {entry.detected_items.length} {entry.detected_items.length === 1 ? 'item' : 'items'}
+                </span>
               </div>
               {entry.detected_items.length ? (
                 <div className="history-crops">
@@ -41,7 +54,11 @@ export function HistoryView({ history, onClearHistory }) {
           ))}
         </div>
       ) : (
-        <div className="status-panel empty-state">No search history yet.</div>
+        <div className="empty-card">
+          <span className="empty-icon"><ClockIcon size={24} /></span>
+          <h2>No search history yet</h2>
+          <p>Your recent searches will show up here.</p>
+        </div>
       )}
     </section>
   )
